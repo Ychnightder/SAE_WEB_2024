@@ -9,3 +9,13 @@
 
 /node_modules
 /tailwind.config.js
+
+public/css/
+dist/
+
+
+# Ignorer les fichiers de log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
