@@ -8,12 +8,13 @@
 /dataSources.local.xml
 
 /node_modules
-/tailwind.config.js
 
+/assets/font
 public/css/
 dist/
 
-
+/node_modules/prettier
+/node_modules/prettier-plugin-tailwindcss
 # Ignorer les fichiers de log
 npm-debug.log*
 yarn-debug.log*
