@@ -3,45 +3,18 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="/dist/style.css" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
 			href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
 			rel="stylesheet"
 		/>
-		<script src="https://cdn.tailwindcss.com"></script>
-		<script>
-			tailwind.config = {
-				theme: {
-					extend: {
-						colors: {
-							'celestial-blue': '#3292ca',
-							'india-red': '#eb5957',
-							'honolulu-blue': '#017ac3',
-							'Aero-blue': '#19c3e3',
-						},
+		<link rel="stylesheet" href="../shared-css/main.css" />
+		<link rel="stylesheet" href="../shared-css/header.css" />
 
-						screens: {
-							phone: '300px',
-							// 	// => @media (min-width: 300px) { ... }
-
-							tablet: '640px',
-							//=> @media (min-width: 640px) { ... }
-
-							laptop: '1024px',
-							//=> @media (min-width: 1024px) { ... }
-
-							lg: '1500px',
-							//=> @media (min-width: 1280px) { ... }
-						},
-					},
-				},
-			};
-		</script>
 		<title>Accueil | Autisme France</title>
 	</head>
-	<body class="font-poppins">
+	<body>
 		<!-- /* effet parallax vertical scroll - https://the-goonies.webflow.io/ - https://www.jordangilroy.com/ */
 		<div class="w-full h-screen bg-blue-800 flex justify-center items-center sticky z-0 top-0 "><img src="https://picsum.photos/1920/1080?random=1" class="bg-cover w-full h-screen" alt=""></div>
 		<div class="w-full h-screen bg-red-800 flex justify-center items-center sticky z-10 top-0 "><img src="https://picsum.photos/1920/1080?random=2" class="bg-cover w-full h-screen" alt=""></div>
@@ -50,82 +23,137 @@
 		<div class="w-full h-screen bg-green-900 flex justify-center items-center sticky  z-20 top-0 "><img src="https://picsum.photos/1920/1080?random=5" class="bg-cover w-full h-screen" alt=""></div> 
 		<div class="w-full h-screen bg-green-900 flex justify-center items-center sticky  z-20 top-0 "><img src="https://picsum.photos/1920/1080?random=6" class="bg-cover w-full h-screen" alt=""></div> 
 	--->
-		<header class="w-full h-20 bg-white shadow-lg flex">
-			<nav class="mx-auto flex w-auto h-full items-center space-x-20">
-				<div class=" hidden lg:flex  h-20 ml-20 items-center">
-					<a href="./index.html" class="-m1.5 p-1.5">
-						<img class="h-20 w-auto" src="/assets/shared/logo.png" alt="logo" />
+
+		<header class="header">
+			<nav class="nav">
+				<div class="logo-container">
+					<a class="logo-link" href="./index.html">
+						<img class="logo" src="/assets/shared/logo.png" alt="logo" />
 					</a>
 				</div>
-				<!-- <div class="lg:hidden"></div> // plus tard -->
-				<div class="hidden lg:flex lg:gap-x-12 text-black text-sm font-semibold">
-					<button type="button" class="flex items-center justify-center" aria-expanded="false">Accueil</button>
 
-					<button type="button" class="flex items-center justify-center" aria-expanded="false">
-						Autisme France
-						<svg class="w-3 ml-2 mt-0 flex-none" aria-hidden="true" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path fill-rule="evenodd" d="M1 1.5L5 5.5L9 1.5" stroke="black" stroke-width="2" clip-rule="evenodd" />
-						</svg>
-					</button>
+				<div class="container-lg">
+					<div class="nav-links">
+						<button type="button" class="nav-button">Accueil</button>
 
-					<button type="button" class="flex items-center justify-center" aria-expanded="false">
-						Action
-						<svg class="w-3 ml-2 mt-0 flex-none" aria-hidden="true" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path fill-rule="evenodd" d="M1 1.5L5 5.5L9 1.5" stroke="black" stroke-width="2" clip-rule="evenodd" />
-						</svg>
-					</button>
+						<button type="button" class="nav-button with-submenu">
+							Autisme France
+							<svg class="icon" aria-hidden="true" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" d="M1 1.5L5 5.5L9 1.5" stroke-width="2" clip-rule="evenodd" />
+							</svg>
+							<div class="submenu">
+								<a href="#">Sous-menu 1</a>
+								<a href="#">Sous-menu 2</a>
+								<a href="#">Sous-menu 3</a>
+							</div>
+						</button>
 
-					<button type="button" class="flex items-center justify-center" aria-expanded="false">
-						Droit & MDPH
-						<svg class="w-3 ml-2 mt-0 flex-none" aria-hidden="true" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path fill-rule="evenodd" d="M1 1.5L5 5.5L9 1.5" stroke="black" stroke-width="2" clip-rule="evenodd" />
-						</svg>
-					</button>
+						<button type="button" class="nav-button with-submenu">
+							Action
+							<svg class="icon" aria-hidden="true" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" d="M1 1.5L5 5.5L9 1.5" stroke-width="2" clip-rule="evenodd" />
+							</svg>
+							<div class="submenu">
+								<a href="#">Sous-menu 1</a>
+								<a href="#">Sous-menu 2</a>
+								<a href="#">Sous-menu 3</a>
+							</div>
+						</button>
 
-					<button type="button" class="flex items-center justify-center" aria-expanded="false">
-						Scolarisation
-						<svg class="w-3 ml-2 mt-0 flex-none" aria-hidden="true" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path fill-rule="evenodd" d="M1 1.5L5 5.5L9 1.5" stroke="black" stroke-width="2" clip-rule="evenodd" />
-						</svg>
-					</button>
-					<button type="button" class="flex items-center justify-center" aria-expanded="false">
-						Vie Adulte
-						<svg class="w-3 ml-2 mt-0 flex-none" aria-hidden="true" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path fill-rule="evenodd" d="M1 1.5L5 5.5L9 1.5" stroke="black" stroke-width="2" clip-rule="evenodd" />
-						</svg>
-					</button>
+						<button type="button" class="nav-button with-submenu">
+							Droit & MDPH
+							<svg class="icon" aria-hidden="true" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" d="M1 1.5L5 5.5L9 1.5" stroke-width="2" clip-rule="evenodd" />
+							</svg>
+							<div class="submenu">
+								<a href="#">Sous-menu 1</a>
+								<a href="#">Sous-menu 2</a>
+								<a href="#">Sous-menu 3</a>
+							</div>
+						</button>
 
-					<button type="button" class="flex items-center justify-center" aria-expanded="false">Contact</button>
+						<button type="button" class="nav-button with-submenu">
+							Scolarisation
+							<svg class="icon" aria-hidden="true" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" d="M1 1.5L5 5.5L9 1.5" stroke-width="2" clip-rule="evenodd" />
+							</svg>
+							<div class="submenu">
+								<a href="#">Sous-menu 1</a>
+								<a href="#">Sous-menu 2</a>
+								<a href="#">Sous-menu 3</a>
+							</div>
+						</button>
+
+						<button type="button" class="nav-button with-submenu">
+							Vie Adulte
+							<svg class="icon" aria-hidden="true" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" d="M1 1.5L5 5.5L9 1.5" stroke-width="2" clip-rule="evenodd" />
+							</svg>
+							<div class="submenu">
+								<a href="#">Sous-menu 1</a>
+								<a href="#">Sous-menu 2</a>
+								<a href="#">Sous-menu 3</a>
+							</div>
+						</button>
+
+						<button type="button" class="nav-button with-submenu">Contact</button>
+					</div>
+					<div class="cta-buttons">
+						<a href="#" class="member-button">
+							<svg class="member-icon" width="17" height="17" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M13.3334 14V12.6667C13.3334 11.9594 13.0525 11.2811 12.5524 10.781C12.0523 10.281 11.374 10 10.6667 10H5.33341C4.62617 10 3.94789 10.281 3.4478 10.781C2.9477 11.2811 2.66675 11.9594 2.66675 12.6667V14M10.6667 4.66667C10.6667 6.13943 9.47284 7.33333 8.00008 7.33333C6.52732 7.33333 5.33341 6.13943 5.33341 4.66667C5.33341 3.19391 6.52732 2 8.00008 2C9.47284 2 10.6667 3.19391 10.6667 4.66667Z"
+									stroke="#FFFAFA"
+									stroke-width="1.6"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								/>
+							</svg>
+							Espace Membre
+						</a>
+
+						<a href="#" class="heart-button">
+							<svg width="17" height="17" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M13.8933 3.07333C13.5528 2.73267 13.1485 2.46243 12.7036 2.27805C12.2586 2.09368 11.7817 1.99878 11.3 1.99878C10.8183 1.99878 10.3414 2.09368 9.89643 2.27805C9.45146 2.46243 9.04717 2.73267 8.70667 3.07333L8 3.78L7.29333 3.07333C6.60554 2.38554 5.67269 1.99914 4.7 1.99914C3.72731 1.99914 2.79446 2.38554 2.10666 3.07333C1.41887 3.76112 1.03247 4.69397 1.03247 5.66666C1.03247 6.63935 1.41887 7.5722 2.10666 8.26L8 14.1533L13.8933 8.26C14.234 7.91949 14.5042 7.51521 14.6886 7.07023C14.873 6.62526 14.9679 6.14832 14.9679 5.66666C14.9679 5.185 14.873 4.70807 14.6886 4.26309C14.5042 3.81812 14.234 3.41383 13.8933 3.07333Z"
+									stroke="white"
+									stroke-width="1.6"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								/>
+							</svg>
+						</a>
+					</div>
 				</div>
-				<div class="hidden lg:flex lg:justify-end space-x-10 font-poppins">
-					<a
-						href="#"
-						class="font-semibold text-base text-white font-poppins flex items-center justify-center bg-Aero-blue p-2.5 rounded-md shadow-sm hover:bg-sky-500"
-					>
-						<svg class="mr-2.5" width="17" height="17" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path
-								d="M13.3334 14V12.6667C13.3334 11.9594 13.0525 11.2811 12.5524 10.781C12.0523 10.281 11.374 10 10.6667 10H5.33341C4.62617 10 3.94789 10.281 3.4478 10.781C2.9477 11.2811 2.66675 11.9594 2.66675 12.6667V14M10.6667 4.66667C10.6667 6.13943 9.47284 7.33333 8.00008 7.33333C6.52732 7.33333 5.33341 6.13943 5.33341 4.66667C5.33341 3.19391 6.52732 2 8.00008 2C9.47284 2 10.6667 3.19391 10.6667 4.66667Z"
-								stroke="#FFFAFA"
-								stroke-width="1.6"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-							/>
-						</svg>
-						Espace Membre</a
-					>
-					<a href="#" class="bg-india-red w-11 h-11 rounded-full flex items-center justify-center shadow-sm hover:bg-red-400"
-						><svg class="" width="17" height="17" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path
-								d="M13.8933 3.07333C13.5528 2.73267 13.1485 2.46243 12.7036 2.27805C12.2586 2.09368 11.7817 1.99878 11.3 1.99878C10.8183 1.99878 10.3414 2.09368 9.89643 2.27805C9.45146 2.46243 9.04717 2.73267 8.70667 3.07333L8 3.78L7.29333 3.07333C6.60554 2.38554 5.67269 1.99914 4.7 1.99914C3.72731 1.99914 2.79446 2.38554 2.10666 3.07333C1.41887 3.76112 1.03247 4.69397 1.03247 5.66666C1.03247 6.63935 1.41887 7.5722 2.10666 8.26L8 14.1533L13.8933 8.26C14.234 7.91949 14.5042 7.51521 14.6886 7.07023C14.873 6.62526 14.9679 6.14832 14.9679 5.66666C14.9679 5.185 14.873 4.70807 14.6886 4.26309C14.5042 3.81812 14.234 3.41383 13.8933 3.07333Z"
-								stroke="white"
-								stroke-width="1.6"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-							/>
-						</svg>
-					</a>
-				</div>
+				<button class="hamburger" aria-label="Toggle menu">
+					<svg width="33" height="18" viewBox="0 0 33 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<g clip-path="url(#clip0_15_228)">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M0.5 0H32.5V2H0.5V0ZM0.5 8H32.5V10H0.5V8ZM0.5 16H32.5V18H0.5V16Z" fill="#151515" />
+						</g>
+						<defs>
+							<clipPath id="clip0_15_228">
+								<rect width="32" height="18" fill="white" transform="translate(0.5)" />
+							</clipPath>
+						</defs>
+					</svg>
+
+					<svg style="display: none" width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path
+							fill-rule="evenodd"
+							clip-rule="evenodd"
+							d="M1.893 0.97998L24.521 23.608L23.107 25.022L0.479004 2.39498L1.893 0.97998Z"
+							fill="#151515"
+						/>
+						<path
+							fill-rule="evenodd"
+							clip-rule="evenodd"
+							d="M0.47998 23.607L23.109 0.979004L24.523 2.393L1.89498 25.021L0.47998 23.607Z"
+							fill="#151515"
+						/>
+					</svg>
+				</button>
 			</nav>
 		</header>
+		<script src="../shared-css/header.js " defer></script>
 	</body>
 </html>
