@@ -1,35 +1,35 @@
 const hamburger = document.querySelector('.hamburger');
+const closeIcon = document.querySelector('.close-icon');
+const menuIcon = document.querySelector('.menu-icon');
 const navLinks = document.querySelector('.nav-links');
 const ctaBtn = document.querySelector('.cta-buttons');
-const navButtons = document.querySelectorAll('.nav-button.with-submenu');
+const navButtons = document.querySelectorAll('.with-submenu ');
+
 hamburger.addEventListener('click', () => {
 	navLinks.classList.toggle('active');
 	ctaBtn.classList.toggle('active');
+
+	const isMenuActive = navLinks.classList.contains('active') || ctaBtn.classList.contains('active');
+	menuIcon.style.display = isMenuActive ? 'none' : 'block';
+	closeIcon.style.display = isMenuActive ? 'block' : 'none';
 });
 
 navButtons.forEach((button) => {
-	button.addEventListener('click', () => {
+	button.addEventListener('click', (event) => {
+		event.preventDefault();
+
+		const clickedSubmenu = button.querySelector('.submenu');
+		const arrow = button.querySelector('svg');
 		navButtons.forEach((btn) => {
-           
-			if (btn !== button) {
-				btn.classList.remove('active');
-				const submenu = btn.querySelector('.submenu');
-				// if (submenu) {
-				// 	submenu.style.opacity = '0'; // Masquer le sous-menu
-				// 	submenu.style.pointerEvents = 'none'; // Désactiver les événements de pointeur
-				// }
+			const otherSubmenu = btn.querySelector('.submenu');
+			const otherArrow = btn.querySelector('svg');
+			if (otherSubmenu && otherSubmenu !== clickedSubmenu) {
+				otherSubmenu.classList.remove('active');
+				otherArrow.classList.remove('rotate');
 			}
 		});
 
-
-        button.classList.toggle('active');
-        const submenu = button.querySelector('.submenu');
-        if (button.classList.contains('active')) {
-            submenu.style.opacity = '1'; // Afficher le sous-menu
-            submenu.style.pointerEvents = 'auto'; // Activer les événements de pointeur
-        } else {
-            submenu.style.opacity = '0'; // Masquer le sous-menu
-            submenu.style.pointerEvents = 'none'; // Désactiver les événements de pointeur
-        }
+		clickedSubmenu.classList.toggle('active');
+		arrow.classList.toggle('rotate');
 	});
 });
