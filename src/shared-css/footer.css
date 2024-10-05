@@ -1,0 +1,165 @@
+:root {
+	--celestial-blue: #3292ca;
+	--india-red: #eb5957;
+	--honolulu-blue: #017ac3;
+	--aero-blue: #19c3e3;
+}
+
+.footer svg {
+	width: 17;
+	height: 17px;
+	fill: #fff;
+}
+.footer {
+	width: 100%;
+	height: 271px;
+	background: var(--honolulu-blue);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	color: #fff;
+}
+.footer .main-footer {
+	height: 100%;
+	width: 90%;
+	display: flex;
+}
+
+.acces-rapide,
+.autisme-footer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	width: 50%;
+}
+
+.autisme-footer h2 {
+	font-weight: 700; /* Met le texte en gras */
+	font-size: 20px; /* Peut avoir une taille différente si besoin */
+	margin-bottom: 15px; /* Ajoute un espace de 15 pixels en dessous de l'élément */
+	text-transform: uppercase; /* Transforme le texte en majuscules */
+	padding-bottom: 2%; /* Ajoute un rembourrage (padding) de 2% en bas de l'élément */
+	border-bottom: 1px solid #fff; /* Ajoute une bordure en bas de l'élément, blanche et d'une épaisseur de 1 pixel */
+}
+.autisme-footer .para {
+	text-align: center;
+	line-height: 1.6;
+	margin-bottom: 2%;
+}
+.autisme-footer .contact-box {
+	width: 300px;
+	height: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+.contact-box a {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	margin-bottom: 2%;
+	width: 150px;
+}
+.contact-box a p {
+	display: flex;
+	color: #fff;
+}
+.acces-rapide h2 {
+	font-weight: 700; /* Met le texte en gras */
+	font-size: 18px; /* Définit la taille de la police à 18 pixels */
+	margin-bottom: 20px; /* Ajoute un espace de 20 pixels en dessous de l'élément */
+	text-transform: uppercase; /* Transforme le texte en majuscules */
+	padding-bottom: 2%; /* Ajoute un rembourrage (padding) de 2% en bas de l'élément */
+	border-bottom: 1px solid #fff; /* Ajoute une bordure en bas de l'élément, blanche et d'une épaisseur de 1 pixel */
+}
+
+.acces-rapide p {
+	text-align: center;
+	line-height: 1.6;
+}
+
+.acces-rapide .cta-buttons {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	width: 40%;
+	margin-top: 20px;
+	height: 20px;
+}
+.legal-mentions {
+	width: 100%;
+	height: 31px;
+	background: var(--aero-blue);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.legal-mentions a {
+	color: #fff;
+}
+@media (max-width: 1280px) {
+	.footer {
+		align-items: center;
+		justify-content: center;
+		display: flex;
+		width: 100%;
+		height: 500px;
+		background: var(--honolulu-blue);
+	}
+
+	.footer .main-footer {
+		height: 100%;
+		width: 90%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-top: 20px;
+	}
+
+	.autisme-footer {
+		margin-bottom: 50px;
+	}
+
+	.acces-rapide .cta-buttons {
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		width: 100%;
+		margin-top: 20px;
+	}
+}
+
+@media (max-width: 670px) {
+	.footer {
+		align-items: center;
+		justify-content: center;
+		display: flex;
+		width: 100%;
+		height: 800px;
+		background: var(--honolulu-blue);
+	}
+
+	.footer .main-footer {
+		height: 100%;
+		width: 90%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		margin-top: 20px;
+	}
+
+	.acces-rapide .cta-buttons {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 300px;
+		margin-top: 20px;
+	}
+	.acces-rapide .cta-buttons .heart-button::after {
+		display: none;
+	}
+}
