@@ -12,7 +12,7 @@
 }
 .footer {
 	width: 100%;
-	height: 271px;
+	height: 270px;
 	background: var(--honolulu-blue);
 	display: flex;
 	align-items: center;
@@ -24,29 +24,33 @@
 	height: 100%;
 	width: 90%;
 	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
 }
 
 .acces-rapide,
 .autisme-footer {
 	display: flex;
 	align-items: center;
-	justify-content: center;
 	flex-direction: column;
 	width: 50%;
+	height: 100%;
 }
 
 .autisme-footer h2 {
-	font-weight: 700; /* Met le texte en gras */
-	font-size: 20px; /* Peut avoir une taille différente si besoin */
-	margin-bottom: 15px; /* Ajoute un espace de 15 pixels en dessous de l'élément */
-	text-transform: uppercase; /* Transforme le texte en majuscules */
-	padding-bottom: 2%; /* Ajoute un rembourrage (padding) de 2% en bas de l'élément */
-	border-bottom: 1px solid #fff; /* Ajoute une bordure en bas de l'élément, blanche et d'une épaisseur de 1 pixel */
+	margin-top: 2%;
+	font-weight: 700;
+	font-size: 20px;
+	margin-bottom: 15px;
+	text-transform: uppercase;
+	padding-bottom: 2%;
+	border-bottom: 1px solid #fff;
 }
 .autisme-footer .para {
 	text-align: center;
 	line-height: 1.6;
-	margin-bottom: 2%;
+	margin-top: 2%;
 }
 .autisme-footer .contact-box {
 	width: 300px;
@@ -55,30 +59,40 @@
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
+	margin-top: 2%;
 }
-.contact-box a {
+.contact-box .contact-links {
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
-	margin-bottom: 2%;
 	width: 150px;
 }
 .contact-box a p {
-	display: flex;
 	color: #fff;
 }
+
+.reseaux {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	width: 150px;
+	margin-top: 5%;
+}
+
 .acces-rapide h2 {
-	font-weight: 700; /* Met le texte en gras */
-	font-size: 18px; /* Définit la taille de la police à 18 pixels */
-	margin-bottom: 20px; /* Ajoute un espace de 20 pixels en dessous de l'élément */
-	text-transform: uppercase; /* Transforme le texte en majuscules */
-	padding-bottom: 2%; /* Ajoute un rembourrage (padding) de 2% en bas de l'élément */
-	border-bottom: 1px solid #fff; /* Ajoute une bordure en bas de l'élément, blanche et d'une épaisseur de 1 pixel */
+	margin-top: 2%;
+	font-weight: 700;
+	font-size: 18px;
+	margin-bottom: 20px;
+	text-transform: uppercase;
+	padding-bottom: 2%;
+	border-bottom: 1px solid #fff;
 }
 
 .acces-rapide p {
 	text-align: center;
 	line-height: 1.6;
+	margin: 0 100px;
 }
 
 .acces-rapide .cta-buttons {
@@ -100,27 +114,21 @@
 .legal-mentions a {
 	color: #fff;
 }
+
 @media (max-width: 1280px) {
 	.footer {
-		align-items: center;
-		justify-content: center;
-		display: flex;
-		width: 100%;
-		height: 500px;
-		background: var(--honolulu-blue);
+		height: 800px;
 	}
 
 	.footer .main-footer {
-		height: 100%;
-		width: 90%;
-		display: flex;
 		flex-direction: column;
-		align-items: center;
-		margin-top: 20px;
 	}
-
+	
+	.acces-rapide,
 	.autisme-footer {
-		margin-bottom: 50px;
+		width: 100%;
+		height: 40%;
+
 	}
 
 	.acces-rapide .cta-buttons {
@@ -128,34 +136,20 @@
 		align-items: center;
 		justify-content: space-around;
 		width: 100%;
-		margin-top: 20px;
+		margin-top: 25px;
 	}
 }
 
 @media (max-width: 670px) {
 	.footer {
-		align-items: center;
-		justify-content: center;
-		display: flex;
-		width: 100%;
-		height: 800px;
-		background: var(--honolulu-blue);
+		height: 900px;
 	}
 
 	.footer .main-footer {
-		height: 100%;
-		width: 90%;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
 		margin-top: 20px;
 	}
 
 	.acces-rapide .cta-buttons {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
 		width: 300px;
 		margin-top: 20px;
 	}
