@@ -123,12 +123,11 @@
 	.footer .main-footer {
 		flex-direction: column;
 	}
-	
+
 	.acces-rapide,
 	.autisme-footer {
 		width: 100%;
 		height: 40%;
-
 	}
 
 	.acces-rapide .cta-buttons {
