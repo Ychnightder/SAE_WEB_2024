@@ -1,9 +1,8 @@
 {
-	"devDependencies": {
-		"prettier-plugin-tailwindcss": "^0.6.8"
-	
-	},
-	"scripts": {
-		"dev": ""
-	}
+  "devDependencies": {
+    "prettier": "3.3.3"
+  },
+  "scripts": {
+    "cleaner": "npx prettier . --write"
+  }
 }

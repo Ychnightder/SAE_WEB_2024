@@ -1,158 +1,158 @@
 :root {
-	--celestial-blue: #3292ca;
-	--india-red: #eb5957;
-	--honolulu-blue: #017ac3;
-	--aero-blue: #19c3e3;
+  --celestial-blue: #3292ca;
+  --india-red: #eb5957;
+  --honolulu-blue: #017ac3;
+  --aero-blue: #19c3e3;
 }
 
 .footer svg {
-	width: 17;
-	height: 17px;
-	fill: #fff;
+  width: 17;
+  height: 17px;
+  fill: #fff;
 }
 .footer {
-	width: 100%;
-	height: 270px;
-	background: var(--honolulu-blue);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-	color: #fff;
+  width: 100%;
+  height: 270px;
+  background: var(--honolulu-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #fff;
 }
 .footer .main-footer {
-	height: 100%;
-	width: 90%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: row;
+  height: 100%;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
 }
 
 .acces-rapide,
 .autisme-footer {
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-	width: 50%;
-	height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
 }
 
 .autisme-footer h2 {
-	margin-top: 2%;
-	font-weight: 700;
-	font-size: 20px;
-	margin-bottom: 15px;
-	text-transform: uppercase;
-	padding-bottom: 2%;
-	border-bottom: 1px solid #fff;
+  margin-top: 2%;
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  padding-bottom: 2%;
+  border-bottom: 1px solid #fff;
 }
 .autisme-footer .para {
-	text-align: center;
-	line-height: 1.6;
-	margin-top: 2%;
+  text-align: center;
+  line-height: 1.6;
+  margin-top: 2%;
 }
 .autisme-footer .contact-box {
-	width: 300px;
-	height: auto;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-	margin-top: 2%;
+  width: 300px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 2%;
 }
 .contact-box .contact-links {
-	display: flex;
-	align-items: center;
-	justify-content: space-around;
-	width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 150px;
 }
 .contact-box a p {
-	color: #fff;
+  color: #fff;
 }
 
 .reseaux {
-	display: flex;
-	align-items: center;
-	justify-content: space-around;
-	width: 150px;
-	margin-top: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 150px;
+  margin-top: 5%;
 }
 
 .acces-rapide h2 {
-	margin-top: 2%;
-	font-weight: 700;
-	font-size: 18px;
-	margin-bottom: 20px;
-	text-transform: uppercase;
-	padding-bottom: 2%;
-	border-bottom: 1px solid #fff;
+  margin-top: 2%;
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  padding-bottom: 2%;
+  border-bottom: 1px solid #fff;
 }
 
 .acces-rapide p {
-	text-align: center;
-	line-height: 1.6;
-	margin: 0 100px;
+  text-align: center;
+  line-height: 1.6;
+  margin: 0 100px;
 }
 
 .acces-rapide .cta-buttons {
-	display: flex;
-	align-items: center;
-	justify-content: space-around;
-	width: 40%;
-	margin-top: 20px;
-	height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 40%;
+  margin-top: 20px;
+  height: 20px;
 }
 .legal-mentions {
-	width: 100%;
-	height: 31px;
-	background: var(--aero-blue);
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  width: 100%;
+  height: 31px;
+  background: var(--aero-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .legal-mentions a {
-	color: #fff;
+  color: #fff;
 }
 
 @media (max-width: 1280px) {
-	.footer {
-		height: 800px;
-	}
+  .footer {
+    height: 800px;
+  }
 
-	.footer .main-footer {
-		flex-direction: column;
-	}
+  .footer .main-footer {
+    flex-direction: column;
+  }
 
-	.acces-rapide,
-	.autisme-footer {
-		width: 100%;
-		height: 40%;
-	}
+  .acces-rapide,
+  .autisme-footer {
+    width: 100%;
+    height: 40%;
+  }
 
-	.acces-rapide .cta-buttons {
-		display: flex;
-		align-items: center;
-		justify-content: space-around;
-		width: 100%;
-		margin-top: 25px;
-	}
+  .acces-rapide .cta-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 25px;
+  }
 }
 
 @media (max-width: 670px) {
-	.footer {
-		height: 900px;
-	}
+  .footer {
+    height: 900px;
+  }
 
-	.footer .main-footer {
-		margin-top: 20px;
-	}
+  .footer .main-footer {
+    margin-top: 20px;
+  }
 
-	.acces-rapide .cta-buttons {
-		width: 300px;
-		margin-top: 20px;
-	}
-	.acces-rapide .cta-buttons .heart-button::after {
-		display: none;
-	}
+  .acces-rapide .cta-buttons {
+    width: 300px;
+    margin-top: 20px;
+  }
+  .acces-rapide .cta-buttons .heart-button::after {
+    display: none;
+  }
 }
