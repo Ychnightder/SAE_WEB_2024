@@ -1,0 +1,19 @@
+#imgAccueil {
+  width: 100%;
+  position: sticky;
+  background-image: url("Accueil/slider.png");
+}
+.section {
+  width: 100%;
+  background: #4a926e;
+  position: sticky;
+  z-index: -20;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sectionPar {
+  background: #e1f4ff;
+}
