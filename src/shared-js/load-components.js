@@ -2,22 +2,23 @@
 
 import { header } from "../shared-js/header.js  ";
 
-
 function getPathPrefix() {
-    // Get the current path
-    const currentPath = window.location.pathname;
+  // Get the current path
+  const currentPath = window.location.pathname;
 
-    // Check if we're in a subdirectory
-    if (currentPath.includes('/contact/') || currentPath.endsWith('/contact.html') ) {
-        return '../';  // Go up one level
-    }
+  // Check if we're in a subdirectory
+  if (
+    currentPath.includes("/contact/") ||
+    currentPath.endsWith("/contact.html")
+  ) {
+    return "../"; // Go up one level
+  }
 
-    return './';  // Stay in current directory
+  return "./"; // Stay in current directory
 }
 
-
 function loadHeader() {
-    const pathPrefix = getPathPrefix();
+  const pathPrefix = getPathPrefix();
   return fetch(`${pathPrefix}shared-html/header.html`)
     .then((response) => {
       if (!response.ok) {
@@ -34,8 +35,8 @@ function loadHeader() {
 
 // Load footer
 
-function loadFooter(){ 
-const pathPrefix = getPathPrefix();
+function loadFooter() {
+  const pathPrefix = getPathPrefix();
   return fetch(`${pathPrefix}shared-html/footer.html`)
     .then((response) => {
       if (!response.ok) {
