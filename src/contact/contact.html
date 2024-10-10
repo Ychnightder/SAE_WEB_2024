@@ -227,134 +227,117 @@
         </div>
       </section>
       <section class="section form-contact">
-        <h2>Formulaire de Contact</h2>
-
-        <form action="" method="">
-          <div class="info-form">
-            <p>Information Personnelles</p>
-
+        <h2>formulaire Contact</h2>
+        <form class="form" action="">
+          <div class="form-info">
+            <p>informations personnelles</p>
             <div class="input-info">
-              <div class="form-group">
-                <label for="titre">Titre :</label>
-                <select id="titre" name="titre">
-                  <option value="Mr">Mr</option>
-                  <option value="Mme">Mme</option>
-                  <option value="Mlle">Mlle</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="nom">Nom :</label>
-                <input type="text" id="nom" name="nom" required />
-              </div>
-
-              <div class="form-group">
-                <label for="prenom">Prénom : </label>
-                <input type="text" id="prenom" name="prenom" required />
-              </div>
-
-              <div class="form-group">
-                <label for="raison-social">Raison Sociale</label>
-                <input type="text" id="raison-social" name="raison-social" />
-              </div>
-
-              <div class="form-group">
-                <label for="telephone">Téléphone</label>
-                <input type="tel" id="telephone" name="telephone" required />
-              </div>
+              <select id="titre" name="titre">
+                <option style="display: none" value="" selected disabled>
+                  Titre
+                </option>
+                <option value="Mr">Mr</option>
+                <option value="Mme">Mme</option>
+                <option value="Mlle">Mlle</option>
+              </select>
+              <input type="text" placeholder="Nom" />
+              <input type="text" placeholder="Prénom" />
+              <input type="text" placeholder="Raison social" />
+              <input type="text" placeholder="Téléphone" />
             </div>
           </div>
-          <div class="adrss-form">
-            <p>Couriel</p>
-            <div class="input-adrss">
-              <div class="form-group">
-                <label for="Libelle">Libellé :</label>
-                <select id="Libelle" name="Libelle">
-                  <option value="Mr">exemple</option>
-                  <option value="Mr">exemple</option>
-                  <option value="Mr">exemple</option>
-                  <option value="Mr">exemple</option>
-                  <option value="Mme">Personnelle</option>
-                  <option value="Mlle">Bureau</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="adresse-email">Adresse E-Mail : </label>
-                <input
-                  type="email"
-                  id="adresse-email"
-                  name="adresse-email"
-                  required
-                />
-              </div>
+          <div class="form-courriel">
+            <p>Courriel</p>
+            <div class="input-courriel">
+              <select id="Libele" name="Libele">
+                <option style="display: none" value="" selected disabled>
+                  Libelé
+                </option>
+                <option value="Personnelle">Personnelle</option>
+                <option value="Bureau">Bureau</option>
+              </select>
+              <input type="email" placeholder="Adresse E-mail" />
             </div>
           </div>
-
-          <div class="adrrssP-form">
+          <div class="form-adresse">
             <p>Adresse</p>
-
-            <div class="input-adrrsP">
-              <div class="form-group">
-                <label for="voie">Voie :</label>
-                <input type="text" id="voie" name="voie" />
-              </div>
-
-              <div class="form-group">
-                <label for="code-postal">Code Postal : </label>
-                <input type="text" id="code-postal" name="code-postal" />
-              </div>
-
-              <div class="form-group">
-                <label for="ville">Ville : </label>
-                <input type="text" id="ville" name="ville" />
-              </div>
-
-              <div class="form-group">
-                <label for="pays">Pays :</label>
-                <input type="text" id="pays" name="pays" />
-              </div>
+            <div class="input-adresse">
+              <input type="text" placeholder="Voie" />
+              <input type="text" placeholder="Code Postal" />
+              <input type="text" placeholder="ville" />
+              <input type="text" placeholder="Pays" />
+            </div>
+          </div>
+          <div class="form-vs">
+            <p>Vous êtes</p>
+            <div class="input-vs">
+              <button><span>v</span> Parent</button>
+              <button><span>v</span> Amis, familles, sympathisant</button>
+              <button><span>v</span> Personne TSA</button>
+              <button><span>v</span> Professionnel</button>
             </div>
           </div>
 
-          <div class="form-vous-etes">
-            <p>Vous êtes</p>
-            <div class="input-vous">
-              <div class="checkbox-group">
-                <input
-                  type="checkbox"
-                  id="parent"
-                  name="vous-etes"
-                  value="Parent"
-                />
-                <label for="parent">Parent</label>
-
-                <input
-                  type="checkbox"
-                  id="ami"
-                  name="vous-etes"
-                  value="Amis, familles, sympathisant"
-                  checked
-                />
-                <label for="ami">Amis, familles, sympathisant</label>
-
-                <input
-                  type="checkbox"
-                  id="tsa"
-                  name="vous-etes"
-                  value="Personne TSA"
-                />
-                <label for="tsa">Personne TSA</label>
-
-                <input
-                  type="checkbox"
-                  id="professionnel"
-                  name="vous-etes"
-                  value="Professionnel"
-                />
-                <label for="professionnel">Professionnel</label>
-              </div>
+          <div class="form-objet">
+            <p>Objet</p>
+            <div class="input-obj">
+              <select id="Objet" name="Objet">
+                <option style="display: none" value="" selected disabled>
+                  Objet du message
+                </option>
+                <option value="Personnelle">-</option>
+                <option value="Bureau">-</option>
+              </select>
             </div>
+          </div>
+          <div class="form-mss">
+            <p>message</p>
+            <div class="input-textarena">
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Intitulé du message"
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="form-piecej">
+            <p>ajouter une pièce jointe</p>
+            <div class="input-pj">
+              <input type="file" id="fichier" name="fichier" />
+            </div>
+          </div>
+
+          <div class="form-sub">
+            <p>En soumettant ce formulaire j'accepte</p>
+            <div class="input-ck">
+              <input id="ck" type="checkbox" />
+              <label for="ck">
+                Que les informations saisies soient exploitées par l’association
+                Autisme France afin qu’elle puisse enregistrer mon adhésion
+                et/ou mon inscription et m’adresser le reçu correspondant, le
+                coupon d’entrée au congrès, m’envoyer la revue si j’adhère, me
+                joindre au sujet de ma demande et/ou mon inscription et/ou mon
+                règlement et me tenir informé de l’actualité de l’association.
+                Afin de protéger la confidentialité de vos données personnelles,
+                l’association Autisme France s’engage à ne pas divulguer, ne pas
+                transmettre, ni partager vos données personnelles avec d’autres
+                entités, entreprises ou organismes, quels qu’ils soient,
+                conformément au Règlement Général de Protection des Données de
+                2018 sur la protection des données personnelles. Pour connaître
+                et exercer vos droits, notamment de retrait de consentement à
+                l’utilisation de vos données collectées par ce formulaire,
+                veuillez écrire à Autisme France 1175 avenue de la République
+                06550 La Roquette-sur-Siagne ou contact@autisme-france.fr Pour
+                plus d’informations vous pouvez consulter notre Politique de
+                confidentialité. Ce formulaire est 100% sécurisé grâce au
+                protocole de cryptage SSL (Secure Socket Layer).
+              </label>
+            </div>
+          </div>
+          <div class="form-btnSubmit">
+            <button type="submit">Envoyer</button>
+            <button>Retour</button>
           </div>
         </form>
       </section>

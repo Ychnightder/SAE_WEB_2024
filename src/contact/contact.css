@@ -93,7 +93,7 @@
   flex-direction: column;
   align-items: center;
 }
-.faq h2 {
+.section h2 {
   font-size: 45px;
   font-weight: bold;
   margin: 45px 0;
@@ -157,189 +157,123 @@
   height: auto;
 }
 
-.form-contact h2 {
-  font-size: 3vw;
-  font-weight: bold;
-  color: #017ac3;
-  padding: 31px;
-}
-
-.form-contact p {
-  margin: 25px;
-  color: white;
-}
-
-.form-contact form {
-  width: 100%;
+.form-contact .form {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  height: auto;
+  width: 85%;
 }
-.info-form {
-  width: 90%;
-  max-width: 1200px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.input-info {
-  width: 1000px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 10px;
+.form input ,select {
   padding: 10px;
-}
-.input-info .form-group {
-  flex-basis: calc(33.33% - 10px);
-  margin-bottom: 15px;
-}
-
-.input-info .form-group:nth-child(4),
-.input-info .form-group:nth-child(5) {
-  flex-basis: calc(50% - 10px);
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 5px;
-  color: white;
-}
-
-.form-group select,
-.form-group input {
-  width: 100%;
-  padding: 8px;
   box-sizing: border-box;
   border-radius: 8px;
+  border: 1px solid #ddd;
 }
-.adrss-form {
-  width: 90%;
-  max-width: 1200px;
+
+.form .form-info,
+.form-courriel,
+.form-adresse,
+.form-vs,
+.form-objet,
+.form-mss,
+.form-piecej,
+.form-sub,
+.form-btnSubmit {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 20px;
+  justify-content: center;
+  height: auto;
+}
+.form .form-info p,
+.form-courriel p,
+.form-adresse p,
+.form-vs p,
+.form-objet p,
+.form-mss p,
+.form-piecej p,
+.form-sub p,
+.form-btnSubmit p {
+  margin: 25px;
 }
 
-.adrss-form .input-adrss {
-  width: 1000px;
+.input-info ,
+.input-courriel ,
+.input-adresse ,
+.input-obj select,
+.input-textarena ,
+.input-pj ,
+.input-ck  {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 10px;
-}
-.input-adrss .form-group {
-  display: flex;
-  flex-direction: column;
-}
-
-.input-adrss .form-group:first-child {
-  flex-basis: 15%;
-}
-
-.input-adrss .form-group:last-child {
-  flex-basis: 75%;
-}
-
-.adrrssP-form {
-  width: 90%;
-  max-width: 1200px;
+  width: 100%;
   display: flex;
   align-items: center;
-  flex-direction: column;
-  margin-bottom: 20px;
-}
-.input-adrrsP {
-  width: 1000px;
-  display: flex;
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 20px;
 }
 
-.input-adrrsP .form-group {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 10px;
+
+
+
+.input-info select,
+.input-info input {
+  flex: 1 1 calc(33.33% - 20px); /* Make the first three inputs share the space */
 }
 
-.input-adrrsP .form-group:first-child {
-  flex-basis: 100%;
+.input-info input:nth-child(4),
+.input-info input:nth-child(5) {
+  flex: 1 1 calc(50% - 10px); /* Make the last two inputs take half width each */
 }
 
-.input-adrrsP .form-group:nth-child(2),
-.input-adrrsP .form-group:nth-child(3),
-.input-adrrsP .form-group:nth-child(4) {
-  flex-basis: calc(33% - 4px);
+
+
+
+.input-courriel select {
+  flex: 1 0 20%;             /* Fixed width of 25% for the dropdown */
 }
 
-.form-vous-etes {
-  width: 90%;
-  max-width: 1200px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  margin-bottom: 20px;
+.input-courriel input {
+  flex: 1 0 75%;             /* Fixed width of 75% for the email input */
 }
 
-.input-vous {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #f04d4d;
-  border-radius: 50px;
-  height: 35px;
-  width: 1000px;
+
+
+
+.input-adresse input:first-child {
+  width: 100%;                /* Make the first input (Voie) 100% width */
 }
 
-.checkbox-group {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
+.input-adresse input:not(:first-child) {
+  width: 32%;                 /* Set the remaining inputs to take 32% width */
 }
 
-.checkbox-group input[type="checkbox"] {
-  display: none;
+.input-adresse input:not(:first-child) {
+  flex: 1;                   /* Ensure all inputs share space evenly */
 }
 
-.checkbox-group label {
+.input-vs{
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  height: 40px;
+}
+
+.input-vs button{
+  width: 260px;
+  height: 100%;
   cursor: pointer;
+  background: #EB5957;
+  color: white;
 }
 
-.checkbox-group input[type="checkbox"]:checked + label {
-  width: 100%;
-  height: 45px;
+.input-vs button:first-child{
+  border-radius: 50px 0px 0px 50px;
 }
-
-.checkbox-group label:before {
-  content: "v";
-  margin-right: 8px;
-  display: inline-block;
-}
-
-.checkbox-group input[type="checkbox"]:not(:checked) + label:before {
-  visibility: hidden;
-}
-
-@media (max-width: 768px) {
-  .input-adrss {
-    flex-direction: column;
-  }
-
-  .input-adrss .form-group {
-    flex-basis: 100%; /* Full width for each input on small screens */
-  }
-
-  .input-adrrsP .form-group {
-    flex-basis: 100%; /* Stack all inputs vertically on small screens */
-  }
+.input-vs button:last-child{
+  border-radius:  0px 50px  50px 0px ;
 }

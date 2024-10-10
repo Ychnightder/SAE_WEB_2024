@@ -87,6 +87,7 @@ video {
   vertical-align: baseline;
   text-decoration: none;
   font-family: "Poppins", system-ui;
+  box-sizing: border-box;
 }
 /* HTML5 display-role reset for older browsers */
 article,
