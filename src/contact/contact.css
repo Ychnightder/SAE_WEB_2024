@@ -5,17 +5,9 @@
   flex-direction: column;
 }
 
-/*.section {*/
-/*  width: 100%;*/
-/*  height: 100vh;*/
-/*  position: sticky;*/
-/*  z-index: -20;*/
-/*  top: 0;*/
-/*  border-bottom: 1px solid #13bb3d;*/
-/*}*/
 .contact {
   width: 100%;
-  height: 530px;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,6 +32,9 @@
 .wrapper-main {
   display: flex;
   align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
 }
 
 .box-img {
@@ -49,7 +44,7 @@
   display: flex;
   flex-direction: column;
 }
-.box-img h2 {
+.box-img .title-img {
   font-size: 22px;
   width: 305px;
   color: #19c3e3;
@@ -70,7 +65,7 @@
   margin-top: 150px;
 }
 .fleche:before {
-  content: "\f061";
+  content: "➡️";
 }
 .contact-box {
   width: 375px;
@@ -85,6 +80,7 @@
 .accordion {
   width: 90%;
   margin: 0 auto;
+
 }
 .faq {
   width: 100%;
@@ -109,7 +105,6 @@
 
 .accordion-header {
   width: 100%;
-  text-align: left;
   padding: 15px;
   background-color: #f7f7f7;
   border: none;
@@ -117,6 +112,9 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
   font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .accordion-header:hover {
@@ -127,26 +125,19 @@
   padding: 15px;
   display: none;
   border-top: 1px solid #e5e5e5;
-}
-
-.accordion-content p {
-  margin: 0;
-}
-
-.accordion-header:after {
-  content: "\25BC";
-  float: right;
-  transition: transform 0.3s ease;
-}
-
-.accordion-item.active .accordion-header:after {
-  transform: rotate(180deg);
+  display: none;
+  overflow: hidden;
 }
 
 .accordion-item.active .accordion-content {
   display: block;
 }
 
+
+.accordion-content.active {
+  display: block;
+  transition: max-height 0.3s ease-in-out;
+}
 .form-contact {
   background: linear-gradient(#b0dff9, #78c2f2);
   width: 100%;
@@ -165,7 +156,9 @@
   height: auto;
   width: 85%;
 }
-.form input ,select {
+.form input,
+select,
+textarea {
   padding: 10px;
   box-sizing: border-box;
   border-radius: 8px;
@@ -200,13 +193,13 @@
   margin: 25px;
 }
 
-.input-info ,
-.input-courriel ,
-.input-adresse ,
-.input-obj select,
-.input-textarena ,
-.input-pj ,
-.input-ck  {
+.input-info,
+.input-courriel,
+.input-adresse,
+.input-obj,
+.input-textarena,
+.input-pj,
+.input-ck {
   display: flex;
   width: 100%;
   display: flex;
@@ -215,9 +208,6 @@
   flex-wrap: wrap;
   gap: 20px;
 }
-
-
-
 
 .input-info select,
 .input-info input {
@@ -229,33 +219,27 @@
   flex: 1 1 calc(50% - 10px); /* Make the last two inputs take half width each */
 }
 
-
-
-
 .input-courriel select {
-  flex: 1 0 20%;             /* Fixed width of 25% for the dropdown */
+  flex: 1 0 20%; /* Fixed width of 25% for the dropdown */
 }
 
 .input-courriel input {
-  flex: 1 0 75%;             /* Fixed width of 75% for the email input */
+  flex: 1 0 75%; /* Fixed width of 75% for the email input */
 }
-
-
-
 
 .input-adresse input:first-child {
-  width: 100%;                /* Make the first input (Voie) 100% width */
+  width: 100%; /* Make the first input (Voie) 100% width */
 }
 
 .input-adresse input:not(:first-child) {
-  width: 32%;                 /* Set the remaining inputs to take 32% width */
+  width: 32%; /* Set the remaining inputs to take 32% width */
 }
 
 .input-adresse input:not(:first-child) {
-  flex: 1;                   /* Ensure all inputs share space evenly */
+  flex: 1; /* Ensure all inputs share space evenly */
 }
 
-.input-vs{
+.input-vs {
   width: 100%;
   display: flex;
   align-items: center;
@@ -263,17 +247,208 @@
   height: 40px;
 }
 
-.input-vs button{
+.input-vs button {
   width: 260px;
   height: 100%;
   cursor: pointer;
-  background: #EB5957;
+  background: #eb5957;
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-.input-vs button:first-child{
+.input-vs button span {
+  margin: 10px;
+}
+.input-vs button:first-child {
   border-radius: 50px 0px 0px 50px;
 }
-.input-vs button:last-child{
-  border-radius:  0px 50px  50px 0px ;
+.input-vs button:last-child {
+  border-radius: 0px 50px 50px 0px;
 }
+
+.input-obj select {
+  width: 100%;
+}
+.input-textarena textarea {
+  width: 100%;
+  height: 250px;
+}
+.input-pj {
+  position: relative;
+}
+.input-pj input {
+  display: none;
+}
+
+.input-pj label {
+  z-index: 2;
+  cursor: pointer;
+  padding: 0 35%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 250px;
+  background: white;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+.input-pj label h3 {
+  color: #0ea5e9;
+}
+
+.input-ck label p {
+  color: rgba(0, 0, 0, 0.87);
+  text-align: left;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.input-ck label p input {
+  margin-right: 20px;
+}
+
+.form-btnSubmit {
+  height: 250px;
+}
+
+.form-btnSubmit button {
+  width: 100%;
+  height: 30px;
+  margin: 15px;
+  border-radius: 50px;
+  color: white;
+  cursor: pointer;
+}
+
+.form-btnSubmit button:first-child {
+  background: #eb5957;
+}
+
+.form-btnSubmit button:last-child {
+  background: #e5e4e4;
+  cursor: pointer;
+}
+/* Ordinateurs de bureau moyens et petits */
+@media (max-width: 1280px) {
+  .contact .wrapper-main {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+
+  .text-center{
+    margin: 0;
+    width: 80%;
+  }
+.contact-box{
+  width: 80%;
+  align-items: center;
+
+}
+
+}
+
+/* Tablettes */
+@media (max-width: 1024px) {
+  .title-contact h1 {
+    font-size: 48px;
+  }
+
+  .text-center p span {
+    font-size: 14px;
+  }
+
+  .form input,
+  select,
+  textarea {
+    width: 100%;
+  }
+
+  .input-info select,
+  .input-info input,
+  .input-courriel select,
+  .input-courriel input,
+  .input-adresse input {
+    flex: 1 1 100%;
+  }
+
+  .input-adresse input:not(:first-child) {
+    width: 100%;
+  }
+
+  .input-vs button {
+    width: 100%;
+  }
+}
+
+/* Smartphones grands écrans */
+@media (max-width: 768px) {
+  .title-contact h1 {
+    font-size: 36px;
+    margin: 20px 0;
+  }
+
+
+
+  .wrapper-main {
+    flex-direction: column;
+  }
+
+  .box-img {
+    margin-bottom: 20px;
+  }
+
+  .accordion {
+    width: 100%;
+  }
+
+  .input-info input,
+  .input-courriel input,
+  .input-adresse input {
+    flex: 1 1 100%;
+  }
+
+  .input-pj label {
+    padding: 0 15%;
+  }
+
+  .form-btnSubmit button {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+
+/* Smartphones petits écrans */
+@media (max-width: 480px) {
+  .title-contact h1 {
+    font-size: 28px;
+  }
+
+  .box-img .title-img {
+    font-size: 18px;
+  }
+
+  .text-center p span {
+    font-size: 12px;
+  }
+
+  .input-pj label {
+    padding: 0 10%;
+    height: 200px;
+  }
+
+  .input-textarena textarea {
+    height: 150px;
+  }
+
+  .form-btnSubmit button {
+    height: 40px;
+  }
+}
+
+
