@@ -25,7 +25,6 @@
   text-transform: uppercase;
   margin-top: 43px;
   margin-bottom: 57px;
-
   color: #017ac3;
 }
 
@@ -80,7 +79,6 @@
 .accordion {
   width: 90%;
   margin: 0 auto;
-
 }
 .faq {
   width: 100%;
@@ -125,8 +123,9 @@
   padding: 15px;
   display: none;
   border-top: 1px solid #e5e5e5;
-  display: none;
   overflow: hidden;
+  text-align: left;
+  line-height: 1.6;
 }
 
 .accordion-item.active .accordion-content {
@@ -256,9 +255,14 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background-color 0.3s ease-out;
+
+}
+.input-vs button:hover {
+  background: #f27775;
 }
 .input-vs button span {
-  margin: 10px;
+  padding: 10px;
 }
 .input-vs button:first-child {
   border-radius: 50px 0px 0px 50px;
@@ -327,14 +331,20 @@ textarea {
 
 .form-btnSubmit button:first-child {
   background: #eb5957;
+  transition: background-color 0.3s ease-out;
 }
-
+.form-btnSubmit button:first-child:hover {
+  background: #f27775;
+}
 .form-btnSubmit button:last-child {
   background: #e5e4e4;
   cursor: pointer;
 }
 /* Ordinateurs de bureau moyens et petits */
 @media (max-width: 1280px) {
+  .form-contact{
+    margin-top: 50px;
+  }
   .contact .wrapper-main {
     flex-direction: column;
     justify-content: center;
@@ -355,6 +365,9 @@ textarea {
 
 /* Tablettes */
 @media (max-width: 1024px) {
+  .form-contact{
+    margin-top: 50px;
+  }
   .title-contact h1 {
     font-size: 48px;
   }
@@ -388,6 +401,9 @@ textarea {
 
 /* Smartphones grands écrans */
 @media (max-width: 768px) {
+  .input-vs button {
+    font-size: 11px;
+  }
   .title-contact h1 {
     font-size: 36px;
     margin: 20px 0;
@@ -402,7 +418,9 @@ textarea {
   .box-img {
     margin-bottom: 20px;
   }
-
+  .form-contact{
+    margin-top: 250px;
+  }
   .accordion {
     width: 100%;
   }

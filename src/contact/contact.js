@@ -16,10 +16,20 @@ btnAll.forEach((btn) => {
 
 
 
-// Sélectionne tous les boutons de l'accordéon
 const accordionHeaders = document.querySelectorAll('.accordion-header');
 accordionHeaders.forEach(header => {
   header.addEventListener('click', () => {
+
+    accordionHeaders.forEach(otherHeader => {
+      const otherContent = otherHeader.nextElementSibling;
+      const otherIcon = otherHeader.querySelector('.icon');
+      if (otherHeader !== header) {
+        otherContent.classList.remove('active');
+        otherIcon.style.transform = 'rotate(0deg)';
+      }
+    });
+    
+    
     const accordionContent = header.nextElementSibling;
     accordionContent.classList.toggle('active');
     const icon = header.querySelector('.icon');
