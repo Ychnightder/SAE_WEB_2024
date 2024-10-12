@@ -132,7 +132,6 @@
   display: block;
 }
 
-
 .accordion-content.active {
   display: block;
   transition: max-height 0.3s ease-in-out;
@@ -256,7 +255,6 @@ textarea {
   align-items: center;
   justify-content: center;
   transition: background-color 0.3s ease-out;
-
 }
 .input-vs button:hover {
   background: #f27775;
@@ -342,7 +340,7 @@ textarea {
 }
 /* Ordinateurs de bureau moyens et petits */
 @media (max-width: 1280px) {
-  .form-contact{
+  .form-contact {
     margin-top: 50px;
   }
   .contact .wrapper-main {
@@ -350,22 +348,19 @@ textarea {
     justify-content: center;
   }
 
-
-  .text-center{
+  .text-center {
     margin: 0;
     width: 80%;
   }
-.contact-box{
-  width: 80%;
-  align-items: center;
-
-}
-
+  .contact-box {
+    width: 80%;
+    align-items: center;
+  }
 }
 
 /* Tablettes */
 @media (max-width: 1024px) {
-  .form-contact{
+  .form-contact {
     margin-top: 50px;
   }
   .title-contact h1 {
@@ -409,8 +404,6 @@ textarea {
     margin: 20px 0;
   }
 
-
-
   .wrapper-main {
     flex-direction: column;
   }
@@ -418,7 +411,7 @@ textarea {
   .box-img {
     margin-bottom: 20px;
   }
-  .form-contact{
+  .form-contact {
     margin-top: 250px;
   }
   .accordion {
@@ -468,5 +461,3 @@ textarea {
     height: 40px;
   }
 }
-
-

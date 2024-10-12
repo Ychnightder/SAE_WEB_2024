@@ -9,7 +9,9 @@ function getPathPrefix() {
   // Check if we're in a subdirectory
   if (
     currentPath.includes("/contact/") ||
-    currentPath.endsWith("/contact.html")
+    currentPath.endsWith("/contact.html") ||
+    currentPath.includes("/adhesion-connexion/") ||
+    currentPath.endsWith("/adhesion-connexion.html")
   ) {
     return "../"; // Go up one level
   }
