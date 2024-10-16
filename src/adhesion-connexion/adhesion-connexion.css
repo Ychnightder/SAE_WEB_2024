@@ -2,15 +2,22 @@
   display: flex;
   width: 100%;
   height: 100vh;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
 }
 
+.wrapper-main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 97%;
+}
 .main .leftBox {
   width: 60%;
   height: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .leftBox .logoBox {
@@ -33,24 +40,112 @@
 
 .leftBox .formBox {
   margin-top: 50px;
-  width: 100%;
   height: 600px; /*met auto après*/
   display: flex;
-  align-items: center;
+  width: 60%;
+  overflow: hidden;
+  position: relative;
+}
+
+.formBox .x {
+  height: 300px;
+  width: 300px;
+}
+.formBox .div-form-conexion{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  
+}
+
+.main label{
+  width: 100%;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  gap: 8px;
+  mar-bottom: 8508px;
+  
+}
+main input{
+  width: 100%;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+
+}
+
+.div-form-conexion .form-conexion{
+  max-width: 85%;
+  width: 100%;
+  display: flex;
   flex-direction: column;
 }
 
-.form {
-  width: 400px;
-  height: 350px;
+.form-conexion label p{
+  gap: 8px;
+}
+.form-conexion .input-connexion label input{
+  padding: 8px;
+}
+.input-connexion label{
+  margin: 30px  0  20px 0;
+ }
+.input-connexion .linkForget{
+  margin-bottom: 30px;
+
+}
+.input-connexion .linkForget a {
+    color: #000;
+  transition: color 0.3s ease-in-out;
+}
+.input-connexion .linkForget a:hover{
+  color: #017AC3;
+}
+.divSubmit{
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
+  height: 50px;
+  margin-bottom: 100px;
+}
+.divSubmit button{
+  width: 200px;
+  height: 100%;
+  border-radius: 10px;
+  color: #ffffff;
+  cursor: pointer;
+}
+.divSubmit button:first-child{
+  background: #D0D0D0;
+}
+.divSubmit button:last-child{
+  background: #017AC3;
+}
+/* position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);*/
+
+.formBox .div-form-inscription {
+  position: absolute;
+  background: rebeccapurple;
+  right: -100%;
+}
+.form-conexion {
 }
 
 /*-*/
 
-.main .rightBox {
+.wrapper-main .rightBox {
   width: calc(40% - 30px);
   height: calc(100% - 30px);
   display: flex;
@@ -63,4 +158,7 @@
   border-radius: 43px;
   background: url("main.png") no-repeat;
   background-size: cover;
+}
+.footer {
+  width: 100%;
 }

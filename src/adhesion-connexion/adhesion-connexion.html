@@ -10,35 +10,145 @@
   </head>
   <body>
     <main class="main">
-      <div class="leftBox">
-        <div class="logoBox">
-          <img src="/assets/shared/logo.png" alt="logo autisme france" />
-        </div>
-        <h1 class="title-AC">
-          Bienvenue sur l'intranet <br />d'Autisme France
-        </h1>
-        <div class="formBox">
-          <form action="" class="form">
-            <div class="input-connexion">
-              <label for="ID">
-                Identifiant :
-                <input id="ID" type="text" />
-              </label>
+      <div class="wrapper-main">
+        <div class="leftBox">
+          <div class="logoBox">
+            <img src="/assets/shared/logo.png" alt="logo autisme france" />
+          </div>
+          <h1 class="title-AC">
+            Bienvenue sur l'intranet <br />d'Autisme France
+          </h1>
+          <div class="formBox">
+            <div class="x div-form-conexion">
+              <form action="" class="form-conexion">
+                <div class="input-connexion">
+                  <label for="ID">
+                   <p> Identifiant :</p>
+                    <input id="ID" type="text" />
+                  </label>
 
-              <label for="password">
-                Mot de passe :
-                <input id="password" type="password" />
-              </label>
+                  <label for="password">
+                 <p>   Mot de passe :</p>
+                    <input id="password" type="password" />
+                  </label>
+                  <div class="linkForget">
+                    <a href="#">Mot de passe oublié</a>
+                  </div>
+                </div>
+                <div class="divSubmit">
+                  <button>Retour</button>
+                  <button>Connexion</button>
+                </div>
+                <div class="likns-ac">
+                  <p>Avez vous un compte ?</p>
+                  <div class="links-box">
+                    <a href="#">Adhérer en ligne </a>
+                    <a href="#">Adhérer par voie postale</a>
+                  </div>
+                </div>
+              </form>
             </div>
-            <div class="divSubmit">
-              <button>Retour</button>
-              <button>Connexion</button>
+            <div class="x div-form-inscription">
+              <form action="" class="form-inscription">
+                <div class="first-info">
+                  <div class="name-firsname">
+                    <label for="nom">
+                      Nom :
+                      <input type="text" id="nom" />
+                    </label>
+                    <label for="prenom">
+                      Prenom :
+                      <input type="text" id="prenom" />
+                    </label>
+                  </div>
+                  <label for="email">
+                    Adresse mail :
+                    <input type="email" />
+                  </label>
+                  <div class="phone-div">
+                    <!--                    <template>-->
+                    <div class="telephone-box">
+                      <select id="Libele" name="Libele">
+                        <option
+                          style="display: none"
+                          value=""
+                          selected
+                          disabled
+                        >
+                          Libelé
+                        </option>
+                        <option value="Bureau">Bureau</option>
+                        <option value="Bureau">Domicile</option>
+                        <option value="Personnelle">Perso</option>
+                        <option value="Bureau">Principal</option>
+                        <option value="Bureau">Pro</option>
+                      </select>
+                      <label for="telephone">
+                        Téléphone :
+                        <input id="telephone" type="number" />
+                      </label>
+                      <div class="button-add">
+                        <button class="add add-num">Ajouter</button>
+                      </div>
+                    </div>
+
+                    <!--                    </template>-->
+                    <div class="divSubmit">
+                      <button>Retour</button>
+                      <button>Suivant</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="second-info">
+                  <label for="voie">
+                    Voie :
+                    <input type="text" id="voie" />
+                  </label>
+                  <div class="info-position">
+                    <label for="codepostale">
+                      Code de postale :
+                      <input id="codepostale" type="text" />
+                    </label>
+                    <label for="ville">
+                      Ville :
+                      <input type="text" id="ville" />
+                    </label>
+                  </div>
+                  <label for="pays">
+                    Pays :
+                    <select name="pays" id="pays">
+                      <option>pays</option>
+                    </select>
+                  </label>
+
+                  <label for="qualite">
+                    J'adhère en qualité de :
+                    <select name="qualite" id="qualite">
+                      <option>qualite</option>
+                    </select>
+                  </label>
+
+                  <label for="don-ad">
+                    Je souhaite adhérer (55 €/an) :
+                    <select name="don-ad" id="don-ad">
+                      <option>55€</option>
+                    </select>
+                  </label>
+                  <div class="divSubmit">
+                    <button>Retour</button>
+                    <button>Valider</button>
+                  </div>
+                </div>
+              </form>
             </div>
-          </form>
+          </div>
+        </div>
+        <div class="rightBox">
+          <div class="img"></div>
         </div>
       </div>
-      <div class="rightBox">
-        <div class="img"></div>
+      <div class="footer">
+        <p>Mentions Légale</p>
       </div>
     </main>
   </body>
