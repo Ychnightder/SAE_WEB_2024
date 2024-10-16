@@ -115,7 +115,7 @@ main input{
   justify-content: space-between;
   align-items: center;
   height: 50px;
-  margin-bottom: 100px;
+  margin-bottom: 80px;
 }
 .divSubmit button{
   width: 200px;
@@ -129,6 +129,28 @@ main input{
 }
 .divSubmit button:last-child{
   background: #017AC3;
+}
+.likns-ac{
+  width: 50%;
+}
+.likns-ac p{
+  margin-bottom: 15px;
+}
+.likns-ac .links-box{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 35px;
+}
+.links-box a{
+  margin-bottom: 10px;
+  color: rgba(1, 122, 195, 0.84);
+
+  transition: color 0.3s ease-in-out;
+}
+.links-box a:hover{
+  color: #017AC3;
+
 }
 /* position: absolute;
   top: 50%;
@@ -159,6 +181,13 @@ main input{
   background: url("main.png") no-repeat;
   background-size: cover;
 }
-.footer {
-  width: 100%;
+.main .footer {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main .footer a{
+  margin: 0 100px;
+  background: #000;
 }
