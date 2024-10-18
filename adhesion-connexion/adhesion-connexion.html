@@ -56,50 +56,44 @@
               <form action="" class="form-inscription">
                 <div class="first-info">
                   <div class="name-firsname">
-                    <label for="nom" required>
+                    <label for="nom">
                       Nom :
                       <input type="text" id="nom" />
                     </label>
-                    <label for="prenom" required>
+                    <label for="prenom">
                       Prenom :
                       <input type="text" id="prenom" />
                     </label>
                   </div>
-                  <label for="email" required>
+                  <label for="Email">
                     Adresse mail :
-                    <input type="email" />
+                    <input id="Email" type="email" />
                   </label>
                   <div class="phone-div">
-                    <!--                    <template>-->
                     <div class="telephone-box">
-                      <select id="Libele" name="Libele">
-                        <option
-                          style="display: none"
-                          value=""
-                          selected
-                          disabled
-                        >
-                          Libelé
-                        </option>
-                        <option value="Bureau">Bureau</option>
-                        <option value="Bureau">Domicile</option>
-                        <option value="Personnelle">Perso</option>
-                        <option value="Bureau">Principal</option>
-                        <option value="Bureau">Pro</option>
-                      </select>
+                      <label for="Libele">
+                        Libelé :
+                        <select id="Libele" name="Libele">
+
+<!--                          <option value="Bureau">Bureau</option>-->
+<!--                          <option value="Bureau">Domicile</option>-->
+<!--                          <option value="Personnelle">Perso</option>-->
+<!--                          <option value="Bureau">Principal</option>-->
+<!--                          <option value="Bureau">Pro</option>-->
+                        </select>
+                      </label>
                       <label for="telephone">
                         Téléphone :
-                        <input id="telephone" type="number" />
+                        <input id="telephone" type="text" />
                       </label>
-                      <div class="button-add">
-                        <button class="add add-num">Ajouter</button>
-                      </div>
                     </div>
 
-                    <!--                    </template>-->
+                    <div class="div-button-add">
+                      <button class="add-num">Ajouter un numero</button>
+                    </div>
                     <div class="divSubmit">
                       <button class="return-btn">Retour</button>
-                      <button  class="btn-suivant" >Suivant</button>
+                      <button class="btn-suivant">Suivant</button>
                     </div>
                   </div>
                 </div>
@@ -139,7 +133,7 @@
                     </select>
                   </label>
                   <div class="divSubmit">
-                    <button>Retour</button>
+                    <button class="return-btn2">Retour</button>
                     <button>Valider</button>
                   </div>
                 </div>

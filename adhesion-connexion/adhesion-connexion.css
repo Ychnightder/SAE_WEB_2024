@@ -1,265 +1,326 @@
 /* Main container */
 .main {
-    display: flex;
-    width: 100%;
-    height: 100vh;
-    flex-direction: column;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  flex-direction: column;
 }
 
 /* Wrapper */
 .wrapper-main {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    height: 97%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 97%;
 }
 
 /* Left Box */
 .main .leftBox {
-    width: 60%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .leftBox .logoBox {
-    width: 100%;
-    margin-left: 55px;
-    margin-top: 35px;
-    margin-bottom: 50px;
+  width: 100%;
+  margin-left: 55px;
+  margin-top: 35px;
+  margin-bottom: 50px;
 }
 
 .logoBox img {
-    width: 150px;
+  width: 150px;
 }
 
 .leftBox .title-AC {
-    text-align: center;
-    font-weight: 600;
-    font-size: 35px;
-    color: #017ac3;
+  text-align: center;
+  font-weight: 600;
+  font-size: 35px;
+  color: #017ac3;
 }
 
 /* Form Box */
 .leftBox .formBox {
-    margin-top: 50px;
-    height: 600px;
-    display: flex;
-    flex-direction: row;
-    width: 60%;
-    overflow: hidden;
-    position: relative;
+  margin-top: 50px;
+  height: 600px;
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+  overflow: hidden;
+  position: relative;
 }
 
 /* Formulaire de connexion et inscription */
 .formBox .div-form-conexion,
 .formBox .div-form-inscription {
-    width: 100%;
-    position: absolute;
-    transition: all 0.5s ease-in-out;
+  width: 100%;
+  position: absolute;
+  transition: all 0.5s ease-in-out;
 }
 
 /* Connexion form */
 .formBox .div-form-conexion {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    left: 0;
+  height: 100%;
+  width: 100%;
+  /*display: flex;*/
+  justify-content: center;
+  left: 0;
+  display: none;
 }
 
 .div-form-conexion .form-conexion {
-    max-width: 85%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+  max-width: 85%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Form fields and labels */
 .main label {
-    width: 100%;
-    height: 70px;
-    display: flex;
-    flex-direction: column;
-    font-size: 16px;
-    gap: 8px;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  gap: 8px;
+  margin-top: 10px;
 }
 
-main input {
-    width: 100%;
-    height: 40px;
-    border-radius: 8px;
-    border: 1px solid #ddd;
+main input,
+select {
+  width: 100%;
+  height: 40px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  padding: 8px;
 }
 
 .form-conexion label p {
-    gap: 8px;
+  gap: 8px;
 }
 
 .form-conexion .input-connexion label input {
-    padding: 8px;
+  padding: 8px;
 }
 
 .input-connexion label {
-    margin: 30px 0 20px 0;
+  margin: 30px 0 20px 0;
 }
 
 /* Link styles */
 .input-connexion .linkForget {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 .input-connexion .linkForget a {
-    color: #000;
-    transition: color 0.3s ease-in-out;
+  color: #000;
+  transition: color 0.3s ease-in-out;
 }
 
 .input-connexion .linkForget a:hover {
-    color: #017ac3;
+  color: #017ac3;
 }
 
 /* Submit button container */
 .divSubmit {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    height: 50px;
-    margin-bottom: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  margin-bottom: 50px;
 }
 
 /* Submit buttons */
 .divSubmit button {
-    width: 200px;
-    height: 100%;
-    border-radius: 10px;
-    color: #ffffff;
-    cursor: pointer;
+  width: 200px;
+  height: 100%;
+  border-radius: 10px;
+  color: #ffffff;
+  cursor: pointer;
 }
 
 .divSubmit button:first-child {
-    background: #d0d0d0;
+  background: #d0d0d0;
 }
 
 .divSubmit button:last-child {
-    background: #017ac3;
+  background: #017ac3;
 }
 
 /* Links */
 .likns-ac {
-    width: 50%;
+  width: 50%;
 }
 
 .likns-ac p {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .likns-ac .links-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    height: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 35px;
 }
 
 .links-box a {
-    margin-bottom: 10px;
-    color: rgba(1, 122, 195, 0.84);
-    transition: color 0.3s ease-in-out;
+  margin-bottom: 10px;
+  color: rgba(1, 122, 195, 0.84);
+  transition: color 0.3s ease-in-out;
 }
 
 .links-box a:hover {
-    color: #017ac3;
+  color: #017ac3;
 }
-
 
 /* Animation pour masquer le formulaire de connexion vers la gauche */
 .hide-left {
-    animation: slideOutLeft 0.5s forwards;
+  animation: slideOutLeft 0.5s forwards;
 }
 
 @keyframes slideOutLeft {
-    from {
-        opacity: 1;
-        transform: translateX(0);
-    }
-    to {
-        opacity: 0;
-        transform: translateX(-100%);
-    }
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
 }
 
 /* Animation pour afficher le formulaire d'inscription venant de la droite */
 .show-right {
-    animation: slideInRight 0.5s forwards;
+  animation: slideInRight 0.5s forwards;
 }
 
 @keyframes slideInRight {
-    from {
-        opacity: 0;
-        transform: translateX(100%);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
-
-
-
 .formBox .div-form-inscription {
-    position: absolute;
-    width: 100%;
-    transform: translateX(110%);
-    overflow: hidden;
+  position: absolute;
+  width: 100%;
+  /*transform: translateX(110%);*/
+  /*overflow: hidden;*/
 }
 
 .form-inscription {
-    display: flex;
+  display: flex;
 }
 
-/* Sign-up form: first and second parts */
 .form-inscription .first-info {
-    transition: transform 0.5s ease-in-out;
-    width: 100%;
-    position: relative;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+  position: relative;
+  /*display: flex;*/
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+  gap: 10px;
+  display: none;
 }
 
+.name-firsname {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.name-firsname label {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.telephone-box {
+  display: flex;
+  gap: 20px;
+}
+
+.div-button-add {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+.add-num {
+  background-color: #017ac3;
+  color: white;
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-out;
+}
+
+.add-num:hover {
+  background-color: #0056b3;
+}
+
+.button-add {
+}
 .form-inscription .second-info {
-    transition: transform 0.5s ease-in-out;
-    position: absolute;
-    top: 0;
-    left: 100%;
+  transition: transform 0.5s ease-in-out;
+  position: absolute;
+  top: 0;
+  /*transform: translateX(110%);*/
+  width: 100%;
+  gap: 20px;
+}
+
+.second-info .info-position{
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+
+.form-inscription.hide-left .first-info {
+  transform: translateX(-110%);
+}
+
+.form-inscription.show-right .second-info {
+  transform: translateX(0%);
 }
 
 /* Right Box */
 .wrapper-main .rightBox {
-    width: calc(40% - 30px);
-    height: calc(100% - 30px);
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
+  width: calc(40% - 30px);
+  height: calc(100% - 30px);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .rightBox .img {
-    width: 700px;
-    height: 100%;
-    border-radius: 43px;
-    background: url("main.png") no-repeat;
-    background-size: cover;
+  width: 700px;
+  height: 100%;
+  border-radius: 43px;
+  background: url("main.png") no-repeat;
+  background-size: cover;
 }
 
 /* Footer */
 .main .footer {
-    width: 60%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .main .footer a {
-    margin: 0 100px;
+  margin: 0 100px;
 }
