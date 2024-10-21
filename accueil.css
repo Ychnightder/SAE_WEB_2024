@@ -1,11 +1,5 @@
-#imgAccueil {
+.section-banniere {
   width: 100%;
-  position: sticky;
-  background-image: url("Accueil/slider.png");
-}
-.section {
-  width: 100%;
-  background: #4a926e;
   position: sticky;
   z-index: -20;
   top: 0;
@@ -14,6 +8,291 @@
   justify-content: center;
 }
 
-.sectionPar {
+.banniere {
+  width: 100%;
+}
+
+.main-presentation {
+  width: 100%;
+  position: sticky;
+  z-index: 20;
+  top: 0;
+  display: grid;
+  grid-template-columns: 70% 30%;
   background: #e1f4ff;
+  height: 600px;
+}
+.main-presentation .wrapper-main-presentation {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.presentation-header {
+  width: 100%;
+  max-width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 90px;
+  margin-bottom: 50px;
+}
+.presentation-header .title {
+  color: #017ac3;
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.presentation-header .subtitle {
+  font-size: 32px;
+  font-weight: bold;
+  color: #eb5957;
+}
+.presentation-content {
+  width: 100%;
+  max-width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 225px;
+  margin-bottom: 67px;
+}
+.presentation-content .description {
+  width: 100%;
+  max-width: 90%;
+  text-align: left;
+  line-height: 1.2;
+  font-size: 16px;
+}
+.btn-div {
+  width: 20%;
+}
+.btn-div button {
+  padding: 10px 20px;
+  border-radius: 100px;
+  background: #3292ca;
+  transition: color 0.3s ease-out;
+  color: white;
+  cursor: pointer;
+}
+.btn-div button a {
+  color: white;
+  cursor: pointer;
+}
+.main-presentation .wrapper-main-img {
+  background: url("./assets/Accueil/bh_heart.png") no-repeat;
+  background-size: cover;
+  width: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cta-header {
+  width: 100%;
+  max-width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 95px;
+  text-align: center;
+  margin-bottom: 42px;
+}
+.cta-header .cta-title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.cta-header .cta-subtitle {
+  font-size: 19px;
+}
+.cta-buttons-main {
+  width: 100%;
+  max-width: 50%;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-bottom: 59px;
+}
+
+.cta-buttons-main .member-button-main {
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background-color: #19c3e3;
+  padding: 0.625rem;
+  border-radius: 0.375rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.member-button-main:hover {
+  background-color: #0ea5e9;
+}
+.cta-buttons-main .heart-button-main {
+  width: 70px;
+  height: 70px;
+  background-color: #eb5957; /*India Red  */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+  position: relative;
+  overflow: visible;
+  animation: pulse 0.5s infinite alternate;
+}
+
+.heart-button-main::after {
+  content: "Donation";
+  position: absolute;
+  top: 80px; /* Position en dehors du bouton initialement */
+  opacity: 0;
+  white-space: nowrap;
+  background-color: #fff;
+  color: #eb5957;
+  padding: 0.25rem 0.5rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+  transform: translateY(-20px);
+}
+
+.heart-button-main:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+.heart-button-main:hover {
+  background-color: #f87171;
+  animation: pulse 0.5s infinite alternate;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1.15);
+  }
+}
+
+.div-cta-mess {
+  display: flex;
+  width: 100%;
+  max-width: 95%;
+  align-items: center;
+  text-align: center;
+  height: 100px;
+}
+.div-cta-mess .cta-message {
+  font-size: 25px;
+  font-weight: bold;
+}
+.actu-carousel {
+  width: 100%;
+  /*height: 800px;*/
+  position: sticky;
+  z-index: 30;
+  top: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: #fff;
+  padding: 20px;
+}
+.actu-carousel .header-title {
+  width: 100%;
+  max-width: 80%;
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.header-title .title {
+  font-size: 48px;
+  color: #017ac3;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+.header-title .subtitle {
+  font-size: 32px;
+  font-weight: 500;
+  color: #eb5957;
+}
+
+.wrapper-carousel {
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  scroll-behavior: smooth;
+  gap: 20px;
+
+  transition: transform 0.5s ease-out;
+}
+
+.card {
+  flex: 0 0 auto;
+  width: 450px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #e1f4ff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.card .card-content {
+  width: 100%;
+  height: 120px;
+  border-radius: 8px;
+  margin: 10px 15px;
+}
+.card-title {
+  font-size: 18px;
+  color: #017ac3;
+  margin-bottom: 10px;
+}
+.card-date {
+  color: lightgray;
+  margin-bottom: 10px;
+}
+.card-description {
+  color: black;
+}
+
+.carousel-nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 75px;
+}
+.carousel-nav button {
+  margin: 25px;
+  border: 2px solid #017ac3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background: none;
+  cursor: pointer;
 }
