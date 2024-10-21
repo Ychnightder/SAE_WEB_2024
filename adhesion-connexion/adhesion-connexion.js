@@ -1,3 +1,5 @@
+import { Pays, libelleTel } from "/shared-js/dataAC.js";
+
 const btnAdhererEnLigne = document.querySelector(".link-online");
 const btnReturn = document.querySelector(".first-info .divSubmit .return-btn");
 const formConnexion = document.querySelector(".div-form-conexion"); // Formulaire de connexion
@@ -32,66 +34,48 @@ btnReturn2.addEventListener("click", () => {
   formInscriptionPart2.classList.remove("hide-left");
 });
 
-
-
 const addPhone = document.querySelector(".div-button-add .add-num");
 const telephoneContainer = document.querySelector(".phone-div");
-let  phoneCount = 2;
+let phoneCount = 2;
 
-
-
-
-addPhone.addEventListener('click', function (e) {
+addPhone.addEventListener("click", function (e) {
   e.preventDefault();
 
-  if (phoneCount < 3) { // Limite à 3 champs au total
+  if (phoneCount < 3) {
+    // Limite à 3 champs au total
     phoneCount++;
 
     // Créer un nouveau div pour les champs du téléphone
-    const newPhoneDiv = document.createElement('div');
-    newPhoneDiv.classList.add('telephone-box');
+    const newPhoneDiv = document.createElement("div");
+    newPhoneDiv.classList.add("telephone-box");
 
     // Créer et configurer le label pour le "Libelé"
-    const labelLibele = document.createElement('label');
-    labelLibele.setAttribute('for', `Libele-${phoneCount}`);
+    const labelLibele = document.createElement("label");
+    labelLibele.setAttribute("for", `Libele-${phoneCount}`);
     labelLibele.textContent = "Libelé :";
 
-    const selectLibele = document.createElement('select');
+    const selectLibele = document.createElement("select");
     selectLibele.id = `Libele-${phoneCount}`;
     selectLibele.name = `Libele-${phoneCount}`;
 
-    // // Créer les options pour le select
-    // const options = [
-    //   { value: '', text: 'Libelé', disabled: true, hidden: true, selected: true },
-    //   { value: 'Bureau', text: 'Bureau' },
-    //   { value: 'Domicile', text: 'Domicile' },
-    //   { value: 'Personnelle', text: 'Perso' },
-    //   { value: 'Principal', text: 'Principal' },
-    //   { value: 'Pro', text: 'Pro' }
-    // ];
-
-    // options.forEach(optionData => {
-    //   const option = document.createElement('option');
-    //   option.value = optionData.value;
-    //   option.textContent = optionData.text;
-    //   if (optionData.disabled) option.disabled = true;
-    //   if (optionData.hidden) option.style.display = 'none';
-    //   if (optionData.selected) option.selected = true;
-    //   selectLibele.appendChild(option);
-    // });
-
-    labelLibele.appendChild(selectLibele);
+    libelleTel.forEach((lb) => {
+      const option = document.createElement("option");
+      option.text = lb;
+      option.value = lb;
+      selectLibele.appendChild(option);
+    });
 
     // Créer et configurer le label pour le numéro de téléphone
-    const labelTelephone = document.createElement('label');
-    labelTelephone.setAttribute('for', `telephone-${phoneCount}`);
+    const labelTelephone = document.createElement("label");
+    labelTelephone.setAttribute("for", `telephone-${phoneCount}`);
     labelTelephone.textContent = "Téléphone :";
 
-    const inputTelephone = document.createElement('input');
+    const inputTelephone = document.createElement("input");
     inputTelephone.id = `telephone-${phoneCount}`;
-    inputTelephone.type = 'text';
+    inputTelephone.type = "text";
 
     labelTelephone.appendChild(inputTelephone);
+    labelLibele.appendChild(selectLibele);
 
     // Ajouter les éléments créés au nouveau div
     newPhoneDiv.appendChild(labelLibele);
@@ -105,8 +89,31 @@ addPhone.addEventListener('click', function (e) {
     }
   }
 
-  if (phoneCount === 2 ){
+  if (phoneCount === 2) {
     addPhone.classList.add("hide-left");
     addPhone.classList.remove("show-right");
   }
+  remplirSelectLibeleTel();
 });
+
+function remplirSelectPays() {
+  const select = document.querySelector(".select-pays");
+  Pays.forEach((pays) => {
+    const option = document.createElement("option");
+    option.text = pays;
+    option.value = pays;
+    select.appendChild(option);
+  });
+}
+window.onload = remplirSelectPays;
+
+function remplirSelectLibeleTel() {
+  const selectTel = document.querySelector(".select-tel");
+  libelleTel.forEach((lb) => {
+    const option = document.createElement("option");
+    option.text = lb;
+    option.value = lb;
+    selectTel.appendChild(option);
+  });
+}
+remplirSelectLibeleTel();

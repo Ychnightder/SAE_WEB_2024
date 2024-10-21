@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../shared-css/main.css" />
     <link rel="stylesheet" href="./adhesion-connexion.css" />
-    <script src="./adhesion-connexion.js" defer></script>
+    <script src="./adhesion-connexion.js" type="module" defer></script>
     <title>Login</title>
   </head>
   <body>
@@ -13,7 +13,9 @@
       <div class="wrapper-main">
         <div class="leftBox">
           <div class="logoBox">
-            <img src="/assets/shared/logo.png" alt="logo autisme france" />
+            <a href="../index.html">
+              <img src="../assets/shared/logo.png" alt="logo autisme france"
+            /></a>
           </div>
           <h1 class="title-AC">
             Bienvenue sur l'intranet <br />d'Autisme France
@@ -73,13 +75,20 @@
                     <div class="telephone-box">
                       <label for="Libele">
                         Libelé :
-                        <select id="Libele" name="Libele">
-
-<!--                          <option value="Bureau">Bureau</option>-->
-<!--                          <option value="Bureau">Domicile</option>-->
-<!--                          <option value="Personnelle">Perso</option>-->
-<!--                          <option value="Bureau">Principal</option>-->
-<!--                          <option value="Bureau">Pro</option>-->
+                        <select class="select-tel" id="Libele" name="Libele">
+                          <option
+                            style="display: none"
+                            value=""
+                            selected
+                            disabled
+                          >
+                            Libelé
+                          </option>
+                          <!--                          <option value="Bureau">Bureau</option>-->
+                          <!--                          <option value="Bureau">Domicile</option>-->
+                          <!--                          <option value="Personnelle">Perso</option>-->
+                          <!--                          <option value="Bureau">Principal</option>-->
+                          <!--                          <option value="Bureau">Pro</option>-->
                         </select>
                       </label>
                       <label for="telephone">
@@ -114,24 +123,36 @@
                   </div>
                   <label for="pays">
                     Pays :
-                    <select name="pays" id="pays">
-                      <option>pays</option>
+                    <select class="select-pays" name="pays" id="pays">
+                      <option selected disabled style="display: none">
+                        Pays
+                      </option>
                     </select>
                   </label>
 
-                  <label for="qualite">
-                    J'adhère en qualité de :
-                    <select name="qualite" id="qualite">
-                      <option>qualite</option>
-                    </select>
-                  </label>
+                  <div class="profil-don">
+                    <label for="qualite">
+                      J'adhère en qualité de :
+                      <select name="qualite" id="qualite">
+                        <option selected disabled style="display: none">
+                          En Tant que
+                        </option>
+                        <option value="Parent">Parent</option>
+                        <option value=" Ami, famille, sympathisant ">
+                          Ami, famille, sympathisant
+                        </option>
+                        <option value="TSA">TSA</option>
+                        <option value="Professionnel ">Professionnel</option>
+                      </select>
+                    </label>
 
-                  <label for="don-ad">
-                    Je souhaite adhérer (55 €/an) :
-                    <select name="don-ad" id="don-ad">
-                      <option>55€</option>
-                    </select>
-                  </label>
+                    <label for="don-ad">
+                      adhérer à (55 €/an) :
+                      <select name="don-ad" id="don-ad">
+                        <option>55€</option>
+                      </select>
+                    </label>
+                  </div>
                   <div class="divSubmit">
                     <button class="return-btn2">Retour</button>
                     <button>Valider</button>

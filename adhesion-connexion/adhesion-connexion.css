@@ -48,7 +48,8 @@
   height: 600px;
   display: flex;
   flex-direction: row;
-  width: 60%;
+  max-width: 60%;
+  width: 100%;
   overflow: hidden;
   position: relative;
 }
@@ -65,10 +66,10 @@
 .formBox .div-form-conexion {
   height: 100%;
   width: 100%;
-  /*display: flex;*/
+  display: flex;
   justify-content: center;
   left: 0;
-  display: none;
+  /*display: none;*/
 }
 
 .div-form-conexion .form-conexion {
@@ -213,8 +214,8 @@ select {
 .formBox .div-form-inscription {
   position: absolute;
   width: 100%;
-  /*transform: translateX(110%);*/
-  /*overflow: hidden;*/
+  transform: translateX(110%);
+  overflow: hidden;
 }
 
 .form-inscription {
@@ -225,12 +226,12 @@ select {
   transition: transform 0.5s ease-in-out;
   width: 100%;
   position: relative;
-  /*display: flex;*/
+  display: flex;
   justify-content: center;
   flex-direction: column;
   margin: 0 auto;
   gap: 10px;
-  display: none;
+  /*display: none;*/
 }
 
 .name-firsname {
@@ -270,23 +271,27 @@ select {
   background-color: #0056b3;
 }
 
-.button-add {
-}
 .form-inscription .second-info {
   transition: transform 0.5s ease-in-out;
   position: absolute;
   top: 0;
-  /*transform: translateX(110%);*/
+  transform: translateX(110%);
   width: 100%;
   gap: 20px;
 }
 
-.second-info .info-position{
+.second-info .info-position {
   display: flex;
   gap: 20px;
   justify-content: space-between;
 }
 
+.second-info .profil-don {
+  gap: 15px;
+  display: flex;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
 
 .form-inscription.hide-left .first-info {
   transform: translateX(-110%);
@@ -298,15 +303,15 @@ select {
 
 /* Right Box */
 .wrapper-main .rightBox {
-  width: calc(40% - 30px);
-  height: calc(100% - 30px);
+  width: calc(40% - 50px);
+  height: calc(100% - 50px);
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
 
 .rightBox .img {
-  width: 700px;
+  width: 100%;
   height: 100%;
   border-radius: 43px;
   background: url("main.png") no-repeat;
@@ -321,6 +326,91 @@ select {
   justify-content: center;
 }
 
-.main .footer a {
-  margin: 0 100px;
+/* Responsive pour petits écrans - smartphones */
+@media (max-width: 820px) {
+  .main {
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+  }
+
+  .wrapper-main {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .main .leftBox {
+    width: 100%;
+  }
+
+  .main .rightBox {
+    display: none;
+  }
+
+  .leftBox .formBox {
+    margin-top: 20px;
+    max-width: 90%;
+    right: 0;
+  }
+
+  .logoBox img {
+    width: 120px;
+  }
+
+  .leftBox .title-AC {
+    font-size: 28px;
+  }
+
+  .divSubmit button {
+    width: 100px;
+  }
+
+  .likns-ac {
+    width: 100%;
+    text-align: center;
+  }
+
+  .main .footer {
+    display: none;
+  }
+}
+
+/* Responsive pour tablettes */
+@media (max-width: 1200px) {
+  .main {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .wrapper-main {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .main .leftBox {
+    width: 100%;
+  }
+
+  .main .rightBox {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .rightBox .img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+  }
+
+  .formBox {
+    width: 80%;
+    margin-top: 30px;
+  }
+
+  .divSubmit button {
+    width: 180px;
+  }
+  main .footer {
+    display: none;
+  }
 }
