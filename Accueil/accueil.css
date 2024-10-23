@@ -14,7 +14,6 @@
 
 .main-presentation {
   width: 100%;
-  position: sticky;
   z-index: 20;
   top: 0;
   display: grid;
@@ -80,7 +79,7 @@
   cursor: pointer;
 }
 .main-presentation .wrapper-main-img {
-  background: url("./assets/Accueil/bh_heart.png") no-repeat;
+  background: url("../assets/Accueil/bh_heart.png") no-repeat;
   background-size: cover;
   width: 100%;
   color: white;
@@ -198,12 +197,13 @@
   font-weight: bold;
 }
 .actu-carousel {
+  display: none;
+
   width: 100%;
   /*height: 800px;*/
-  position: sticky;
   z-index: 30;
   top: 0;
-  display: flex;
+  /*display: flex;*/
   align-items: center;
   flex-direction: column;
   background: #fff;
@@ -295,4 +295,143 @@
   border-radius: 50%;
   background: none;
   cursor: pointer;
+}
+/* responsive*/
+
+
+
+
+
+
+.main-presentation {
+  width: 100%;
+  z-index: 20;
+  top: 0;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  background: #e1f4ff;
+  height: 600px;
+}
+
+.main-presentation .wrapper-main-presentation {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 1024px) {
+
+  .main-presentation {
+    grid-template-columns: 100%;
+    margin-bottom: 500px;
+  }
+  .wrapper-main-presentation{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+  }
+  .presentation-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 25px  0;
+  }
+  .presentation-header .title {
+    font-size: 36px; /* Réduction de la taille de la police */
+  }
+
+  .presentation-header .subtitle {
+    font-size: 24px;
+  }
+
+  .presentation-content {
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    max-width: 90%; /* Réduction de la largeur pour de meilleurs ajustements */
+  }
+
+
+  .presentation-content .description{
+    text-align: justify;
+  }
+
+.btn-div{
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+.cta-title{
+  font-size: 28px;
+}
+.cta-subtitle{
+  font-size: 20px;
+}
+}
+
+@media (max-width: 720px) {
+
+  .presentation-content {
+    margin-bottom: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .presentation-header{
+    max-width: 100%;
+    width: 100%;
+    margin: 25px 0 100px 0;
+  }
+  .presentation-header .title {
+    font-size: 28px;
+    text-align: center;
+
+  }
+
+  .presentation-header .subtitle {
+    font-size: 19px;
+  }
+
+  .presentation-content {
+    max-width: 100%;
+  }
+.btn-div{
+  margin-top: 10%;
+}
+
+
+  .cta-header {
+    max-width: 100%; /* Adaptation de la section CTA */
+  }
+
+  .cta-buttons-main {
+    max-width: 100%; /* Réduction des boutons CTA pour les petits écrans */
+    flex-direction: column; /* Mise en colonne pour les petits écrans */
+  }
+
+  .heart-button-main {
+    width: 50px;
+    height: 50px; /* Réduction de la taille du bouton "heart" */
+  }
+}
+@media (max-width: 415px) {
+
+  .presentation-header .subtitle {
+    font-size: 14px;
+  }
+
+  .presentation-content .description {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  .btn-div{
+    margin-top: 25%;
+  }
 }
