@@ -14,8 +14,6 @@
 
 .main-presentation {
   width: 100%;
-  z-index: 20;
-  top: 0;
   display: grid;
   grid-template-columns: 70% 30%;
   background: #e1f4ff;
@@ -197,13 +195,8 @@
   font-weight: bold;
 }
 .actu-carousel {
-  display: none;
-
   width: 100%;
-  /*height: 800px;*/
-  z-index: 30;
-  top: 0;
-  /*display: flex;*/
+  display: flex;
   align-items: center;
   flex-direction: column;
   background: #fff;
@@ -217,6 +210,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin-bottom: 100px;
 }
 .header-title .title {
   font-size: 48px;
@@ -231,28 +225,33 @@
 }
 
 .wrapper-carousel {
-  width: 100%;
-  position: relative;
-  margin: 0 auto;
   overflow: hidden;
+  width: 100%;
+  max-width: 95%;
+  padding: 0;
 }
 
 .carousel {
   display: flex;
-  scroll-behavior: smooth;
-  gap: 20px;
-
+  align-items: center;
+  margin-right: 20px;
   transition: transform 0.5s ease-out;
 }
 
 .card {
-  flex: 0 0 auto;
-  width: 450px;
+  flex: 0 0 calc((100% / 3) - 20px);
+  margin: 0 15px;
+  width: 300px;
   border-radius: 8px;
   overflow: hidden;
   background: #e1f4ff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+.card:last-child {
+  margin-right: 0; /* Pas de marge à droite pour la dernière carte */
+}
+
 .card img {
   width: 100%;
   height: auto;
@@ -275,6 +274,8 @@
 }
 .card-description {
   color: black;
+  text-align: left;
+  margin: 0 30px 0 0;
 }
 
 .carousel-nav {
@@ -296,6 +297,62 @@
   background: none;
   cursor: pointer;
 }
+
+
+.parteners{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  background: white;
+}
+.parter-present{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  max-width: 95%;
+}
+.parter-present h2{
+  color: #017AC3;
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+.parter-present p{
+  margin: 15px 0 100px 0;
+}
+
+
+.wrapper{
+  overflow: hidden;
+  width: 100%;
+  max-width: 95%;
+  padding: 0;
+  margin-bottom: 10%;
+}
+
+.carrousel-partener{
+  display: flex;
+  align-items: center;
+  transition: transform 0.5s ease-out;
+  width: 100%;
+}
+.carrousel-partener li {
+  flex: 0 0 calc((100% / 6) - 10px);
+  margin: 0 5px;
+  height: 250px;
+  background: #3294ce;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+
+.red{
+  background: red!important;
+}
 /* responsive*/
 
 
@@ -303,41 +360,23 @@
 
 
 
-.main-presentation {
-  width: 100%;
-  z-index: 20;
-  top: 0;
-  display: grid;
-  grid-template-columns: 70% 30%;
-  background: #e1f4ff;
-  height: 600px;
-}
-
-.main-presentation .wrapper-main-presentation {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
 @media (max-width: 1024px) {
-
   .main-presentation {
     grid-template-columns: 100%;
     margin-bottom: 500px;
   }
-  .wrapper-main-presentation{
+  .wrapper-main-presentation {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-
   }
-  .presentation-header{
+  .presentation-header {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 25px  0;
+    margin: 25px 0;
   }
   .presentation-header .title {
     font-size: 36px; /* Réduction de la taille de la police */
@@ -355,28 +394,26 @@
     max-width: 90%; /* Réduction de la largeur pour de meilleurs ajustements */
   }
 
-
-  .presentation-content .description{
+  .presentation-content .description {
     text-align: justify;
   }
 
-.btn-div{
-  width: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 25px;
-}
-.cta-title{
-  font-size: 28px;
-}
-.cta-subtitle{
-  font-size: 20px;
-}
+  .btn-div {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+  }
+  .cta-title {
+    font-size: 28px;
+  }
+  .cta-subtitle {
+    font-size: 20px;
+  }
 }
 
 @media (max-width: 720px) {
-
   .presentation-content {
     margin-bottom: 10%;
     display: flex;
@@ -384,7 +421,7 @@
     justify-content: center;
   }
 
-  .presentation-header{
+  .presentation-header {
     max-width: 100%;
     width: 100%;
     margin: 25px 0 100px 0;
@@ -392,7 +429,6 @@
   .presentation-header .title {
     font-size: 28px;
     text-align: center;
-
   }
 
   .presentation-header .subtitle {
@@ -402,10 +438,9 @@
   .presentation-content {
     max-width: 100%;
   }
-.btn-div{
-  margin-top: 10%;
-}
-
+  .btn-div {
+    margin-top: 10%;
+  }
 
   .cta-header {
     max-width: 100%; /* Adaptation de la section CTA */
@@ -422,7 +457,6 @@
   }
 }
 @media (max-width: 415px) {
-
   .presentation-header .subtitle {
     font-size: 14px;
   }
@@ -431,7 +465,7 @@
     font-size: 14px;
     margin-bottom: 10px;
   }
-  .btn-div{
+  .btn-div {
     margin-top: 25%;
   }
 }

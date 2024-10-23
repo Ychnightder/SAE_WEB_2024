@@ -21,7 +21,7 @@ function getPathPrefix() {
 
 function loadHeader() {
   const pathPrefix = getPathPrefix();
-  return fetch(`${pathPrefix}shared-html/header.html`)
+  return fetch(`${pathPrefix}test-html/header.html`)
     .then((response) => {
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
@@ -39,7 +39,7 @@ function loadHeader() {
 
 function loadFooter() {
   const pathPrefix = getPathPrefix();
-  return fetch(`${pathPrefix}shared-html/footer.html`)
+  return fetch(`${pathPrefix}test-html/footer.html`)
     .then((response) => {
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);

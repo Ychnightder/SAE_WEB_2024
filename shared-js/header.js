@@ -1,5 +1,6 @@
+
 export function header() {
-  const hamburger = document.querySelector(".hamburger");
+  const hamburger = document.querySelector(".nav .hamburger");
   const closeIcon = document.querySelector(".close-icon");
   const menuIcon = document.querySelector(".menu-icon");
   const navLinks = document.querySelector(".nav-links");
@@ -10,8 +11,8 @@ export function header() {
     navLinks.classList.toggle("active");
     ctaBtn.classList.toggle("active");
     const isMenuActive =
-      navLinks.classList.contains("active") ||
-      ctaBtn.classList.contains("active");
+        navLinks.classList.contains("active") ||
+        ctaBtn.classList.contains("active");
     menuIcon.style.display = isMenuActive ? "none" : "block";
     closeIcon.style.display = isMenuActive ? "block" : "none";
   });
