@@ -234,7 +234,9 @@
   }
   .hamburger {
     margin-right: 10%;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .close-icon {
