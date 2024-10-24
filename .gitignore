@@ -1,22 +1,30 @@
 # Default ignored files
+
 /shelf/
 /workspace.xml
-# Editor-based HTTP Client requests
 /httpRequests/
-# Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
-
 /node_modules
 
-/assets/font
-public/css/
-dist/
+/dist/
+.vite/
 
 /node_modules/prettier
-/node_modules/prettier-plugin-tailwindcss
+
 # Ignorer les fichiers de log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+.env
+.env.local
+.env.*.local
+
+# Editor settings
+.vscode/
+.idea/
+
+# Other potential caches or temporary files
+.DS_Store   # macOS
+Thumbs.db   # Windows
