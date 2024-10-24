@@ -3,18 +3,371 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="shared-css/main.css" />
-    <link rel="stylesheet" href="shared-css/header.css" />
-    <link rel="stylesheet" href="shared-css/footer.css" />
-    <link rel="stylesheet" href="Accueil/accueil.css" />
-    <script src="shared-js/load-components.js" defer type="module"></script>
-    <script src="Accueil/accueil.js" defer type="module"></script>
+    <link rel="stylesheet" href="src/assets/css/main.css" />
+    <link rel="stylesheet" href="src/assets/css/header.css" />
+    <link rel="stylesheet" href="src/assets/css/footer.css" />
+    <link rel="stylesheet" href="src/assets/css/accueil.css" />
+    <script src="src/assets/js/header.js" defer></script>
+    <script src="src/assets/js/accueil.js" defer type="module"></script>
     <title>Accueil | Autisme France</title>
   </head>
   <body>
-  <div id="header-placeholder"></div>
+    <header class="header">
+      <nav class="nav">
+        <div class="logo-container">
+          <a class="logo-link" href="./index.html">
+            <img class="logo" src="/assets/shared/logo.png" alt="logo" />
+          </a>
+        </div>
+
+        <div class="nav-links">
+          <button type="button" class="nav-button">
+            <a class="links" href="./index.html">Accueil</a>
+          </button>
+
+          <button type="button" class="nav-button with-submenu">
+            <a class="links" href="">
+              <p>Autisme France</p>
+              <svg
+                class="icon"
+                aria-hidden="true"
+                viewBox="0 0 10 7"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1 1.5L5 5.5L9 1.5"
+                  stroke-width="2"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </a>
+            <div class="submenu">
+              <a href="https://www.autisme-france.fr/qui-sommes-nous"
+                >Qui sommes-nous ?</a
+              >
+              <a href="https://www.autisme-france.fr/parrain-et-ambassadeurs"
+                >Parrain et Ambassadeurs</a
+              >
+              <a href="https://www.autisme-france.fr/comite-scientifique"
+                >Comité scientifique</a
+              >
+              <a href="https://www.autisme-france.fr/dons">Dons</a>
+              <a
+                href="https://www.autisme-france.fr/legs-donation-et-assurance-vie"
+                >Legs, donation et assurance vie</a
+              >
+              <a href="https://www.autisme-france.fr/nous-soutenir"
+                >Nous soutenir</a
+              >
+              <a href="https://www.autisme-france.fr/adherer">Adhérer</a>
+              <a href="https://www.autisme-france.fr/autisme-europe"
+                >Autisme-Europe</a
+              >
+              <a href="https://www.autisme-france.fr/rejoindre-notre-reseau"
+                >Rejoindre notre réseau</a
+              >
+            </div>
+          </button>
+
+          <button type="button" class="nav-button with-submenu">
+            <a class="links" href="">
+              <p>Action</p>
+              <svg
+                class="icon"
+                aria-hidden="true"
+                viewBox="0 0 10 7"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1 1.5L5 5.5L9 1.5"
+                  stroke-width="2"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </a>
+            <div class="submenu">
+              <a href="https://www.autisme-france.fr/actions-de-plaidoyer"
+                >Actions de plaidoyer</a
+              >
+              <a href="https://www.autisme-france.fr/congres">Congrès</a>
+              <a href="https://www.autisme-france.fr/brochures">Brochures</a>
+              <a href="https://www.autisme-france.fr/newsletter">Newsletter</a>
+              <a href="https://www.autisme-france.fr/revues">Revues</a>
+              <a href="https://www.autisme-france.fr/demarche-qualite"
+                >Démarche Qualité</a
+              >
+              <a href="https://www.autisme-france.fr/journee-de-lautisme"
+                >Journée de l'autisme</a
+              >
+            </div>
+          </button>
+
+          <button type="button" class="nav-button with-submenu">
+            <a class="links" href="">
+              <p>L'Austime</p>
+              <svg
+                class="icon"
+                aria-hidden="true"
+                viewBox="0 0 10 7"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1 1.5L5 5.5L9 1.5"
+                  stroke-width="2"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </a>
+            <div class="submenu">
+              <a href="https://www.autisme-france.fr/quest-ce-que-lautisme"
+                >Qu'est-ce que l'autisme ?</a
+              >
+              <a href="https://www.autisme-france.fr/la-demarche-diagnostique"
+                >La démarche diagnostique</a
+              >
+              <a
+                href="https://www.autisme-france.fr/reperage-des-premiers-signes"
+                >Repérage des premiers signes</a
+              >
+              <a href="https://www.autisme-france.fr/recommandations-has"
+                >Recommandations HAS</a
+              >
+              <a
+                href="https://www.autisme-france.fr/accompagner-une-personne-autiste"
+                >Accompagner une personne autiste</a
+              >
+              <a href="https://www.autisme-france.fr/terminologie-de-lautisme"
+                >Terminologie de l'autisme</a
+              >
+              <a href="https://www.autisme-france.fr/formations">Formations</a>
+            </div>
+          </button>
+
+          <button type="button" class="nav-button with-submenu">
+            <a class="links" href="">
+              <p>Droit & MDPH</p>
+              <svg
+                class="icon"
+                aria-hidden="true"
+                viewBox="0 0 10 7"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1 1.5L5 5.5L9 1.5"
+                  stroke-width="2"
+                  clip-rule="evenodd"
+                /></svg
+            ></a>
+
+            <div class="submenu">
+              <a href="https://www.autisme-france.fr/demande-a-la-mdph"
+                >Demande à la MDPH</a
+              >
+              <a href="https://www.autisme-france.fr/les-allocations"
+                >Les allocations</a
+              >
+              <a href="https://www.autisme-france.fr/les-assurances"
+                >Les assurances</a
+              >
+              <a
+                href="https://www.autisme-france.fr/acces-aux-soins-somatiques-et-aux-interventions-pour-les-personnes-autistes"
+                >Accès aux soins</a
+              >
+              <a href="https://www.autisme-france.fr/aidants-familiaux"
+                >Aidants familiaux</a
+              >
+              <a href="https://www.autisme-france.fr/covid-19-et-handicap"
+                >Covid-19 et handicap</a
+              >
+              <a href="https://www.autisme-france.fr/la-fiscalite"
+                >La fiscalité</a
+              >
+              <a href="https://www.autisme-france.fr/jurisprudence"
+                >Jurisprudence</a
+              >
+              <a href="https://www.autisme-france.fr/lexique">Lexique</a>
+            </div>
+          </button>
+
+          <button type="button" class="nav-button with-submenu">
+            <a class="links" href="">
+              <p>Scolarisation</p>
+              <svg
+                class="icon"
+                aria-hidden="true"
+                viewBox="0 0 10 7"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1 1.5L5 5.5L9 1.5"
+                  stroke-width="2"
+                  clip-rule="evenodd"
+                /></svg
+            ></a>
+
+            <div class="submenu">
+              <a href="https://www.autisme-france.fr/droit-a-la-scolarisation"
+                >Droit à la scolarisation</a
+              >
+              <a href="https://www.autisme-france.fr/aesh"
+                >Aide humaine à l’école (AESH)</a
+              >
+              <a
+                href="https://www.autisme-france.fr/dispositifs-education-nationale"
+                >Dispositifs Education Nationale</a
+              >
+              <a
+                href="https://www.autisme-france.fr/outils-guides-pour-la-scolarite"
+                >Outils & guides pour la scolarité</a
+              >
+              <a
+                href="https://www.autisme-france.fr/enseigner-a-des-personnes-atteintes-dautisme"
+                >Enseigner à une personne autiste</a
+              >
+              <a
+                href="https://www.autisme-france.fr/textes-et-etudes-sur-la-scolarisation"
+                >Textes et études sur la scolarisation</a
+              >
+            </div>
+          </button>
+
+          <button type="button" class="nav-button with-submenu">
+            <a class="links" href=""
+              ><p>Vie Adulte</p>
+              <svg
+                class="icon"
+                aria-hidden="true"
+                viewBox="0 0 10 7"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1 1.5L5 5.5L9 1.5"
+                  stroke-width="2"
+                  clip-rule="evenodd"
+                /></svg
+            ></a>
+
+            <div class="submenu">
+              <a href="https://www.autisme-france.fr/habitat-vie-sociale"
+                >Habitat & Vie sociale</a
+              >
+              <a href="https://www.autisme-france.fr/emploi">Emploi</a>
+              <a href="https://www.autisme-france.fr/protection-des-majeurs"
+                >Protection des majeurs</a
+              >
+            </div>
+          </button>
+
+          <button type="button" class="nav-button">
+            <a class="links" href="./contact.html">Contact</a>
+          </button>
+        </div>
+        <div class="cta-buttons">
+          <a href="src/adhesion-connexion.html" class="member-button">
+            <svg
+              class="member-icon"
+              width="17"
+              height="17"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M13.3334 14V12.6667C13.3334 11.9594 13.0525 11.2811 12.5524 10.781C12.0523 10.281 11.374 10 10.6667 10H5.33341C4.62617 10 3.94789 10.281 3.4478 10.781C2.9477 11.2811 2.66675 11.9594 2.66675 12.6667V14M10.6667 4.66667C10.6667 6.13943 9.47284 7.33333 8.00008 7.33333C6.52732 7.33333 5.33341 6.13943 5.33341 4.66667C5.33341 3.19391 6.52732 2 8.00008 2C9.47284 2 10.6667 3.19391 10.6667 4.66667Z"
+                stroke="#FFFAFA"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            Espace Membre
+          </a>
+
+          <a href="#" class="heart-button">
+            <svg
+              width="17"
+              height="17"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M13.8933 3.07333C13.5528 2.73267 13.1485 2.46243 12.7036 2.27805C12.2586 2.09368 11.7817 1.99878 11.3 1.99878C10.8183 1.99878 10.3414 2.09368 9.89643 2.27805C9.45146 2.46243 9.04717 2.73267 8.70667 3.07333L8 3.78L7.29333 3.07333C6.60554 2.38554 5.67269 1.99914 4.7 1.99914C3.72731 1.99914 2.79446 2.38554 2.10666 3.07333C1.41887 3.76112 1.03247 4.69397 1.03247 5.66666C1.03247 6.63935 1.41887 7.5722 2.10666 8.26L8 14.1533L13.8933 8.26C14.234 7.91949 14.5042 7.51521 14.6886 7.07023C14.873 6.62526 14.9679 6.14832 14.9679 5.66666C14.9679 5.185 14.873 4.70807 14.6886 4.26309C14.5042 3.81812 14.234 3.41383 13.8933 3.07333Z"
+                stroke="white"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+        </div>
+        <button class="hamburger">
+          <svg
+            class="menu-icon"
+            width="33"
+            height="18"
+            viewBox="0 0 33 18"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g clip-path="url(#clip0_15_228)">
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M0.5 0H32.5V2H0.5V0ZM0.5 8H32.5V10H0.5V8ZM0.5 16H32.5V18H0.5V16Z"
+                fill="#151515"
+              />
+            </g>
+            <defs>
+              <clipPath id="clip0_15_228">
+                <rect
+                  width="32"
+                  height="18"
+                  fill="white"
+                  transform="translate(0.5)"
+                />
+              </clipPath>
+            </defs>
+          </svg>
+          <svg
+            class="close-icon"
+            width="25"
+            height="26"
+            viewBox="0 0 25 26"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M1.893 0.97998L24.521 23.608L23.107 25.022L0.479004 2.39498L1.893 0.97998Z"
+              fill="#151515"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M0.47998 23.607L23.109 0.979004L24.523 2.393L1.89498 25.021L0.47998 23.607Z"
+              fill="#151515"
+            />
+          </svg>
+        </button>
+      </nav>
+    </header>
+
     <section class="section-banniere">
-      <img class="banniere" src="./Accueil/slider.png" />
+      <img class="banniere" src="assets/Accueil/slider.png" />
     </section>
     <main class="main-presentation">
       <div class="wrapper-main-presentation">
@@ -55,10 +408,7 @@
         </div>
 
         <div class="cta-buttons-main">
-          <a
-            href="./adhesion-connexion/adhesion-connexion.html"
-            class="member-button-main"
-          >
+          <a href="src/adhesion-connexion.html" class="member-button-main">
             <svg
               class="member-icon"
               width="17"
@@ -117,7 +467,7 @@
           <li class="card">
             <a href="#">
               <img
-                src="./assets/Accueil/AF-VisuelSite-Congres2024.png"
+                src="assets/Accueil/AF-VisuelSite-Congres2024.png"
                 alt="Image descriptive"
                 class="card-image"
               />
@@ -134,7 +484,7 @@
           <li class="card">
             <a href="#">
               <img
-                src="./assets/Accueil/AF-VisuelSite-Congres2024.png"
+                src="assets/Accueil/AF-VisuelSite-Congres2024.png"
                 alt="Image descriptive"
                 class="card-image"
               />
@@ -151,7 +501,7 @@
           <li class="card">
             <a href="#">
               <img
-                src="./assets/Accueil/AF-VisuelSite-Congres2024.png"
+                src="assets/Accueil/AF-VisuelSite-Congres2024.png"
                 alt="Image descriptive"
                 class="card-image"
               />
@@ -168,7 +518,7 @@
           <li class="card">
             <a href="#">
               <img
-                src="./assets/Accueil/AF-VisuelSite-Congres2024.png"
+                src="assets/Accueil/AF-VisuelSite-Congres2024.png"
                 alt="Image descriptive"
                 class="card-image"
               />
@@ -185,7 +535,7 @@
           <li class="card">
             <a href="#">
               <img
-                src="./assets/Accueil/AF-VisuelSite-Congres2024.png"
+                src="assets/Accueil/AF-VisuelSite-Congres2024.png"
                 alt="Image descriptive"
                 class="card-image"
               />
@@ -202,7 +552,7 @@
           <li class="card">
             <a href="#">
               <img
-                src="./assets/Accueil/AF-VisuelSite-Solutions.png"
+                src="assets/Accueil/AF-VisuelSite-Solutions.png"
                 alt="Image descriptive"
                 class="card-image"
               />
@@ -222,45 +572,49 @@
       <div class="carousel-nav">
         <button class="prevBtn">
           <svg
-                  width="32"
-                  height="32"
-                  viewBox="0 0 32 32"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
           >
             <path
-                    d="M20 24L12 16L20 8"
-                    stroke="#017ac3"
-                    stroke-width="3"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+              d="M20 24L12 16L20 8"
+              stroke="#017ac3"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
             />
           </svg>
         </button>
         <button class="nextBtn">
           <svg
-                  width="32"
-                  height="32"
-                  viewBox="0 0 32 32"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
           >
             <path
-                    d="M12 24L20 16L12 8"
-                    stroke="#017ac3"
-                    stroke-width="3"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+              d="M12 24L20 16L12 8"
+              stroke="#017ac3"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
             />
           </svg>
         </button>
       </div>
-
     </section>
     <section class="parteners">
       <div class="parter-present">
         <h2 class="parter sub">Autisme France vous représente</h2>
-        <p class="para">Autisme France œuvre pour que les besoins des personnes autistes soient compris et pour que leurs droits soient respectés par divers organismes publics ou associatifs qui ont un rôle clef dans les politiques du handicap, de la santé et de l'éducation.</p>
+        <p class="para">
+          Autisme France œuvre pour que les besoins des personnes autistes
+          soient compris et pour que leurs droits soient respectés par divers
+          organismes publics ou associatifs qui ont un rôle clef dans les
+          politiques du handicap, de la santé et de l'éducation.
+        </p>
       </div>
       <div class="wrapper">
         <ul class="carrousel-partener">
@@ -288,6 +642,130 @@
       </div>
     </section>
 
-  <div id="footer-placeholder"></div>
+    <footer class="footer">
+      <div class="main-footer">
+        <div class="autisme-footer">
+          <h2>AUTISME FRANCE</h2>
+          <p class="para">
+            Permanence téléphonique <br />
+            de 8h30 à 12h30 du lundi au vendredi<br />
+            04 93 46 01 77
+          </p>
+          <div class="contact-box">
+            <a class="contact-links" href="src/contact.html">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M22 12C22 15.7712 22 17.6569 20.8284 18.8284C19.6569 20 17.7712 20 14 20H10C6.22876 20 4.34315 20 3.17157 18.8284C2 17.6569 2 15.7712 2 12C2 8.22876 2 6.34315 3.17157 5.17157C4.34315 4 6.22876 4 10 4H14C17.7712 4 19.6569 4 20.8284 5.17157C21.4816 5.82475 21.7706 6.69989 21.8985 8"
+                  stroke="#1C274C"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M18 8L15.8411 9.79908C14.0045 11.3296 13.0861 12.0949 12 12.0949C11.3507 12.0949 10.7614 11.8214 10 11.2744M6 8L6.9 8.75L7.8 9.5"
+                  stroke="#1C274C"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+              </svg>
+              <p>Contact-nous</p>
+            </a>
+
+            <div class="reseaux">
+              <a href="https://www.facebook.com/AutismeFrance.fr"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  x="0px"
+                  y="0px"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12,2C6.477,2,2,6.477,2,12c0,5.013,3.693,9.153,8.505,9.876V14.65H8.031v-2.629h2.474v-1.749 c0-2.896,1.411-4.167,3.818-4.167c1.153,0,1.762,0.085,2.051,0.124v2.294h-1.642c-1.022,0-1.379,0.969-1.379,2.061v1.437h2.995 l-0.406,2.629h-2.588v7.247C18.235,21.236,22,17.062,22,12C22,6.477,17.523,2,12,2z"
+                  ></path></svg
+              ></a>
+              <a
+                href="https://www.linkedin.com/authwall?trk=gf&trkInfo=AQEkXSYIpAv8eQAAAXnGauXIZgGbl3oE7oz2QOQW4wSPaQrSh5Mf2qgg1JUijyX1YdQI7BnXkktOw6cAHLC8pPCLe0yGhsfgybtWtZ0sO-WXJa7XljZ-Boqy9h6C20VYzNo8Qn4=&originalReferer=&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2Fautisme-france%2F%3FviewAsMember%3Dtrue"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  x="0px"
+                  y="0px"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M19,3H5C3.895,3,3,3.895,3,5v14c0,1.105,0.895,2,2,2h14c1.105,0,2-0.895,2-2V5C21,3.895,20.105,3,19,3z M9,17H6.477v-7H9 V17z M7.694,8.717c-0.771,0-1.286-0.514-1.286-1.2s0.514-1.2,1.371-1.2c0.771,0,1.286,0.514,1.286,1.2S8.551,8.717,7.694,8.717z M18,17h-2.442v-3.826c0-1.058-0.651-1.302-0.895-1.302s-1.058,0.163-1.058,1.302c0,0.163,0,3.826,0,3.826h-2.523v-7h2.523v0.977 C13.93,10.407,14.581,10,15.802,10C17.023,10,18,10.977,18,13.174V17z"
+                  ></path></svg
+              ></a>
+              <a href="https://x.com/Autisme_France?lang=fr"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  x="0px"
+                  y="0px"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M 2.8671875 3 L 9.7363281 12.818359 L 2.734375 21 L 5.3808594 21 L 10.919922 14.509766 L 15.460938 21 L 21.371094 21 L 14.173828 10.697266 L 20.744141 3 L 18.138672 3 L 12.996094 9.0097656 L 8.7988281 3 L 2.8671875 3 z"
+                  ></path></svg
+              ></a>
+            </div>
+          </div>
+        </div>
+        <div class="acces-rapide">
+          <h2>ACCES RAPIDES</h2>
+          <p>
+            Aidez-nous à poursuivre la défense des droits des personnes autistes
+            Autisme France existe uniquement grâce à votre générosité.<br />
+            Merci à tous
+          </p>
+
+          <div class="cta-buttons">
+            <a href="src/adhesion-connexion.html" class="member-button">
+              <svg
+                class="member-icon"
+                width="17"
+                height="17"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13.3334 14V12.6667C13.3334 11.9594 13.0525 11.2811 12.5524 10.781C12.0523 10.281 11.374 10 10.6667 10H5.33341C4.62617 10 3.94789 10.281 3.4478 10.781C2.9477 11.2811 2.66675 11.9594 2.66675 12.6667V14M10.6667 4.66667C10.6667 6.13943 9.47284 7.33333 8.00008 7.33333C6.52732 7.33333 5.33341 6.13943 5.33341 4.66667C5.33341 3.19391 6.52732 2 8.00008 2C9.47284 2 10.6667 3.19391 10.6667 4.66667Z"
+                  stroke="#FFFAFA"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              Espace Membre
+            </a>
+
+            <a href="#" class="heart-button">
+              <svg
+                width="17"
+                height="17"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13.8933 3.07333C13.5528 2.73267 13.1485 2.46243 12.7036 2.27805C12.2586 2.09368 11.7817 1.99878 11.3 1.99878C10.8183 1.99878 10.3414 2.09368 9.89643 2.27805C9.45146 2.46243 9.04717 2.73267 8.70667 3.07333L8 3.78L7.29333 3.07333C6.60554 2.38554 5.67269 1.99914 4.7 1.99914C3.72731 1.99914 2.79446 2.38554 2.10666 3.07333C1.41887 3.76112 1.03247 4.69397 1.03247 5.66666C1.03247 6.63935 1.41887 7.5722 2.10666 8.26L8 14.1533L13.8933 8.26C14.234 7.91949 14.5042 7.51521 14.6886 7.07023C14.873 6.62526 14.9679 6.14832 14.9679 5.66666C14.9679 5.185 14.873 4.70807 14.6886 4.26309C14.5042 3.81812 14.234 3.41383 13.8933 3.07333Z"
+                  stroke="white"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="legal-mentions">
+        <a href="https://www.autisme-france.fr/mentions-legales"
+          >Mentions légales</a
+        >
+      </div>
+    </footer>
   </body>
 </html>

@@ -1,4 +1,4 @@
-import { Pays, libelleTel } from "/shared-js/dataAC.js";
+import { Pays, libelleTel } from "/src/assets/js/dataAC.js";
 
 const btnAdhererEnLigne = document.querySelector(".link-online");
 const btnReturn = document.querySelector(".first-info .divSubmit .return-btn");

@@ -1,12 +1,18 @@
-import { defineConfig } from 'vite';
-
+import { defineConfig } from "vite";
 
 export default defineConfig({
-    root: './', // Définir la racine du projet (racine actuelle)
-    server: {
-        port: 3000, // Port pour le serveur de développement
+  root: "./",
+
+  build: {
+    outDir: "dist", // Dossier de sortie pour le build
+
+    rollupOptions: {
+      input: {
+        main: "./index.html",
+        contact: "/src/contact.html",
+        adhesionconnexion: "/src/adhesion-connexion.html",
+        //don: '/src/don.html'
+      },
     },
-    build: {
-        outDir: 'dist', // Dossier de sortie pour le build
-    },
+  },
 });

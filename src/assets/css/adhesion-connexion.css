@@ -314,7 +314,7 @@ select {
   width: 100%;
   height: 100%;
   border-radius: 43px;
-  background: url("main.png") no-repeat;
+  background: url("/assets/adhere&membre/main.png") no-repeat;
   background-size: cover;
 }
 

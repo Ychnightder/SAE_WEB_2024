@@ -7,6 +7,6 @@
     "cleaner": "npx prettier . --write",
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "preview": "vite preview"
   }
 }

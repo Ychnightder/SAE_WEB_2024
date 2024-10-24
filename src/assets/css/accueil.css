@@ -77,7 +77,7 @@
   cursor: pointer;
 }
 .main-presentation .wrapper-main-img {
-  background: url("../assets/Accueil/bh_heart.png") no-repeat;
+  background: url("/assets/Accueil/bh_heart.png") no-repeat;
   background-size: cover;
   width: 100%;
   color: white;
@@ -298,8 +298,7 @@
   cursor: pointer;
 }
 
-
-.parteners{
+.parteners {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -308,7 +307,7 @@
   height: auto;
   background: white;
 }
-.parter-present{
+.parter-present {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -316,17 +315,16 @@
   width: 100%;
   max-width: 95%;
 }
-.parter-present h2{
-  color: #017AC3;
+.parter-present h2 {
+  color: #017ac3;
   font-size: 48px;
   margin-bottom: 20px;
 }
-.parter-present p{
+.parter-present p {
   margin: 15px 0 100px 0;
 }
 
-
-.wrapper{
+.wrapper {
   overflow: hidden;
   width: 100%;
   max-width: 95%;
@@ -334,7 +332,7 @@
   margin-bottom: 10%;
 }
 
-.carrousel-partener{
+.carrousel-partener {
   display: flex;
   align-items: center;
   transition: transform 0.5s ease-out;
@@ -349,17 +347,10 @@
   overflow: hidden;
 }
 
-
-.red{
-  background: red!important;
+.red {
+  background: red !important;
 }
 /* responsive*/
-
-
-
-
-
-
 
 @media (max-width: 1024px) {
   .main-presentation {
