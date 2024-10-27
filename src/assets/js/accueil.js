@@ -75,14 +75,15 @@ function moveCarousel() {
 
 setInterval(moveCarousel, 3000);
 
-
-
-
-
-
-
-
-function creationDeCardPourCarousel(img, alt, titre, dateString, text, textAfter, link) {
+function creationDeCardPourCarousel(
+  img,
+  alt,
+  titre,
+  dateString,
+  text,
+  textAfter,
+  link,
+) {
   const newCard = document.createElement("li");
   newCard.classList.add("card");
 
@@ -123,18 +124,17 @@ function creationDeCardPourCarousel(img, alt, titre, dateString, text, textAfter
   return newCard;
 }
 
-
 const carrouselContainer = document.querySelector(".carousel");
 
-Cards.forEach(cardData => {
+Cards.forEach((cardData) => {
   const cardElement = creationDeCardPourCarousel(
-      cardData.img,
-      cardData.alt,
-      cardData.titre,
-      cardData.date,
-      cardData.text,
-      cardData.textInAfter,
-      cardData.link
+    cardData.img,
+    cardData.alt,
+    cardData.titre,
+    cardData.date,
+    cardData.text,
+    cardData.textInAfter,
+    cardData.link,
   );
 
   carrouselContainer.append(cardElement);
