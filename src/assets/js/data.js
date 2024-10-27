@@ -9,4 +9,49 @@ export const Cards = [
     textInAfter: "Congrès",
     link: "https://www.bonjour.com",
   },
+  {
+    img: "", // Chemin de l'image
+    alt: "", // Texte alternatif pour l'image
+    titre: "", // Titre de la carte
+    date: "", // Date sous forme de chaîne, ex: "jj/mm/aaaa"
+    text: "", // Texte descriptif
+    textInAfter: "", // Texte complémentaire (ex: catégorie, thème)
+    link: "", // Lien vers la page
+  },
+  {
+    img: "", // Chemin de l'image
+    alt: "", // Texte alternatif pour l'image
+    titre: "", // Titre de la carte
+    date: "", // Date sous forme de chaîne, ex: "jj/mm/aaaa"
+    text: "", // Texte descriptif
+    textInAfter: "", // Texte complémentaire (ex: catégorie, thème)
+    link: "", // Lien vers la page
+  },
+  {
+    img: "", // Chemin de l'image
+    alt: "", // Texte alternatif pour l'image
+    titre: "", // Titre de la carte
+    date: "", // Date sous forme de chaîne, ex: "jj/mm/aaaa"
+    text: "", // Texte descriptif
+    textInAfter: "", // Texte complémentaire (ex: catégorie, thème)
+    link: "", // Lien vers la page
+  },
+  {
+    img: "", // Chemin de l'image
+    alt: "", // Texte alternatif pour l'image
+    titre: "", // Titre de la carte
+    date: "", // Date sous forme de chaîne, ex: "jj/mm/aaaa"
+    text: "", // Texte descriptif
+    textInAfter: "", // Texte complémentaire (ex: catégorie, thème)
+    link: "", // Lien vers la page
+  },
+  {
+    img: "", // Chemin de l'image
+    alt: "", // Texte alternatif pour l'image
+    titre: "", // Titre de la carte
+    date: "", // Date sous forme de chaîne, ex: "jj/mm/aaaa"
+    text: "", // Texte descriptif
+    textInAfter: "", // Texte complémentaire (ex: catégorie, thème)
+    link: "", // Lien vers la page
+  },
 ];

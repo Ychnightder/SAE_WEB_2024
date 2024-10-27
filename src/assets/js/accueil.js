@@ -74,3 +74,68 @@ function moveCarousel() {
 }
 
 setInterval(moveCarousel, 3000);
+
+
+
+
+
+
+
+
+function creationDeCardPourCarousel(img, alt, titre, dateString, text, textAfter, link) {
+  const newCard = document.createElement("li");
+  newCard.classList.add("card");
+
+  const linksCard = document.createElement("a");
+  linksCard.setAttribute("href", link);
+  newCard.appendChild(linksCard);
+
+  // Image dans le lien
+  const imgNew = document.createElement("img");
+  imgNew.classList.add("card-image");
+  imgNew.src = img;
+  imgNew.alt = alt;
+  linksCard.appendChild(imgNew);
+
+  // Contenu de la carte
+  const cardContent = document.createElement("div");
+  cardContent.classList.add("card-content");
+  linksCard.appendChild(cardContent);
+
+  // Titre
+  const title = document.createElement("h3");
+  title.classList.add("card-title");
+  title.textContent = titre;
+  cardContent.appendChild(title);
+
+  // Date
+  const datePara = document.createElement("p");
+  datePara.classList.add("card-date");
+  datePara.textContent = dateString;
+  cardContent.appendChild(datePara);
+
+  // Description
+  const paragraph = document.createElement("p");
+  paragraph.classList.add("card-description");
+  paragraph.textContent = text;
+  cardContent.appendChild(paragraph);
+
+  return newCard;
+}
+
+
+const carrouselContainer = document.querySelector(".carousel");
+
+Cards.forEach(cardData => {
+  const cardElement = creationDeCardPourCarousel(
+      cardData.img,
+      cardData.alt,
+      cardData.titre,
+      cardData.date,
+      cardData.text,
+      cardData.textInAfter,
+      cardData.link
+  );
+
+  carrouselContainer.append(cardElement);
+});
