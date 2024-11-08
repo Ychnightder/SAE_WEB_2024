@@ -1,12 +1,14 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="src/assets/css/main.css" />
-    <link rel="stylesheet" href="src/assets/css/header.css" />
-    <link rel="stylesheet" href="src/assets/css/footer.css" />
-    <script src="src/assets/js/header.js" defer></script>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/header.css" />
+    <link rel="stylesheet" href="assets/css/footer.css" />
+    <link rel="stylesheet" href="assets/css/don.css" />
+    <script src="assets/js/header.js" defer></script>
+    <script src="assets/js/don.js"></script>
     <title>Donation</title>
   </head>
   <body>
@@ -363,44 +365,267 @@
         </button>
       </nav>
     </header>
-
     <main>
       <section id="don-intro">
         <h1>Pourquoi faire un don ?</h1>
-        <div class="info-box">
-          <p>Texte explicatif pour le don avec des informations et exemples.</p>
-        </div>
-        <div class="info-box">
-          <p>Texte explicatif complémentaire sur les impacts des dons.</p>
+        <div class="box-info">
+          <div class="info-box">
+            <p>
+              Pourquoi nous soutenir Depuis plus de 30 ans, Autisme France se
+              mobilise pour améliorer la vie des personnes autistes, mais
+              beaucoup reste à faire.
+            </p>
+
+            <p>
+              Nous réclamons : Un diagnostic et des interventions précoces, Un
+              soutien à la scolarisation avec les aménagements nécessaires, Un
+              accès au travail et au logement pour ceux qui en ont besoin, La
+              fin des maltraitances institutionnelles et un meilleur accès aux
+              soins.
+            </p>
+
+            <p>
+              Aidez-nous à poursuivre notre mission en faisant un don à Autisme
+              France.
+            </p>
+          </div>
+          <div class="info-box">
+            <p>
+              Respect de votre vie privée Vos informations sont nécessaires pour
+              gérer votre don et vous informer de son utilisation. Autisme
+              France ne partage jamais vos données avec des tiers.
+            </p>
+
+            <p>
+              Sécurité Votre paiement est sécurisé grâce au protocole SSL.
+              Aucune information bancaire n'est stockée sur nos serveurs.
+            </p>
+
+            <p>
+              Pour toute question, contactez notre service donateurs au 04 93 46
+              01 77 ou par email à contact@autisme-france.fr.
+            </p>
+          </div>
         </div>
       </section>
 
       <section id="don-amount">
         <h2>Mon DON</h2>
-        <button>Je fais un don ponctuel</button>
-        <button>Je fais un don régulier</button>
-        <!-- Choix du montant du don -->
-        <input type="number" placeholder="Montant en €" />
+        <div class="btn-don">
+          <button class="btn-choix">Je fais un don ponctuel</button>
+          <button class="btn-choix">Je fais un don régulier</button>
+        </div>
+        <div class="div-amount-select">
+          <div class="don-amount-section">
+            <label for="don-amount-slider1">Choisissez un montant</label>
+            <input
+              type="range"
+              id="don-amount-slider1"
+              min="0"
+              max="100"
+              value="50"
+            />
+            <div class="range-values">
+              <span>0 €</span>
+              <span>100 €</span>
+            </div>
+            <p class="selected-amount">Choisissez le montant de votre don !</p>
+
+            <div class="custom-amount-input">
+              <input
+                type="text"
+                placeholder="Autre montant ponctuel"
+                id="other-amount1"
+              />
+              <button class="currency-button">€</button>
+            </div>
+          </div>
+
+          <div class="don-amount-section">
+            <label for="don-amount-slider">Choisissez un montant</label>
+            <input
+              type="range"
+              id="don-amount-slider"
+              min="0"
+              max="100"
+              value="50"
+            />
+            <div class="range-values">
+              <span>0 €</span>
+              <span>100 €</span>
+            </div>
+            <p class="selected-amount">Choisissez le montant de votre don !</p>
+
+            <div class="custom-amount-input">
+              <input
+                type="text"
+                placeholder="Autre montant ponctuel"
+                id="other-amount"
+              />
+              <button class="currency-button">€</button>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section id="don-coordinates">
         <h2>Mes coordonnées</h2>
-        <div class="form">
-          <input type="radio" id="individual" name="type" checked />
-          <label for="individual">Particulier</label>
-          <input type="radio" id="company" name="type" />
-          <label for="company">Entreprise</label>
-          <!-- Formulaire des coordonnées ici -->
+        <div class="form-container">
+          <div class="form-header">
+            <button
+              class="form-tab active"
+              id="individual-tab"
+              onclick="showForm('individual')"
+            >
+              <span class="icon">
+                <span class="icon">👤</span>
+              </span>
+              Particulier
+            </button>
+            <button
+              class="form-tab"
+              id="organization-tab"
+              onclick="showForm('organization')"
+            >
+              <span class="icon">
+                <span class="icon">👥</span>
+              </span>
+              Organisation
+            </button>
+          </div>
+
+          <!-- Formulaire pour particulier -->
+          <form id="individual-form" class="form-content active">
+            <label for="email">Adresse E-Mail *</label>
+            <input type="email" id="email" placeholder="E-Mail" required />
+
+            <label for="civility">Civilité *</label>
+            <select id="civility" required>
+              <option>Selectionner</option>
+              <option>M.</option>
+              <option>Mme</option>
+            </select>
+
+            <label for="first-name">Prénom *</label>
+            <input type="text" id="first-name" placeholder="Prénom" required />
+
+            <label for="last-name">Nom *</label>
+            <input type="text" id="last-name" placeholder="Nom" required />
+
+            <label for="phone">Téléphone *</label>
+            <input type="tel" id="phone" placeholder="Téléphone" required />
+
+            <label for="address">Adresse *</label>
+            <input
+              type="text"
+              id="address"
+              placeholder="Adresse Postal"
+              required
+            />
+
+            <label for="address-complement">Complément d’adresse</label>
+            <input
+              type="text"
+              id="address-complement"
+              placeholder="Complément"
+            />
+
+            <label for="city">Ville *</label>
+            <input type="text" id="city" placeholder="Ville" required />
+
+            <label for="postal-code">Code Postal *</label>
+            <input
+              type="text"
+              id="postal-code"
+              placeholder="Code Postal"
+              required
+            />
+
+            <p class="mandatory-fields">* Champs obligatoires</p>
+          </form>
+
+          <!-- Formulaire pour organisation -->
+          <form id="organization-form" class="form-content">
+            <label for="org-email">Adresse E-Mail *</label>
+            <input type="email" id="org-email" placeholder="E-Mail" required />
+
+            <label for="org-name">Société *</label>
+            <input type="text" id="org-name" placeholder="Société" required />
+
+            <label for="org-civility">Civilité *</label>
+            <select id="org-civility" required>
+              <option>Selectionner</option>
+              <option>M.</option>
+              <option>Mme</option>
+            </select>
+
+            <label for="org-first-name">Prénom *</label>
+            <input
+              type="text"
+              id="org-first-name"
+              placeholder="Prénom"
+              required
+            />
+
+            <label for="org-last-name">Nom *</label>
+            <input type="text" id="org-last-name" placeholder="Nom" required />
+
+            <label for="org-phone">Téléphone *</label>
+            <input type="tel" id="org-phone" placeholder="Téléphone" required />
+
+            <label for="org-address">Adresse *</label>
+            <input
+              type="text"
+              id="org-address"
+              placeholder="Adresse Postal"
+              required
+            />
+
+            <label for="org-address-complement">Complément d’adresse</label>
+            <input
+              type="text"
+              id="org-address-complement"
+              placeholder="Complément"
+            />
+
+            <label for="org-city">Ville *</label>
+            <input type="text" id="org-city" placeholder="Ville" required />
+
+            <label for="org-postal-code">Code Postal *</label>
+            <input
+              type="text"
+              id="org-postal-code"
+              placeholder="Code Postal"
+              required
+            />
+
+            <p class="mandatory-fields">* Champs obligatoires</p>
+          </form>
         </div>
       </section>
       <section id="don-payment">
         <h2>Mon payement</h2>
-        <button onclick="location.href='src/donCb.html'">
-          Payer par carte bancaire
-        </button>
-        <button onclick="location.href='src/donCheque.html'">
-          Payer par chèque
-        </button>
+        <div class="div-btn-mode">
+          <button
+            class="btn-select-mode"
+            onclick="location.href='src/donCb.html'"
+          >
+            Payer par carte bancaire
+          </button>
+          <button
+            class="btn-select-mode"
+            onclick="location.href='src/donCheque.html'"
+          >
+            Payer par chèque
+          </button>
+        </div>
+
+        <div class="info">
+          Paiement en toute confiance Ce site est 100% sécurisé. Vos
+          informations bancaires ne sont en aucun cas conservées sur nos
+          systèmes informatiques. Grâce au cryptage SSL de vos données, vous
+          êtes assurés de la fiabilité des transactions.
+        </div>
       </section>
     </main>
     <footer class="footer">
