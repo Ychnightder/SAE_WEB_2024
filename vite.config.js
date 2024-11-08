@@ -7,10 +7,10 @@ export default defineConfig({
     outDir: "dist", // Dossier de sortie pour le build
     rollupOptions: {
       input: {
-        main: "./index.html",
-        contact: "./src/contact.html",
-        adhesionconnexion: "./src/adhesion-connexion.html",
-        //don: './src/don.html'
+        // main: "./index.html",
+        // contact: "./src/contact.html",
+        // adhesionconnexion: "./src/adhesion-connexion.html",
+        don: './src/don.html'
       },
     },
   },

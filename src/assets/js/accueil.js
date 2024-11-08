@@ -1,4 +1,4 @@
-import { Cards } from "./dataAccueil.js";
+import { Cards, CardsParttener } from "./dataAccueil.js";
 
 // creation de card carousem
 function creationDeCardPourCarousel(

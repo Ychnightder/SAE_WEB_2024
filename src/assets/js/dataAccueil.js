@@ -106,3 +106,10 @@ export const Cards = [
   //   link: "", // Lien vers la page
   // },
 ];
+
+
+export const CardsParttener = [{
+  id: 1,
+  img : "",
+  alt:""
+}]
