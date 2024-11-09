@@ -240,3 +240,173 @@
 .confirm-button {
   background-color: #00aaff;
 }
+.donation-container {
+  width: 90%;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+.section-title {
+  background-color: #017ac3;
+  color: #ffffff;
+  text-align: center;
+  padding: 15px;
+  border-radius: 20px;
+  font-size: 1.2em;
+  margin: 20px 0;
+}
+
+.info-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.info-box {
+  width: 100%;
+  max-width: 45%;
+  background-color: #7fd0e6;
+  padding: 20px;
+  border-radius: 15px;
+  margin: 10px 0;
+}
+
+.info-header {
+  background-color: #f47373;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px 10px 0 0;
+  font-weight: bold;
+}
+
+.info-box p {
+  font-size: 1em;
+  margin: 10px 0;
+  color: #333;
+}
+
+.info-box span {
+  font-weight: bold;
+}
+
+.bank-info,
+.receipt-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px 0;
+}
+
+.bank-info2 {
+  width: 100%;
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bank-info label,
+.additional-info,
+.description {
+  text-align: center;
+  font-size: 0.9em;
+  color: #333;
+}
+
+.additional-info {
+  padding: 10px;
+  background-color: #78c2f2;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+.toggle-label {
+  display: flex;
+  align-items: center;
+  font-size: 1em;
+  color: #333;
+  cursor: pointer;
+  position: relative;
+}
+
+.toggle-checkbox {
+  display: none;
+}
+
+.toggle-slider {
+  width: 40px;
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 10px;
+  margin-left: 10px;
+  position: relative;
+  transition: background-color 0.3s;
+}
+
+.toggle-slider::before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background-color: #fff;
+  border-radius: 50%;
+  top: 1px;
+  left: 1px;
+  transition: transform 0.3s;
+}
+
+.toggle-checkbox:checked + .toggle-slider {
+  background-color: #333;
+}
+
+.toggle-checkbox:checked + .toggle-slider::before {
+  transform: translateX(20px);
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.cancel-button,
+.confirm-button {
+  background-color: #f47373;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  flex: 1;
+  max-width: 200px;
+  margin: 10px;
+}
+
+.confirm-button {
+  background-color: #00aaff;
+}
+
+@media (max-width: 768px) {
+  .info-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .info-box,
+  .bank-info2 {
+    width: 90%;
+  }
+
+  .button-container {
+    flex-direction: column;
+  }
+
+  .cancel-button,
+  .confirm-button {
+    width: 100%;
+    max-width: none;
+  }
+}

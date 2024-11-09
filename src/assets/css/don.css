@@ -115,11 +115,6 @@ input[type="range"]::-webkit-slider-thumb {
   width: 100%;
 }
 
-#selected-amount {
-  font-size: 14px;
-  color: #555;
-}
-
 .custom-amount-input {
   display: flex;
   align-items: center;
@@ -247,4 +242,76 @@ select {
   align-items: center;
   margin: 15px auto;
   text-align: center;
+}
+
+@media (max-width: 768px) {
+  h1,
+  h2 {
+    font-size: 2em;
+  }
+
+  .box-info {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .info-box {
+    width: 90%;
+    height: auto;
+  }
+
+  .btn-choix {
+    width: 80%;
+  }
+
+  .div-amount-select {
+    flex-direction: column;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .don-amount-section {
+    width: 90%;
+    margin: 20px 0;
+  }
+
+  .selected-amount {
+    margin: 0;
+  }
+  .div-btn-mode {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .btn-select-mode {
+    width: 200px;
+    font-size: 10px;
+  }
+  .btn-select-mode:last-child {
+    margin: 10px 0 0 0;
+  }
+}
+
+@media (max-width: 480px) {
+  h1,
+  h2 {
+    font-size: 1.5em;
+  }
+
+  .form-container {
+    width: 100%;
+  }
+
+  .btn-choix,
+  .btn-don {
+    width: 100%;
+    font-size: 12px;
+  }
+
+  .info {
+    width: 90%;
+    padding: 8px;
+  }
 }
