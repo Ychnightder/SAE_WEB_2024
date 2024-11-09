@@ -3,24 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="src/assets/css/main.css" />
-    <link rel="stylesheet" href="src/assets/css/header.css" />
-    <link rel="stylesheet" href="src/assets/css/footer.css" />
-    <script src="src/assets/js/header.js" defer></script>
-    <title>Title</title>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/header.css" />
+    <link rel="stylesheet" href="assets/css/footer.css" />
+    <link rel="stylesheet" href="assets/css/donCbCheque.css" />
+    <script src="assets/js/header.js" defer></script>
+    <title>Donnation CB</title>
   </head>
   <body>
     <header class="header">
       <nav class="nav">
         <div class="logo-container">
-          <a class="logo-link" href="./index.html">
+          <a class="logo-link" href="../index.html">
             <img class="logo" src="/assets/shared/logo.png" alt="logo" />
           </a>
         </div>
 
         <div class="nav-links">
           <button type="button" class="nav-button">
-            <a class="links" href="./index.html">Accueil</a>
+            <a class="links" href="../index.html">Accueil</a>
           </button>
 
           <button type="button" class="nav-button with-submenu">
@@ -363,24 +364,52 @@
         </button>
       </nav>
     </header>
+    <div class="donation-container">
+      <!-- Section Carte Bleu -->
+      <div class="section-title">Carte Bleu</div>
 
-    <main>
-      <h1>Paiement par Carte Bancaire</h1>
-      <section id="payment-summary">
-        <button>Récapitulatif</button>
-        <!-- Afficher les informations de don -->
-      </section>
+      <!-- Section Récapitulatif -->
+      <div class="section-title">Récapitulatif</div>
 
-      <section id="bank-info">
-        <h2>Informations bancaires</h2>
-        <form>
-          <input type="text" placeholder="Numéro de carte" />
-          <input type="text" placeholder="Cryptogramme (CVV)" />
-          <input type="text" placeholder="Date d'expiration" />
-          <button type="submit">Valider le paiement</button>
-        </form>
-      </section>
-    </main>
+      <div class="info-container">
+        <!-- Informations personnelles -->
+        <div class="info-box">
+          <div class="info-header">Informations personnelles</div>
+          <p>Nom: <span>Jean Dupont</span></p>
+          <p>Prénom: <span>Jean</span></p>
+          <p>Adresse: <span>123 Rue de Paris</span></p>
+        </div>
+
+        <!-- Informations sur le don -->
+        <div class="info-box">
+          <div class="info-header">Informations sur le Don</div>
+          <p>Montant: <span>50€</span></p>
+          <p>Mode de don: <span>Mensuel</span></p>
+        </div>
+      </div>
+
+      <!-- Section Informations bancaire -->
+      <div class="section-title">Informations bancaire</div>
+
+      <div class="bank-info">
+        <div class="bank-info2">
+          <label>Numéro de carte</label>
+          <input type="text" placeholder="1234 5678 1234 5678" />
+          <label>Date d'expiration</label>
+          <input type="text" placeholder="MM/AA" />
+          <label>CVV</label>
+          <input type="text" placeholder="123" />
+        </div>
+      </div>
+
+      <!-- Boutons de validation et d'annulation -->
+      <div class="button-container">
+        <button class="cancel-button" onclick="location.href='./don.html'">
+          Retour
+        </button>
+        <button class="confirm-button">Valider</button>
+      </div>
+    </div>
 
     <footer class="footer">
       <div class="main-footer">

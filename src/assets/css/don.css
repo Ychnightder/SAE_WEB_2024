@@ -3,7 +3,7 @@ h2 {
   color: #017ac3;
   text-align: center;
   font-size: 3em;
-  margin: 1em auto;
+  margin: 1.5em auto;
 }
 
 #don-intro,
@@ -69,7 +69,7 @@ h2 {
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 25vw;
+  height: 18vw;
   margin-top: 25px;
 }
 .don-amount-section {
@@ -83,7 +83,7 @@ h2 {
   color: #ccc;
   font-size: 15px;
   margin-top: 10px;
-  margin-right: 356px;
+  margin-right: 200px;
 }
 label {
   font-weight: bold;
@@ -169,6 +169,8 @@ input[type="range"]::-webkit-slider-thumb {
   font-weight: bold;
   display: flex;
   align-items: center;
+  justify-content: space-around;
+  gap: 5px;
 }
 
 .form-tab.active {
@@ -221,11 +223,16 @@ select {
   border-radius: 50px;
   width: 600px;
 }
+
+.btn-select-mode:last-child {
+  background-color: rgba(50, 146, 202, 0.58);
+}
+
 .div-btn-mode {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 25px;
+  margin: 90px 0;
 }
 .info {
   width: 80%;

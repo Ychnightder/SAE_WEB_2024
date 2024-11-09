@@ -1,0 +1,242 @@
+.donation-container {
+  width: 75%;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+.section-title {
+  background-color: #017ac3;
+  color: #ffffff;
+  text-align: center;
+  padding: 15px;
+  border-radius: 20px;
+  font-size: 1.2em;
+  margin: 20px 0;
+}
+
+.info-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.info-box {
+  width: 45%;
+  background-color: #7fd0e6;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.info-header {
+  background-color: #f47373;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px 10px 0 0;
+  font-weight: bold;
+}
+
+.info-box p {
+  font-size: 1em;
+  margin: 10px 0;
+  color: #333;
+}
+
+.info-box span {
+  font-weight: bold;
+}
+
+.bank-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 50px 0;
+  width: 100%;
+}
+.bank-info2 {
+  width: 50%;
+  height: 25vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bank-info label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.bank-info input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin: 70px 0;
+}
+
+.cancel-button,
+.confirm-button {
+  background-color: #f47373;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0 30px;
+}
+
+.confirm-button {
+  background-color: #00aaff;
+}
+/* cheque */
+
+.donation-container {
+  width: 75%;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+.section-title {
+  background-color: #017ac3;
+  color: #ffffff;
+  text-align: center;
+  padding: 15px;
+  border-radius: 20px;
+  font-size: 1.2em;
+  margin: 20px 0;
+}
+
+.info-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.info-box {
+  width: 45%;
+  background-color: #7fd0e6;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.info-header {
+  background-color: #f47373;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px 10px 0 0;
+  font-weight: bold;
+}
+
+.info-box p {
+  font-size: 1em;
+  margin: 10px 0;
+  color: #333;
+}
+
+.info-box span {
+  font-weight: bold;
+}
+
+.additional-info {
+  text-align: center;
+  margin: 40px 0;
+
+  font-size: 0.9em;
+  color: #333;
+  padding: 10px;
+  background-color: #78c2f2;
+  border-radius: 10px;
+}
+
+.receipt-option {
+  font-family: Arial, sans-serif;
+  color: #555;
+  margin: 40px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-direction: column;
+}
+
+.toggle-label {
+  display: flex;
+  align-items: center;
+  font-size: 1em;
+  color: #333;
+  cursor: pointer;
+  position: relative;
+}
+
+.toggle-checkbox {
+  display: none;
+}
+
+.toggle-slider {
+  width: 40px;
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 10px;
+  margin-left: 10px;
+  position: relative;
+  transition: background-color 0.3s;
+}
+
+.toggle-slider::before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background-color: #fff;
+  border-radius: 50%;
+  top: 1px;
+  left: 1px;
+  transition: transform 0.3s;
+}
+
+.toggle-checkbox:checked + .toggle-slider {
+  background-color: #333;
+}
+
+.toggle-checkbox:checked + .toggle-slider::before {
+  transform: translateX(20px);
+}
+
+.description {
+  font-size: 0.9em;
+  color: #777;
+  margin-top: 5px;
+  padding-left: 20px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.cancel-button,
+.confirm-button {
+  background-color: #f47373;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 600px;
+}
+
+.confirm-button {
+  background-color: #00aaff;
+}
