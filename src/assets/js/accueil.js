@@ -2,13 +2,13 @@ import { Cards, CardsParttener } from "./dataAccueil.js";
 
 // creation de card carousem
 function creationDeCardPourCarousel(
-    img,
-    alt,
-    titre,
-    dateString,
-    text,
-    textAfter,
-    link,
+  img,
+  alt,
+  titre,
+  dateString,
+  text,
+  textAfter,
+  link,
 ) {
   const newCard = document.createElement("li");
   newCard.classList.add("card");
@@ -54,21 +54,19 @@ const carrouselContainer = document.querySelector(".carousel");
 
 Cards.forEach((cardData) => {
   const cardElement = creationDeCardPourCarousel(
-      cardData.img,
-      cardData.alt,
-      cardData.titre,
-      cardData.date,
-      cardData.text,
-      cardData.textInAfter,
-      cardData.link,
+    cardData.img,
+    cardData.alt,
+    cardData.titre,
+    cardData.date,
+    cardData.text,
+    cardData.textInAfter,
+    cardData.link,
   );
 
   carrouselContainer.append(cardElement);
 });
 
-
 // premier carousel
-
 
 const items = document.querySelectorAll(".card");
 const nbSlideinifini = items.length - 2;
@@ -124,10 +122,6 @@ precedent.addEventListener("click", () => {
   startAutoScroll();
 });
 
-
-
-
-
 // deuxieme carousel
 
 const carousel = document.querySelector(".carrousel-partener");
@@ -145,4 +139,3 @@ function moveCarousel() {
   carousel.style.transform = `translateX(${offset}px)`;
 }
 setInterval(moveCarousel, 3000);
-

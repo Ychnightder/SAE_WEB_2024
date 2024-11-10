@@ -340,16 +340,17 @@
 }
 .carrousel-partener li {
   flex: 0 0 calc((100% / 6) - 10px);
-  margin: 0 5px;
   height: 250px;
-  background: #3294ce;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.carrousel-partener li img {
+  width: 100%;
 }
 
-.red {
-  background: red !important;
-}
 /* responsive*/
 
 @media (max-width: 1024px) {
@@ -402,6 +403,34 @@
   .cta-subtitle {
     font-size: 20px;
   }
+  /*carousel actu*/
+  .carousel {
+    flex-direction: row;
+  }
+
+  .header-title .title {
+    font-size: 36px;
+  }
+
+  .header-title .subtitle {
+    font-size: 24px;
+  }
+
+  .card {
+    flex: 0 0 calc(100% / 2 - 20px); /* 2 cartes par ligne */
+  }
+
+  .card-title {
+    font-size: 16px;
+  }
+
+  .parter-present h2 {
+    font-size: 36px;
+  }
+
+  .carrousel-partener li {
+    flex: 0 0 calc(100% / 4 - 10px); /* 4 éléments par ligne */
+  }
 }
 
 @media (max-width: 720px) {
@@ -445,6 +474,53 @@
   .heart-button-main {
     width: 50px;
     height: 50px; /* Réduction de la taille du bouton "heart" */
+  }
+  /*carousel actu*/
+
+  .header-title .title {
+    font-size: 28px;
+  }
+
+  .header-title .subtitle {
+    font-size: 20px;
+  }
+
+  .header-title {
+    margin-bottom: 50px;
+  }
+  .carousel {
+    /* Retirer ou ajuster flex-direction: column pour éviter les cartes empilées */
+    flex-direction: row;
+  }
+  .card {
+    flex: 0 0 100%; /* 1 carte par ligne à partir de 720px */
+    margin-bottom: 20px;
+  }
+
+  .card .card-content {
+    height: auto;
+    margin: 10px;
+  }
+
+  .card-title {
+    font-size: 16px;
+  }
+
+  .parter-present h2 {
+    font-size: 28px;
+  }
+
+  .parter-present p {
+    font-size: 16px;
+  }
+
+  .carrousel-partener li {
+    flex: 0 0 calc(100% / 2 - 10px); /* 2 éléments par ligne */
+    margin-bottom: 20px;
+  }
+
+  .carrousel-partener {
+    flex-direction: row; /* Les éléments se mettent en colonne */
   }
 }
 @media (max-width: 415px) {

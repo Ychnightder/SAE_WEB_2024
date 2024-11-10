@@ -107,9 +107,10 @@ export const Cards = [
   // },
 ];
 
-
-export const CardsParttener = [{
-  id: 1,
-  img : "",
-  alt:""
-}]
+export const CardsParttener = [
+  {
+    id: 1,
+    img: "",
+    alt: "",
+  },
+];
