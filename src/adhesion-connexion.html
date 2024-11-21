@@ -22,27 +22,33 @@
           </h1>
           <div class="formBox">
             <div class="div-form-conexion">
-              <form action="" class="form-conexion">
+              <form
+                action="assets/php/adhesion.php"
+                method="post"
+                class="form-conexion"
+              >
                 <div class="input-connexion">
                   <label for="ID" aria-label="Identifiant">
                     <p>Identifiant :</p>
-                    <input id="ID" type="text" />
+                    <input id="ID" name="ID" type="text" />
                   </label>
 
                   <label for="password">
                     <p>Mot de passe :</p>
-                    <input id="password" type="password" />
+                    <input id="password" name="password" type="password" />
                   </label>
                   <div class="linkForget">
                     <a href="#">Mot de passe oublié</a>
                   </div>
                 </div>
                 <div class="divSubmit">
-                  <button>Retour</button>
-                  <button>Connexion</button>
+                  <button type="button" onclick="window.history.back()">
+                    Retour
+                  </button>
+                  <button type="submit">Connexion</button>
                 </div>
                 <div class="likns-ac">
-                  <p>Avez vous un compte ?</p>
+                  <p>Avez-vous un compte ?</p>
                   <div class="links-box">
                     <a class="link-online" href="#">Adhérer en ligne </a>
                     <a
