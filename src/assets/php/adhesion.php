@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 if (!empty($identifiant) && !empty($password)) {
     echo "<script>
             alert('Identifiant : " . htmlspecialchars($identifiant) . "\\nMot de passe : " . htmlspecialchars($password) . "');
-        </script>"a;
+        </script>";
     // Vous pouvez ici effectuer des actions supplémentaires, comme une requête SQL
 } else {
     echo "<script>alert('Mets un ID');</script>";
