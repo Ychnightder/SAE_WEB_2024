@@ -12,5 +12,3 @@ function showForm(formType) {
     document.getElementById("organization-tab").classList.add("active");
   }
 }
-
-

@@ -324,6 +324,15 @@ select {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 20px;
+}
+
+.footer a {
+  color: #000;
+  transition: all 0.3s ease-out;
+}
+.footer a:hover {
+  border-bottom: 1px solid #000;
 }
 
 /* Responsive pour petits écrans - smartphones */

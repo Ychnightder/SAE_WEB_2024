@@ -5,32 +5,32 @@ const navLinks = document.querySelector(".nav-links");
 const ctaBtn = document.querySelector(".cta-buttons");
 const navButtons = document.querySelectorAll(".with-submenu ");
 if (hamburger) {
-    hamburger.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-        ctaBtn.classList.toggle("active");
-        const isMenuActive =
-            navLinks.classList.contains("active") ||
-            ctaBtn.classList.contains("active");
-        menuIcon.style.display = isMenuActive ? "none" : "block";
-        closeIcon.style.display = isMenuActive ? "block" : "none";
-    });
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+    ctaBtn.classList.toggle("active");
+    const isMenuActive =
+      navLinks.classList.contains("active") ||
+      ctaBtn.classList.contains("active");
+    menuIcon.style.display = isMenuActive ? "none" : "block";
+    closeIcon.style.display = isMenuActive ? "block" : "none";
+  });
 }
 navButtons.forEach((button) => {
-    button.addEventListener("click", (event) => {
-        event.preventDefault();
+  button.addEventListener("click", (event) => {
+    event.preventDefault();
 
-        const clickedSubmenu = button.querySelector(".submenu");
-        const arrow = button.querySelector("svg");
-        navButtons.forEach((btn) => {
-            const otherSubmenu = btn.querySelector(".submenu");
-            const otherArrow = btn.querySelector("svg");
-            if (otherSubmenu && otherSubmenu !== clickedSubmenu) {
-                otherSubmenu.classList.remove("active");
-                otherArrow.classList.remove("rotate");
-            }
-        });
-
-        clickedSubmenu.classList.toggle("active");
-        arrow.classList.toggle("rotate");
+    const clickedSubmenu = button.querySelector(".submenu");
+    const arrow = button.querySelector("svg");
+    navButtons.forEach((btn) => {
+      const otherSubmenu = btn.querySelector(".submenu");
+      const otherArrow = btn.querySelector("svg");
+      if (otherSubmenu && otherSubmenu !== clickedSubmenu) {
+        otherSubmenu.classList.remove("active");
+        otherArrow.classList.remove("rotate");
+      }
     });
+
+    clickedSubmenu.classList.toggle("active");
+    arrow.classList.toggle("rotate");
+  });
 });

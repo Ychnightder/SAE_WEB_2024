@@ -1,7 +1,6 @@
 import { defineConfig } from "vite";
 import path from "path";
 export default defineConfig({
-
   root: "./",
   resolve: {
     alias: {
@@ -19,6 +18,7 @@ export default defineConfig({
         don: "./src/don.html",
         donCheque: "./src/donCheque.html",
         donCb: "./src/donCb.html",
+        admin: "./src/admin.html",
       },
     },
   },
