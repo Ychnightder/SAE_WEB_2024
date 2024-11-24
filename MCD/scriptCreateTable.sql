@@ -63,6 +63,8 @@ CREATE TABLE Statistiques(
 
 CREATE TABLE Admins(
                        id_admin INT AUTO_INCREMENT,
+                        login INT ,
+                        password VARCHAR(250),
                        role VARCHAR(50)  NOT NULL,
                        id_utilisateur INT NOT NULL,
                        PRIMARY KEY(id_admin),
