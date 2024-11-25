@@ -1,0 +1,1072 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Contact | Autisme France</title>
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <link rel="stylesheet" href="./assets/css/header.css" />
+    <link rel="stylesheet" href="./assets/css/footer.css" />
+    <link rel="stylesheet" href="./assets/css/contact.css" />
+    <script src="./assets/js/contact.js" defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <div class="logo-container">
+          <a class="logo-link" href="index.php">
+            <img class="logo" src="./assets/image/shared/logo.png" alt="logo" />
+          </a>
+        </div>
+
+        <div class="nav-links">
+          <button type="button" class="nav-button">
+            <a class="links" href="index.php">Accueil</a>
+          </button>
+
+          <button type="button" class="nav-button with-submenu">
+            <a class="links" href="">
+              <p>Autisme France</p>
+              <svg
+                class="icon"
+                aria-hidden="true"
+                viewBox="0 0 10 7"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1 1.5L5 5.5L9 1.5"
+                  stroke-width="2"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </a>
+            <div class="submenu">
+              <a href="https://www.autisme-france.fr/qui-sommes-nous"
+                >Qui sommes-nous ?</a
+              >
+              <a href="https://www.autisme-france.fr/parrain-et-ambassadeurs"
+                >Parrain et Ambassadeurs</a
+              >
+              <a href="https://www.autisme-france.fr/comite-scientifique"
+                >Comité scientifique</a
+              >
+              <a href="https://www.autisme-france.fr/dons">Dons</a>
+              <a
+                href="https://www.autisme-france.fr/legs-donation-et-assurance-vie"
+                >Legs, donation et assurance vie</a
+              >
+              <a href="https://www.autisme-france.fr/nous-soutenir"
+                >Nous soutenir</a
+              >
+              <a href="https://www.autisme-france.fr/adherer">Adhérer</a>
+              <a href="https://www.autisme-france.fr/autisme-europe"
+                >Autisme-Europe</a
+              >
+              <a href="https://www.autisme-france.fr/rejoindre-notre-reseau"
+                >Rejoindre notre réseau</a
+              >
+            </div>
+          </button>
+
+          <button type="button" class="nav-button with-submenu">
+            <a class="links" href="">
+              <p>Action</p>
+              <svg
+                class="icon"
+                aria-hidden="true"
+                viewBox="0 0 10 7"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1 1.5L5 5.5L9 1.5"
+                  stroke-width="2"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </a>
+            <div class="submenu">
+              <a href="https://www.autisme-france.fr/actions-de-plaidoyer"
+                >Actions de plaidoyer</a
+              >
+              <a href="https://www.autisme-france.fr/congres">Congrès</a>
+              <a href="https://www.autisme-france.fr/brochures">Brochures</a>
+              <a href="https://www.autisme-france.fr/newsletter">Newsletter</a>
+              <a href="https://www.autisme-france.fr/revues">Revues</a>
+              <a href="https://www.autisme-france.fr/demarche-qualite"
+                >Démarche Qualité</a
+              >
+              <a href="https://www.autisme-france.fr/journee-de-lautisme"
+                >Journée de l'autisme</a
+              >
+            </div>
+          </button>
+
+          <button type="button" class="nav-button with-submenu">
+            <a class="links" href="">
+              <p>L'Austime</p>
+              <svg
+                class="icon"
+                aria-hidden="true"
+                viewBox="0 0 10 7"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1 1.5L5 5.5L9 1.5"
+                  stroke-width="2"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </a>
+            <div class="submenu">
+              <a href="https://www.autisme-france.fr/quest-ce-que-lautisme"
+                >Qu'est-ce que l'autisme ?</a
+              >
+              <a href="https://www.autisme-france.fr/la-demarche-diagnostique"
+                >La démarche diagnostique</a
+              >
+              <a
+                href="https://www.autisme-france.fr/reperage-des-premiers-signes"
+                >Repérage des premiers signes</a
+              >
+              <a href="https://www.autisme-france.fr/recommandations-has"
+                >Recommandations HAS</a
+              >
+              <a
+                href="https://www.autisme-france.fr/accompagner-une-personne-autiste"
+                >Accompagner une personne autiste</a
+              >
+              <a href="https://www.autisme-france.fr/terminologie-de-lautisme"
+                >Terminologie de l'autisme</a
+              >
+              <a href="https://www.autisme-france.fr/formations">Formations</a>
+            </div>
+          </button>
+
+          <button type="button" class="nav-button with-submenu">
+            <a class="links" href="">
+              <p>Droit & MDPH</p>
+              <svg
+                class="icon"
+                aria-hidden="true"
+                viewBox="0 0 10 7"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1 1.5L5 5.5L9 1.5"
+                  stroke-width="2"
+                  clip-rule="evenodd"
+                /></svg
+            ></a>
+
+            <div class="submenu">
+              <a href="https://www.autisme-france.fr/demande-a-la-mdph"
+                >Demande à la MDPH</a
+              >
+              <a href="https://www.autisme-france.fr/les-allocations"
+                >Les allocations</a
+              >
+              <a href="https://www.autisme-france.fr/les-assurances"
+                >Les assurances</a
+              >
+              <a
+                href="https://www.autisme-france.fr/acces-aux-soins-somatiques-et-aux-interventions-pour-les-personnes-autistes"
+                >Accès aux soins</a
+              >
+              <a href="https://www.autisme-france.fr/aidants-familiaux"
+                >Aidants familiaux</a
+              >
+              <a href="https://www.autisme-france.fr/covid-19-et-handicap"
+                >Covid-19 et handicap</a
+              >
+              <a href="https://www.autisme-france.fr/la-fiscalite"
+                >La fiscalité</a
+              >
+              <a href="https://www.autisme-france.fr/jurisprudence"
+                >Jurisprudence</a
+              >
+              <a href="https://www.autisme-france.fr/lexique">Lexique</a>
+            </div>
+          </button>
+
+          <button type="button" class="nav-button with-submenu">
+            <a class="links" href="">
+              <p>Scolarisation</p>
+              <svg
+                class="icon"
+                aria-hidden="true"
+                viewBox="0 0 10 7"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1 1.5L5 5.5L9 1.5"
+                  stroke-width="2"
+                  clip-rule="evenodd"
+                /></svg
+            ></a>
+
+            <div class="submenu">
+              <a href="https://www.autisme-france.fr/droit-a-la-scolarisation"
+                >Droit à la scolarisation</a
+              >
+              <a href="https://www.autisme-france.fr/aesh"
+                >Aide humaine à l’école (AESH)</a
+              >
+              <a
+                href="https://www.autisme-france.fr/dispositifs-education-nationale"
+                >Dispositifs Education Nationale</a
+              >
+              <a
+                href="https://www.autisme-france.fr/outils-guides-pour-la-scolarite"
+                >Outils & guides pour la scolarité</a
+              >
+              <a
+                href="https://www.autisme-france.fr/enseigner-a-des-personnes-atteintes-dautisme"
+                >Enseigner à une personne autiste</a
+              >
+              <a
+                href="https://www.autisme-france.fr/textes-et-etudes-sur-la-scolarisation"
+                >Textes et études sur la scolarisation</a
+              >
+            </div>
+          </button>
+
+          <button type="button" class="nav-button with-submenu">
+            <a class="links" href=""
+              ><p>Vie Adulte</p>
+              <svg
+                class="icon"
+                aria-hidden="true"
+                viewBox="0 0 10 7"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1 1.5L5 5.5L9 1.5"
+                  stroke-width="2"
+                  clip-rule="evenodd"
+                /></svg
+            ></a>
+
+            <div class="submenu">
+              <a href="https://www.autisme-france.fr/habitat-vie-sociale"
+                >Habitat & Vie sociale</a
+              >
+              <a href="https://www.autisme-france.fr/emploi">Emploi</a>
+              <a href="https://www.autisme-france.fr/protection-des-majeurs"
+                >Protection des majeurs</a
+              >
+            </div>
+          </button>
+
+          <button type="button" class="nav-button">
+            <a class="links" href="/src/contact.php">Contact</a>
+          </button>
+        </div>
+        <div class="cta-buttons">
+          <a href="/public/adhesion-connexion.php" class="member-button">
+            <svg
+              class="member-icon"
+              width="17"
+              height="17"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M13.3334 14V12.6667C13.3334 11.9594 13.0525 11.2811 12.5524 10.781C12.0523 10.281 11.374 10 10.6667 10H5.33341C4.62617 10 3.94789 10.281 3.4478 10.781C2.9477 11.2811 2.66675 11.9594 2.66675 12.6667V14M10.6667 4.66667C10.6667 6.13943 9.47284 7.33333 8.00008 7.33333C6.52732 7.33333 5.33341 6.13943 5.33341 4.66667C5.33341 3.19391 6.52732 2 8.00008 2C9.47284 2 10.6667 3.19391 10.6667 4.66667Z"
+                stroke="#FFFAFA"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            Espace Membre
+          </a>
+
+          <a href="#" class="heart-button">
+            <svg
+              width="17"
+              height="17"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M13.8933 3.07333C13.5528 2.73267 13.1485 2.46243 12.7036 2.27805C12.2586 2.09368 11.7817 1.99878 11.3 1.99878C10.8183 1.99878 10.3414 2.09368 9.89643 2.27805C9.45146 2.46243 9.04717 2.73267 8.70667 3.07333L8 3.78L7.29333 3.07333C6.60554 2.38554 5.67269 1.99914 4.7 1.99914C3.72731 1.99914 2.79446 2.38554 2.10666 3.07333C1.41887 3.76112 1.03247 4.69397 1.03247 5.66666C1.03247 6.63935 1.41887 7.5722 2.10666 8.26L8 14.1533L13.8933 8.26C14.234 7.91949 14.5042 7.51521 14.6886 7.07023C14.873 6.62526 14.9679 6.14832 14.9679 5.66666C14.9679 5.185 14.873 4.70807 14.6886 4.26309C14.5042 3.81812 14.234 3.41383 13.8933 3.07333Z"
+                stroke="white"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+        </div>
+        <button class="hamburger">
+          <svg
+            class="menu-icon"
+            width="33"
+            height="18"
+            viewBox="0 0 33 18"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g clip-path="url(#clip0_15_228)">
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M0.5 0H32.5V2H0.5V0ZM0.5 8H32.5V10H0.5V8ZM0.5 16H32.5V18H0.5V16Z"
+                fill="#151515"
+              />
+            </g>
+            <defs>
+              <clipPath id="clip0_15_228">
+                <rect
+                  width="32"
+                  height="18"
+                  fill="white"
+                  transform="translate(0.5)"
+                />
+              </clipPath>
+            </defs>
+          </svg>
+          <svg
+            class="close-icon"
+            width="25"
+            height="26"
+            viewBox="0 0 25 26"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M1.893 0.97998L24.521 23.608L23.107 25.022L0.479004 2.39498L1.893 0.97998Z"
+              fill="#151515"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M0.47998 23.607L23.109 0.979004L24.523 2.393L1.89498 25.021L0.47998 23.607Z"
+              fill="#151515"
+            />
+          </svg>
+        </button>
+      </nav>
+    </header>
+    <main class="main-contact">
+      <section class="section contact">
+        <div class="title-contact">
+          <h1>Contact</h1>
+        </div>
+        <div class="wrapper-main">
+          <div class="box-img">
+            <h2 class="title-img">Avez-vous une questions ?</h2>
+            <img
+              src="/assets/image/contact/FAQ.png"
+              alt="une dame qui se pose des question"
+            />
+          </div>
+          <div class="text-center">
+            <p>
+              Utilisez ce formulaire pour nous contacter <br />
+              <span>A savoir</span>
+            </p>
+            <p class="fleche">
+              En raison d'un trop grand nombre de demandes, nous ne diffusons
+              plus de questionnaires à nos adhérents.
+            </p>
+            <p class="fleche">
+              Pour des renseignements concernant votre situation, merci de nous
+              communiquer un dossier complet pour que nous puissions vous
+              répondre au mieux. Sans ces éléments importants nous ne pourrons
+              vous apporter de réponse.
+            </p>
+          </div>
+          <div class="contact-box">
+            <p>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xml:space="preserve"
+                width="15"
+                height="15"
+                style="
+                  shape-rendering: geometricPrecision;
+                  text-rendering: geometricPrecision;
+                  image-rendering: optimizeQuality;
+                  fill-rule: evenodd;
+                  clip-rule: evenodd;
+                "
+                viewBox="0 0 6.827 6.827"
+              >
+                <defs>
+                  <style>
+                    .fil0 {
+                      fill: none;
+                    }
+                    .fil2 {
+                      fill: #e64a19;
+                    }
+                  </style>
+                </defs>
+                <g id="Layer_x0020_1">
+                  <g id="_491463032">
+                    <path
+                      id="_491463320"
+                      class="fil0"
+                      d="M0 0h6.827v6.827H0z"
+                    />
+                    <path
+                      id="_491463128"
+                      class="fil0"
+                      d="M.853.853h5.12v5.12H.853z"
+                    />
+                  </g>
+                  <g id="_491478824">
+                    <path
+                      id="_491463224"
+                      d="M.909 2.24c.067 1.39 1.968 3.158 3.255 3.57.863.275 2.148-.269 1.64-.777L5 4.23c-.122-.123-.32-.108-.439.01l-.46.462c-.992-.54-1.408-.966-1.953-1.951l.462-.462c.119-.119.132-.317.01-.439l-.803-.803C1.37.598.883 1.715.908 2.24z"
+                      style="fill: #ff6e40"
+                    />
+                    <path
+                      id="_491478584"
+                      class="fil2"
+                      d="m.909 2.24 1.24.51.462-.46c.119-.12.132-.318.01-.44l-.803-.803C1.37.598.883 1.715.908 2.24z"
+                    />
+                    <path
+                      id="_491478176"
+                      class="fil2"
+                      d="M4.164 5.81c.863.275 2.148-.269 1.64-.777L5 4.23c-.122-.123-.32-.108-.439.01l-.46.462.062 1.107z"
+                    />
+                  </g>
+                </g>
+              </svg>
+
+              Permanence téléphonique de 8h30 à 12h30, du lundi au vendredi : 04
+              93 46 01 77
+            </p>
+            <p>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xml:space="preserve"
+                width="15"
+                height="15"
+                style="
+                  shape-rendering: geometricPrecision;
+                  text-rendering: geometricPrecision;
+                  image-rendering: optimizeQuality;
+                  fill-rule: evenodd;
+                  clip-rule: evenodd;
+                "
+                viewBox="0 0 6.827 6.827"
+              >
+                <defs>
+                  <style>
+                    .fil0 {
+                      fill: none;
+                    }
+                  </style>
+                </defs>
+                <g id="Layer_x0020_1">
+                  <g id="_488781256">
+                    <path
+                      id="_488782264"
+                      class="fil0"
+                      d="M0 0h6.827v6.827H0z"
+                    />
+                    <path
+                      id="_488781280"
+                      class="fil0"
+                      d="M.853.853h5.12v5.12H.853z"
+                    />
+                  </g>
+                  <path
+                    style="fill: #29b6f6"
+                    d="m5.982 1.976-5.129.013 2.54 1.562z"
+                  />
+                  <path
+                    style="fill: #039be5"
+                    d="M.853 1.99v2.857h5.12V1.98L3.461 3.45l-.056.032-.056-.033z"
+                  />
+                </g></svg
+              >contact@autisme-france.fr
+            </p>
+            <p>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 64 64"
+                width="15"
+              >
+                <path
+                  d="M32 5a21 21 0 0 0-21 21c0 17 21 33 21 33s21-16 21-33A21 21 0 0 0 32 5zm0 31a10 10 0 1 1 10-10 10 10 0 0 1-10 10z"
+                /></svg
+              >1175 avenue de la République 06550 La Roquette-sur-Siagne
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="section faq">
+        <h2>FAQ</h2>
+        <div class="accordion">
+          <div class="accordion-item">
+            <button class="accordion-header">
+              Qui sommes-nous ?
+              <svg
+                class="icon"
+                aria-hidden="true"
+                viewBox="0 0 10 7"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1 1.5L5 5.5L9 1.5"
+                  stroke-width="2"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </button>
+            <div class="accordion-content">
+              <p>
+                Autisme France est une association nationale de parents créée en
+                1989, représentant environ 9 000 familles. Elle milite pour un
+                diagnostic correct et un accompagnement adapté des personnes
+                autistes tout au long de leur vie.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header">
+              Quels sont les objectifs principaux d'Autisme France ?
+              <svg
+                class="icon"
+                aria-hidden="true"
+                viewBox="0 0 10 7"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1 1.5L5 5.5L9 1.5"
+                  stroke-width="2"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </button>
+            <div class="accordion-content">
+              <p>
+                Autisme France milite pour un dépistage et un diagnostic
+                précoces, conformes aux standards internationaux, et pour un
+                accompagnement éducatif et professionnel tout au long de la vie
+                des personnes autistes.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header">
+              Comment Autisme France aide-t-elle les familles ?
+              <svg
+                class="icon"
+                aria-hidden="true"
+                viewBox="0 0 10 7"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1 1.5L5 5.5L9 1.5"
+                  stroke-width="2"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </button>
+            <div class="accordion-content">
+              <p>
+                L'association propose une ligne téléphonique pour informer les
+                parents, publie une lettre électronique mensuelle, organise un
+                congrès annuel, et offre un service d'assistance juridique
+                téléphonique pour aider les familles à naviguer dans les
+                démarches liées à l'autisme.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header">
+              Quels sont les services proposés par Autisme France ?
+              <svg
+                class="icon"
+                aria-hidden="true"
+                viewBox="0 0 10 7"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1 1.5L5 5.5L9 1.5"
+                  stroke-width="2"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </button>
+            <div class="accordion-content">
+              <p>
+                Autisme France offre des services tels que des conseils
+                téléphoniques, des publications informatives (lettres, revues),
+                un service d'assistance juridique, et un groupement de
+                coopération sociale et médico-sociale (GCSMS AF).
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header">
+              Quels sont les événements organisés par Autisme France ?
+              <svg
+                class="icon"
+                aria-hidden="true"
+                viewBox="0 0 10 7"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1 1.5L5 5.5L9 1.5"
+                  stroke-width="2"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </button>
+            <div class="accordion-content">
+              <p>
+                Chaque année, Autisme France organise un congrès pour discuter
+                des avancées scientifiques, thérapeutiques et éducatives liées à
+                l'autisme, aussi bien pour les enfants que pour les adultes.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header">
+              Quelle est la mission d'Autisme France en matière de
+              sensibilisation ?
+              <svg
+                class="icon"
+                aria-hidden="true"
+                viewBox="0 0 10 7"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1 1.5L5 5.5L9 1.5"
+                  stroke-width="2"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </button>
+            <div class="accordion-content">
+              <p>
+                Autisme France s'engage à sensibiliser le public et les pouvoirs
+                publics aux besoins des personnes autistes et aux
+                dysfonctionnements de leur accompagnement, en proposant des
+                solutions concrètes.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header">
+              Comment Autisme France milite-t-elle pour l'accompagnement des
+              personnes autistes tout au long de leur vie ?
+              <svg
+                class="icon"
+                aria-hidden="true"
+                viewBox="0 0 10 7"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1 1.5L5 5.5L9 1.5"
+                  stroke-width="2"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </button>
+            <div class="accordion-content">
+              <p>
+                Autisme France demande que les personnes autistes bénéficient
+                d'interventions éducatives et professionnelles adaptées dès le
+                diagnostic, avec un soutien continu tout au long de leur vie,
+                afin de favoriser leur intégration sociale et professionnelle.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header">
+              Comment Autisme France est-elle représentée au niveau national ?
+              <svg
+                class="icon"
+                aria-hidden="true"
+                viewBox="0 0 10 7"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1 1.5L5 5.5L9 1.5"
+                  stroke-width="2"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </button>
+            <div class="accordion-content">
+              <p>
+                Autisme France siège dans plusieurs instances officielles comme
+                le CNCPH, la CNSA, et participe à des comités de suivi sur
+                l’inclusion scolaire et universitaire ainsi que sur la
+                bientraitance et la maltraitance.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header">
+              Comment adhérer à Autisme France ou faire un don ?
+              <svg
+                class="icon"
+                aria-hidden="true"
+                viewBox="0 0 10 7"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1 1.5L5 5.5L9 1.5"
+                  stroke-width="2"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </button>
+            <div class="accordion-content">
+              <p>
+                Pour adhérer à Autisme France ou faire un don, vous pouvez
+                visiter leur site officiel ou contacter leur permanence
+                téléphonique disponible de 8h30 à 12h30, du lundi au vendredi,
+                au 04 93 46 01 77.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header">
+              Quel est l'historique d'Autisme France ?
+              <svg
+                class="icon"
+                aria-hidden="true"
+                viewBox="0 0 10 7"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1 1.5L5 5.5L9 1.5"
+                  stroke-width="2"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </button>
+            <div class="accordion-content">
+              <p>
+                L'association a été fondée en 1989 et est reconnue d’utilité
+                publique. Depuis sa création, elle a mené plusieurs combats pour
+                faire reconnaître les droits des personnes autistes en France.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section form-contact">
+        <h2>formulaire Contact</h2>
+        <form class="form" action="">
+          <div class="form-info">
+            <p>informations personnelles</p>
+            <div class="input-info">
+              <select id="titre" name="titre">
+                <option style="display: none" value="" selected disabled>
+                  Titre
+                </option>
+                <option value="Mr">Mr</option>
+                <option value="Mme">Mme</option>
+              </select>
+              <input type="text" placeholder="Nom" />
+              <input type="text" placeholder="Prénom" />
+              <input type="text" placeholder="Raison social" />
+              <input type="text" placeholder="Téléphone" />
+            </div>
+          </div>
+          <div class="form-courriel">
+            <p>Courriel</p>
+            <div class="input-courriel">
+              <select id="Libele" name="Libele">
+                <option style="display: none" value="" selected disabled>
+                  Libelé
+                </option>
+                <option value="Bureau">Bureau</option>
+                <option value="Bureau">Domicile</option>
+                <option value="Personnelle">Perso</option>
+                <option value="Bureau">Principal</option>
+                <option value="Bureau">Pro</option>
+              </select>
+              <input type="email" placeholder="Adresse E-mail" />
+            </div>
+          </div>
+          <div class="form-adresse">
+            <p>Adresse</p>
+            <div class="input-adresse">
+              <input type="text" placeholder="Voie" />
+              <input type="text" placeholder="Code Postal" />
+              <input type="text" placeholder="ville" />
+              <input type="text" placeholder="Pays" />
+            </div>
+          </div>
+          <div class="form-vs">
+            <p>Vous êtes</p>
+            <div class="input-vs">
+              <button><span></span> Parent</button>
+              <button><span></span> Amis, familles, sympathisant</button>
+              <button><span></span> Personne TSA</button>
+              <button><span></span> Professionnel</button>
+            </div>
+          </div>
+
+          <div class="form-objet">
+            <p>Objet</p>
+            <div class="input-obj">
+              <select id="Objet" name="Objet">
+                <option style="display: none" value="" selected disabled>
+                  Objet du message
+                </option>
+                <option value="Adhésion">Adhésion</option>
+                <option value="Boutique">Boutique</option>
+                <option value="Congrès Autisme France">
+                  Congrès Autisme France
+                </option>
+                <option value="Conseeil juridique">Conseeil juridique</option>
+                <option value="Demande de partenariat">
+                  Demande de partenariat
+                </option>
+                <option value="Dons et legs">Dons et legs</option>
+                <option value="Nouvelles coordonnées">
+                  Nouvelles coordonnées
+                </option>
+                <option value="Présentation d'un projet">
+                  Présentation d'un projet
+                </option>
+              </select>
+            </div>
+          </div>
+          <div class="form-mss">
+            <p>message</p>
+            <div class="input-textarena">
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Intitulé du message"
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="form-piecej">
+            <p>ajouter une pièce jointe</p>
+            <div class="input-pj">
+              <label for="fichier">
+                <svg
+                  width="200"
+                  height="200"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 16L7 11L8.4 9.55L11 12.15V4H13V12.15L15.6 9.55L17 11L12 16ZM6 20C5.45 20 4.97917 19.8042 4.5875 19.4125C4.19583 19.0208 4 18.55 4 18V15H6V18H18V15H20V18C20 18.55 19.8042 19.0208 19.4125 19.4125C19.0208 19.8042 18.55 20 18 20H6Z"
+                    fill="#0ea5e9"
+                  />
+                </svg>
+                <h3>Cliquez ici ou glissez-déposez des fichiers</h3>
+              </label>
+              <input type="file" id="fichier" name="fichier" />
+            </div>
+          </div>
+
+          <div class="form-sub">
+            <p>En soumettant ce formulaire j'accepte</p>
+            <div class="input-ck">
+              <label for="ck">
+                <p>
+                  <input id="ck" type="checkbox" />Que les informations saisies
+                  soient exploitées par l’association Autisme France afin
+                  qu’elle puisse enregistrer mon adhésion et/ou mon inscription
+                  et m’adresser le reçu correspondant, le coupon d’entrée au
+                  congrès, m’envoyer la revue si j’adhère, me joindre au sujet
+                  de ma demande et/ou mon inscription et/ou mon règlement et me
+                  tenir informé de l’actualité de l’association. Afin de
+                  protéger la confidentialité de vos données personnelles,
+                  l’association Autisme France s’engage à ne pas divulguer, ne
+                  pas transmettre, ni partager vos données personnelles avec
+                  d’autres entités, entreprises ou organismes, quels qu’ils
+                  soient, conformément au Règlement Général de Protection des
+                  Données de 2018 sur la protection des données personnelles.
+                  Pour connaître et exercer vos droits, notamment de retrait de
+                  consentement à l’utilisation de vos données collectées par ce
+                  formulaire, veuillez écrire à Autisme France 1175 avenue de la
+                  République 06550 La Roquette-sur-Siagne ou
+                  contact@autisme-france.fr Pour plus d’informations vous pouvez
+                  consulter notre Politique de confidentialité. Ce formulaire
+                  est 100% sécurisé grâce au protocole de cryptage SSL (Secure
+                  Socket Layer).
+                </p>
+              </label>
+            </div>
+          </div>
+          <div class="form-btnSubmit">
+            <button type="submit">Envoyer</button>
+            <button>Retour</button>
+          </div>
+        </form>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="main-footer">
+        <div class="autisme-footer">
+          <h2>AUTISME FRANCE</h2>
+          <p class="para">
+            Permanence téléphonique <br />
+            de 8h30 à 12h30 du lundi au vendredi<br />
+            04 93 46 01 77
+          </p>
+          <div class="contact-box">
+            <a class="contact-links" href="contact.php">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M22 12C22 15.7712 22 17.6569 20.8284 18.8284C19.6569 20 17.7712 20 14 20H10C6.22876 20 4.34315 20 3.17157 18.8284C2 17.6569 2 15.7712 2 12C2 8.22876 2 6.34315 3.17157 5.17157C4.34315 4 6.22876 4 10 4H14C17.7712 4 19.6569 4 20.8284 5.17157C21.4816 5.82475 21.7706 6.69989 21.8985 8"
+                  stroke="#1C274C"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M18 8L15.8411 9.79908C14.0045 11.3296 13.0861 12.0949 12 12.0949C11.3507 12.0949 10.7614 11.8214 10 11.2744M6 8L6.9 8.75L7.8 9.5"
+                  stroke="#1C274C"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+              </svg>
+              <p>Contact-nous</p>
+            </a>
+
+            <div class="reseaux">
+              <a href="https://www.facebook.com/AutismeFrance.fr"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  x="0px"
+                  y="0px"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12,2C6.477,2,2,6.477,2,12c0,5.013,3.693,9.153,8.505,9.876V14.65H8.031v-2.629h2.474v-1.749 c0-2.896,1.411-4.167,3.818-4.167c1.153,0,1.762,0.085,2.051,0.124v2.294h-1.642c-1.022,0-1.379,0.969-1.379,2.061v1.437h2.995 l-0.406,2.629h-2.588v7.247C18.235,21.236,22,17.062,22,12C22,6.477,17.523,2,12,2z"
+                  ></path></svg
+              ></a>
+              <a
+                href="https://www.linkedin.com/authwall?trk=gf&trkInfo=AQEkXSYIpAv8eQAAAXnGauXIZgGbl3oE7oz2QOQW4wSPaQrSh5Mf2qgg1JUijyX1YdQI7BnXkktOw6cAHLC8pPCLe0yGhsfgybtWtZ0sO-WXJa7XljZ-Boqy9h6C20VYzNo8Qn4=&originalReferer=&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2Fautisme-france%2F%3FviewAsMember%3Dtrue"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  x="0px"
+                  y="0px"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M19,3H5C3.895,3,3,3.895,3,5v14c0,1.105,0.895,2,2,2h14c1.105,0,2-0.895,2-2V5C21,3.895,20.105,3,19,3z M9,17H6.477v-7H9 V17z M7.694,8.717c-0.771,0-1.286-0.514-1.286-1.2s0.514-1.2,1.371-1.2c0.771,0,1.286,0.514,1.286,1.2S8.551,8.717,7.694,8.717z M18,17h-2.442v-3.826c0-1.058-0.651-1.302-0.895-1.302s-1.058,0.163-1.058,1.302c0,0.163,0,3.826,0,3.826h-2.523v-7h2.523v0.977 C13.93,10.407,14.581,10,15.802,10C17.023,10,18,10.977,18,13.174V17z"
+                  ></path></svg
+              ></a>
+              <a href="https://x.com/Autisme_France?lang=fr"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  x="0px"
+                  y="0px"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M 2.8671875 3 L 9.7363281 12.818359 L 2.734375 21 L 5.3808594 21 L 10.919922 14.509766 L 15.460938 21 L 21.371094 21 L 14.173828 10.697266 L 20.744141 3 L 18.138672 3 L 12.996094 9.0097656 L 8.7988281 3 L 2.8671875 3 z"
+                  ></path></svg
+              ></a>
+            </div>
+          </div>
+        </div>
+        <div class="acces-rapide">
+          <h2>ACCES RAPIDES</h2>
+          <p>
+            Aidez-nous à poursuivre la défense des droits des personnes autistes
+            Autisme France existe uniquement grâce à votre générosité.<br />
+            Merci à tous
+          </p>
+
+          <div class="cta-buttons">
+            <a href="../public/adhesion-connexion.php" class="member-button">
+              <svg
+                class="member-icon"
+                width="17"
+                height="17"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13.3334 14V12.6667C13.3334 11.9594 13.0525 11.2811 12.5524 10.781C12.0523 10.281 11.374 10 10.6667 10H5.33341C4.62617 10 3.94789 10.281 3.4478 10.781C2.9477 11.2811 2.66675 11.9594 2.66675 12.6667V14M10.6667 4.66667C10.6667 6.13943 9.47284 7.33333 8.00008 7.33333C6.52732 7.33333 5.33341 6.13943 5.33341 4.66667C5.33341 3.19391 6.52732 2 8.00008 2C9.47284 2 10.6667 3.19391 10.6667 4.66667Z"
+                  stroke="#FFFAFA"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              Espace Membre
+            </a>
+
+            <a href="don.php" class="heart-button">
+              <svg
+                width="17"
+                height="17"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13.8933 3.07333C13.5528 2.73267 13.1485 2.46243 12.7036 2.27805C12.2586 2.09368 11.7817 1.99878 11.3 1.99878C10.8183 1.99878 10.3414 2.09368 9.89643 2.27805C9.45146 2.46243 9.04717 2.73267 8.70667 3.07333L8 3.78L7.29333 3.07333C6.60554 2.38554 5.67269 1.99914 4.7 1.99914C3.72731 1.99914 2.79446 2.38554 2.10666 3.07333C1.41887 3.76112 1.03247 4.69397 1.03247 5.66666C1.03247 6.63935 1.41887 7.5722 2.10666 8.26L8 14.1533L13.8933 8.26C14.234 7.91949 14.5042 7.51521 14.6886 7.07023C14.873 6.62526 14.9679 6.14832 14.9679 5.66666C14.9679 5.185 14.873 4.70807 14.6886 4.26309C14.5042 3.81812 14.234 3.41383 13.8933 3.07333Z"
+                  stroke="white"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="legal-mentions">
+        <a href="https://www.autisme-france.fr/mentions-legales"
+          >Mentions légales</a
+        >
+      </div>
+    </footer>
+    <script src="navBar.js"></script>
+  </body>
+</html>
