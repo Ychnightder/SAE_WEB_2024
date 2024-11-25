@@ -1,7 +1,8 @@
 {
   "devDependencies": {
     "prettier": "3.3.3",
-    "vite": "^5.4.10"
+    "vite": "^5.4.10",
+    "vite-plugin-php": "^1.0.67"
   },
   "scripts": {
     "cleaner": "npx prettier . --write",

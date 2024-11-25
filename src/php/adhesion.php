@@ -13,6 +13,6 @@ if (!empty($identifiant) && !empty($password)) {
 } else {
     echo "<script>alert('Mets un ID');</script>";
 }
-echo "<script>window.location.href = '../../adhesion-connexion.html';</script>";
+echo "<script>window.location.href = '../adhesion-connexion.html';</script>";
 exit();
 ?>
