@@ -26,7 +26,6 @@
 }
 
 .logo-link {
-  padding: 1.5rem;
 }
 
 .logo {
@@ -40,6 +39,7 @@
   font-size: 14px;
   font-weight: 500;
   color: black;
+  width: 98%;
 }
 
 .nav-button {
@@ -137,15 +137,14 @@
   animation: donMotion 1s ease-out infinite;
 }
 .heart-button::after {
-  content: "Donation";
-  color: black;
+  content: "Don";
   position: absolute;
   top: 50px; /* Position en dehors du bouton initialement */
   opacity: 0;
+  padding: 2px;
   white-space: nowrap;
   background-color: #fff;
   color: #eb5957;
-  padding: 0.25rem 0.5rem;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition:
@@ -282,11 +281,12 @@
   .nav-links .nav-button {
     width: 100%;
     height: 70px;
+
   }
   .nav-links .nav-button .links {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
   }
 
   .nav-button::after {
