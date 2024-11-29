@@ -7,15 +7,33 @@
     <link rel="stylesheet" href="../assets/css/main.css" />
     <link rel="stylesheet" href="../assets/css/header.css" />
     <link rel="stylesheet" href="../assets/css/footer.css" />
-    <link rel="stylesheet" href="../assets/css/accueil.css" />
-    <link rel="stylesheet" href="./assets/css/contact.css" />
-    <link rel="stylesheet" href="./assets/css/donCbCheque.css" />
-    <link rel="stylesheet" href="../assets/css/donCbCheque.css" />
-    <link rel="stylesheet" href="assets/css/don.css" />
+    <?php
+
+    $currentPage = basename($_SERVER['PHP_SELF'], ".php");
+    $pageTitles = [
+        "index" => "Accueil | Autisme France",
+        "contact" => "Contact | Autisme France",
+        "don" => "Faire un Don | Autisme France",
+        "adhesion-connexion" => "Adhésion & Connexion | Autisme France",
+
+    ];
+    $pageStyles = [
+        "index" => ["../assets/css/accueil.css"],
+        "contact" => ["./assets/css/contact.css"],
+        "don" => ["assets/css/don.css", "../assets/css/donCbCheque.css" ],
+    ];
+    $title = $pageTitles[$currentPage] ?? "Autisme France";
+    $styles = $pageStyles[$currentPage] ?? [];
+    ?>
+
+    <?php foreach ($styles as $style): ?>
+        <link rel="stylesheet" href="<?= htmlspecialchars($style) ?>" />
+    <?php endforeach; ?>
+
     <script src="./assets/js/don.js" defer></script>
     <script src="./assets/js/contact.js" defer></script>
     <script src="../assets/js/accueil.js" type="module"></script>
-    <title>Accueil | Autisme France</title>
+    <title><?= htmlspecialchars($title) ?></title>
 </head>
 
 <body>

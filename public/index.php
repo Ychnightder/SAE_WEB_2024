@@ -86,7 +86,6 @@ require_once "../src/php/views/header.php";
       </div>
     </div>
   </main>
-
   <section class="actu-carousel">
     <div class="header-title">
       <h5 class="title">ACTUALITÉS & INFOS</h5>

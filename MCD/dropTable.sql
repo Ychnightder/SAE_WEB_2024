@@ -1,5 +1,3 @@
--- Supprimer les affichages des indicateurs
-DELETE FROM Affichages_Indicateurs;
 
 -- Supprimer les connexions des utilisateurs
 DELETE FROM Connexions;
@@ -10,8 +8,6 @@ DELETE FROM Réponses;
 -- Supprimer les statistiques
 DELETE FROM Statistiques;
 
--- Supprimer les administrateurs
-DELETE FROM Admins;
 
 -- Supprimer les dons
 DELETE FROM Donateurs;
@@ -35,6 +31,4 @@ ALTER TABLE Questionnaires AUTO_INCREMENT = 1;
 ALTER TABLE Questions AUTO_INCREMENT = 1;
 ALTER TABLE Réponses AUTO_INCREMENT = 1;
 ALTER TABLE Statistiques AUTO_INCREMENT = 1;
-ALTER TABLE Admins AUTO_INCREMENT = 1;
 ALTER TABLE Connexions AUTO_INCREMENT = 1;
-ALTER TABLE Affichages_Indicateurs AUTO_INCREMENT = 1;
