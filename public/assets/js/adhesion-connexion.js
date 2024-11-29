@@ -26,17 +26,17 @@ const btnReturn = document.querySelector(".first-info .divSubmit .return-btn");
 const formConnexion = document.querySelector(".div-form-conexion"); // Formulaire de connexion
 const formInscription = document.querySelector(".div-form-inscription"); // Formulaire d'inscription (partie 1)
 
-btnAdhererEnLigne.addEventListener("click", () => {
-  formConnexion.classList.add("hide-left"); // Masquer le formulaire de connexion
-  formInscription.classList.add("show-right"); // Afficher le formulaire d'inscription (partie 1)
-});
+// btnAdhererEnLigne.addEventListener("click", () => {
+//   formConnexion.classList.add("hide-left"); // Masquer le formulaire de connexion
+//   formInscription.classList.add("show-right"); // Afficher le formulaire d'inscription (partie 1)
+// });
 
-btnReturn.addEventListener("click", () => {
-  formConnexion.classList.remove("hide-left");
-  formInscription.classList.remove("show-right");
-
-  formInscription.classList.remove("hide-left");
-});
+// btnReturn.addEventListener("click", () => {
+//   formConnexion.classList.remove("hide-left");
+//   formInscription.classList.remove("show-right");
+//
+//   formInscription.classList.remove("hide-left");
+// });
 
 const btnSuivanteIns1 = document.querySelector(".btn-suivant");
 const formInscriptionPart1 = document.querySelector(".first-info");

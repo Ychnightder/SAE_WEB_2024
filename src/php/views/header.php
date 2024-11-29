@@ -14,7 +14,7 @@
         "index" => "Accueil | Autisme France",
         "contact" => "Contact | Autisme France",
         "don" => "Faire un Don | Autisme France",
-        "adhesion-connexion" => "Adhésion & Connexion | Autisme France",
+        "adhesion-connexion-connexion" => "Adhésion & Connexion | Autisme France",
 
     ];
     $pageStyles = [
@@ -51,7 +51,7 @@
             </button>
 
             <button type="button" class="nav-button with-submenu">
-                <a class="links" href="">
+                <a class="links" href="testA.html">
                     <p>Autisme France</p>
                     <svg
                         class="icon"
