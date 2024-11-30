@@ -1,0 +1,16 @@
+### Inscription
+POST http://localhost:8000/public/testA.php
+Host: http://localhost:8000
+Content-Type: application/x-www-form-urlencoded
+
+nom=Omen&
+prenom=John&
+email=Omen@riot.com&
+password=25878ww&
+voie=Exemple de voie&
+codepostale=75000&
+ville=Paris&
+pays=France&
+telephone=0123456789
+###
+

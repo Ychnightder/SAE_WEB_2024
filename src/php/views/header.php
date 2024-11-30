@@ -227,7 +227,7 @@
             </button>
         </div>
         <div class="cta-buttons">
-            <a href="adhesion-connexion.php" class="member-button">
+            <a href="./connexion.php" class="member-button">
                 <svg
                     class="member-icon"
                     width="17"
@@ -245,7 +245,7 @@
                 Espace Membre
             </a>
 
-            <a href="don.php" class="heart-button">
+            <a href="./don.php" class="heart-button">
                 <svg
                     width="17"
                     height="17"
