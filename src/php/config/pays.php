@@ -2,7 +2,7 @@
 
 require_once "database.php";
 require_once 'functionsCpPays.php';
-
+//https://download.geonames.org/export/zip/
 $fileContent = file_get_contents("FR.txt");
 
 // Diviser le contenu en lignes
