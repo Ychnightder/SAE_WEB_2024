@@ -5,6 +5,7 @@ error_reporting(E_ALL);
 
 // Connexion à la base de données
 require_once __DIR__ . '/../config/database.php';
+require_once __DIR__ . '/../helpers/fonction.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Récupérer et valider les données du formulaire
     $nom = isset($_POST['nom']) ? trim($_POST['nom']) : null;
@@ -20,6 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validation des champs obligatoires
     if (empty($nom) || empty($prenom) || empty($email) || empty($password) || empty($voie) || empty($codepostale) || empty($ville) || empty($pays) || empty($telephone)) {
         die("Tous les champs doivent être remplis.");
+
     }
 
     // Validation de l'email (simple exemple)

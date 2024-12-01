@@ -11,7 +11,6 @@ $routes = [
 
 handleRequest($routes);
 require_once "../src/php/views/header.php";
-
 ?>
   <section class="section-banniere">
     <img class="banniere" src="/assets/image/Accueil/slider.png" />
