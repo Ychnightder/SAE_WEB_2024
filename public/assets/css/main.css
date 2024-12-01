@@ -133,3 +133,14 @@ body {
   --honolulu-blue: #017ac3;
   --aero-blue: #19c3e3;
 }
+
+
+.input-error {
+  border: 1px solid var(--india-red);
+}
+
+.error-message {
+  color: var(--india-red);
+  font-size: 0.9em;
+  margin-top: 5px;
+}

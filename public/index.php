@@ -1,5 +1,17 @@
 <?php
+require_once "../src/php/helpers/fonction.php";
+
+
+$routes = [
+    'connect_user' => '../src/php/adhesion-connexion/process_connect_user.php',
+    'register_user' => '../src/php/adhesion-connexion/process_register_user.php',
+    'connect_admin' => '../src/php/admin/process_connect_admin.php',
+    'dashboard' => '../src/php/admin/dashboard.php',
+];
+
+handleRequest($routes);
 require_once "../src/php/views/header.php";
+
 ?>
   <section class="section-banniere">
     <img class="banniere" src="/assets/image/Accueil/slider.png" />

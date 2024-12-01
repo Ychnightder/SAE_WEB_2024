@@ -47,6 +47,7 @@ CREATE TABLE Utilisateurs(
                              est_adherent BOOLEAN,
                              date_inscription DATE,
                              est_admin BOOLEAN NOT NULL,
+                             mot_de_passe_admin varchar(255) NULL,
                              IdPays INT NOT NULL,
                              idVille INT NOT NULL,
                              PRIMARY KEY(id_utilisateur),

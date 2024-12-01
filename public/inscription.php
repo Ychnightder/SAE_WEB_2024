@@ -13,29 +13,40 @@ require"../src/php/views/headerAC.php";
     <div class="formBox">
         <div class="div-form-inscription">
             <form
-                action="../src/php/adhesion-connexion/process_register_user.php"
-                method="post"
-                class="form-inscription"
+                    class="form-inscription"
+
+                    method="post"
+                action="index.php?action=register_user"
             >
+                <!--            ../src/php/adhesion-connexion/process_register_user.php-->
+
                 <div class="first-info">
                     <div class="name-firsname">
                         <label for="nom">
                             Nom :
                             <input type="text" id="nom" name="nom" required />
+                            <span class="error-message"></span>
+
                         </label>
                         <label for="prenom">
                             Prenom :
                             <input type="text" id="prenom" name="prenom" required />
+                            <span class="error-message"></span>
+
                         </label>
                     </div>
                     <label for="Email">
                         Adresse mail :
-                        <input id="Email" type="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" />
+                        <input id="Email" type="email" name="email" required />
+                        <span class="error-message"></span>
+
                     </label>
 
                     <label for="pwd">
                         Mot de passe :
                         <input id="pwd" type="password" name="password" required />
+                        <span class="error-message"></span>
+
                     </label>
 
                     <div class="divSubmit">
@@ -47,6 +58,8 @@ require"../src/php/views/headerAC.php";
                     <label for="voie">
                         Voie :
                         <input type="text" id="voie" name="voie" />
+                        <span class="error-message"></span>
+
                     </label>
                     <div class="info-position">
                         <label for="codepostale">
@@ -56,10 +69,14 @@ require"../src/php/views/headerAC.php";
                                 type="number"
                                 name="codepostale"
                             />
+                            <span class="error-message"></span>
+
                         </label>
                         <label for="ville">
                             Ville :
                             <input type="text" id="ville" name="ville" />
+                            <span class="error-message"></span>
+
                         </label>
                     </div>
                     <label for="pays">
@@ -71,10 +88,14 @@ require"../src/php/views/headerAC.php";
                                 France
                             </option>
                         </select>
+                        <span class="error-message"></span>
+
                     </label>
                     <label for="telephone">
                         Téléphone :
                         <input id="telephone" type="number" name="telephone" />
+                        <span class="error-message"></span>
+
                     </label>
 
                     <div class="divSubmit">

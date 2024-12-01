@@ -110,9 +110,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 10px;
 }
 .legal-mentions a {
   color: #fff;
+  transition: all 0.3s ease-out;
+}
+.legal-mentions a:hover {
+  border-bottom: 1px solid #fff;
 }
 
 @media (max-width: 1280px) {

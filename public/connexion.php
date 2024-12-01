@@ -13,14 +13,15 @@ require_once "../src/php/views/headerAC.php";
     <div class="formBox">
         <div class="div-form-conexion">
             <form
-                    action="../src/php/adhesion-connexion/process_connect_user.php"
+                    action="index.php?action=connect_user"
                     method="post"
                     class="form-conexion"
             >
                 <div class="input-connexion">
                     <label for="ID" aria-label="Identifiant">
                         <p>Email :</p>
-                        <input id="ID" name="Identifiant" type="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" />
+                        <input id="ID" name="identifiant" type="email" required />
+                        <span class="error-message"></span>
                     </label>
 
                     <label for="password">
@@ -31,6 +32,7 @@ require_once "../src/php/views/headerAC.php";
                                 type="password"
                                 required
                         />
+                        <span class="error-message"></span>
                     </label>
                     <div class="linkForget">
                         <a href="#">Mot de passe oublié</a>

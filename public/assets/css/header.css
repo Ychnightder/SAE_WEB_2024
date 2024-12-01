@@ -101,7 +101,8 @@
   width: 20%;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 15px;
 }
 .cta-buttons .member-button {
   font-size: 1rem;
@@ -281,7 +282,6 @@
   .nav-links .nav-button {
     width: 100%;
     height: 70px;
-
   }
   .nav-links .nav-button .links {
     width: 100%;

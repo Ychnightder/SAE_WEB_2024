@@ -73,6 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($stmt->execute()) {
             echo "Inscription réussie !";
             //header("Location:  ../public/index.php"); // Redirige vers la page d'accueil après inscription
+            header("Location: /index.php");
             exit();
         } else {
            // header("Location: https://www.amazon.fr/ref=nav_logo");

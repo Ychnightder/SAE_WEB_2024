@@ -33,6 +33,7 @@
     <script src="./assets/js/don.js" defer></script>
     <script src="./assets/js/contact.js" defer></script>
     <script src="../assets/js/accueil.js" type="module"></script>
+<!--    <script src="../assets/js/main.js" type="module"></script>-->
     <title><?= htmlspecialchars($title) ?></title>
 </head>
 

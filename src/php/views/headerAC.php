@@ -20,5 +20,6 @@
     ></script>
     <title><?= htmlspecialchars($title) ?></title>
 </head>
+
 <body>
 <main class="main">

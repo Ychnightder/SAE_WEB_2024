@@ -104,6 +104,7 @@
     </div>
     <div class="legal-mentions">
         <a href="https://www.autisme-france.fr/mentions-legales">Mentions légales</a>
+        <a href="/admin.php">Administration</a>
     </div>
 </footer>
 <script src="../navBar.js"></script>

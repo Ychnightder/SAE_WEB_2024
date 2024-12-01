@@ -134,12 +134,6 @@ body {
   .card form .btn-modal {
     gap: 10px; /* Réduit l'écart entre les boutons */
   }
-
-  .card form .btn-modal .btn-submit,
-  .card form .btn-modal .btn-reset {
-    width: 100%; /* Les boutons prennent toute la largeur sur mobile */
-    max-width: 100%; /* Supprime la limite sur petits écrans */
-  }
 }
 
 /* Pour les très petits écrans (smartphones) */
@@ -154,6 +148,15 @@ body {
 
   .card form .btn-modal {
     height: auto; /* Ajuste la hauteur des boutons */
+  }
+  .card form .btn-modal .btn-submit,
+  .card form .btn-modal .btn-reset {
+    height: 25px;
+    margin: 15px;
+  }
+  .btn-forget-pwd {
+    font-size: 15px;
+    text-align: center;
   }
 }
 
