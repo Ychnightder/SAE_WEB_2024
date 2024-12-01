@@ -41,11 +41,10 @@
 <header class="header">
     <nav class="nav">
         <div class="logo-container">
-            <a class="logo-link" href="index.php">
+            <a class="logo-link" href="main.php">
                 <img class="logo" src="../assets/image/shared/logo.png" alt="logo" />
             </a>
         </div>
-
         <div class="nav-links">
             <button type="button" class="nav-button">
                 <a class="links" href="index.php">Accueil</a>
@@ -307,5 +306,5 @@
             </svg>
         </button>
     </nav>
-
 </header>
+<a href="main.php">equête</a>
