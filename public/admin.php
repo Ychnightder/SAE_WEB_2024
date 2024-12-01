@@ -66,8 +66,9 @@
                         name="identifiant"
                         placeholder="azerty@exemple.com"
                         required
-                <span class="error-message"></span>
                 />
+                <span class="error-message"></span>
+
                 <label for="password">Mot de passe :</label>
                 <input
                         type="password"
