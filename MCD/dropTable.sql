@@ -21,7 +21,7 @@ DELETE FROM Questionnaires;
 -- Supprimer les utilisateurs
 DELETE FROM Utilisateurs;
 
-
+DELETE FROM ville;
 
 
 -- Réinitialiser les compteurs AUTO_INCREMENT
@@ -32,3 +32,5 @@ ALTER TABLE Questions AUTO_INCREMENT = 1;
 ALTER TABLE Réponses AUTO_INCREMENT = 1;
 ALTER TABLE Statistiques AUTO_INCREMENT = 1;
 ALTER TABLE Connexions AUTO_INCREMENT = 1;
+ALTER TABLE ville AUTO_INCREMENT = 1;
+

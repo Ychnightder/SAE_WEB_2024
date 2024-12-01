@@ -8,8 +8,6 @@
 # /node_modules
 
 /dist/
-# .vite/
-
 # /node_modules/prettier
 
 # Ignorer les fichiers de log
