@@ -1,0 +1,88 @@
+body {
+  overflow: hidden;
+  height: 100vh;
+}
+.wave {
+  width: 200%;
+  position: absolute;
+  z-index: -1;
+}
+.wave img {
+  width: 50%;
+}
+.fond-top img {
+  position: absolute;
+  bottom: -350px;
+  transform: rotate(180deg);
+}
+.fond-bot img {
+  position: absolute;
+  top: 444px;
+}
+.retour {
+  width: 150px;
+  height: 45px;
+  border: 2px solid #017ac3;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 50px;
+  color: #017ac3;
+  transition: all 0.4s ease-out;
+}
+.retour:hover {
+  background: #017ac3;
+  color: #fff;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 800px;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.logo-box {
+  width: 150px;
+}
+.logo-box img {
+  width: 150px;
+}
+
+.body-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 50%;
+  width: 90%;
+}
+.body-container h1 {
+  font-weight: 600;
+  text-align: center;
+  margin: 0px 150px;
+  line-height: 1.4;
+  color: #017ac3;
+}
+.body-container h1:nth-child(2) {
+  margin: 0 150px 25px 150px;
+}
+.btn {
+  background: #017ac3;
+  color: #fff;
+  width: 250px;
+  height: 45px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.4s ease-out;
+}
+.btn:hover {
+  background: #00aaff;
+}
