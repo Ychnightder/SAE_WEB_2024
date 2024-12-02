@@ -54,7 +54,7 @@
             </svg>
             <h2>Changer de mot de passe</h2>
         </div>
-        <form class="form3" action="../src/php/admin/process_change_password.php" method="post">
+        <form class="form3" action="" method="post">
             <div class="wrapper-center">
                 <label for="Login-changePwd">Code authentification :</label>
                 <input

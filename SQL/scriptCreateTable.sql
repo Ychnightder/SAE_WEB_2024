@@ -85,3 +85,10 @@ CREATE TABLE Connexions(
                            PRIMARY KEY(id_connexion),
                            FOREIGN KEY(id_utilisateur) REFERENCES Utilisateurs(id_utilisateur)
 );
+create table options
+(
+    id_option   int auto_increment primary key,
+    id_question int          null,
+    option_text varchar(255) null,
+    foreign key (id_question) references questions (id_question)
+);
