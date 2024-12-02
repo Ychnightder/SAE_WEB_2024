@@ -10,10 +10,12 @@
     <link rel="stylesheet" href="./assets/css/enquete-main.css">
 </head>
 <body>
+
 <div class="wave fond-top">
     <img src="./assets/image/enquete/VectorTop.png" alt="une vague">
 </div>
 <a class="retour" href="index.php">Retour l'accueil</a>
+
 <div class="container">
     <div class="logo-box">
         <img src="./assets/image/shared/logo.png" alt="">
@@ -27,5 +29,6 @@
 <div class="wave fond-bot">
     <img src="./assets/image/enquete/Vector.png" alt="une vague">
 </div>
+
 </body>
 </html>

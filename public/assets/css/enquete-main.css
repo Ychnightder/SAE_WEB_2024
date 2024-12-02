@@ -17,7 +17,7 @@ body {
 }
 .fond-bot img {
   position: absolute;
-  top: 444px;
+  top: 517px;
 }
 .retour {
   width: 150px;
@@ -28,6 +28,7 @@ body {
   margin: 50px;
   color: #017ac3;
   transition: all 0.4s ease-out;
+  cursor: pointer;
 }
 .retour:hover {
   background: #017ac3;
@@ -64,7 +65,7 @@ body {
 .body-container h1 {
   font-weight: 600;
   text-align: center;
-  margin: 0px 150px;
+  margin: 0 150px;
   line-height: 1.4;
   color: #017ac3;
 }
@@ -85,4 +86,48 @@ body {
 }
 .btn:hover {
   background: #00aaff;
+}
+@media (max-width: 1024px) {
+  body {
+    overflow: visible;
+  }
+  .fond-top img {
+    bottom: -315px;
+    display: none;
+  }
+
+  .fond-bot img {
+    bottom: -315px;
+    display: none;
+  }
+  .container {
+    width: 100%;
+  }
+  .body-container {
+    width: 100%;
+  }
+  .body-container h1:nth-child(2) {
+    margin: 0 104px 25px 104px;
+  }
+}
+@media (max-width: 579px) {
+  .body-container {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 18px;
+    margin: 0 0 0 0;
+    width: 90%;
+  }
+  .btn {
+    width: 200px;
+    height: 45px;
+    font-size: 16px;
+    padding: 10px;
+  }
+  .retour {
+    margin: 20px;
+    width: 100px;
+  }
 }
