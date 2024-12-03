@@ -2,7 +2,8 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Formulaire Étape <?= $step ?></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulaire Enquête <?= $step ?></title>
     <link rel="stylesheet" href="./assets/css/questionForm.css">
     <link rel="stylesheet" href="./assets/css/main.css">
     <script src="./assets/js/questionForm.js" defer></script>
@@ -47,8 +48,8 @@
 
                             <?= htmlspecialchars($option['option_text']) ?>
                         </button>
-                         <!-- hidden -->
                     <?php endforeach; ?>
+                        <!-- hidden -->
                     <input type="hidden"
                            id="input-<?= $question['id_question'] ?>"
                            name="reponses[<?= $question['id_question'] ?>]"

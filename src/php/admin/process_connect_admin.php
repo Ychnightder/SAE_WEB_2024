@@ -23,7 +23,7 @@ if ($user&& password_verify($password, $user['mot_de_passe_admin']) ) { //
     $_SESSION['user_prenom'] = $user['prenom'];
     $_SESSION['user_email'] = $user['email'];
     debug($user);
-    header("Location: /dashboard.php");
+    header("Location: ./dashboard.php");
     exit;
 } else {
     echo "Identifiant ou mot de passe incorrect.";

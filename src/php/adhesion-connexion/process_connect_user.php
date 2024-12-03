@@ -24,8 +24,14 @@ if ($user && password_verify($password, $user['mot_de_passe']) ) {
     $_SESSION['user_name'] = $user['nom'];
     $_SESSION['user_prenom'] = $user['prenom'];
     $_SESSION['user_email'] = $user['email'];
-    echo "bonjour ". $user['nom'] ." ". $user['prenom'];
-//    header("Location: ../../../public/index.php");
+
+    $sqlInsertOnConnexion = "INSERT INTO connexions (date_connexion_, statut_connexion, id_utilisateur) 
+                                 VALUES (NOW(), 1, :id_utilisateur)";
+    $stmt = $pdo->prepare($sqlInsertOnConnexion);
+    $stmt->bindParam(':id_utilisateur', $user['id_utilisateur'], PDO::PARAM_INT);
+    $stmt->execute();
+
+
     header("Location: /index.php");
     exit;
 } else {
@@ -35,3 +41,5 @@ if ($user && password_verify($password, $user['mot_de_passe']) ) {
    // header("Location: ./index.php"); // Rediriger vers la page de connexion avec un message d'erreur
     exit;
 }
+
+

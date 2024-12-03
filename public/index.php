@@ -13,6 +13,7 @@ handleRequest($routes);
 require_once "../src/php/views/header.php";
 ?>
   <section class="section-banniere">
+      <a class="link-enquete" href="main.php">equête</a>
     <img class="banniere" src="/assets/image/Accueil/slider.png" />
   </section>
   <main class="main-presentation">

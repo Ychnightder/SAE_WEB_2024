@@ -19,7 +19,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     handlePostRequest($pdo, $_POST, $step, $totalSteps);
 }
 
-
 // Charger les questions pour l'étape actuelle
 $questions = loadQuestions($pdo, $step);
 

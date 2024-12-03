@@ -307,4 +307,3 @@
         </button>
     </nav>
 </header>
-<a href="main.php">equête</a>
