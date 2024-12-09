@@ -1,5 +1,14 @@
 <?php
 require"../src/php/views/headerAC.php";
+session_start();
+
+if (isset($_SESSION['register_errors'])) {
+    // Afficher toutes les erreurs
+    foreach ($_SESSION['register_errors'] as $error) {
+        echo "<p class='error'>$error</p>";
+    }
+}
+
 ?>
 <div class="leftBox">
     <div class="logoBox">
@@ -24,29 +33,28 @@ require"../src/php/views/headerAC.php";
                     <div class="name-firsname">
                         <label for="nom">
                             Nom :
-                            <input type="text" id="nom" name="nom" required />
-                            <span class="error-message"></span>
+                            <input class="<?= isset($_SESSION['register_errors']['nom']) ? 'error' : '' ?>" type="text" id="nom" name="nom" value="<?= htmlspecialchars($_POST['nom'] ?? '') ?>" required />
+                            <span class="error-message"><?= $_SESSION['register_errors']['nom'] ?? '' ?></span>
 
                         </label>
                         <label for="prenom">
                             Prenom :
-                            <input type="text" id="prenom" name="prenom" required />
-                            <span class="error-message"></span>
+                            <input  class="<?= isset($_SESSION['register_errors']['prenom']) ? 'error' : '' ?>" type="text" id="prenom" name="prenom" value="<?= htmlspecialchars($_POST['prenom'] ?? '') ?>" required />
+                            <span class="error-message"><?= $_SESSION['register_errors']['prenom'] ?? '' ?></span>
 
                         </label>
                     </div>
                     <label for="Email">
                         Adresse mail :
-                        <input id="Email" type="email" name="email" required />
-                        <span class="error-message"></span>
+                        <input class="<?= isset($_SESSION['register_errors']['email']) ? 'error' : '' ?>" id="Email" type="email" name="email" value="<?= htmlspecialchars($_POST['email'] ?? '') ?>" required />
+                        <span class="error-message"><?= $_SESSION['register_errors']['email'] ?? '' ?></span>
 
                     </label>
 
                     <label for="pwd">
                         Mot de passe :
-                        <input id="pwd" type="password" name="password" required />
-                        <span class="error-message"></span>
-
+                        <input class="<?= isset($_SESSION['register_errors']['password']) ? 'error' : '' ?>" id="pwd" type="password" name="password" value="<?= htmlspecialchars($_POST['password'] ?? '') ?>" required />
+                        <span class="error-message"><?= $_SESSION['register_errors']['password'] ?? '' ?></span>
                     </label>
 
                     <div class="divSubmit">
@@ -57,44 +65,56 @@ require"../src/php/views/headerAC.php";
                 <div class="second-info">
                     <label for="voie">
                         Voie :
-                        <input type="text" id="voie" name="voie" />
-                        <span class="error-message"></span>
+                        <input   class="<?= isset($_SESSION['register_errors']['voie']) ? 'error' : '' ?>" type="text" value="<?= htmlspecialchars($_POST['voie'] ?? '') ?>" id="voie" name="voie" required />
+                        <span class="error-message">
+            <?= $_SESSION['register_errors']['voie'] ?? '' ?>
+        </span>
 
                     </label>
                     <div class="info-position">
                         <label for="codepostale">
                             Code de postale :
-                            <input
+                            <input class="<?= isset($_SESSION['register_errors']['codepostale']) ? 'error' : '' ?>"
                                 id="codepostale"
+                                   required
                                 type="number"
                                 name="codepostale"
+                                value="<?= htmlspecialchars($_POST['codepostale'] ?? '') ?>"
                             />
-                            <span class="error-message"></span>
+                            <span class="error-message">
+                <?= $_SESSION['register_errors']['codepostale'] ?? '' ?>
+            </span>
 
                         </label>
                         <label for="ville">
                             Ville :
-                            <input type="text" id="ville" name="ville" />
-                            <span class="error-message"></span>
+                            <input   class="<?= isset($_SESSION['register_errors']['ville']) ? 'error' : '' ?>" type="text"  value="<?= htmlspecialchars($_POST['ville'] ?? '') ?>" id="ville" name="ville" required />
+                            <span class="error-message">
+                <?= $_SESSION['register_errors']['ville'] ?? '' ?>
+            </span>
 
                         </label>
                     </div>
                     <label for="pays">
                         Pays :
-                        <select class="select-pays" name="pays" id="pays">
+                        <select  class="<?= isset($_SESSION['register_errors']['pays']) ? 'error' : 'select-pays' ?>" required name="pays" id="pays">
 
 
-                            <option selected  name="pays">
+                            <option selected  <?= isset($_POST['pays']) && $_POST['pays'] == 'France' ? 'selected' : '' ?> name="pays">
                                 France
                             </option>
                         </select>
-                        <span class="error-message"></span>
+                        <span class="error-message">
+            <?= $_SESSION['register_errors']['pays'] ?? '' ?>
+        </span>
 
                     </label>
                     <label for="telephone">
                         Téléphone :
-                        <input id="telephone" type="number" name="telephone" />
-                        <span class="error-message"></span>
+                        <input  class="<?= isset($_SESSION['register_errors']['telephone']) ? 'error' : '' ?>" value="<?= htmlspecialchars($_POST['telephone'] ?? '') ?>" id="telephone" type="number" name="telephone" />
+                        <span class="error-message">
+            <?= $_SESSION['register_errors']['telephone'] ?? '' ?>
+        </span>
 
                     </label>
 
@@ -110,4 +130,5 @@ require"../src/php/views/headerAC.php";
    
 <?php
 require "../src/php/views/footerAC.php";
+unset($_SESSION['register_errors']);
 ?>

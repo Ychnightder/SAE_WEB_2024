@@ -1,5 +1,10 @@
 <?php
 require_once "../src/php/views/headerAC.php";
+
+session_start();
+$errors = isset($_SESSION['login_errors']) ? $_SESSION['login_errors'] : [];
+$oldInputs = isset($_SESSION['old_inputs']) ? $_SESSION['old_inputs'] : [];
+unset($_SESSION['login_errors'], $_SESSION['old_inputs']); // Nettoyer les sessions après récupération
 ?>
 <div class="leftBox">
     <div class="logoBox">
@@ -17,11 +22,20 @@ require_once "../src/php/views/headerAC.php";
                     method="post"
                     class="form-conexion"
             >
+                <?php if (!empty($errors['general'])): ?>
+                    <p class="error-message-general"><?= htmlspecialchars($errors['general']) ?></p>
+                <?php endif; ?>
+
                 <div class="input-connexion">
                     <label for="ID" aria-label="Identifiant">
                         <p>Email :</p>
-                        <input id="ID" name="identifiant" type="email" required />
-                        <span class="error-message"></span>
+                        <input id="ID" name="identifiant" type="email"
+                               class="<?= isset($errors['identifiant']) ? 'input-error' : '' ?>"
+                               value="<?= htmlspecialchars($_POST['identifiant'] ?? '') ?>"
+                        />
+                        <?php if (!empty($errors['identifiant'])): ?>
+                            <span class="error-message"><?= htmlspecialchars($errors['identifiant']) ?></span>
+                        <?php endif; ?>
                     </label>
 
                     <label for="password">
@@ -30,10 +44,14 @@ require_once "../src/php/views/headerAC.php";
                                 id="password"
                                 name="password"
                                 type="password"
-                                required
+
+                                class="<?= isset($errors['password']) ? 'input-error' : '' ?>"
                         />
-                        <span class="error-message"></span>
+                        <?php if (!empty($errors['password'])): ?>
+                            <span class="error-message"><?= htmlspecialchars($errors['password']) ?></span>
+                        <?php endif; ?>
                     </label>
+
                     <div class="linkForget">
                         <a href="#">Mot de passe oublié</a>
                     </div>

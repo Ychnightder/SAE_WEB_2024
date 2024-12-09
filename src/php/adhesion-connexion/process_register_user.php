@@ -1,7 +1,5 @@
 <?php
 session_start();
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
 
 // Connexion à la base de données
 require_once __DIR__ . '/../config/database.php';
@@ -19,14 +17,49 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $telephone = isset($_POST['telephone']) ? trim($_POST['telephone']) : null;
 
     // Validation des champs obligatoires
-    if (empty($nom) || empty($prenom) || empty($email) || empty($password) || empty($voie) || empty($codepostale) || empty($ville) || empty($pays) || empty($telephone)) {
-        die("Tous les champs doivent être remplis.");
 
+// Initialisation du tableau des erreurs
+    $errors = [];
+
+// Validation des champs
+    if (empty($_POST['nom'])) {
+        $errors['nom'] = "Le nom est requis.";
+    }
+    if (empty($_POST['prenom'])) {
+        $errors['prenom'] = "Le prénom est requis.";
+    }
+    if (empty($_POST['email']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+        $errors['email'] = "Une adresse e-mail valide est requise.";
+    }
+    if (empty($_POST['password'])) {
+        $errors['password'] = "Le mot de passe est requis.";
+    }
+    if (empty($_POST['voie'])) {
+        $errors['voie'] = "La voie est requise.";
+    }
+    if (empty($_POST['codepostale']) || !is_numeric($_POST['codepostale'])) {
+        $errors['codepostale'] = "Le code postal est requis et doit être un nombre.";
+    }
+    if (empty($_POST['ville'])) {
+        $errors['ville'] = "La ville est requise.";
+    }
+    if (empty($_POST['telephone']) || !is_numeric($_POST['telephone'])) {
+        $errors['telephone'] = "Le téléphone est requis et doit être un nombre.";
+    }
+
+// Si des erreurs sont présentes, stockez-les dans la session et redirigez
+    if (!empty($errors)) {
+        $_SESSION['register_errors'] = $errors;
+        // Vous pouvez rediriger vers la page du formulaire avec les erreurs
+        header("Location: /inscription.php");
+        exit;
     }
 
     // Validation de l'email (simple exemple)
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        die("L'email est invalide.");
+        $_SESSION['register_errors'] = "Cet email est non valide.";
+        header("Location: /inscription.php");
+        exit();
     }
 
     // Vérification si l'email est déjà utilisé
@@ -38,9 +71,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmtCheckEmail->execute();
     $emailCount = $stmtCheckEmail->fetchColumn();
 
-
     if ($emailCount > 0) {
-        die("Cet email est déjà utilisé.");
+        $_SESSION['register_errors'] = "Cet email est déjà utilisé.";
+        header("Location: /inscription.php");
+        exit();
     }
     // Sécuriser le mot de passe (hachage)
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
@@ -51,10 +85,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmtVille->execute();
     $idVille = $stmtVille->fetchColumn();  // Récupérer l'id de la ville
 
+    if (!$idVille) {
+        $_SESSION['register_errors'] = "Ville inconnue. Veuillez entrer une ville valide.";
+        header("Location: /inscription.php");
+        exit();
+    }
+
     $stmtPays = $pdo->prepare("SELECT IdPays FROM pays WHERE nom = :pays");
     $stmtPays->bindParam(':pays', $pays);
     $stmtPays->execute();
     $idPays = $stmtPays->fetchColumn();  // Récupérer l'id du pays
+
+    if (!$idPays) {
+        $_SESSION['register_errors'] = "Pays inconnu. Veuillez entrer un pays valide.";
+        header("Location: /inscription.php");
+        exit();
+    }
+
 
 // Préparer la requête pour insérer les données
     $sql = "INSERT INTO Utilisateurs (nom, prenom, email, mot_de_passe, adresse, telephone, IdPays, idVille , est_admin , date_inscription , est_adherent) 
@@ -73,16 +120,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     try {
         if ($stmt->execute()) {
-            echo "Inscription réussie !";
-            //header("Location:  ../public/index.php"); // Redirige vers la page d'accueil après inscription
-            header("Location: /index.php");
+            $_SESSION['success_message'] = "Inscription réussie !";
+            header("Location: /connexion.php");
             exit();
         } else {
            // header("Location: https://www.amazon.fr/ref=nav_logo");
-            echo "Erreur lors de l'inscription.";
+            $_SESSION['register_errors'] = "Erreur lors de l'inscription.";
+            header("Location: /inscription.php");
+            exit();
         }
     }catch (PDOException $e){
-        echo "Erreur de base de données : " . $e->getMessage();
+        $_SESSION['register_errors'] = "Erreur de base de données : " . $e->getMessage();
+        header("Location: /inscription.php");
+
+        exit();
     }
 }
+
+
 ?>

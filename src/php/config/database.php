@@ -1,5 +1,5 @@
 <?php
-// Paramètres de connexion à la base de données
+//// Paramètres de connexion à la base de données
 $dbHost = 'localhost';    // Adresse du serveur
 $dbName = 'autisme_france'; // Nom de la base de données
 $dbUser = 'root';          // Nom d'utilisateur
@@ -24,3 +24,17 @@ try {
     // Gère les erreurs de connexion
     die("Erreur de connexion à la base de données : " . $e->getMessage());
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
