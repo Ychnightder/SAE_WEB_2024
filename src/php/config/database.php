@@ -6,6 +6,7 @@ $dbUser = 'root';          // Nom d'utilisateur
 $dbPass = 'ychnightder';              // Mot de passe (laisser vide si aucun)
 $dbCharset = 'utf8mb4';    // Jeu de caractères
 
+
 // Options pour PDO
 $options = [
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, // Affiche les erreurs sous forme d'exception
