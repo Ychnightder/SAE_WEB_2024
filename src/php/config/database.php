@@ -3,8 +3,6 @@ try {
     $dbPath = __DIR__ . '/database.db';
 //  $dbPath = 'sqlite:C:/Users/Pierr/OneDrive/Bureau/SAE_WEB/SQL/database.db';
     $pdo = new PDO('sqlite:' . $dbPath);
-  
-   
 } catch (PDOException $e) {
     echo "Erreur : " . $e->getMessage();
 }
