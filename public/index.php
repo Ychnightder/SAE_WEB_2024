@@ -6,7 +6,7 @@ $routes = [
     'connect_user' => '../src/php/adhesion-connexion/process_connect_user.php',
     'register_user' => '../src/php/adhesion-connexion/process_register_user.php',
     'connect_admin' => '../src/php/admin/process_connect_admin.php',
-    'dashboard' => '../src/php/admin/dashboard.php',
+    'dashboard' => '../src/php/dashboard.php',
 ];
 
 handleRequest($routes);

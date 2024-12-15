@@ -3,7 +3,7 @@ require"../src/php/views/headerAC.php";
 session_start();
 
 if (isset($_SESSION['register_errors'])) {
-    // Afficher toutes les erreurs
+//     Afficher toutes les erreurs
     foreach ($_SESSION['register_errors'] as $error) {
         echo "<p class='error'>$error</p>";
     }
@@ -27,7 +27,6 @@ if (isset($_SESSION['register_errors'])) {
                     method="post"
                 action="index.php?action=register_user"
             >
-                <!--            ../src/php/adhesion-connexion/process_register_user.php-->
 
                 <div class="first-info">
                     <div class="name-firsname">

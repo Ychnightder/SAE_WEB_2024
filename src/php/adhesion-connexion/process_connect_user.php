@@ -22,7 +22,7 @@ if (!empty($errors)) {
     exit;
 }
 
-$sql = "SELECT * FROM autisme_france.utilisateurs WHERE email = :email LIMIT 1";
+$sql = "SELECT * FROM utilisateurs WHERE email = :email LIMIT 1";
 $stmt = $pdo->prepare($sql);
 $stmt->bindParam(':email', $email, PDO::PARAM_STR);
 

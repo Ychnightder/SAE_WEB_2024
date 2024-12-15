@@ -1,6 +1,4 @@
 <?php
-//require_once '../config/database.php';
-//require_once '../helpers/fonction.php';
 
 function loadQuestions($pdo, $step) {
     $query = $pdo->prepare("
@@ -12,6 +10,3 @@ function loadQuestions($pdo, $step) {
     $query->execute(['step' => $step]);
     return $query->fetchAll();
 }
-
-//$r = loadQuestions($pdo, 1);
-//debug($r);

@@ -11,11 +11,11 @@ function insertPays($countryCode)
 {
 global $pdo;
 
-$stmt = $pdo->prepare("SELECT IdPays FROM Pays WHERE nom = :nom");
+$stmt = $pdo->prepare("SELECT IdPays FROM pays WHERE nom = :nom");
 $stmt->bindParam(':nom', $countryCode);
 $stmt->execute();
 if ($stmt->rowCount() > 0) {
-    $insertStmt = $pdo->prepare("INSERT INTO Pays (nom) VALUES (:nom)");
+    $insertStmt = $pdo->prepare("INSERT INTO pays (nom) VALUES (:nom)");
     $insertStmt->bindParam(':nom', $countryCode);
     $insertStmt->execute();
     return $pdo->lastInsertId();

@@ -6,8 +6,6 @@ echo '<pre>';
 print_r($data);
 echo '</pre>';
 }
-
-
 function handleRequest (array $chemin) : void  {
 
         $action = filter_var($_GET["action"] ?? $_POST["action"] ?? null  );
@@ -22,4 +20,9 @@ function handleRequest (array $chemin) : void  {
 //            debug($action);
 //            debug($chemin);
         }
+}
+function redirectWithError($errors, $redirectUrl) {
+    $_SESSION['register_errors'] = $errors;
+    header("Location: {$redirectUrl}");
+    exit;
 }
