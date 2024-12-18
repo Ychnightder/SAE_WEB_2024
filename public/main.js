@@ -89,3 +89,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+function checkDebutForm() {
+  const inputs = document.querySelectorAll("input");
+  nom = document.querySelector("nom");
+  prenom = document.querySelector("prenom");
+  email = document.querySelector("email");
+  password = document.querySelector("password");
+
+  if (nom == null || prenom == null || email == null || password == null) {
+    input.classList.add("error");
+    errorText = "Ce champ est requis";
+  }
+}
