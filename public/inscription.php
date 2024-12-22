@@ -2,13 +2,6 @@
 require"../src/php/views/headerAC.php";
 session_start();
 
-if (isset($_SESSION['register_errors'])) {
-//     Afficher toutes les erreurs
-    foreach ($_SESSION['register_errors'] as $error) {
-        echo "<p class='error'>$error</p>";
-    }
-}
-
 ?>
 <div class="leftBox">
     <div class="logoBox">

@@ -10,7 +10,7 @@
     $currentPage = basename($_SERVER['PHP_SELF'], ".php");
     $pageTitles = [
         "inscription" => "Inscription | Autisme France",
-        "connexion" => "Connexion | Autisme France",
+        "login" => "Connexion | Autisme France",
     ];
     $title = $pageTitles[$currentPage] ?? "Autisme France";
     ?>

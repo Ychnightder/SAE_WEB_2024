@@ -14,7 +14,7 @@
         "index" => "Accueil | Autisme France",
         "contact" => "Contact | Autisme France",
         "don" => "Faire un Don | Autisme France",
-        "adhesion-connexion-connexion" => "Adhésion & Connexion | Autisme France",
+        "adhesion_connexion-connexion" => "Adhésion & Connexion | Autisme France",
 
     ];
     $pageStyles = [

@@ -359,6 +359,9 @@ input.error, select.error {
 
 /* Responsive pour petits écrans - smartphones */
 @media (max-width: 820px) {
+  .rightBox .img img{
+    display: none;
+  }
   .main {
     flex-direction: column;
     height: auto;
@@ -404,10 +407,18 @@ input.error, select.error {
   .main .footer {
     display: none;
   }
+
+}
+@media (max-width: 1140px) {
+
+  .rightBox .img img{
+    display: none;
+  }
 }
 
 /* Responsive pour tablettes */
 @media (max-width: 1200px) {
+
   .img{
     display: none;
   }

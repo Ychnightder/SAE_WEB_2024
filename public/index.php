@@ -3,8 +3,8 @@ require_once "../src/php/helpers/fonction.php";
 
 
 $routes = [
-    'connect_user' => '../src/php/adhesion-connexion/process_connect_user.php',
-    'register_user' => '../src/php/adhesion-connexion/process_register_user.php',
+    'connect_user' => '../src/php/adhesion_connexion/process_connect_user.php',
+    'register_user' => '../src/php/adhesion_connexion/process_register_user.php',
     'connect_admin' => '../src/php/admin/process_connect_admin.php',
     'dashboard' => '../src/php/dashboard.php',
 ];
