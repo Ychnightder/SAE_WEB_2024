@@ -1,6 +1,11 @@
 <?php
 require"../src/php/views/headerAC.php";
 session_start();
+unset($_SESSION['$errors'] ); // Nettoyer les sessions après récupération
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 ?>
 <div class="leftBox">
@@ -16,7 +21,6 @@ session_start();
         <div class="div-form-inscription">
             <form
                     class="form-inscription"
-
                     method="post"
                 action="index.php?action=register_user"
             >

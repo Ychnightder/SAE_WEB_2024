@@ -64,7 +64,12 @@ class UserManager
         $sql = "SELECT email FROM utilisateurs WHERE email = :email LIMIT 1";
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindParam(':email', $email, \PDO::PARAM_STR);
-        return $stmt->execute();
+
+        if ($stmt->execute()) {
+            return $stmt->fetch() !== false; // Retourne true si l'email existe
+        }
+
+        return false;
     }
 
     private function getCityId(string $ville): ?int
@@ -72,7 +77,10 @@ class UserManager
         $stmt = $this->pdo->prepare("SELECT idVille FROM ville WHERE nomVille = :ville");
         $stmt->bindParam(':ville', $ville);
         $stmt->execute();
-        return $stmt->fetchColumn();
+        if ($stmt->execute()) {
+            return $stmt->fetchColumn() ?: null; // Retourne null si aucune correspondance
+        }
+        return null;
     }
     private function getCountryId(string $pays): ?int
     {
@@ -145,24 +153,26 @@ class UserManager
         string $nom, string $prenom, string $email, string $password,
         string $voie, string $codepostale, string $ville, string $pays, string $telephone
     ) {
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
         $errors = $this->validateFields($nom, $prenom, $email, $password, $voie, $codepostale, $ville, $telephone);
 
-        if (!empty($errors)) {
-            $_SESSION['register_errors'] = $errors;
-            return false;
-        }
-        if ($this->isEmailValid($email)) {
+            if (!empty($errors)) {
+                $_SESSION['register_errors'] = $errors;
+                return false;
+            }
+
+        if ($this->isEmailValid($email) ) {
             $_SESSION['register_errors'] = "Cet email est déjà utilisé.";
             return false;
         }
         // Hachage du mot de passe
-        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
         $idVille = $this->getCityId($ville);
         $idPays = $this->getCountryId($pays);
 
 
         if (!$idVille || !$idPays) {
+            $_SESSION['register_errors'] = "Ville ou pays invalide.";
             return false;
         }
 
@@ -183,6 +193,7 @@ class UserManager
             if ($stmt->execute()) {
                 $_SESSION['success_message'] = "Inscription réussie !";
                 return true;
+
             } else {
                 $_SESSION['register_errors'] = "Erreur lors de l'inscription.";
                 return false;
@@ -191,7 +202,6 @@ class UserManager
             $_SESSION['register_errors'] = "Erreur de base de données : " . $e->getMessage();
             return false;
         }
-
     }
 
 

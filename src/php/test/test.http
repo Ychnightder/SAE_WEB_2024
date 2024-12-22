@@ -1,11 +1,11 @@
 ### Inscription
 POST http://localhost:8000/index.php?action=register_user
-Host: http://localhost:8000
+Host: http://localhost:8000autisme_france
 Content-Type: application/x-www-form-urlencoded
 
 nom=Omen&
 prenom=Jihn&
-email=pierreychnightder52@gmail.com&
+email=pierreychnightder522@gmail.com&
 password=ychnightder&
 voie=Exempl&
 codepostale=93240&
