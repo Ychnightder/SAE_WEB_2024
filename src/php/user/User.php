@@ -1,32 +1,116 @@
 <?php
 
-namespace user;
-
+namespace config;
 
 class User {
-
     private int $id;
     private string $nom;
     private string $prenom;
     private string $email;
+    private string $motDePasse;
+    private string $adresse;
+    private string $telephone;
+    private int $idPays;
+    private int $idVille;
+    private string $dateInscription;
 
-    public function __construct($id, $nom, $prenom, $email) {
+    public function __construct(
+        int $id,
+        string $nom,
+        string $prenom,
+        string $email,
+        string $motDePasse,
+        string $adresse,
+        string $telephone,
+        int $idPays,
+        int $idVille,
+        string $dateInscription
+    ) {
         $this->id = $id;
         $this->nom = $nom;
         $this->prenom = $prenom;
         $this->email = $email;
+        $this->motDePasse = $motDePasse;
+        $this->adresse = $adresse;
+        $this->telephone = $telephone;
+        $this->idPays = $idPays;
+        $this->idVille = $idVille;
+        $this->dateInscription = $dateInscription;
     }
 
-    public function getId() {
+    public function getId(): int {
         return $this->id;
     }
-    public function getNom() {
+
+    public function getNom(): string {
         return $this->nom;
     }
-    public function getPrenom() {
+
+    public function getPrenom(): string {
         return $this->prenom;
     }
-    public function getEmail() {
+
+    public function getEmail(): string {
         return $this->email;
+    }
+
+    public function getMotDePasse(): string {
+        return $this->motDePasse;
+    }
+
+    public function getAdresse(): string {
+        return $this->adresse;
+    }
+
+    public function getTelephone(): string {
+        return $this->telephone;
+    }
+
+    public function getIdPays(): int {
+        return $this->idPays;
+    }
+
+    public function getIdVille(): int {
+        return $this->idVille;
+    }
+
+    public function getDateInscription(): string {
+        return $this->dateInscription;
+    }
+
+    public function setNom(string $nom): void {
+        $this->nom = $nom;
+    }
+
+    public function setPrenom(string $prenom): void {
+        $this->prenom = $prenom;
+    }
+
+    public function setEmail(string $email): void {
+        $this->email = $email;
+    }
+
+    public function setMotDePasse(string $motDePasse): void {
+        $this->motDePasse = $motDePasse;
+    }
+
+    public function setAdresse(string $adresse): void {
+        $this->adresse = $adresse;
+    }
+
+    public function setTelephone(string $telephone): void {
+        $this->telephone = $telephone;
+    }
+
+    public function setIdPays(int $idPays): void {
+        $this->idPays = $idPays;
+    }
+
+    public function setIdVille(int $idVille): void {
+        $this->idVille = $idVille;
+    }
+
+    public function setDateInscription(string $dateInscription): void {
+        $this->dateInscription = $dateInscription;
     }
 }
