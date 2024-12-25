@@ -21,10 +21,6 @@ CREATE TABLE Statistiques (
                               FOREIGN KEY (id_questionnaire) REFERENCES Questionnaires(id_questionnaire)
 );
 
-CREATE TABLE Pays (
-                      IdPays INTEGER PRIMARY KEY AUTOINCREMENT,
-                      nom TEXT NOT NULL
-);
 
 CREATE TABLE Ville (
                        idVille INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -41,9 +37,7 @@ CREATE TABLE Utilisateurs (
                               telephone TEXT,
                               est_adherent INTEGER, -- BOOLEAN remplacé par INTEGER
                               date_inscription DATE,
-                              IdPays INTEGER NOT NULL,
                               idVille INTEGER NOT NULL,
-                              FOREIGN KEY (IdPays) REFERENCES pays(IdPays),
                               FOREIGN KEY (idVille) REFERENCES ville(idVille)
 );
 

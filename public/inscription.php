@@ -2,13 +2,6 @@
 require"../src/php/views/headerAC.php";
 session_start();
 
-if (isset($_SESSION['register_errors'])) {
-//     Afficher toutes les erreurs
-    foreach ($_SESSION['register_errors'] as $error) {
-        echo "<p class='error'>$error</p>";
-    }
-}
-
 ?>
 <div class="leftBox">
     <div class="logoBox">
@@ -58,7 +51,13 @@ if (isset($_SESSION['register_errors'])) {
 
                     <div class="divSubmit">
                         <button type="reset" class="return-btn">Retour</button>
-                        <button type="button" class="btn-suivant">Suivant</button>
+                        <button type="submit" class="btn-suivant">Connexion</button>
+                    </div>
+                    <div class="likns-ac">
+                        <p>Vous avez un compte ?</p>
+                        <div class="links-box">
+                            <a class="link-online" href="./connexion.php">Connexion</a>
+                        </div>
                     </div>
                 </div>
                 <div class="second-info">

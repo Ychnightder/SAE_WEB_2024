@@ -1,31 +1,39 @@
 <?php
+
+use config\BDDRequetes;
+use user\User;
+require_once __DIR__ . "/User.php";
+require_once "../src/php/config/BDDRequetes.php";
+
 session_start();
 
-require_once __DIR__ . "/User.php";
-require_once __DIR__ . '/../config/database.php';
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $request = new BDDRequetes();
+    $errors = [];
+    if($request->getUser($_POST['email']) !== null) {
+        $errors['email'] = "Cette adresse email existe déjà !";
+        $_SESSION['register_errors'] = $errors;
+        header("Location: /inscription.php");
+        exit();
+    }
+
+
+    $hashedPassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
+
+    $idVille = $request->getIdVille($_POST['ville']);
+    $date = date("Y-m-d");
     $user = new User(
         nom: $_POST['nom'],
         prenom: $_POST['prenom'],
         email: $_POST['email'],
-        password: $_POST['password'],
-        adresse: $_POST['adresse'],
+        password: $hashedPassword,
+        adresse: $_POST['voie'],
         telephone: $_POST['telephone'],
-        idPays: (int)$_POST['IdPays'],
-        idVille: (int)$_POST['idVille'],
-        dateInscription: $_POST['date_inscription']
+        idVille: $idVille,
+        dateInscription: $date,
+        adherent: false
     );
-    $nom = $_POST['nom'];
-    $prenom = $_POST['prenom'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $voie = $_POST['voie'];
-    $codepostale = $_POST['codepostale'];
-    $ville = $_POST['ville'];
-    $pays = $_POST['pays'];
-    $telephone = $_POST['telephone'];
-    $result = $userManager->register($nom, $prenom, $email, $password, $voie, $codepostale, $ville, $pays, $telephone);
+    $result = $request->insertUser($user);
     if ($result) {
         // Inscription réussie
         header("Location: /connexion.php");
@@ -33,7 +41,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         // Redirection avec erreurs
         header("Location: /inscription.php");
-
         exit();
     }
 }

@@ -2,37 +2,43 @@
 
 namespace config;
 use BDDConnect;
+use Exception;
+use PDO;
 use PDOException;
+use user\User;
+require_once "BDDConnect.php";
+require_once "../src/php/user/User.php";
 
 class BDDRequetes {
 
-    private PDO $pdo;
+    public PDO $pdo;
     public function __construct() {
-        $bddConnect = new BDDConnect(__DIR__ . '/database.db');
+        $bddConnect = new BDDConnect(__DIR__ . '/database');
         $this->pdo = $bddConnect->connexion();
     }
 
-    public function insertUser(User $user) : boolean {
+    public function insertUser(User $user) : bool {
 
-        $sql = "INSERT INTO Utilisateurs (nom, prenom, email, mot_de_passe, adresse, telephone, IdPays, idVille,  date_inscription)
-                VALUES (:nom, :prenom, :email, :mot_de_passe, :adresse, :telephone, :idPays, :idVille,  NOW())";
-
+        $sql = "INSERT INTO Utilisateurs(email, nom, prenom, password, adresse, telephone, est_adherent, date_inscription, idVille)
+            VALUES(:email, :nom, :prenom, :password, :adresse, :telephone, :est_adherent, :currentdate, :idVille)";
         $stmt = $this->pdo->prepare($sql);
+        $email = $user->getEmail();
         $nom = $user->getNom();
         $prenom = $user->getPrenom();
-        $email = $user->getEmail();
-        $motDePasse = $user->getMotDePasse();
+        $password = $user->getPassword();
         $adresse = $user->getAdresse();
         $telephone = $user->getTelephone();
-        $idPays = $user->getIdPays();
+        $est_adherent = $user->isAdherent();
+        $currentdate = date('Y-m-d H:i:s');;
         $idVille = $user->getIdVille();
         $stmt->bindParam(':nom', $nom);
         $stmt->bindParam(':prenom', $prenom);
         $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':mot_de_passe', $motDePasse);
+        $stmt->bindParam(':password', $password);
         $stmt->bindParam(':adresse', $adresse);
         $stmt->bindParam(':telephone', $telephone);
-        $stmt->bindParam(':idPays', $idPays);
+        $stmt->bindParam(':est_adherent', $est_adherent);
+        $stmt->bindParam(':currentdate', $currentdate);
         $stmt->bindParam(':idVille', $idVille);
 
         try {
@@ -51,9 +57,11 @@ class BDDRequetes {
     }
 
     public function getUser(string $email): User {
-        $sql = "SELECT id, nom, prenom, email, mot_de_passe, adresse, telephone, IdPays, idVille, date_inscription
+        $sql = "SELECT *
             FROM Utilisateurs
-            WHERE email = :email";
+            WHERE email = :email
+            LIMIT 1";
+
 
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
@@ -64,16 +72,15 @@ class BDDRequetes {
 
             if ($result) {
                 return new User(
-                    id: (int)$result['id'],
                     nom: $result['nom'],
                     prenom: $result['prenom'],
                     email: $result['email'],
-                    motDePasse: $result['mot_de_passe'],
+                    password: $result['password'],
                     adresse: $result['adresse'],
                     telephone: $result['telephone'],
-                    idPays: (int)$result['IdPays'],
-                    idVille: (int)$result['idVille'],
-                    dateInscription: $result['date_inscription']
+                    idVille: $result['idVille'],
+                    dateInscription: $result['date_inscription'],
+                    adherent: $result['est_adherent']
                 );
             } else {
                 throw new Exception("Utilisateur avec l'email $email non trouvé.");
@@ -84,5 +91,25 @@ class BDDRequetes {
     }
 
 
+    public function getIdVille(string $ville): int {
+        $sql = "SELECT idVille
+            FROM Ville
+            WHERE nomville = :nomville";
 
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':nomville', $ville, PDO::PARAM_STR);
+
+        try {
+            $stmt->execute();
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if ($result) {
+                return $result['idVille'];
+            } else {
+                throw new Exception("La ville $ville n'a pas été trouvé");
+            }
+        } catch (PDOException $e) {
+            throw new Exception("Erreur lors de la récupération de la ville : " . $e->getMessage());
+        }
+    }
 }

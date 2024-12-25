@@ -31,7 +31,7 @@ unset($_SESSION['login_errors'], $_SESSION['old_inputs']); // Nettoyer les sessi
                         <p>Email :</p>
                         <input id="ID" name="identifiant" type="email"
                                class="<?= isset($errors['identifiant']) ? 'input-error' : '' ?>"
-                               value="<?= htmlspecialchars($_POST['identifiant'] ?? '') ?>"
+                               value="<?= htmlspecialchars($oldInputs['identifiant'] ?? '') ?>"
                         />
                         <?php if (!empty($errors['identifiant'])): ?>
                             <span class="error-message"><?= htmlspecialchars($errors['identifiant']) ?></span>
@@ -57,11 +57,11 @@ unset($_SESSION['login_errors'], $_SESSION['old_inputs']); // Nettoyer les sessi
                     </div>
                 </div>
                 <div class="divSubmit">
-                    <button type="reset">Retour</button>
-                    <button type="submit">Connexion</button>
+                    <button type="reset" class="return-btn">Retour</button>
+                    <button type="submit" class="btn-suivant">Connexion</button>
                 </div>
                 <div class="likns-ac">
-                    <p>Avez-vous un compte ?</p>
+                    <p>Pas de compte ?</p>
                     <div class="links-box">
                         <a class="link-online" href="./inscription.php">Adhérer en ligne </a>
                         <a

@@ -9,20 +9,17 @@ class User {
     private string $password;
     private string $adresse;
     private string $telephone;
-    private int $idPays;
     private int $idVille;
     private string $dateInscription;
     private bool $adherent;
 
     public function __construct(
-        int $id,
         string $nom,
         string $prenom,
         string $email,
         string $password,
         string $adresse,
         string $telephone,
-        int $idPays,
         int $idVille,
         string $dateInscription,
         bool $adherent
@@ -33,7 +30,6 @@ class User {
         $this->password = $password;
         $this->adresse = $adresse;
         $this->telephone = $telephone;
-        $this->idPays = $idPays;
         $this->idVille = $idVille;
         $this->dateInscription = $dateInscription;
         $this->adherent = $adherent;
@@ -61,10 +57,6 @@ class User {
 
     public function getTelephone(): string {
         return $this->telephone;
-    }
-
-    public function getIdPays(): int {
-        return $this->idPays;
     }
 
     public function getIdVille(): int {
@@ -101,10 +93,6 @@ class User {
 
     public function setTelephone(string $telephone): void {
         $this->telephone = $telephone;
-    }
-
-    public function setIdPays(int $idPays): void {
-        $this->idPays = $idPays;
     }
 
     public function setIdVille(int $idVille): void {
