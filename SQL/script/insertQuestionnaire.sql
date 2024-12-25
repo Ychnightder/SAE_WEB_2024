@@ -1,5 +1,5 @@
 -- Insérer les questionnaires
-INSERT INTO questionnaires (titre_, date_creation, est__Actif, ordre) VALUES
+INSERT INTO Questionnaires (titre_, date_creation, est__Actif, ordre) VALUES
                                                                           ('Qui a répondu à l’enquête', '2024-12-01', 1, 1),
                                                                           ('Lieu de vie', '2024-12-01', 1, 2),
                                                                           ('Insertion professionnelle et sociale', '2024-12-01', 1, 3),

@@ -2,7 +2,8 @@ CREATE TABLE Questionnaires (
                                 id_questionnaire INTEGER PRIMARY KEY AUTOINCREMENT,
                                 titre_ TEXT NOT NULL,
                                 date_creation DATE NOT NULL,
-                                est__Actif INTEGER NOT NULL -- BOOLEAN est remplacé par INTEGER (0 ou 1)
+                                est__Actif INTEGER NOT NULL, -- BOOLEAN est remplacé par INTEGER (0 ou 1)
+                                ordre INTEGER NOT NULL
 );
 
 CREATE TABLE Questions (
@@ -20,29 +21,26 @@ CREATE TABLE Statistiques (
                               FOREIGN KEY (id_questionnaire) REFERENCES Questionnaires(id_questionnaire)
 );
 
-CREATE TABLE pays (
+CREATE TABLE Pays (
                       IdPays INTEGER PRIMARY KEY AUTOINCREMENT,
                       nom TEXT NOT NULL
 );
 
-CREATE TABLE ville (
+CREATE TABLE Ville (
                        idVille INTEGER PRIMARY KEY AUTOINCREMENT,
                        nomVille TEXT NOT NULL,
                        codePostal INTEGER NOT NULL
 );
 
 CREATE TABLE Utilisateurs (
-                              id_utilisateur INTEGER PRIMARY KEY AUTOINCREMENT,
+                              email TEXT NOT NULL UNIQUE PRIMARY KEY,
                               nom TEXT NOT NULL,
                               prenom TEXT NOT NULL,
-                              email TEXT NOT NULL UNIQUE,
-                              mot_de_passe TEXT NOT NULL,
+                              password TEXT NOT NULL,
                               adresse TEXT,
                               telephone TEXT,
                               est_adherent INTEGER, -- BOOLEAN remplacé par INTEGER
                               date_inscription DATE,
-                              est_admin INTEGER NOT NULL, -- BOOLEAN remplacé par INTEGER
-                              mot_de_passe_admin TEXT,
                               IdPays INTEGER NOT NULL,
                               idVille INTEGER NOT NULL,
                               FOREIGN KEY (IdPays) REFERENCES pays(IdPays),
@@ -54,11 +52,11 @@ CREATE TABLE Donateurs (
                            date_don DATE NOT NULL,
                            methode_paiement TEXT NOT NULL,
                            montant REAL, -- DECIMAL remplacé par REAL
-                           id_utilisateur INTEGER NOT NULL,
-                           FOREIGN KEY (id_utilisateur) REFERENCES Utilisateurs(id_utilisateur)
+                           email_utilisateur INTEGER NOT NULL,
+                           FOREIGN KEY (email_utilisateur) REFERENCES Utilisateurs(email)
 );
 
-CREATE TABLE Réponses (
+CREATE TABLE Reponses (
                           id_reponse_ INTEGER PRIMARY KEY AUTOINCREMENT,
                           reponse TEXT NOT NULL,
                           id_question INTEGER NOT NULL,
@@ -76,7 +74,7 @@ CREATE TABLE Connexions (
                             FOREIGN KEY (id_utilisateur) REFERENCES Utilisateurs(id_utilisateur)
 );
 
-CREATE TABLE options (
+CREATE TABLE Options (
                          id_option INTEGER PRIMARY KEY AUTOINCREMENT,
                          id_question INTEGER,
                          option_text TEXT,

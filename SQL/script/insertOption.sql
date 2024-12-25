@@ -1,4 +1,4 @@
-INSERT INTO autisme_france.options (id_option, id_question, option_text) VALUES (1, 1, 'Moins de 18 ans');
+INSERT INTO database.options (id_option, id_question, option_text) VALUES (1, 1, 'Moins de 18 ans');
 INSERT INTO autisme_france.options (id_option, id_question, option_text) VALUES (2, 1, '18-25 ans');
 INSERT INTO autisme_france.options (id_option, id_question, option_text) VALUES (3, 1, '26-40 ans');
 INSERT INTO autisme_france.options (id_option, id_question, option_text) VALUES (4, 1, '41-60 ans');

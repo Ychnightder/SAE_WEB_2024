@@ -1,27 +1,27 @@
 
 -- Supprimer les connexions des utilisateurs
-DELETE FROM Connexions;
+DROP TABLE Connexions;
 
 -- Supprimer les réponses des utilisateurs
-DELETE FROM Réponses;
+DROP TABLE Réponses;
 
 -- Supprimer les statistiques
-DELETE FROM Statistiques;
+DROP TABLE Statistiques;
 
 
 -- Supprimer les dons
-DELETE FROM Donateurs;
+DROP TABLE Donateurs;
 
 -- Supprimer les questions
-DELETE FROM Questions;
+DROP TABLE Questions;
 
 -- Supprimer les questionnaires
-DELETE FROM Questionnaires;
+DROP TABLE Questionnaires;
 
 -- Supprimer les utilisateurs
-DELETE FROM Utilisateurs;
+DROP TABLE Utilisateurs;
 
-DELETE FROM ville;
+DROP TABLE ville;
 
 
 -- Réinitialiser les compteurs AUTO_INCREMENT

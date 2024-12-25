@@ -1,9 +1,8 @@
 <?php
 
-namespace config;
+namespace user;
 
 class User {
-    private int $id;
     private string $nom;
     private string $prenom;
     private string $email;
@@ -13,6 +12,7 @@ class User {
     private int $idPays;
     private int $idVille;
     private string $dateInscription;
+    private bool $adherent;
 
     public function __construct(
         int $id,
@@ -24,22 +24,19 @@ class User {
         string $telephone,
         int $idPays,
         int $idVille,
-        string $dateInscription
+        string $dateInscription,
+        bool $adherent
     ) {
-        $this->id = $id;
         $this->nom = $nom;
         $this->prenom = $prenom;
         $this->email = $email;
-        $this->$password = $password;
+        $this->password = $password;
         $this->adresse = $adresse;
         $this->telephone = $telephone;
         $this->idPays = $idPays;
         $this->idVille = $idVille;
         $this->dateInscription = $dateInscription;
-    }
-
-    public function getId(): int {
-        return $this->id;
+        $this->adherent = $adherent;
     }
 
     public function getNom(): string {
@@ -55,7 +52,7 @@ class User {
     }
 
     public function getPassword(): string {
-        return $this->$password;
+        return $this->password;
     }
 
     public function getAdresse(): string {
@@ -76,6 +73,10 @@ class User {
 
     public function getDateInscription(): string {
         return $this->dateInscription;
+    }
+
+    public function isAdherent(): bool {
+        return $this->adherent;
     }
 
     public function setNom(string $nom): void {
@@ -112,5 +113,9 @@ class User {
 
     public function setDateInscription(string $dateInscription): void {
         $this->dateInscription = $dateInscription;
+    }
+
+    public function setAdherent(bool $adherent): void {
+        $this->adherent = $adherent;
     }
 }

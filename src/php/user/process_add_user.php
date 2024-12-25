@@ -5,7 +5,17 @@ require_once __DIR__ . "/User.php";
 require_once __DIR__ . '/../config/database.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $userManager = new UserManager();
+    $user = new User(
+        nom: $_POST['nom'],
+        prenom: $_POST['prenom'],
+        email: $_POST['email'],
+        password: $_POST['password'],
+        adresse: $_POST['adresse'],
+        telephone: $_POST['telephone'],
+        idPays: (int)$_POST['IdPays'],
+        idVille: (int)$_POST['idVille'],
+        dateInscription: $_POST['date_inscription']
+    );
     $nom = $_POST['nom'];
     $prenom = $_POST['prenom'];
     $email = $_POST['email'];
