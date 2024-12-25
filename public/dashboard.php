@@ -2,7 +2,6 @@
 
 global $pdo;
 require "../src/php/views/headerDash.php";
-require "../src/php/config/database.php";
 
 ?>
 <header>
