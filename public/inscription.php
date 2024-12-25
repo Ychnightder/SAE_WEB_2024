@@ -58,7 +58,7 @@ if (isset($_SESSION['register_errors'])) {
 
                     <div class="divSubmit">
                         <button type="reset" class="return-btn">Retour</button>
-                        <button type="button" onclick="checkDebutForm()" class="btn-suivant">Suivant</button>
+                        <button type="button" class="btn-suivant">Suivant</button>
                     </div>
                 </div>
                 <div class="second-info">
