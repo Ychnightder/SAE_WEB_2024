@@ -19,7 +19,7 @@ class User {
         string $nom,
         string $prenom,
         string $email,
-        string $motDePasse,
+        string $password,
         string $adresse,
         string $telephone,
         int $idPays,
@@ -30,7 +30,7 @@ class User {
         $this->nom = $nom;
         $this->prenom = $prenom;
         $this->email = $email;
-        $this->motDePasse = $motDePasse;
+        $this->$password = $password;
         $this->adresse = $adresse;
         $this->telephone = $telephone;
         $this->idPays = $idPays;
@@ -54,8 +54,8 @@ class User {
         return $this->email;
     }
 
-    public function getMotDePasse(): string {
-        return $this->motDePasse;
+    public function getPassword(): string {
+        return $this->$password;
     }
 
     public function getAdresse(): string {
@@ -90,8 +90,8 @@ class User {
         $this->email = $email;
     }
 
-    public function setMotDePasse(string $motDePasse): void {
-        $this->motDePasse = $motDePasse;
+    public function setPassword(string $password): void {
+        $this->$password = $password;
     }
 
     public function setAdresse(string $adresse): void {
