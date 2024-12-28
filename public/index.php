@@ -12,11 +12,7 @@ handleRequest($routes);
 require_once "../src/php/views/header.php";
 ?>
     <section class="section-banniere">
-        <?php if (isset($_SESSION['user_id'])): ?>
-           <a class="link-enquete" href="enquete.php">Enquête</a>
-        <?php else: ?>
-            <a class="link-enquete" href="connexion.php">Veuillez vous connecter pour accéder à l'enquête</a>
-        <?php endif; ?>
+        <a class="link-enquete" href="enquete.php">Enquête</a>
         <img class="banniere" src="/assets/image/Accueil/slider.png" />
     </section>
   <main class="main-presentation">

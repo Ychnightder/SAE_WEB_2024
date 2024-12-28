@@ -114,20 +114,13 @@ class BDDRequetes {
     }
 
     public function loadQuestions(int $step): array {
-        $sql = "
+        $query = $this->pdo->prepare("
             SELECT Questions.texte_question_, Questions.type_question, Questions.id_question
             FROM Questions
             INNER JOIN Questionnaires ON Questions.id_questionnaire = Questionnaires.id_questionnaire
             WHERE Questionnaires.id_questionnaire = :step
-        ";
-
-        try {
-            $stmt = $this->pdo->prepare($sql);
-            $stmt->bindParam(':step', $step, PDO::PARAM_INT);
-            $stmt->execute();
-            return $stmt->fetchAll();
-        } catch (\PDOException $e) {
-            throw new Exception("Erreur lors du chargement des questions : " . $e->getMessage());
-        }
+        ");
+        $query->execute(['step' => $step]);
+        return $query->fetchAll();
     }
 }
