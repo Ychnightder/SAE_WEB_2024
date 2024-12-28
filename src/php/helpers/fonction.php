@@ -10,3 +10,9 @@ function handleRequest (array $chemin) : void  {
         http_response_code(404);
     }
 }
+
+function debug($data) : void {
+    echo '<pre>';
+    print_r($data);
+    echo '</pre>';
+}

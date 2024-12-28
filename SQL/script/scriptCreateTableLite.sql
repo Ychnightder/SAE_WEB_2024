@@ -74,3 +74,8 @@ CREATE TABLE Options (
                          option_text TEXT,
                          FOREIGN KEY (id_question) REFERENCES Questions(id_question)
 );
+
+CREATE TABLE Admin (
+                       email TEXT NOT NULL UNIQUE PRIMARY KEY,
+                       password TEXT NOT NULL
+);

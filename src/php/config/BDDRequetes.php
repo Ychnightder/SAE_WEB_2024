@@ -1,7 +1,7 @@
 <?php
 
 namespace config;
-use BDDConnect;
+use config\BDDConnect;
 use Exception;
 use PDO;
 use PDOException;
@@ -110,6 +110,24 @@ class BDDRequetes {
             }
         } catch (PDOException $e) {
             throw new Exception("Erreur lors de la récupération de la ville : " . $e->getMessage());
+        }
+    }
+
+    public function loadQuestions(int $step): array {
+        $sql = "
+            SELECT Questions.texte_question_, Questions.type_question, Questions.id_question
+            FROM Questions
+            INNER JOIN Questionnaires ON Questions.id_questionnaire = Questionnaires.id_questionnaire
+            WHERE Questionnaires.id_questionnaire = :step
+        ";
+
+        try {
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->bindParam(':step', $step, PDO::PARAM_INT);
+            $stmt->execute();
+            return $stmt->fetchAll();
+        } catch (\PDOException $e) {
+            throw new Exception("Erreur lors du chargement des questions : " . $e->getMessage());
         }
     }
 }

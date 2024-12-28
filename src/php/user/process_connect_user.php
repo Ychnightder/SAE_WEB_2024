@@ -46,4 +46,5 @@ if (!password_verify($password, $user->getPassword())) {
     exit;
 }
 
-echo "c'est carré tu es co là !'";
+header("Location: /enquete.php");
+exit;

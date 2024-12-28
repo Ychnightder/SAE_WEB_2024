@@ -1,5 +1,9 @@
 <?php
 
+namespace config;
+use PDO;
+use PDOException;
+
 class BDDConnect {
     private string $dbpath;
     public PDO $pdo;

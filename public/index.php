@@ -6,16 +6,19 @@ $routes = [
     'connect_user' => '../src/php/user/process_connect_user.php',
     'register_user' => '../src/php/user/process_add_user.php',
     'connect_admin' => '../src/php/admin/process_connect_admin.php',
-    //'dashboard' => '../src/php/dashboard.php',
 ];
 
 handleRequest($routes);
 require_once "../src/php/views/header.php";
 ?>
-  <section class="section-banniere">
-      <a class="link-enquete" href="main.php">equête</a>
-    <img class="banniere" src="/assets/image/Accueil/slider.png" />
-  </section>
+    <section class="section-banniere">
+        <?php if (isset($_SESSION['user_id'])): ?>
+           <a class="link-enquete" href="enquete.php">Enquête</a>
+        <?php else: ?>
+            <a class="link-enquete" href="connexion.php">Veuillez vous connecter pour accéder à l'enquête</a>
+        <?php endif; ?>
+        <img class="banniere" src="/assets/image/Accueil/slider.png" />
+    </section>
   <main class="main-presentation">
     <div class="wrapper-main-presentation">
       <div class="presentation-header">

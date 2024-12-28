@@ -1,14 +1,15 @@
 <?php
 
-
-global $pdo;
-require_once '../src/php/config/database.php';
+require_once '../src/php/config/BDDRequetes.php';
 require_once '../src/php/helpers/fonction.php';
-require_once '../src/php/enquete/validateStep.php';
-require_once '../src/php/enquete/loadQuestion.php';
+require_once '../src/php/enquete/stepQuestionnaire.php';
+//require_once '../src/php/enquete/loadQuestion.php';
 require_once '../src/php/enquete/handlePost.php';
+use config\BDDRequetes;
 
 
+$request = new BDDRequetes();
+$pdo = $request->pdo;
 
 $step = isset($_GET['step']) ? (int)$_GET['step'] : 1;
 
@@ -20,7 +21,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 // Charger les questions pour l'étape actuelle
-$questions = loadQuestions($pdo, $step);
+try {
+    $questions = $request->loadQuestions($step);
+} catch (Exception $e) {
+    echo $e->getMessage();
+}
 
 extract([
     'step' => $step,
