@@ -3,9 +3,9 @@ POST http://localhost:8000/index.php?action=register_user
 Host: http://localhost:8000autisme_france
 Content-Type: application/x-www-form-urlencoded
 
-nom=Omen&
+nom=Omeny&
 prenom=Jihn&
-email=pierreychnightder522@gmail.com&
+email=pierreychnightder52255@gmail.com&
 password=ychnightder&
 voie=Exempl&
 codepostale=93240&

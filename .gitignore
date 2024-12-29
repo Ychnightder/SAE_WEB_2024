@@ -26,3 +26,4 @@ yarn-error.log*
 # Other potential caches or temporary files
 .DS_Store   # macOS
 Thumbs.db   # Windows
+/vendor/

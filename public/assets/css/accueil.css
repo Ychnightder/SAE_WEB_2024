@@ -1,9 +1,8 @@
 .section-banniere {
   width: 100%;
   position: relative;
-
 }
-.section-banniere .link-enquete{
+.section-banniere .link-enquete {
   position: absolute;
   left: 5%;
   width: 35%;

@@ -1,6 +1,7 @@
 <?php
 
-function loadQuestions($pdo, $step) {
+function loadQuestions($pdo, $step)
+{
     $query = $pdo->prepare("
         SELECT Questions.texte_question_, Questions.type_question, Questions.id_question
         FROM Questions

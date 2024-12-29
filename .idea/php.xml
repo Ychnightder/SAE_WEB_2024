@@ -10,6 +10,19 @@
     <option name="highlightLevel" value="WARNING" />
     <option name="transferred" value="true" />
   </component>
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+    </include_path>
+  </component>
   <component name="PhpInterpreters">
     <interpreters>
       <interpreter id="9a7e0a09-e71c-4599-b1d8-d8be6fb4f25c" name="C:\Program Files\PHP\php.exe (project level)" home="C:\Program Files\PHP\php.exe" auto="true" debugger_id="php.debugger.XDebug" custom_ini="C:\Program Files\PHP\php.ini" />
@@ -22,7 +35,7 @@
           <additional_php_ini />
           <configuration_file>C:\Program Files\PHP\php.ini</configuration_file>
           <configuration_options>
-            <configuration_option name="include_path" value=".;C:\Program Files\PHP\includes" />
+            <configuration_option name="include_path" value=".;C:\php\pear" />
           </configuration_options>
           <debuggers />
           <loaded_extensions>
@@ -35,6 +48,7 @@
             <extension name="bcmath" />
             <extension name="calendar" />
             <extension name="ctype" />
+            <extension name="curl" />
             <extension name="date" />
             <extension name="dom" />
             <extension name="filter" />
@@ -42,13 +56,18 @@
             <extension name="iconv" />
             <extension name="json" />
             <extension name="libxml" />
+            <extension name="mbstring" />
             <extension name="mysqli" />
             <extension name="mysqlnd" />
+            <extension name="openssl" />
             <extension name="pcre" />
             <extension name="pdo_mysql" />
+            <extension name="pdo_sqlite" />
+            <extension name="pgsql" />
             <extension name="random" />
             <extension name="readline" />
             <extension name="session" />
+            <extension name="sqlite3" />
             <extension name="standard" />
             <extension name="tokenizer" />
             <extension name="xml" />

@@ -58,3 +58,22 @@ prevButton.addEventListener("click", () => {
 
 // Initialisation
 showQuestion(currentIndex);
+document.querySelector('.form').addEventListener('submit', function (event) {
+  const questions = document.querySelectorAll('.question-slide');
+  let allAnswered = true;
+
+  questions.forEach((question) => {
+    const input = question.querySelector('[name^="reponses"]');
+    if (!input || !input.value.trim()) {
+      allAnswered = false;
+      question.classList.add('error');
+    } else {
+      question.classList.remove('error');
+    }
+  });
+
+  if (!allAnswered) {
+    event.preventDefault();
+    alert('Veuillez répondre à toutes les questions.');
+  }
+});

@@ -1,14 +1,16 @@
 <?php
 
 
+
+
 require_once '../src/php/config/database.php';
 require_once '../src/php/helpers/fonction.php';
 require_once '../src/php/enquete/validateStep.php';
-require_once '../src/php/enquete/loadQuestion.php';
+require_once '../src/php/enquete/loadQuestions.php';
 require_once '../src/php/enquete/handlePost.php';
 
-
-
+$db = new database();
+$pdo = $db->connect();
 $step = isset($_GET['step']) ? (int)$_GET['step'] : 1;
 
 $totalSteps = getTotalSteps($pdo);
@@ -23,7 +25,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $questions = loadQuestions($pdo, $step);
 
 
-
 extract([
     'step' => $step,
     'totalSteps' => $totalSteps,
@@ -32,4 +33,3 @@ extract([
 
 // Inclure le formulaire
 require_once '../src/php/views/questionForm.php';
-

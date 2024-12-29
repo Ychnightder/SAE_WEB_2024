@@ -1,9 +1,10 @@
 <?php
 
 
-require 'EnqueteManger.php';
+require 'EnqueteManager.php';
 
-$enquete = new EnqueteManger();
+$enquete = new EnqueteManager();
+
 
 
 echo "<pre>";

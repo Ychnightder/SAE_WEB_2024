@@ -240,3 +240,11 @@ textarea::placeholder {
 .navigation .btn:hover {
   background-color: #0056b3;
 }
+.question-slide.error {
+  border: 1px solid red;
+  background-color: #ffe6e6;
+}
+.error-message {
+  color: red;
+  margin-bottom: 20px;
+}

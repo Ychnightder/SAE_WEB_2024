@@ -13,11 +13,12 @@ class Database
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
         PDO::ATTR_EMULATE_PREPARES => false,
     ];
-
     public function connect()
     {
         if ($this->pdo === null) {
             try {
+//                $dbpath = "C:\Users\Pierr\OneDrive\Bureau\SAE_WEB\src\php\config\database.db";
+//                $pdo = new PDO('sqlite:' . $this->dbpath, $this->options);
                 $dsn = "mysql:host={$this->dbHost};dbname={$this->dbName};charset={$this->dbCharset}";
                 $this->pdo = new PDO($dsn, $this->dbUser, $this->dbPass, $this->options);
             } catch (PDOException $e) {
