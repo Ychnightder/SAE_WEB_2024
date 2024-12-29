@@ -23,7 +23,7 @@
     <div class="body-container">
         <h1>Bienvenue sur notre enquête</h1>
         <h1>Aidez nous à améliorer l'accompagnement des personnes autistes et de leurs proches</h1>
-        <a href="enquete.php?step=1" class="btn">Commencer l'enquête</a>
+        <a href="questionnaire.php" class="btn">Commencer l'enquête</a>
     </div>
 </div>
 <div class="wave fond-bot">

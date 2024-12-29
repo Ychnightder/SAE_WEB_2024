@@ -15,10 +15,7 @@ function handleRequest (array $chemin) : void  {
             exit();
         }else{
             http_response_code(404);
-//            echo json_encode(["error" => "Action '$action' non trouvée."]);
-//            echo "Erreur aucune page trouver";
-//            debug($action);
-//            debug($chemin);
+
         }
 }
 function redirectWithError($errors, $redirectUrl) {

@@ -41,9 +41,7 @@ body {
   margin: 0 5px;
   background: #eeeeee;
   border-radius: 50px;
-  transition:
-    background-color 0.3s,
-    border 0.3s;
+  transition: background-color 0.3s, border 0.3s;
   position: relative;
 }
 
@@ -53,7 +51,7 @@ body {
 #questions-wrapper {
   position: relative;
   height: 100%;
-  width: 80%;
+  width: 100%;
   overflow: hidden;
 }
 
@@ -61,8 +59,7 @@ body {
   display: flex;
   flex-direction: column;
   margin: 15px;
-  width: 100%;
-  height: 400px;
+  width: 98%;
   min-height: 100%;
   left: 100%;
   height: 100%;
@@ -76,6 +73,7 @@ body {
   opacity: 1;
   transform: translateX(0); /* Place la question active */
   display: block;
+  margin:  15px;
 }
 .question-slide.exit {
   opacity: 0;
@@ -112,12 +110,10 @@ body {
   border: none;
   margin: 10px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
   font-size: 14px;
   font-weight: 500;
   position: relative;
   transition: all 0.3s ease-out;
-  cursor: pointer;
 }
 
 .btn-select:hover {
@@ -189,7 +185,6 @@ body {
 select {
   width: 90%;
   padding: 10px 15px;
-  border-radius: 5px;
   font-size: 16px;
   color: #017ac3;
   border: 2px solid #017ac3;
@@ -243,8 +238,14 @@ textarea::placeholder {
 .question-slide.error {
   border: 1px solid red;
   background-color: #ffe6e6;
+  animation: shake 0.3s ease-in-out;
+  width: 98%;
+  border-radius: 8px;
 }
-.error-message {
-  color: red;
-  margin-bottom: 20px;
+
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
 }
