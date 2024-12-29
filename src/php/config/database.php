@@ -7,7 +7,6 @@ class Database
     private $dbUser = 'root';
     private $dbPass = 'ychnightder';
     private $dbCharset = 'utf8mb4';
-
     private $options = [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
@@ -32,8 +31,6 @@ class Database
         var_dump($d);
         echo '</pre>';
     }
-
-
     public function chargerLesOptions(PDO $pdo , $idQuestion)
     {
         try {
@@ -46,8 +43,6 @@ class Database
         }
         return $options;
     }
-
-
     public function chargerLesQuestions(PDO $pdo): array
     {
         try {
@@ -78,9 +73,5 @@ class Database
             return [];
         }
     }
-
-
-
-
 
 }

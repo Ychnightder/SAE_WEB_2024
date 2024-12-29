@@ -1,6 +1,6 @@
 <?php
-
-use adhesion_connexion\UserManager;
+session_start();
+use Pierr\SaeWeb\php\adhesion_connexion\UserManager;
 
 require_once __DIR__ . "/UserManager.php";
 session_start();
@@ -34,6 +34,7 @@ $user = $userManager->authenticate($email, $password);
 
 if ($user) {
     // Connexion réussie
+    $_SESSION['user_id'] = $user['id_utilisateur'];
     $_SESSION['user_name'] = $user['nom'];
     $_SESSION['user_prenom'] = $user['prenom'];
     $_SESSION['user_email'] = $user['email'];

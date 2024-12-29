@@ -1,7 +1,8 @@
 <?php
-namespace adhesion_connexion;
+namespace Pierr\SaeWeb\php\adhesion_connexion;
 
 use Database;
+use PDOException;
 
 require_once __DIR__ . '/../config/database.php';
 
@@ -13,7 +14,6 @@ class UserManager
         $db = new Database();
         $this->pdo = $db->connect(); // Assure-toi d'utiliser le bon nom de classe ici
     }
-
     /**
      * Vérifie les identifiants de l'utilisateur et retourne les données utilisateur si elles sont valides.
      *
@@ -149,26 +149,24 @@ class UserManager
      * @param string $telephone
      * @return bool|string
      */
-    public function register(
-        string $nom, string $prenom, string $email, string $password,
-        string $voie, string $codepostale, string $ville, string $pays, string $telephone
-    ) {
-        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-        $errors = $this->validateFields($nom, $prenom, $email, $password, $voie, $codepostale, $ville, $telephone);
+    public function register(User $user) {
+
+        $hashedPassword = password_hash($user->getPassword(), PASSWORD_DEFAULT);
+        $errors = $this->validateFields($user->getNom(), $user->getPrenom(), $user->getEmail(), $hashedPassword, $user->getAdresse(), $user->getCodePostal(), $user->getVille(), $user->getTelephone());
 
             if (!empty($errors)) {
                 $_SESSION['register_errors'] = $errors;
                 return false;
             }
 
-        if ($this->isEmailValid($email) ) {
+        if ($this->isEmailValid($user->getEmail()) ) {
             $_SESSION['register_errors'] = "Cet email est déjà utilisé.";
             return false;
         }
         // Hachage du mot de passe
 
-        $idVille = $this->getCityId($ville);
-        $idPays = $this->getCountryId($pays);
+        $idVille = $this->getCityId($user->getVille());
+        $idPays = $this->getCountryId($user->getPays());
 
 
         if (!$idVille || !$idPays) {
@@ -180,14 +178,14 @@ class UserManager
                 VALUES (:nom, :prenom, :email, :mot_de_passe, :adresse, :telephone, :idPays, :idVille,  NOW())";
 
         $stmt = $this->pdo->prepare($sql);
-        $stmt->bindParam(':nom', $nom);
-        $stmt->bindParam(':prenom', $prenom);
-        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':nom', $user->getNom());
+        $stmt->bindParam(':prenom', $user->getPrenom());
+        $stmt->bindParam(':email', $user->getEmail());
         $stmt->bindParam(':mot_de_passe', $hashedPassword);
-        $stmt->bindParam(':adresse', $voie);
+        $stmt->bindParam(':adresse', $user->getAdresse());
         $stmt->bindParam(':idVille', $idVille);
         $stmt->bindParam(':idPays', $idPays);
-        $stmt->bindParam(':telephone', $telephone);
+        $stmt->bindParam(':telephone', $user->getTelephone());
 
         try {
             if ($stmt->execute()) {
@@ -206,9 +204,63 @@ class UserManager
 
 
 
-
-
-
+//
+//    public function register(
+//        string $nom, string $prenom, string $email, string $password,
+//        string $voie, string $codepostale, string $ville, string $pays, string $telephone
+//    ) {
+//        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+//        $errors = $this->validateFields($nom, $prenom, $email, $password, $voie, $codepostale, $ville, $telephone);
+//
+//        if (!empty($errors)) {
+//            $_SESSION['register_errors'] = $errors;
+//            return false;
+//        }
+//
+//        if ($this->isEmailValid($email) ) {
+//            $_SESSION['register_errors'] = "Cet email est déjà utilisé.";
+//            return false;
+//        }
+//        // Hachage du mot de passe
+//
+//        $idVille = $this->getCityId($ville);
+//        $idPays = $this->getCountryId($pays);
+//
+//
+//        if (!$idVille || !$idPays) {
+//            $_SESSION['register_errors'] = "Ville ou pays invalide.";
+//            return false;
+//        }
+//
+//        $sql = "INSERT INTO Utilisateurs (nom, prenom, email, mot_de_passe, adresse, telephone, IdPays, idVille,  date_inscription)
+//                VALUES (:nom, :prenom, :email, :mot_de_passe, :adresse, :telephone, :idPays, :idVille,  NOW())";
+//
+//        $stmt = $this->pdo->prepare($sql);
+//        $stmt->bindParam(':nom', $nom);
+//        $stmt->bindParam(':prenom', $prenom);
+//        $stmt->bindParam(':email', $email);
+//        $stmt->bindParam(':mot_de_passe', $hashedPassword);
+//        $stmt->bindParam(':adresse', $voie);
+//        $stmt->bindParam(':idVille', $idVille);
+//        $stmt->bindParam(':idPays', $idPays);
+//        $stmt->bindParam(':telephone', $telephone);
+//
+//        try {
+//            if ($stmt->execute()) {
+//                $_SESSION['success_message'] = "Inscription réussie !";
+//                return true;
+//
+//            } else {
+//                $_SESSION['register_errors'] = "Erreur lors de l'inscription.";
+//                return false;
+//            }
+//        } catch (PDOException $e) {
+//            $_SESSION['register_errors'] = "Erreur de base de données : " . $e->getMessage();
+//            return false;
+//        }
+//    }
+//
+//
 
 
 

@@ -10,18 +10,17 @@ if (empty($email) || empty($password)) {
     // Message d'erreur si les champs sont vides
     echo "pws :" ;debug($password);
     echo"email " ;debug($email);
-    die("Veuillez remplir tous les champs.");
+    header("Location : /admin.php");
 }
 
-$sql = "SELECT * FROM Utilisateurs WHERE email = :email AND est_admin = 1 LIMIT 1";
+$sql = "SELECT * FROM admin WHERE email = :email";
 $stmt = $pdo->prepare($sql);
 $stmt->bindParam(':email', $email, PDO::PARAM_STR);
 $stmt->execute();
 $user = $stmt->fetch();
-if ($user&& password_verify($password, $user['mot_de_passe_admin']) ) { //
+if ($user && password_verify($password, $user['passwordAdmin']) ) { //
     $_SESSION['user_name'] = $user['nom'];
     $_SESSION['user_prenom'] = $user['prenom'];
-    $_SESSION['user_email'] = $user['email'];
     debug($user);
     header("Location: ./dashboard.php");
     exit;

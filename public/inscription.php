@@ -1,12 +1,7 @@
 <?php
 require"../src/php/views/headerAC.php";
 session_start();
-unset($_SESSION['$errors'] ); // Nettoyer les sessions après récupération
-
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
+unset($_SESSION['$errors'] );
 ?>
 <div class="leftBox">
     <div class="logoBox">
@@ -19,11 +14,9 @@ error_reporting(E_ALL);
     </h1>
     <div class="formBox">
         <div class="div-form-inscription">
-            <form
-                    class="form-inscription"
+            <form class="form-inscription"
                     method="post"
-                action="index.php?action=register_user"
-            >
+                action="index.php?action=register_user">
                 <div class="first-info">
                     <div class="name-firsname">
                         <label for="nom">

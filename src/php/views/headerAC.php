@@ -10,12 +10,12 @@
     $currentPage = basename($_SERVER['PHP_SELF'], ".php");
     $pageTitles = [
         "inscription" => "Inscription | Autisme France",
-        "login" => "Connexion | Autisme France",
+        "connexion" => "Connexion | Autisme France",
     ];
     $title = $pageTitles[$currentPage] ?? "Autisme France";
     ?>
     <script
-        src="./assets/js/adhesion-connexion.js"
+        src="./assets/js/<?= $currentPage?>.js"
         type="module"
     ></script>
     <title><?= htmlspecialchars($title) ?></title>

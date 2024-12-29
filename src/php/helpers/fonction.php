@@ -18,8 +18,3 @@ function handleRequest (array $chemin) : void  {
 
         }
 }
-function redirectWithError($errors, $redirectUrl) {
-    $_SESSION['register_errors'] = $errors;
-    header("Location: {$redirectUrl}");
-    exit;
-}

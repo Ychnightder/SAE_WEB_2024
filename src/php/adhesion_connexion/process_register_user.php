@@ -1,20 +1,15 @@
 <?php
 session_start();
-use adhesion_connexion\UserManager;
+use Pierr\SaeWeb\php\adhesion_connexion\UserManager;
+use Pierr\SaeWeb\php\adhesion_connexion\User;
+
 require_once __DIR__ . "/UserManager.php";
+require_once __DIR__ . "/User.php";
 require_once __DIR__ . '/../config/database.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $userManager = new UserManager();
-    $nom = $_POST['nom'];
-    $prenom = $_POST['prenom'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $voie = $_POST['voie'];
-    $codepostale = $_POST['codepostale'];
-    $ville = $_POST['ville'];
-    $pays = $_POST['pays'];
-    $telephone = $_POST['telephone'];
-    $result = $userManager->register($nom, $prenom, $email, $password, $voie, $codepostale, $ville, $pays, $telephone);
+    $userCurrent = new User($_POST['nom'] , $_POST['prenom'] , $_POST['email'] , $_POST['password'], $_POST['voie'] , $_POST['telephone'] ,$_POST['codepostale'], $_POST['pays'] ,$_POST['ville'] );
+    $result = $userManager->register($userCurrent);
     if ($result) {
         // Inscription réussie
         header("Location: /connexion.php");

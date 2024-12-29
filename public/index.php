@@ -1,7 +1,6 @@
 <?php
 require_once "../src/php/helpers/fonction.php";
 
-
 $routes = [
     'connect_user' => '../src/php/adhesion_connexion/process_connect_user.php',
     'register_user' => '../src/php/adhesion_connexion/process_register_user.php',
@@ -13,10 +12,8 @@ $routes = [
 handleRequest($routes);
 require_once "../src/php/views/header.php";
 ?>
-  <section class="section-banniere">
       <a class="link-enquete" href="main.php">equête</a>
     <img class="banniere" src="/assets/image/Accueil/slider.png" />
-  </section>
   <main class="main-presentation">
     <div class="wrapper-main-presentation">
       <div class="presentation-header">

@@ -1,5 +1,13 @@
 <?php
+require_once "../src/php/helpers/fonction.php";
 require "../src/php/config/database.php";
+session_start();
+
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: ./index.php?action=connect_user"); // Rediriger si non connecté
+    exit();
+}
 $totalSteps = 7;
 $db = new Database();
 $pdo = $db->connect();
