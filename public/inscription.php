@@ -109,7 +109,7 @@ unset($_SESSION['register_errors'], $_SESSION['old_inputs']); // Nettoyer la ses
                     </label>
                     <div class="divSubmit">
                         <button class="return-btn2" type="button" >Retour</button>
-                        <button type="submit">Valider</button>
+                        <button type="submit" class="sub-inscription">Valider</button>
                     </div>
                 </div>
             </form>
