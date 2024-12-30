@@ -147,15 +147,22 @@ class UserManager
     public function register(User $user) {
 
         $hashedPassword = password_hash($user->getPassword(), PASSWORD_DEFAULT);
-        $errors = $this->validateFields($user->getNom(), $user->getPrenom(), $user->getEmail(), $hashedPassword, $user->getAdresse(), $user->getCodePostal(), $user->getVille(), $user->getTelephone());
+        $errors = $this->validateFields($user->getNom(),
+            $user->getPrenom(), $user->getEmail(),
+            $hashedPassword,
+            $user->getAdresse(),
+            $user->getCodePostal(),
+            $user->getVille(),
+            $user->getTelephone());
 
             if (!empty($errors)) {
                 $_SESSION['register_errors'] = $errors;
                 return false;
             }
 
-        if ($this->isEmailValid($user->getEmail()) ) {
-            $_SESSION['register_errors'] = "Cet email est déjà utilisé.";
+        if ($this->isEmailValid($user->getEmail())) {
+            $errors['general'] = "Cet email est déjà utilisé.";
+            $_SESSION['register_errors'] = $errors;
             return false;
         }
         // Hachage du mot de passe
@@ -165,6 +172,8 @@ class UserManager
 
 
         if (!$idVille || !$idPays) {
+            $errors['general'] = "Ville ou pays invalide.";
+
             $_SESSION['register_errors'] = "Ville ou pays invalide.";
             return false;
         }
@@ -188,10 +197,12 @@ class UserManager
                 return true;
 
             } else {
+                $errors['general'] = "Erreur lors de l'inscription.";
                 $_SESSION['register_errors'] = "Erreur lors de l'inscription.";
                 return false;
             }
         } catch (PDOException $e) {
+            $errors['general'] = "Erreur de base de données : " . $e->getMessage();
             $_SESSION['register_errors'] = "Erreur de base de données : " . $e->getMessage();
             return false;
         }

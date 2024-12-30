@@ -5,6 +5,5 @@
 </div>
 </div>
 </main>
-<script type="module" src="../main.js"></script>
 </body>
 </html>

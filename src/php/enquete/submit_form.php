@@ -31,4 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $update = $pdo->prepare("UPDATE utilisateurs SET has_participated = TRUE WHERE id_utilisateur = :id");
     $update->execute(['id' => 20]);
+
+
+    header("Location: ./mainEnd.php");
 }

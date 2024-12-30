@@ -324,6 +324,21 @@ select {
 .footer a:hover {
   border-bottom: 1px solid #000;
 }
+.error-message-general {
+  color: #eb5957;
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-align: center;
+  transition: all 0.3s ease-out;
+}
+
+.error-message-general-2 {
+  color: #eb5957;
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-align: center;
+  transition: all 0.3s ease-out;
+}
 
 .input-error {
   border: 1px solid #eb5957;
@@ -332,20 +347,20 @@ select {
 .error-message {
   color: #eb5957;
   font-size: 0.9em;
-  transition: all 0.3s ease-out;
+  transition: all 0.3ms ease-out;
 }
-.error-message-general {
-  color: #eb5957;
-  margin-bottom: 10px;
-  font-weight: bold;
-  text-align: center;
-  transition: all 0.3s ease-out;
-}
-span.error-message {
+
+.error-message {
   color: #eb5957;
   font-size: 0.9em;
-  margin-top: 5px;
-  display: block;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.error-message.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 input.error,

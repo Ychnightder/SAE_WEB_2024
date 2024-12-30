@@ -22,9 +22,8 @@
         <img src="./assets/image/shared/logo.png" alt="">
     </div>
     <div class="body-container">
-        <h1>Bienvenue sur notre enquête</h1>
-        <h1>Aidez nous à améliorer l'accompagnement des personnes autistes et de leurs proches</h1>
-        <a href="questionnaire.php" class="btn">Commencer l'enquête</a>
+        <h1 style="margin-bottom: 70px">Merci d'avoir répondu</h1>
+        <a href="index.php" class="btn">Retour à l'accueil</a>
     </div>
 </div>
 <div class="wave fond-bot">

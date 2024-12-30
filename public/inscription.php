@@ -1,7 +1,9 @@
 <?php
 require"../src/php/views/headerAC.php";
 session_start();
-unset($_SESSION['$errors'] );
+$errors = $_SESSION['register_errors'] ?? [];
+$oldInputs = $_SESSION['old_inputs'] ?? [];
+unset($_SESSION['register_errors'], $_SESSION['old_inputs']); // Nettoyer la session
 ?>
 <div class="leftBox">
     <div class="logoBox">
@@ -10,13 +12,28 @@ unset($_SESSION['$errors'] );
             /></a>
     </div>
     <h1 class="title-AC">
-        Bienvenue sur l'intranet <br />d'Autisme France
+        Bienvenue sur l'intranet <br />d'Autisme France <br /> <br />
+
     </h1>
+                    <?php if (!empty($errors)): ?>
+    <div class="error-message-general-2">
+        <?php
+        // Afficher toutes les erreurs générales (qui peuvent inclure "email déjà utilisé", "ville/pays invalide", etc.)
+        foreach ($errors as $error) {
+            echo "<p>" . htmlspecialchars($error) . "</p>";
+        }
+
+
+        ?>
+    </div>
+                    <?php endif; ?>
     <div class="formBox">
         <div class="div-form-inscription">
             <form class="form-inscription"
                     method="post"
                 action="index.php?action=register_user">
+
+
                 <div class="first-info">
                     <div class="name-firsname">
                         <label for="nom">
