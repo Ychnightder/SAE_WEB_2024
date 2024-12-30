@@ -5,6 +5,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $db = new Database();
     $pdo = $db->connect();
+    $db->debug($_POST);
 //    $userId = $_SESSION['user_id'];
     $reponses = $_POST['reponses']?? [];
 

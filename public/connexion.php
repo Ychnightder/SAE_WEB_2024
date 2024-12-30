@@ -32,6 +32,7 @@ unset($_SESSION['login_errors'], $_SESSION['old_inputs']); // Nettoyer les sessi
                         <input id="ID" name="identifiant" type="email"
                                class="<?= isset($errors['identifiant']) ? 'input-error' : '' ?>"
                                value="<?= htmlspecialchars($_POST['identifiant'] ?? '') ?>"
+                               required
                         />
                         <?php if (!empty($errors['identifiant'])): ?>
                             <span class="error-message"><?= htmlspecialchars($errors['identifiant']) ?></span>
@@ -44,7 +45,7 @@ unset($_SESSION['login_errors'], $_SESSION['old_inputs']); // Nettoyer les sessi
                                 id="password"
                                 name="password"
                                 type="password"
-
+required
                                 class="<?= isset($errors['password']) ? 'input-error' : '' ?>"
                         />
                         <?php if (!empty($errors['password'])): ?>
@@ -58,7 +59,7 @@ unset($_SESSION['login_errors'], $_SESSION['old_inputs']); // Nettoyer les sessi
                 </div>
                 <div class="divSubmit">
                     <button type="reset">Retour</button>
-                    <button type="submit">Connexion</button>
+                    <button class="sub" type="submit">Connexion</button>
                 </div>
                 <div class="likns-ac">
                     <p>Avez-vous un compte ?</p>

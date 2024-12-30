@@ -15,6 +15,5 @@ function handleRequest (array $chemin) : void  {
             exit();
         }else{
             http_response_code(404);
-
         }
 }

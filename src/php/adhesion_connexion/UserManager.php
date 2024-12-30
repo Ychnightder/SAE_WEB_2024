@@ -9,7 +9,6 @@ require_once __DIR__ . '/../config/database.php';
 class UserManager
 {
     private $pdo;
-
     public function __construct() {
         $db = new Database();
         $this->pdo = $db->connect(); // Assure-toi d'utiliser le bon nom de classe ici
@@ -40,7 +39,6 @@ class UserManager
 
         return null;
     }
-
     /**
      * Enregistre une connexion réussie dans la base de données.
      *
@@ -57,8 +55,6 @@ class UserManager
         $stmt->bindParam(':id_utilisateur', $userId, \PDO::PARAM_INT);
         $stmt->execute();
     }
-
-
     private function isEmailValid(string $email): bool
     {
         $sql = "SELECT email FROM utilisateurs WHERE email = :email LIMIT 1";
@@ -71,7 +67,6 @@ class UserManager
 
         return false;
     }
-
     private function getCityId(string $ville): ?int
     {
         $stmt = $this->pdo->prepare("SELECT idVille FROM ville WHERE nomVille = :ville");

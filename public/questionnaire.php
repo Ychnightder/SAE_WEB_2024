@@ -37,9 +37,9 @@ $step = 1; // Par défaut
     <form class="form" method="POST" action="index.php?action=submit_form">
         <div id="questions-wrapper">
             <?php foreach ($questions as $index => $question): ?>
-            <div class="question-slide <?= $index === 1 ? 'visible' : '' ?>" id="question-<?= $index ?>" data-id="<?= $question['id_questionnaire']  ?>">
+            <div class="question-slide <?= $index === 0 ? 'visible' : '' ?>" id="question-<?= $index ?>" data-id="<?= $question['id_questionnaire']  ?>">
                 <p class="question-num">
-                    Question <?= $index + 1 ?>
+                    Question <?= $index  ?>
                 </p>
                 <p class="question">
                     <?= htmlspecialchars($question['texte_question'])?>

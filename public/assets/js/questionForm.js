@@ -1,4 +1,3 @@
-
 let currentIndex = 0;
 const questions = document.querySelectorAll(".question-slide");
 const nextButton = document.getElementById("next-btn");
@@ -25,8 +24,9 @@ function showQuestion(index) {
       question.classList.remove("visible", "exit"); // Masquer les autres
     }
   });
+
   // Gestion des boutons
-  prevButton.style.display = index > 0 ? "inline-block" : "none";
+  // prevButton.style.display = index > 0 ? "inline-block" : "none";
   nextButton.textContent = index === questions.length - 1 ? "Terminer" : "Suivant";
 }
 nextButton.addEventListener("click", () => {
@@ -49,6 +49,11 @@ nextButton.addEventListener("click", () => {
   }
 });
 prevButton.addEventListener("click", () => {
+
+  if (questions[currentIndex].id === "question-1") {
+      location.href = "main.php";
+  }
+
   if (currentIndex > 0) {
     currentIndex--;
     showQuestion(currentIndex);
@@ -69,9 +74,6 @@ function updateStepInput() {
     bar.classList.toggle("active", index < stepValue);
   });
 }
-
-
-
 function isCurrentQuestionAnswered() {
   const currentQuestion = questions[currentIndex];
   const input = currentQuestion.querySelector('[name^="reponses"]');
@@ -89,7 +91,7 @@ function isCurrentQuestionAnswered() {
       currentQuestion.classList.add('error');
       setTimeout(() => {
         currentQuestion.classList.remove('error');
-      }, 1000);
+      }, 2000);
 
     } else {
       currentQuestion.classList.remove('error');
@@ -98,5 +100,4 @@ function isCurrentQuestionAnswered() {
   }
   return false;
 }
-
 showQuestion(currentIndex);

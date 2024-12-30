@@ -31,3 +31,41 @@ Content-Type: application/x-www-form-urlencoded
 identifiant=pierreychnightder52@gmail.com&
 password=ychnightder
 ###
+
+
+### Réponses aux questions
+POST http://localhost:8000/index.php?action=submit_form
+Host: http://localhost:8000
+Content-Type: application/x-www-form-urlencoded
+
+reponses[1]=26-40%20ans&
+reponses[2]=Masculin&
+reponses[3]=Professionnel%20de%20sant%C3%A9&
+reponses[4]=1%20%C3%A0%203%20ans&
+reponses[5]=Provence-Alpes-C%C3%B4te%20d%27Azur&
+reponses[6]=Partiellement&
+reponses[7]=Non&
+reponses[8]=1h-2h&
+reponses[9]=Scolarit%C3%A9%20dans%20un%20%C3%A9tablissement%20m%C3%A9dico-social%20(IME,%20IMPRO,%20IME,%20SESSAD,%20FAM,%20Foyer%20de%20vie)&
+reponses[10]=Oui&
+reponses[11]=Souffrance%20psychologique&
+reponses[12]=Finances&
+reponses[13]=3&
+reponses[14]=Informations%20juridiques&
+reponses[15]=Non&
+reponses[16]=Non&
+reponses[17]=bbbbbbbbbbbbbbb&
+reponses[18]=bbbbbbbbbbbbbbb&
+reponses[19]=bbbbbbbbbbbbbbbb&
+reponses[20]=Oui&
+reponses[21]=Oui
+
+
+
+
+
+
+
+
+
+

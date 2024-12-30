@@ -236,11 +236,9 @@ textarea::placeholder {
   background-color: #0056b3;
 }
 .question-slide.error {
-  border: 1px solid red;
-  background-color: #ffe6e6;
   animation: shake 0.3s ease-in-out;
-  width: 98%;
   border-radius: 8px;
+  height: 100%;
 }
 
 
