@@ -37,7 +37,6 @@ if ($user) {
     $_SESSION['user_id'] = $user['id_utilisateur'];
     $_SESSION['user_name'] = $user['nom'];
     $_SESSION['user_prenom'] = $user['prenom'];
-    $_SESSION['user_email'] = $user['email'];
     $userManager->logConnection($user['id_utilisateur']);
     header("Location: /main.php");
     exit;

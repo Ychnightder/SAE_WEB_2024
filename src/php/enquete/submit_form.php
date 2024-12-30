@@ -5,7 +5,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $db = new Database();
     $pdo = $db->connect();
-    $userId = $_SESSION['user_id'];
+//    $userId = $_SESSION['user_id'];
     $reponses = $_POST['reponses']?? [];
 
     foreach ($reponses as $id_question => $reponse) {
@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $query->execute([
                 'reponse' => $reponse,
                 'id_question' => $id_question,
-                'id_utilisateur' => $userId
+                'id_utilisateur' => 20 //$userId
             ]);
         } catch (PDOException $e) {
             // Handle database errors
@@ -29,5 +29,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     $update = $pdo->prepare("UPDATE utilisateurs SET has_participated = TRUE WHERE id_utilisateur = :id");
-    $update->execute(['id' => $userId]);
+    $update->execute(['id' => 20]);
 }
