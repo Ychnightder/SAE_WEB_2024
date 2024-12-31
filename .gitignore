@@ -5,10 +5,10 @@
 /httpRequests/
 /dataSources/
 /dataSources.local.xml
-# /node_modules
+ /node_modules
 
 /dist/
-# /node_modules/prettier
+ /node_modules/prettier
 
 # Ignorer les fichiers de log
 npm-debug.log*
