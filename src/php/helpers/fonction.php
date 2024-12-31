@@ -6,6 +6,7 @@ echo '<pre>';
 print_r($data);
 echo '</pre>';
 }
+
 function handleRequest (array $chemin) : void  {
 
         $action = filter_var($_GET["action"] ?? $_POST["action"] ?? null  );
@@ -16,4 +17,8 @@ function handleRequest (array $chemin) : void  {
         }else{
             http_response_code(404);
         }
+}
+
+function convertirEnJS($nomjs,$data) : void {
+    echo 'const '. $nomjs . '= ' . json_encode($data) . ';'.PHP_EOL;
 }

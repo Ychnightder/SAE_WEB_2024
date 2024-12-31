@@ -3,7 +3,6 @@ require_once __DIR__ . '/../config/database.php'; // Chemin vers database.php
 require_once __DIR__ . '/../helpers/fonction.php';
 $db = new Database();
 $pdo = $db->connect();
-
 session_start();
 $email = isset($_POST['identifiant']) ? trim($_POST['identifiant']) : null;
 $password = $_POST['password'] ?? null;

@@ -13,7 +13,7 @@
 <div class="container">
     <div class="card" id="modal-connexion">
         <div class="head">
-           <a href="/index.php"> <svg
+           <a href="/index.php"><svg
                        width="50"
                        height="50"
                        viewBox="0 0 50 50"
