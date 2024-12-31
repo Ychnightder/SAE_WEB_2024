@@ -369,7 +369,6 @@ select.error {
   background-color: #ffe6e6; /* Fond rouge clair pour l'erreur */
 }
 
-/* Responsive pour petits écrans - smartphones */
 @media (max-width: 820px) {
   .rightBox .img img {
     display: none;
@@ -425,8 +424,6 @@ select.error {
     display: none;
   }
 }
-
-/* Responsive pour tablettes */
 @media (max-width: 1200px) {
   .img {
     display: none;

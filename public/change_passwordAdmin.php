@@ -54,14 +54,14 @@
             </svg>
             <h2>Changer de mot de passe</h2>
         </div>
-        <form class="form3" action="" method="post">
+        <form class="form3" action="index.php?action=process_change_password_admin" method="post">
             <div class="wrapper-center">
-                <label for="Login-changePwd">Code authentification :</label>
+                <label for="Login-changePwd">Email :</label>
                 <input
-                        type="number"
+                        type="email"
                         id="Login-changePwd"
-                        name="code authentification"
-                        placeholder="12345"
+                        name="emailAdmin"
+                        placeholder="azerty@azerty.fr"
                         required
                 />
 

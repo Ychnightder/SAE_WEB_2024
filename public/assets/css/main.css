@@ -134,12 +134,49 @@ body {
   --aero-blue: #19c3e3;
 }
 
+
+
+.error-message-general {
+  color: #eb5957;
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-align: center;
+  transition: all 0.3s ease-out;
+}
+
+.error-message-general-2 {
+  color: #eb5957;
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-align: center;
+  transition: all 0.3s ease-out;
+}
+
 .input-error {
-  border: 1px solid var(--india-red);
+  border: 1px solid #eb5957;
+  transition: all 0.3s ease-out;
+}
+.error-message {
+  color: #eb5957;
+  font-size: 0.9em;
+  transition: all 0.3ms ease-out;
 }
 
 .error-message {
-  color: var(--india-red);
+  color: #eb5957;
   font-size: 0.9em;
-  margin-top: 5px;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.error-message.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+input.error,
+select.error {
+  border: 1px solid #eb5957;
+  background-color: #ffe6e6; /* Fond rouge clair pour l'erreur */
 }

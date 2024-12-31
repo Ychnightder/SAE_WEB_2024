@@ -18,7 +18,6 @@ unset($_SESSION['register_errors'], $_SESSION['old_inputs']); // Nettoyer la ses
                     <?php if (!empty($errors)): ?>
     <div class="error-message-general-2">
         <?php
-        // Afficher toutes les erreurs générales (qui peuvent inclure "email déjà utilisé", "ville/pays invalide", etc.)
         foreach ($errors as $error) {
             echo "<p>" . htmlspecialchars($error) . "</p>";
         }

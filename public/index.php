@@ -7,6 +7,8 @@ $routes = [
     'connect_admin' => '../src/php/admin/process_connect_admin.php',
     'dashboard' => '../src/php/dashboard.php',
     'submit_form' => '../src/php/enquete/submit_form.php',
+    'process_change_password_admin' => '../src/php/admin/process_change_password_admin.php',
+
 ];
 
 handleRequest($routes);

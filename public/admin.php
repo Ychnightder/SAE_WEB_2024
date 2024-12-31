@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -65,9 +68,8 @@
                         id="identifiant"
                         name="identifiant"
                         placeholder="azerty@exemple.com"
-                        required
                 />
-                <span class="error-message"></span>
+                <span class="error-message error-message-admin"></span>
 
                 <label for="password">Mot de passe :</label>
                 <input
@@ -75,9 +77,8 @@
                         id="password"
                         name="password"
                         placeholder="mot de passe"
-                        required
                 />
-                <span class="error-message"></span>
+                <span class="error-message error-message-admin"></span>
 
             </div>
             <div class="btn-modal">

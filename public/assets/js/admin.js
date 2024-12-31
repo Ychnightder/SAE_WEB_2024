@@ -1,27 +1,48 @@
-// const cards = document.querySelectorAll(".card ");
-// const btnNext1 = document.querySelector(".btn-forget-pwd");
-// const btnNext2 = document.querySelector(".btn-submit1");
-// const btnBack2 = document.querySelector(".btn-reset");
-//
-// function showCard(index) {
-//   cards.forEach((card, i) => {
-//     if (i === index) {
-//       card.style.display = "block"; // Affiche la carte
-//       // console.log(`Carte ${index + 1} affichée`);
-//     } else {
-//       card.style.display = "none"; // Cache les autres cartes
-//     }
-//   });
-// }
+function showError(input, message) {
+    const errorMessage = input.nextElementSibling;
+    errorMessage.textContent = message;
+    errorMessage.classList.add("show");
+    setTimeout(() => {
+        errorMessage.classList.remove("show");
+    }, 5000);
+}
+function clearErrors() {
+    const errorMessages = document.querySelectorAll(".error-message");
+    errorMessages.forEach((msg) => {
+        msg.textContent = "";
+        msg.classList.remove("show");
+    });
+}
 
-// const InputIdChangeMdp = document.querySelector("#reset-pwd");
-// const InputCodeAuth = document.querySelector("#code-auth");
-//
 
-// InputIdChangeMdp.addEventListener("input", function (event) {
-//   event.target.value = event.target.value.replace(/\D/g, "");
-// });
+function  validateConnexion() {
+    let isValid = true;
 
-// InputCodeAuth.addEventListener("input", function (event) {
-//   event.target.value = event.target.value.replace(/\D/g, "");
-// });
+    // Réinitialiser les erreurs
+    clearErrors();
+    const email = document.getElementById("identifiant");
+    const password = document.getElementById("password");
+
+    if (!email.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+        isValid = false;
+        showError(email, "Veuillez entrer une adresse email valide.");
+    }
+
+    if (!password.value.trim() || password.value.length < 8) {
+        isValid = false;
+        showError(password, "Veuillez entrer votre mot de passe.");
+    }
+    return isValid;
+}
+
+
+
+const btnSub = document.querySelector(".btn-submit");
+const form = document.querySelector(".form-admin");
+
+btnSub.addEventListener("click" , (e) =>{
+    e.preventDefault();
+    if (validateConnexion()){
+        form.submit();
+    }
+})
