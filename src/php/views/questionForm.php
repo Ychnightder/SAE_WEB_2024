@@ -1,3 +1,11 @@
+<?php
+use config\BDDRequetes;
+require_once '../src/php/config/BDDRequetes.php';
+
+$request = new BDDRequetes(); // Instance de la classe BDDRequetes
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -29,15 +37,17 @@
                         Question <?= $index + 1 ?>
                     </p>
                     <p class="question">
-                        <?= htmlspecialchars($question['texte_question_'])?>
+                        <?= htmlspecialchars($question['texte_question_']) ?>
                     </p>
+                    <!-- Zone d'affichage des erreurs -->
+                    <?php if (!empty($errors[$question['id_question']])): ?>
+                        <p class="error-message"><?= htmlspecialchars($errors[$question['id_question']]) ?></p>
+                    <?php endif; ?>
                     <div class="div-reponse">
                         <?php if ($question['type_question'] === 'button'): ?>
                             <?php
                             // Charger les options pour cette question de type 'button'
-                            $query = $pdo->prepare("SELECT * FROM Options WHERE id_question = :id_question");
-                            $query->execute(['id_question' => $question['id_question']]);
-                            $options = $query->fetchAll();
+                            $options = $request->getOptions($question['id_question']);
                             ?>
 
                             <?php foreach ($options as $option): ?>
@@ -49,25 +59,27 @@
                                     <?= htmlspecialchars($option['option_text']) ?>
                                 </button>
                             <?php endforeach; ?>
-                            <!-- hidden -->
+                            <!-- Champ caché -->
                             <input type="hidden"
                                    id="input-<?= $question['id_question'] ?>"
                                    name="reponses[<?= $question['id_question'] ?>]"
                                    value="">
-
                         <?php elseif ($question['type_question'] === 'textarea'): ?>
-                            <textarea placeholder="champs libre" name="reponses[<?= $question['id_question'] ?>]" required></textarea>
+                            <textarea placeholder="champs libre"
+                                      name="reponses[<?= $question['id_question'] ?>]"
+                                      required></textarea>
                         <?php elseif ($question['type_question'] === 'select'): ?>
                             <?php
                             // Charger les options pour cette question de type 'select'
-                            $query = $pdo->prepare("SELECT * FROM Options WHERE id_question = :id_question");
-                            $query->execute(['id_question' => $question['id_question']]);
-                            $options = $query->fetchAll();
+                            $options = $request->getOptions($question['id_question']);
                             ?>
 
-                            <select name="reponses[<?= $question['id_question'] ?>]" required>
+                            <select name="reponses[<?= $question['id_question'] ?>]" data-required="true" required>
+                                <option value="">Sélectionnez une option</option>
                                 <?php foreach ($options as $option): ?>
-                                    <option value="<?= htmlspecialchars($option['option_text']) ?>"><?= htmlspecialchars($option['option_text']) ?></option>
+                                    <option value="<?= htmlspecialchars($option['option_text']) ?>">
+                                        <?= htmlspecialchars($option['option_text']) ?>
+                                    </option>
                                 <?php endforeach; ?>
                             </select>
                         <?php endif; ?>
@@ -76,7 +88,6 @@
             <?php endforeach; ?>
         </div>
         <div class="navigation">
-
             <button id="prev-btn" type="button" class="btn">Retour</button>
             <button id="next-btn" type="button" class="btn">Suivant</button>
         </div>

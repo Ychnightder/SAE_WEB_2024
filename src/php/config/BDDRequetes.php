@@ -123,4 +123,11 @@ class BDDRequetes {
         $query->execute(['step' => $step]);
         return $query->fetchAll();
     }
+
+
+    public function getOptions(int $idQuestion): array {
+        $query = $this->pdo->prepare("SELECT * FROM Options WHERE id_question = :id_question");
+        $query->execute(['id_question' => $idQuestion]);
+        return $query->fetchAll();
+    }
 }

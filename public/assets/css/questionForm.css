@@ -240,3 +240,26 @@ textarea::placeholder {
 .navigation .btn:hover {
   background-color: #0056b3;
 }
+
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+.errors-wrapper {
+  border: 1px solid red;
+  background-color: #ffe6e6;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.errors-wrapper ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.errors-wrapper li {
+  margin: 5px 0;
+}

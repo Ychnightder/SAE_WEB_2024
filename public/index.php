@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once "../src/php/helpers/fonction.php";
 
 $routes = [
@@ -10,9 +10,19 @@ $routes = [
 
 handleRequest($routes);
 require_once "../src/php/views/header.php";
+
+// Vérifier si l'utilisateur est connecté en vérifiant si l'ID de l'utilisateur est dans la session
+if (isset($_SESSION['user_id'])) {
+    // Si l'utilisateur est connecté, rediriger vers la page d'enquête
+    $enquete_url = 'enquete.php';
+} else {
+    // Si l'utilisateur n'est pas connecté, rediriger vers la page de connexion
+    $enquete_url = 'connexion.php';
+}
 ?>
+
     <section class="section-banniere">
-        <a class="link-enquete" href="enquete.php">Enquête</a>
+        <a class="link-enquete" href="<?php echo $enquete_url; ?>">Enquête</a>
         <img class="banniere" src="/assets/image/Accueil/slider.png" />
     </section>
   <main class="main-presentation">

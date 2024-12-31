@@ -28,6 +28,8 @@ extract([
     'questions' => $questions,
 ]);
 
+
 // Inclure le formulaire
 require_once '../src/php/views/questionForm.php';
+
 

@@ -37,18 +37,44 @@ function showQuestion(index) {
     index === questions.length - 1 ? "Terminer" : "Suivant";
 }
 
+// Fonction de validation des champs
+function validateCurrentQuestion() {
+  const currentQuestion = questions[currentIndex];
+  const inputs = currentQuestion.querySelectorAll("input, textarea, select");
+  let isValid = true;
+
+  inputs.forEach((input) => {
+    const errorMsg = currentQuestion.querySelector(".error-msg");
+
+    if (!input.value.trim()) {
+      isValid = false;
+
+      // Ajouter un message d'erreur si absent
+      if (!errorMsg) {
+        const error = document.createElement("p");
+        error.className = "error-msg";
+        error.style.color = "red";
+        error.textContent = "Veuillez répondre à cette question.";
+        currentQuestion.appendChild(error);
+      }
+    } else if (errorMsg) {
+      errorMsg.remove();
+    }
+  });
+
+  return isValid;
+}
 nextButton.addEventListener("click", () => {
-  if (currentIndex < questions.length - 1) {
-    currentIndex++;
-    showQuestion(currentIndex);
-  } else {
-    // alert("Questionnaire terminé !");
-    //form.submit();
-    console.log("QT");
-    window.location.href = `enquete.php?step=${nextStep}`;
+  if (validateCurrentQuestion()) {
+    if (currentIndex < questions.length - 1) {
+      currentIndex++;
+      showQuestion(currentIndex);
+    } else {
+      console.log("QT");
+      window.location.href = `enquete.php?step=${nextStep}`;
+    }
   }
 });
-
 prevButton.addEventListener("click", () => {
   if (currentIndex > 0) {
     currentIndex--;
