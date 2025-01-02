@@ -65,7 +65,7 @@ body {
 .body-container h1 {
   font-weight: 600;
   text-align: center;
-  margin: 0 150px;
+  margin: 0 50px;
   line-height: 1.4;
   color: #017ac3;
 }
@@ -87,6 +87,11 @@ body {
 .btn:hover {
   background: #00aaff;
 }
+
+.name-user {
+  border-bottom: 3px solid #017ac3;
+}
+
 @media (max-width: 1024px) {
   body {
     overflow: visible;

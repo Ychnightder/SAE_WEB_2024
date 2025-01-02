@@ -1,8 +1,0 @@
-<?php
-
-
-require 'EnqueteManager.php';
-
-
-
-

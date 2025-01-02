@@ -1,20 +1,19 @@
 <?php
 class Database
 {
-    private $pdo;
-    private $dbHost = 'localhost';
-    private $dbName = 'autisme_france';
-    private $dbUser = 'root';
-    private $dbPass = 'ychnightder';
-    private $dbCharset = 'utf8mb4';
-    private $options = [
+    private   $pdo;
+    private string $dbHost = 'localhost';
+    private string $dbName = 'autisme_france';
+    private string $dbUser = 'root';
+    private string $dbPass = 'ychnightder';
+    private string $dbCharset = 'utf8mb4';
+    private array $options = [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
         PDO::ATTR_EMULATE_PREPARES => false,
     ];
-    private $dbpath = "C:\Users\Pierr\OneDrive\Bureau\SAE_WEB\src\php\config\database.db";
-
-    public function connect()
+    private string $dbpath = "C:\Users\Pierr\OneDrive\Bureau\SAE_WEB\src\php\config\database.db";
+    public function connect() : PDO
     {
         if ($this->pdo === null) {
             try {
@@ -32,7 +31,7 @@ class Database
         var_dump($d);
         echo '</pre>';
     }
-    public function chargerLesOptions(PDO $pdo , $idQuestion)
+    public function chargerLesOptions(PDO $pdo , $idQuestion): false|array
     {
         try {
             $query = $pdo->prepare("SELECT * FROM Options WHERE id_question = :id_question");
@@ -44,7 +43,7 @@ class Database
         }
         return $options;
     }
-    public function chargerLesQuestions(PDO $pdo)
+    public function chargerLesQuestions(PDO $pdo): array
     {
         try {
             $questionsQuery = "SELECT Q.id_question, Q.texte_question_, Q.type_question, Q.id_questionnaire
@@ -74,7 +73,7 @@ class Database
             return [];
         }
     }
-    public function chargerReponse (PDO $pdo ,  $idQuestion )
+    public function chargerReponse (PDO $pdo ,  $idQuestion ): false|array
     {
         $query = "
     SELECT r.reponse, COUNT(*) as count 

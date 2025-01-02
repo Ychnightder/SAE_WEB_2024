@@ -1,15 +1,14 @@
 <?php
-require_once "../src/php/helpers/fonction.php";
-require "../src/php/config/database.php";
 session_start();
 
+require_once "../src/php/helpers/fonction.php";
+require "../src/php/config/database.php";
 
-if (!isset($_SESSION['user_id'])) {
-    echo $_SESSION['user_id'];
+if (!isset($_SESSION["userCurrent"])) {
     header("Location: ./index.php?action=connect_user"); // Rediriger si non connecté
     exit();
 }
-$totalSteps = 7;
+$totalQuestionnaire = 7;
 $db = new Database();
 $pdo = $db->connect();
 $questions = $db->chargerLesQuestions($pdo);
@@ -25,15 +24,15 @@ $step = 1; // Par défaut
     <script src="./assets/js/questionForm.js" defer></script>
 </head>
 <body >
-<div class="container">
-    <div class="header-form">
-        <h1 class="stepbystep"><?= $step ?> sur 7</h1>
-        <div class="progress-bar">
-            <?php for ($i = 1; $i <= $totalSteps; $i++): ?>
-                <div class="<?= $i <= $step ? 'active' : '' ?>"></div>
-            <?php endfor; ?>
+    <div class="container">
+        <div class="header-form">
+            <h1 class="stepbystep"><?= $step ?> sur 7</h1>
+            <div class="progress-bar">
+                <?php for ($i = 1; $i <= $totalQuestionnaire; $i++): ?>
+                    <div class="<?= $i <= $step ? 'active' : '' ?>"></div>
+                <?php endfor; ?>
+            </div>
         </div>
-    </div>
     <form class="form" method="POST" action="index.php?action=submit_form">
         <div id="questions-wrapper">
             <?php foreach ($questions as $index => $question): ?>

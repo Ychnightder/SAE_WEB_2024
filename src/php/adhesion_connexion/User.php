@@ -10,16 +10,15 @@ class User
     private $password;
     private $adresse;
     private $telephone;
-
     private $codePostal;
-
+    private $pays;
+    private $ville;
 
     public function getCodePostal()
     {
         return $this->codePostal;
     }
-    private $pays;
-    private $ville;
+
 
     /**
      * @param $nom

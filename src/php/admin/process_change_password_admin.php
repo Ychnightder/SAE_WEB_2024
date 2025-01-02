@@ -10,11 +10,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $email = isset($_POST['emailAdmin']) ? trim($_POST['emailAdmin']) : null;
     $password = $_POST['new-pwd'] ?? null;
     $confirm = $_POST['confirm-new-pwd'] ?? null;
-    
     if (empty($email) || empty($password) || empty($confirm) || $password !== $confirm)  {
         header("Location : /change_passwordAdmin.php");
     }
-    
     $sql = "update admin set passwordAdmin = :password where email = :email" ;
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(':email', $email);

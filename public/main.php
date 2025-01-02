@@ -1,4 +1,6 @@
-<?php session_start();
+<?php
+session_start();
+require_once "../src/php/helpers/fonction.php";
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -6,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Titre de la page</title>
+    <title>Page Principal</title>
     <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="stylesheet" href="./assets/css/enquete-main.css">
 </head>
@@ -22,7 +24,7 @@
         <img src="./assets/image/shared/logo.png" alt="">
     </div>
     <div class="body-container">
-        <h1>Bienvenue sur notre enquête</h1>
+        <h1>Bienvenue <span class="name-user"><?php echo $_SESSION["userCurrent"]["nom"] ?></span> sur notre enquête</h1>
         <h1>Aidez nous à améliorer l'accompagnement des personnes autistes et de leurs proches</h1>
         <a href="questionnaire.php" class="btn">Commencer l'enquête</a>
     </div>
