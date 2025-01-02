@@ -1,5 +1,4 @@
 export const Pays = [
-  "France",
   // "Allemagne",
   // "Italie",
   // "Espagne",
@@ -31,13 +30,12 @@ btnSuivanteIns1.addEventListener("click", () => {
     formInscriptionPart2.classList.add("show-right");
   }
 });
-btnRtr1.addEventListener("click" , ()=>{
-  location.href="connexion.php"
-})
+btnRtr1.addEventListener("click", () => {
+  location.href = "connexion.php";
+});
 btnReturn2.addEventListener("click", () => {
   formInscriptionPart1.classList.remove("hide-left");
   formInscriptionPart2.classList.remove("show-right");
-
   formInscriptionPart2.classList.remove("hide-left");
 });
 function showError(input, message) {
@@ -55,7 +53,7 @@ function clearErrors() {
     msg.classList.remove("show");
   });
 }
-function  validateFirstInfo() {
+function validateFirstInfo() {
   let isValid = true;
 
   // Réinitialiser les erreurs
@@ -99,21 +97,24 @@ function validateSecondInfo() {
   const telephone = document.getElementById("telephone");
 
   // Vérifier si la voie est vide
-  if (!voie.value.trim()) {
+  if (
+    !voie.value.trim() ||
+    !/^[a-zA-ZÀ-ÿ0-9\s\-\.,']+$/.test(voie.value.trim())
+  ) {
     isValid = false;
     showError(voie, "La voie est requise.");
   }
 
   // Vérifier si le code postal est vide
-  if (!codepostale.value.trim() || !/^\d+$/.test(codepostale.value)) {
+  if (!codepostale.value.trim() || !/^\d{5}$/.test(codepostale.value)) {
     isValid = false;
-    showError(codepostale, "Le code postal est requis et doit être un nombre.");
+    showError(codepostale, "Veuillez entrer un code postal  ");
   }
 
   // Vérifier si la ville est vide
-  if (!ville.value.trim()) {
+  if (!ville.value.trim() || !/^[a-zA-ZÀ-ÿ\s\-\']+$/.test(ville.value.trim())) {
     isValid = false;
-    showError(ville, "Veuillez entrer votre ville.");
+    showError(ville, "Veuillez entrer une ville valide.");
   }
 
   // Vérifier la validité du numéro de téléphone (10 chiffres)
@@ -130,7 +131,7 @@ btnSubIns.addEventListener("click", (e) => {
   e.preventDefault(); // Empêche la soumission du formulaire par défaut
 
   // Vérifier les entrées avant l'envoi
-  if (validateFirstInfo() &&validateSecondInfo() ) {
+  if (validateFirstInfo() && validateSecondInfo()) {
     // Si tout est valide, envoyer le formulaire
     formInsctiption.submit(); // Soumettre le formulaire
   }
@@ -145,3 +146,11 @@ function remplirSelectPays() {
   });
 }
 remplirSelectPays();
+
+const errors = document.querySelector(".error-message-general-2");
+if (errors.textContent.trim() === "Code Postal ou Ville invalide.") {
+  if (validateFirstInfo()) {
+    formInscriptionPart1.classList.add("hide-left");
+    formInscriptionPart2.classList.add("show-right");
+  }
+}
