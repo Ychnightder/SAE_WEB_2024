@@ -3,9 +3,17 @@ session_start();
 
 require_once "../src/php/helpers/fonction.php";
 require "../src/php/config/database.php";
+require_once "../src/php/adhesion_connexion/UserManager.php";
+$gestionnaire = new \Pierr\SaeWeb\php\adhesion_connexion\UserManager();
+
 
 if (!isset($_SESSION["userCurrent"])) {
     header("Location: ./index.php?action=connect_user"); // Rediriger si non connecté
+    exit();
+}
+
+if ($gestionnaire->CheckUserEnquete($_SESSION["userCurrent"]["id"]) ) {
+    header("Location: ./index.php"); // Rediriger si non connecté
     exit();
 }
 $totalQuestionnaire = 7;

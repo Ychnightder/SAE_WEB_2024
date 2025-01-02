@@ -8,20 +8,25 @@ body {
 .container {
   width: 95%;
   height: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centre horizontalement le contenu */
 }
 .header-form {
   width: 100%;
   height: 55px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 .form {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 150px;
+  margin-top: 130px;
+  max-width: 1920px; /* Limiter la largeur du formulaire */
+  height: 70%;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 .stepbystep {
   font-size: 20px;
@@ -41,7 +46,9 @@ body {
   margin: 0 5px;
   background: #eeeeee;
   border-radius: 50px;
-  transition: background-color 0.3s, border 0.3s;
+  transition:
+    background-color 0.3s,
+    border 0.3s;
   position: relative;
 }
 
@@ -56,11 +63,9 @@ body {
 }
 
 .question-slide {
-  display: flex;
   flex-direction: column;
-  margin: 15px;
+  padding: 15px;
   width: 98%;
-  min-height: 100%;
   left: 100%;
   height: 100%;
   transition: all 0.5s ease-in-out;
@@ -73,7 +78,7 @@ body {
   opacity: 1;
   transform: translateX(0); /* Place la question active */
   display: block;
-  margin:  15px;
+  margin: 15px;
 }
 .question-slide.exit {
   opacity: 0;
@@ -213,9 +218,9 @@ textarea::placeholder {
   color: #017ac3;
 }
 .navigation {
-  width: 100%;
+  width: 90%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-direction: row;
 }
 
@@ -238,12 +243,19 @@ textarea::placeholder {
 .question-slide.error {
   animation: shake 0.3s ease-in-out;
   border-radius: 8px;
-  height: 100%;
+  background: #ffe6e6;
+  padding: 15px;
 }
 
-
 @keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-5px); }
-  75% { transform: translateX(5px); }
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
 }

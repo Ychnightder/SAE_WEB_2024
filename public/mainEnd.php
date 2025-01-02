@@ -23,7 +23,7 @@ session_start();
         <img src="./assets/image/shared/logo.png" alt="">
     </div>
     <div class="body-container">
-        <h1 style="margin-bottom: 70px">Merci <span class="name-user"><?php echo $_SESSION["userCurrent"]["nom"] ?></span> d'avoir répondu</h1>
+        <h1 style="margin-bottom: 70px">Merci <span class="name-user"><?php echo $_SESSION["userCurrent"]["prenom"] ?></span> d'avoir répondu</h1>
         <a href="index.php" class="btn">Retour à l'accueil</a>
     </div>
 </div>

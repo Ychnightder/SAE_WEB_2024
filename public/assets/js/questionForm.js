@@ -27,7 +27,8 @@ function showQuestion(index) {
 
   // Gestion des boutons
   // prevButton.style.display = index > 0 ? "inline-block" : "none";
-  nextButton.textContent = index === questions.length - 1 ? "Terminer" : "Suivant";
+  nextButton.textContent =
+    index === questions.length - 1 ? "Terminer" : "Suivant";
 }
 nextButton.addEventListener("click", () => {
   if (!isCurrentQuestionAnswered()) {
@@ -44,14 +45,11 @@ nextButton.addEventListener("click", () => {
       nextButton.textContent = "Soumettre";
     }
     updateStepInput();
-    alert("Questionnaire terminé !");
-
   }
 });
 prevButton.addEventListener("click", () => {
-
   if (questions[currentIndex].id === "question-1") {
-      location.href = "main.php";
+    location.href = "main.php";
   }
 
   if (currentIndex > 0) {
@@ -77,24 +75,24 @@ function updateStepInput() {
 function isCurrentQuestionAnswered() {
   const currentQuestion = questions[currentIndex];
   const input = currentQuestion.querySelector('[name^="reponses"]');
-
   if (input) {
     const isAnswered =
-        (input.type === 'text' || input.type === 'textarea' || input.type === 'hidden')
-            ? input.value.trim() !== ''
-            : input.tagName === 'SELECT'
-                ? input.value !== ''
-                : false;
+      input.type === "text" ||
+      input.type === "textarea" ||
+      input.type === "hidden"
+        ? input.value.trim() !== ""
+        : input.tagName === "SELECT"
+          ? input.value !== ""
+          : false;
 
     // Ajouter ou supprimer une classe pour indiquer un problème
     if (!isAnswered) {
-      currentQuestion.classList.add('error');
+      currentQuestion.classList.add("error");
       setTimeout(() => {
-        currentQuestion.classList.remove('error');
-      }, 2000);
-
+        currentQuestion.classList.remove("error");
+      }, 1000);
     } else {
-      currentQuestion.classList.remove('error');
+      currentQuestion.classList.remove("error");
     }
     return isAnswered;
   }
