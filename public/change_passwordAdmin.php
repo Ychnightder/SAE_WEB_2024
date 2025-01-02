@@ -1,4 +1,12 @@
 <?php
+session_start();
+
+// Vérifiez si l'utilisateur est connecté et est admin
+if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true || $_SESSION['role'] !== 'admin') {
+    // Redirigez vers la page de connexion ou affichez un message d'erreur
+    header('Location: /connexion.php'); // Remplacez "login.php" par votre page de connexion
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -54,14 +62,14 @@
             </svg>
             <h2>Changer de mot de passe</h2>
         </div>
-        <form class="form3" action="" method="post">
+        <form class="form3" action="../src/php/admin/process_change-password_admin.php" method="post">
             <div class="wrapper-center">
-                <label for="Login-changePwd">Code authentification :</label>
+                <label for="Login-changePwd">Email du compte</label>
                 <input
-                        type="number"
-                        id="Login-changePwd"
+                        type="email"
+                        id="email-changePwd"
                         name="code authentification"
-                        placeholder="12345"
+                        placeholder="admin@gmail.com"
                         required
                 />
 

@@ -27,7 +27,8 @@ if ($user && password_verify($password, $user['password']) ) { //
     $_SESSION['user_name'] = $user['nom'];
     $_SESSION['user_prenom'] = $user['prenom'];
     $_SESSION['user_email'] = $user['email'];
-    debug($user);
+    $_SESSION['logged_in'] = true; // L'utilisateur est connecté
+    $_SESSION['role'] = "admin"; // Stocke le rôle (par ex : 'admin' ou 'user')
     header("Location: ./dashboard.php");
     exit;
 } else {

@@ -45,6 +45,7 @@ if (!password_verify($password, $user->getPassword())) {
     header("Location: /connexion.php");
     exit;
 }
-
+$_SESSION['logged_in'] = true; // L'utilisateur est connecté
+$_SESSION['role'] = "user"; // Stocke le rôle (par ex : 'admin' ou 'user')
 header("Location: /enquete.php");
 exit;
