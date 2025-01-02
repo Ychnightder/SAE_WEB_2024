@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../assets/css/header.css" />
     <link rel="stylesheet" href="../assets/css/footer.css" />
     <?php
-
+    require_once "../src/php/config/config.php";
     $currentPage = basename($_SERVER['PHP_SELF'], ".php");
     $pageTitles = [
         "index" => "Accueil | Autisme France",
@@ -24,6 +24,14 @@
     ];
     $title = $pageTitles[$currentPage] ?? "Autisme France";
     $styles = $pageStyles[$currentPage] ?? [];
+
+    if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true || $_SESSION['role'] !== 'user') {
+        // Si l'utilisateur est connecté, rediriger vers la page d'enquête
+        $dashboardUser_url = 'connexion.php';
+    } else {
+        // Si l'utilisateur n'est pas connecté, rediriger vers la page de connexion
+        $dashboardUser_url = 'dashboardUser.php';
+    }
     ?>
 
     <?php foreach ($styles as $style): ?>
@@ -227,7 +235,7 @@
             </button>
         </div>
         <div class="cta-buttons">
-            <a href="./connexion.php" class="member-button">
+            <a href="<?php echo $dashboardUser_url; ?>" class="member-button">
                 <svg
                     class="member-icon"
                     width="17"

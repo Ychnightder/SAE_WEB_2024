@@ -1,5 +1,4 @@
 <?php
-session_start();
 require_once "../src/php/helpers/fonction.php";
 
 $routes = [
@@ -12,20 +11,24 @@ handleRequest($routes);
 require_once "../src/php/views/header.php";
 
 // Vérifier si l'utilisateur est connecté en vérifiant si l'ID de l'utilisateur est dans la session
-if (isset($_SESSION['user_id'])) {
+if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true || $_SESSION['role'] !== 'user') {
     // Si l'utilisateur est connecté, rediriger vers la page d'enquête
-    $enquete_url = 'enquete.php';
+    $enquete_url = 'connexion.php';
 } else {
     // Si l'utilisateur n'est pas connecté, rediriger vers la page de connexion
-    $enquete_url = 'connexion.php';
+    $enquete_url = 'enquete.php';
 }
 ?>
 
     <section class="section-banniere">
-        <a class="link-enquete" href="<?php echo $enquete_url; ?>">Enquête</a>
-        <img class="banniere" src="/assets/image/Accueil/slider.png" />
+        <img class="banniere" src="/assets/image/Accueil/slider.png" alt="Bannière principale" />
+        <div class="banniere-box">
+            <h2 class="banniere-title">Participez à notre enquête !</h2>
+            <p class="banniere-description">Aidez-nous à mieux comprendre vos besoins et attentes.</p>
+            <a class="banniere-button" href="<?php echo $enquete_url; ?>">Répondre à l'enquête</a>
+        </div>
     </section>
-  <main class="main-presentation">
+    <main class="main-presentation">
     <div class="wrapper-main-presentation">
       <div class="presentation-header">
         <h3 class="title">AUTISME FRANCE</h3>

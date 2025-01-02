@@ -1,12 +1,13 @@
 <?php
-session_start();
+require_once "../src/php/config/config.php";
+
 // Vérifiez si l'utilisateur est connecté et est admin
 if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true || $_SESSION['role'] !== 'admin') {
     // Redirigez vers la page de connexion ou affichez un message d'erreur
     header('Location: /connexion.php'); // Remplacez "login.php" par votre page de connexion
     exit();
 }
-global $pdo;
+
 require "../src/php/views/headerDash.php";
 
 ?>

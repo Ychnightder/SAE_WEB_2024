@@ -1,5 +1,11 @@
 <?php
 
+require_once "../src/php/config/config.php";
+if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true || $_SESSION['role'] !== 'user') {
+    // Redirigez vers la page de connexion ou affichez un message d'erreur
+    header('Location: /connexion.php'); // Remplacez "login.php" par votre page de connexion
+    exit();
+}
 use config\BDDRequetes;
 require_once '../src/php/config/BDDRequetes.php';
 require_once '../src/php/helpers/fonction.php';
