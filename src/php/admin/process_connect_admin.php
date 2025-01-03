@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once __DIR__ . '/../config/database.php'; // Chemin vers database.php
 require_once __DIR__ . '/../helpers/fonction.php';
 $db = new Database();
@@ -21,7 +22,8 @@ if ($user && password_verify($password, $user['passwordAdmin']) ) { //
     header("Location: ./dashboard.php");
     exit;
 } else {
-    echo "Identifiant ou mot de passe incorrect.";
-    $_SESSION['login_error'] = "Identifiant ou mot de passe incorrect.";
+    header("Location: ./admin.php");
+    $_SESSION['admin_error'] = "Identifiant ou mot de passe incorrect.";
+    $_SESSION['oldInput'] = $_POST;
     exit;
 }

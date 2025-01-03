@@ -1,5 +1,9 @@
-
-
+<?php
+session_start();
+ $errors = $_SESSION['admin_error'] ?? "";
+ $oldInput = $_SESSION['oldInput'] ?? [];
+ unset($_SESSION['admin_error'] , $_SESSION['oldInput']);
+?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -61,6 +65,9 @@
                </svg></a>
         </div>
         <form class="form-admin" action="index.php?action=connect_admin" method="POST">
+            <?php if (!empty($errors)): ?>
+                <p class="error-message-general-admin"><?= htmlspecialchars($errors)  ?></p>
+            <?php endif; ?>
             <div class="wrapper-center">
                 <label for="identifiant">Email :</label>
                 <input
@@ -68,6 +75,7 @@
                         id="identifiant"
                         name="identifiant"
                         placeholder="azerty@exemple.com"
+                        value="<?= htmlspecialchars($oldInput["identifiant"] ?? '')?>"
                 />
                 <span class="error-message error-message-admin"></span>
 
@@ -77,6 +85,7 @@
                         id="password"
                         name="password"
                         placeholder="mot de passe"
+                        value="<?= htmlspecialchars($oldInput["password"]?? '')?>"
                 />
                 <span class="error-message error-message-admin"></span>
 

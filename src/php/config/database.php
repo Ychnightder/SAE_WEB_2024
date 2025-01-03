@@ -1,7 +1,7 @@
 <?php
 class Database
 {
-    private   $pdo;
+    private $pdo;
     private string $dbHost = 'localhost';
     private string $dbName = 'autisme_france';
     private string $dbUser = 'root';
@@ -88,4 +88,31 @@ class Database
         $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $data;
     }
+    public function ChargerNomQuestionnaire(PDO $pdo,  $idQuestionnaire )
+    {
+        $query = "
+    SELECT titre_ 
+    FROM questionnaires q
+    WHERE q.id_questionnaire = :idQuestionnaire
+";
+        $stmt = $pdo->prepare($query);
+        $stmt->bindParam(':idQuestionnaire', $idQuestionnaire ,pdo::PARAM_INT);
+        $stmt->execute();
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $data[0]["titre_"];
+    }
+    public function ChargerTexteQuestion(PDO $pdo,  $idQuestion )
+    {
+        $query = "
+    SELECT texte_question_
+    FROM questions q
+    WHERE q.id_question = :idQuestion
+";
+        $stmt = $pdo->prepare($query);
+        $stmt->bindParam(':idQuestion', $idQuestion ,pdo::PARAM_INT);
+        $stmt->execute();
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $data[0]["texte_question_"];
+    }
+
 }

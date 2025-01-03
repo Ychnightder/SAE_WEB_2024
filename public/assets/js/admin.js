@@ -13,8 +13,6 @@ function clearErrors() {
         msg.classList.remove("show");
     });
 }
-
-
 function  validateConnexion() {
     let isValid = true;
 
@@ -34,9 +32,6 @@ function  validateConnexion() {
     }
     return isValid;
 }
-
-
-
 const btnSub = document.querySelector(".btn-submit");
 const form = document.querySelector(".form-admin");
 
