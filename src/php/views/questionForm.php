@@ -52,14 +52,12 @@ $request = new BDDRequetes(); // Instance de la classe BDDRequetes
 
                             <?php foreach ($options as $option): ?>
                                 <button class="btn-select" type="button"
-                                        onclick="selectOption(this)"
+                                        onclick="removeErrorMessage(this); selectOption(this)"
                                         data-target="input-<?= $question['id_question'] ?>"
                                         value="<?= $option['option_text'] ?>">
-
                                     <?= htmlspecialchars($option['option_text']) ?>
                                 </button>
                             <?php endforeach; ?>
-                            <!-- Champ caché -->
                             <input type="hidden"
                                    id="input-<?= $question['id_question'] ?>"
                                    name="reponses[<?= $question['id_question'] ?>]"
@@ -67,6 +65,7 @@ $request = new BDDRequetes(); // Instance de la classe BDDRequetes
                         <?php elseif ($question['type_question'] === 'textarea'): ?>
                             <textarea placeholder="champs libre"
                                       name="reponses[<?= $question['id_question'] ?>]"
+                                      onchange="removeErrorMessage(this)"
                                       required></textarea>
                         <?php elseif ($question['type_question'] === 'select'): ?>
                             <?php
@@ -74,7 +73,11 @@ $request = new BDDRequetes(); // Instance de la classe BDDRequetes
                             $options = $request->getOptions($question['id_question']);
                             ?>
 
-                            <select name="reponses[<?= $question['id_question'] ?>]" data-required="true" required>
+                            <select
+                                    name="reponses[<?= $question['id_question'] ?>]"
+                                    data-required="true"
+                                    onchange="removeErrorMessage(this)"
+                                    required>
                                 <option value="">Sélectionnez une option</option>
                                 <?php foreach ($options as $option): ?>
                                     <option value="<?= htmlspecialchars($option['option_text']) ?>">

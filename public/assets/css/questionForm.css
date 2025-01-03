@@ -241,25 +241,46 @@ textarea::placeholder {
   background-color: #0056b3;
 }
 
-.error-message {
-  color: red;
-  font-size: 0.9rem;
-  margin-top: 5px;
-}
-
-.errors-wrapper {
-  border: 1px solid red;
+.error-message,
+.error-msg {
+  position: fixed;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #d9534f;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 20px;
   background-color: #ffe6e6;
-  padding: 10px;
-  margin-bottom: 15px;
+  border: 2px solid #d9534f;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in-out;
+  z-index: 9999;
+  text-align: center;
 }
 
-.errors-wrapper ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
 }
 
-.errors-wrapper li {
-  margin: 5px 0;
+input:invalid,
+textarea:invalid,
+select:invalid {
+  border: 2px solid #d9534f;
+  background-color: #ffe6e6;
+}
+
+input:valid,
+textarea:valid,
+select:valid {
+  border: 2px solid #5cb85c;
+  background-color: #e6ffe6;
 }

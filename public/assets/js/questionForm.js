@@ -1,3 +1,9 @@
+let currentIndex = 0;
+const questions = document.querySelectorAll(".question-slide");
+const nextButton = document.getElementById("next-btn");
+const prevButton = document.getElementById("prev-btn");
+const form = document.querySelector(".form");
+const nextStep = form.dataset.nextStep;
 function selectOption(button) {
   // Récupérer l'ID de l'input depuis le bouton
   const inputId = button.getAttribute("data-target");
@@ -10,14 +16,18 @@ function selectOption(button) {
   const buttons = document.querySelectorAll(`[data-target="${inputId}"]`);
   buttons.forEach((btn) => btn.classList.remove("selected"));
   button.classList.add("selected");
+  console.log("Il a prit " + inputId);
 }
 
-let currentIndex = 0;
-const questions = document.querySelectorAll(".question-slide");
-const nextButton = document.getElementById("next-btn");
-const prevButton = document.getElementById("prev-btn");
-const form = document.querySelector(".form");
-const nextStep = form.dataset.nextStep;
+function removeErrorMessage(element) {
+  const parentQuestion = element.closest(".question-slide");
+  const errorMsg = parentQuestion.querySelector(".error-msg");
+
+  if (errorMsg) {
+    errorMsg.remove();
+  }
+}
+
 function showQuestion(index) {
   questions.forEach((question, i) => {
     if (i === index) {
@@ -53,7 +63,6 @@ function validateCurrentQuestion() {
       if (!errorMsg) {
         const error = document.createElement("p");
         error.className = "error-msg";
-        error.style.color = "red";
         error.textContent = "Veuillez répondre à cette question.";
         currentQuestion.appendChild(error);
       }
@@ -70,8 +79,7 @@ nextButton.addEventListener("click", () => {
       currentIndex++;
       showQuestion(currentIndex);
     } else {
-      console.log("QT");
-      window.location.href = `enquete.php?step=${nextStep}`;
+      form.submit();
     }
   }
 });
