@@ -40,8 +40,11 @@ $request = new BDDRequetes(); // Instance de la classe BDDRequetes
                         <?= htmlspecialchars($question['texte_question_']) ?>
                     </p>
                     <!-- Zone d'affichage des erreurs -->
-                    <?php if (!empty($errors[$question['id_question']])): ?>
-                        <p class="error-message"><?= htmlspecialchars($errors[$question['id_question']]) ?></p>
+                    <?php if (!empty($_SESSION['insert_error'])): ?>
+                        <?php foreach ($_SESSION['insert_error'] as $error): ?>
+                            <p class="error-message"><?= htmlspecialchars($error) ?></p>
+                        <?php endforeach; ?>
+                        <?php unset($_SESSION['insert_error']); ?> <!-- Effacer les erreurs après affichage -->
                     <?php endif; ?>
                     <div class="div-reponse">
                         <?php if ($question['type_question'] === 'button'): ?>

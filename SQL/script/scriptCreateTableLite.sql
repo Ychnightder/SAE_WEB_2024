@@ -52,12 +52,13 @@ CREATE TABLE Donateurs (
 
 CREATE TABLE Reponses (
                           id_reponse_ INTEGER PRIMARY KEY AUTOINCREMENT,
-                          reponse TEXT NOT NULL,
+                          id_option TEXT NOT NULL,
                           id_question INTEGER NOT NULL,
-                          id_utilisateur INTEGER NOT NULL,
+                          emailUser INTEGER NOT NULL,
                           FOREIGN KEY (id_question) REFERENCES Questions(id_question),
-                          FOREIGN KEY (id_utilisateur) REFERENCES Utilisateurs(id_utilisateur),
-                          UNIQUE (id_utilisateur, id_reponse_)
+                          FOREIGN KEY (emailUser) REFERENCES Utilisateurs(email),
+                          FOREIGN KEY (id_option) REFERENCES Options(id_option),
+                          UNIQUE (emailUser, id_reponse_)
 );
 
 CREATE TABLE Connexions (
@@ -65,7 +66,7 @@ CREATE TABLE Connexions (
                             date_connexion_ DATE NOT NULL,
                             statut_connexion INTEGER, -- BOOLEAN remplacé par INTEGER
                             id_utilisateur INTEGER NOT NULL,
-                            FOREIGN KEY (id_utilisateur) REFERENCES Utilisateurs(id_utilisateur)
+                            FOREIGN KEY (id_utilisateur) REFERENCES Utilisateurs(email)
 );
 
 CREATE TABLE Options (

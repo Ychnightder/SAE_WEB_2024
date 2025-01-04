@@ -1,28 +1,26 @@
 <?php
 
-function handlePostRequest($pdo, $postData, $step, $totalSteps) {
-    $reponses = $postData['reponses'] ?? [];
-    debug($reponses);
-//    foreach ($reponses as $id_question => $reponse) {
-//
-//
-//        $query = $pdo->prepare("
-//            INSERT INTO Réponses (reponse, id_question, id_utilisateur)
-//            VALUES (:reponse, :id_question, :id_utilisateur)
-//            ON DUPLICATE KEY UPDATE reponse = :reponse
-//        ");
-//        $query->execute([
-//            'reponse' => $reponse,
-//            'id_question' => $id_question,
-//            'id_utilisateur' => 1 // Utilisateur connecté
-//        ]);
-//    }
+$errors = [];
 
-//    $nextStep = $step + 1;
-//    if ($nextStep > $totalSteps) {
-//        header("Location: https://www.google.fr/");
-//    } else {
-//        header("Location: enquete.php?step=$nextStep");
-//    }
-//    exit;
+function handlePostRequest($request, $postData, $step, $totalSteps) {
+    $dataReponse = $postData['reponses'] ?? [];
+    foreach ($dataReponse as $id_question => $reponse) {
+        $id_option = $request->getOptionIdByText($reponse);
+        debug($id_option);
+        debug($reponse);
+        $result = $request->insertReponse($id_question, $id_option, $_SESSION['emailUser']);
+        if (!$result) {
+            $errors['insert_fail'] = "Une erreur est survenue. Veuillez recommencer l'enquête. Si le problème persiste, contactez l'administrateur.";
+            $_SESSION['insert_error'] = $errors;
+            header("Location: enquete.php?step=$step");
+            exit;
+        }
+    }
+    $nextStep = $step + 1;
+    if ($nextStep > $totalSteps) {
+        header("Location: https://www.google.fr/");
+    } else {
+        header("Location: enquete.php?step=$nextStep");
+    }
+    exit;
 }

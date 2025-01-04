@@ -124,10 +124,37 @@ class BDDRequetes {
         return $query->fetchAll();
     }
 
+    function getTotalSteps() {
+        $query = $this->pdo->prepare("SELECT COUNT(*) as total FROM Questionnaires");
+        $query->execute();
+        return (int) $query->fetch()['total'];
+    }
 
     public function getOptions(int $idQuestion): array {
         $query = $this->pdo->prepare("SELECT * FROM Options WHERE id_question = :id_question");
         $query->execute(['id_question' => $idQuestion]);
         return $query->fetchAll();
+    }
+
+    function getOptionIdByText($optionText): int {
+        $sql = "SELECT id_option FROM Options WHERE option_text = :optionText";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':optionText', $optionText, PDO::PARAM_STR);
+        $stmt->execute();
+        return $stmt->fetchColumn(); // Retourne directement l'ID
+    }
+
+    function insertReponse($id_question, $id_option, $emailUser): bool {
+//        $query = $this->pdo->prepare("
+//            INSERT INTO Réponses (id_option, id_question, emailUser)
+//            VALUES (:id_option, :id_question, :id_utilisateur)
+//            ON DUPLICATE KEY UPDATE id_option = :id_option
+//        ");
+//        return $query->execute([
+//            'id_option' => $id_option,
+//            'id_question' => $id_question,
+//            'emailUser' => $emailUser
+//        ]);
+        return false;
     }
 }

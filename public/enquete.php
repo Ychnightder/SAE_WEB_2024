@@ -17,12 +17,11 @@ $pdo = $request->pdo;
 
 $step = isset($_GET['step']) ? (int)$_GET['step'] : 1;
 
-$totalSteps = getTotalSteps($pdo);
+$totalSteps = $request->getTotalSteps();
 
 validateStep($step, $totalSteps);
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    debug($_POST);
-    handlePostRequest($pdo, $_POST, $step, $totalSteps);
+    handlePostRequest($request, $_POST, $step, $totalSteps);
 }
 
 $questions = $request->loadQuestions($step);

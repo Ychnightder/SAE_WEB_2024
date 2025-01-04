@@ -16,7 +16,6 @@ function selectOption(button) {
   const buttons = document.querySelectorAll(`[data-target="${inputId}"]`);
   buttons.forEach((btn) => btn.classList.remove("selected"));
   button.classList.add("selected");
-  console.log("Il a prit " + inputId);
 }
 
 function removeErrorMessage(element) {

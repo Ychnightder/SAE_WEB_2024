@@ -47,5 +47,6 @@ if (!password_verify($password, $user->getPassword())) {
 }
 $_SESSION['logged_in'] = true; // L'utilisateur est connecté
 $_SESSION['role'] = "user"; // Stocke le rôle (par ex : 'admin' ou 'user')
+$_SESSION['emailUser'] = $email;
 header("Location: /dashboardUser.php");
 exit;
