@@ -8,7 +8,7 @@ function handlePostRequest($request, $postData, $step, $totalSteps) {
         $id_option = $request->getOptionIdByText($reponse);
         debug($id_option);
         debug($reponse);
-        $result = $request->insertReponse($id_question, $id_option, $_SESSION['emailUser']);
+        $result = $request->insertReponse($id_option, $id_question, $_SESSION['emailUser']);
         if (!$result) {
             $errors['insert_fail'] = "Une erreur est survenue. Veuillez recommencer l'enquête. Si le problème persiste, contactez l'administrateur.";
             $_SESSION['insert_error'] = $errors;

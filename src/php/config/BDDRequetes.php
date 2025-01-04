@@ -144,17 +144,15 @@ class BDDRequetes {
         return $stmt->fetchColumn(); // Retourne directement l'ID
     }
 
-    function insertReponse($id_question, $id_option, $emailUser): bool {
-//        $query = $this->pdo->prepare("
-//            INSERT INTO Réponses (id_option, id_question, emailUser)
-//            VALUES (:id_option, :id_question, :id_utilisateur)
-//            ON DUPLICATE KEY UPDATE id_option = :id_option
-//        ");
-//        return $query->execute([
-//            'id_option' => $id_option,
-//            'id_question' => $id_question,
-//            'emailUser' => $emailUser
-//        ]);
-        return false;
+    function insertReponse($id_option, $id_question, $emailUser): bool {
+        $query = $this->pdo->prepare("
+            INSERT INTO Reponses (id_option, id_question, emailUser)
+            VALUES (:id_option, :id_question, :emailUser)
+        ");
+
+        $query->bindParam(':id_option', $id_option, PDO::PARAM_INT);
+        $query->bindParam(':id_question', $id_question, PDO::PARAM_INT);
+        $query->bindParam(':emailUser', $emailUser, PDO::PARAM_STR);
+        return $query->execute();
     }
 }
