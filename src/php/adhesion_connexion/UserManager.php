@@ -1,10 +1,9 @@
 <?php
 namespace Pierr\SaeWeb\php\adhesion_connexion;
-use Database;
+use Pierr\SaeWeb\php\Database\Database;
 use PDO;
 use PDOException;
 
-require_once __DIR__ . '/../config/database.php';
 
 class UserManager
 {

@@ -355,7 +355,9 @@ select {
   font-size: 0.9em;
   opacity: 0;
   transform: translateY(-10px);
-  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  transition:
+    opacity 0.3s ease-out,
+    transform 0.3s ease-out;
 }
 
 .error-message.show {

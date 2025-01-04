@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once __DIR__ . '/../config/database.php';
+use Pierr\SaeWeb\php\Database\Database;
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $db = new Database();
     $pdo = $db->connect();

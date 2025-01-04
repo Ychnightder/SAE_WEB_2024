@@ -1,7 +1,7 @@
 <?php
 session_start();
-require_once __DIR__ . '/../config/database.php'; // Chemin vers database.php
-require_once __DIR__ . '/../helpers/fonction.php';
+use Pierr\SaeWeb\php\Database\Database;
+
 $db = new Database();
 $pdo = $db->connect();
 $email = isset($_POST['identifiant']) ? trim($_POST['identifiant']) : null;

@@ -1,9 +1,9 @@
 <?php
 session_start();
-require_once "../src/php/helpers/fonction.php";
-require_once "../src/php/adhesion_connexion/UserManager.php";
 
-$gestionnaire = new \Pierr\SaeWeb\php\adhesion_connexion\UserManager();
+use Pierr\SaeWeb\php\adhesion_connexion\UserManager;
+
+$gestionnaire = new UserManager();
 
 if (!isset($_SESSION["userCurrent"]) ) {
     header("Location: ./index.php?action=connect_user"); // Rediriger si non connecté

@@ -10,18 +10,18 @@ header {
 
 header h1 {
   padding: 15px;
-  margin: 0  50px;
+  margin: 0 50px;
 }
-header a{
-  margin: 0  130px;
+header a {
+  margin: 0 130px;
   color: #ffffff;
   border-bottom: 1px solid transparent;
   transition: all 0.3s ease-out;
 }
-header a:hover{
-  margin: 0  130px;
+header a:hover {
+  margin: 0 130px;
   color: #ffffff;
-  border-bottom: 1px solid  #ffffff;
+  border-bottom: 1px solid #ffffff;
 }
 main {
   display: flex;
@@ -66,7 +66,7 @@ canvas {
   color: #017ac3;
   padding: 15px;
 }
-.chart-question{
+.chart-question {
   z-index: 25;
   margin: 50px;
   color: #017ac3;

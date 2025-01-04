@@ -134,8 +134,6 @@ body {
   --aero-blue: #19c3e3;
 }
 
-
-
 .error-message-general {
   color: #eb5957;
   margin-bottom: 10px;
@@ -167,7 +165,9 @@ body {
   font-size: 0.9em;
   opacity: 0;
   transform: translateY(-10px);
-  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  transition:
+    opacity 0.3s ease-out,
+    transform 0.3s ease-out;
 }
 
 .error-message.show {

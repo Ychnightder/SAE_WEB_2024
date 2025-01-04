@@ -1,6 +1,6 @@
 <?php
-require_once "../src/php/views/headerAC.php";
 session_start();
+require_once "../src/php/views/headerAC.php";
 $errors = isset($_SESSION['login_errors']) ? $_SESSION['login_errors'] : [];
 $oldInputs = isset($_SESSION['old_inputs']) ? $_SESSION['old_inputs'] : [];
 unset($_SESSION['login_errors'], $_SESSION['old_inputs']); // Nettoyer les sessions après récupération

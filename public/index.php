@@ -1,4 +1,5 @@
 <?php
+require  '../vendor/autoload.php';
 require_once "../src/php/helpers/fonction.php";
 
 $routes = [
@@ -12,7 +13,7 @@ $routes = [
 
 ];
 
-handleRequest($routes);
+    handleRequest($routes);
 require_once "../src/php/views/header.php";
 ?>
 <!--      <a class="link-enquete" href="main.php">equête</a>-->

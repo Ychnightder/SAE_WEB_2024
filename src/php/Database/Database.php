@@ -1,4 +1,8 @@
 <?php
+namespace Pierr\SaeWeb\php\Database;
+use PDO;
+use PDOException;
+
 class Database
 {
     private $pdo;
@@ -26,7 +30,8 @@ class Database
         }
         return $this->pdo;
     }
-    public function debug($d){
+    public function debug($d): void
+    {
         echo '<pre>';
         var_dump($d);
         echo '</pre>';

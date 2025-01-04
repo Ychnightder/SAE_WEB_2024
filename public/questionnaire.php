@@ -1,10 +1,8 @@
 <?php
 session_start();
-
-require_once "../src/php/helpers/fonction.php";
-require "../src/php/config/database.php";
-require_once "../src/php/adhesion_connexion/UserManager.php";
-$gestionnaire = new \Pierr\SaeWeb\php\adhesion_connexion\UserManager();
+use Pierr\SaeWeb\php\adhesion_connexion\UserManager;
+use Pierr\SaeWeb\php\Database\Database;
+$gestionnaire = new UserManager();
 
 
 if (!isset($_SESSION["userCurrent"])) {

@@ -1,7 +1,10 @@
 <?php
 require "../src/php/views/headerDash.php";
+use Pierr\SaeWeb\php\Database\Database;
+
 require_once "../src/php/helpers/fonction.php";
-require "../src/php/config/database.php";
+require  '../vendor/autoload.php';
+
 $db = new Database();
 $pdo = $db->connect();
 

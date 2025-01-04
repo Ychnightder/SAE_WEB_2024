@@ -119,7 +119,7 @@ body {
   color: #ddd;
 }
 
-.error-message-admin{
+.error-message-admin {
   margin: 10px 0;
 }
 
@@ -168,8 +168,7 @@ body {
   margin-bottom: 15px;
 }
 
-
-.error-message-general-admin{
+.error-message-general-admin {
   position: absolute;
   top: 5%;
   color: #eb5957;

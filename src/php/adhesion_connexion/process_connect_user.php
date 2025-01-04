@@ -1,7 +1,6 @@
 <?php
 session_start();
 use Pierr\SaeWeb\php\adhesion_connexion\UserManager;
-require_once __DIR__ . "/UserManager.php";
 
 $email = isset($_POST['identifiant']) ? trim($_POST['identifiant']) : null;
 $password = $_POST['password'] ?? null;

@@ -2,9 +2,6 @@
 session_start();
 use Pierr\SaeWeb\php\adhesion_connexion\UserManager;
 use Pierr\SaeWeb\php\adhesion_connexion\User;
-require_once __DIR__ . "/UserManager.php";
-require_once __DIR__ . "/User.php";
-require_once __DIR__ . '/../config/database.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $userManager = new UserManager();
     $userCurrent = new User(
