@@ -1,4 +1,4 @@
-
+let i = 1;
 /**
  * Génère un graphique avec les données et le type spécifié.
  * @param {string} canvasId - ID du canvas HTML.
@@ -11,12 +11,11 @@ function generateChart(canvasId, allOptions, rawData, chartType, question) {
     // Crée l'élément de la question dynamiquement
     const canvas = document.getElementById(canvasId);
     const parentDiv = canvas.parentElement;
-
     // Vérifie si un titre existe déjà, sinon l'ajoute
     let questionElement = parentDiv.querySelector('.chart-question');
     if (!questionElement) {
         questionElement = document.createElement('h3');
-        questionElement.classList.add('chart-question');
+        questionElement.classList.add(`chart-question-${i++}`);
         parentDiv.insertBefore(questionElement, canvas);
     }
     questionElement.textContent = question;
@@ -86,25 +85,14 @@ function generateChart(canvasId, allOptions, rawData, chartType, question) {
     });
 }
 
-
-
 // Q1
 generateChart('pieChart-1', allOptionsAge, dataAge, 'doughnut', questionAge);
 generateChart('pieChart-2', allOptionsSex, dataSex, 'pie', questionSex);
-//Q3
+// //Q3
 generateChart('BarChart-1', allOptionsInsertion, dataInsertion, 'bar' , questionInsertion);
-
 generateChart('BarChart-2', allOptionsRecevez, dataRecevez, 'bar' , questionRecevez);
-
-generateChart('myChart-1', allOptionsRegion
-    , dataRegion
-    , 'bar' , questionRegion
-);
-
-// Exemple d'utilisation
-// generateChart('BarChart', allOptionsBesoin, dataBesoin, 'bar');
-// generateChart('pieChart', allOptionsBesoin, dataBesoin, 'doughnut');
-// generateChart('myChart', allOptionsBesoin, dataBesoin, 'doughnut');
+//Q2
+generateChart('myChart-1', allOptionsRegion, dataRegion, 'bar' , questionRegion);
 
 
 

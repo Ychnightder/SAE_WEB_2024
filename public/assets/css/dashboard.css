@@ -26,22 +26,22 @@ header a:hover{
 main {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   gap: 16px;
   justify-content: center;
   align-items: center;
   padding: 16px;
+  width: 100%;
 }
 
 .box {
+  width: 90%;
+  height: auto;
+  max-width: 1900px; /* Limite la taille maximale */
   background-color: #f9f9f9;
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 16px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  flex: 1 1 1300px; /* Minimum de 300px, extensible */
-  max-width: 100%; /* Limite la largeur pour des affichages larges */
-  width: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -50,24 +50,24 @@ main {
 }
 
 .box .body-box {
-  flex: 1;
-  flex-wrap: wrap;
   display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
-}
-.chart-question{
-  z-index: 25;
-  margin: 50px;
-  color: #017ac3;
+  height: 100%;
+  gap: 20px;
 }
 canvas {
-  gap: 20px;
-  max-width: 100%;
+  height: auto;
+  max-height: 300px;
 }
 .head h2 {
   text-align: center;
   color: #017ac3;
   padding: 15px;
 }
-
+.chart-question{
+  z-index: 25;
+  margin: 50px;
+  color: #017ac3;
+}

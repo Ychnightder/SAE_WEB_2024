@@ -49,7 +49,7 @@ require_once "../src/php/views/header.php";
         <h2>Mon DON</h2>
         <div class="btn-don">
           <button class="btn-choix">Je fais un don ponctuel</button>
-          <button class="btn-choix">Je fais un don régulier</button>
+<!--          <button class="btn-choix">Je fais un don régulier</button>-->
         </div>
         <div class="div-amount-select">
           <div class="don-amount-section">
@@ -77,30 +77,30 @@ require_once "../src/php/views/header.php";
             </div>
           </div>
 
-          <div class="don-amount-section">
-            <label for="don-amount-slider">Choisissez un montant</label>
-            <input
-              type="range"
-              id="don-amount-slider"
-              min="0"
-              max="100"
-              value="50"
-            />
-            <div class="range-values">
-              <span>0 €</span>
-              <span>100 €</span>
-            </div>
-            <p class="selected-amount">Choisissez le montant de votre don !</p>
-
-            <div class="custom-amount-input">
-              <input
-                type="text"
-                placeholder="Autre montant ponctuel"
-                id="other-amount"
-              />
-              <button class="currency-button">€</button>
-            </div>
-          </div>
+<!--          <div class="don-amount-section">-->
+<!--            <label for="don-amount-slider">Choisissez un montant</label>-->
+<!--            <input-->
+<!--              type="range"-->
+<!--              id="don-amount-slider"-->
+<!--              min="0"-->
+<!--              max="100"-->
+<!--              value="50"-->
+<!--            />-->
+<!--            <div class="range-values">-->
+<!--              <span>0 €</span>-->
+<!--              <span>100 €</span>-->
+<!--            </div>-->
+<!--            <p class="selected-amount">Choisissez le montant de votre don !</p>-->
+<!---->
+<!--            <div class="custom-amount-input">-->
+<!--              <input-->
+<!--                type="text"-->
+<!--                placeholder="Autre montant ponctuel"-->
+<!--                id="other-amount"-->
+<!--              />-->
+<!--              <button class="currency-button">€</button>-->
+<!--            </div>-->
+<!--          </div>-->
         </div>
       </section>
 
@@ -268,12 +268,12 @@ require_once "../src/php/views/header.php";
           >
             Payer par carte bancaire
           </button>
-          <button
-            class="btn-select-mode"
-            onclick="location.href='donCheque.php'"
-          >
-            Payer par chèque
-          </button>
+<!--          <button-->
+<!--            class="btn-select-mode"-->
+<!--            onclick="location.href='donCheque.php'"-->
+<!--          >-->
+<!--            Payer par chèque-->
+<!--          </button>-->
         </div>
 
         <div class="info">

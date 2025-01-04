@@ -219,9 +219,9 @@ select {
   width: 600px;
 }
 
-.btn-select-mode:last-child {
-  background-color: rgba(50, 146, 202, 0.58);
-}
+/*.btn-select-mode:first-child   {*/
+/*  background-color: rgba(50, 146, 202, 0.58);*/
+/*}*/
 
 .div-btn-mode {
   display: flex;

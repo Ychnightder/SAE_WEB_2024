@@ -32,7 +32,7 @@ $OptionRegion = $db->chargerLesOptions($pdo,5);
 
 ?>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
+<script defer>
     <?php
         
 // Q1        

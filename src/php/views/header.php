@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../assets/css/main.css" />
     <link rel="stylesheet" href="../assets/css/header.css" />
     <link rel="stylesheet" href="../assets/css/footer.css" />
+<!--    <link rel="stylesheet" href="../assets/css/donCbCheque.css" />-->
     <?php
 
     $currentPage = basename($_SERVER['PHP_SELF'], ".php");
@@ -15,12 +16,13 @@
         "contact" => "Contact | Autisme France",
         "don" => "Faire un Don | Autisme France",
         "adhesion_connexion-connexion" => "Adhésion & Connexion | Autisme France",
-
+        "DonCb" => " DonCbCheque | France",
     ];
     $pageStyles = [
         "index" => ["../assets/css/accueil.css"],
-        "contact" => ["./assets/css/contact.css"],
-        "don" => ["assets/css/don.css", "../assets/css/donCbCheque.css" ],
+        "contact" => ["../assets/css/contact.css"],
+        "don" => ["../assets/css/don.css"], //, "../assets/css/donCbCheque.css"
+        "donCb" => ["../assets/css/donCbCheque.css"],
     ];
     $title = $pageTitles[$currentPage] ?? "Autisme France";
     $styles = $pageStyles[$currentPage] ?? [];

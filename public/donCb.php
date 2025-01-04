@@ -21,7 +21,7 @@ require_once "../src/php/views/header.php";
         <div class="info-box">
           <div class="info-header">Informations sur le Don</div>
           <p>Montant: <span>50€</span></p>
-          <p>Mode de don: <span>Mensuel</span></p>
+          <p>Mode de don: <span>-</span></p>
         </div>
       </div>
 
