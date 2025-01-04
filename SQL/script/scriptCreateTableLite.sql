@@ -51,14 +51,13 @@ CREATE TABLE Donateurs (
 );
 
 CREATE TABLE Reponses (
-                          id_reponse_ INTEGER PRIMARY KEY AUTOINCREMENT,
+                          id_reponse INTEGER PRIMARY KEY AUTOINCREMENT,
                           id_option INTEGER NOT NULL,
                           id_question INTEGER NOT NULL,
                           emailUser TEXT NOT NULL,
                           FOREIGN KEY (id_question) REFERENCES Questions(id_question),
                           FOREIGN KEY (emailUser) REFERENCES Utilisateurs(email),
-                          FOREIGN KEY (id_option) REFERENCES Options(id_option),
-                          UNIQUE (id_question, emailUser)
+                          FOREIGN KEY (id_option) REFERENCES Options(id_option)
 );
 
 CREATE TABLE Connexions (
@@ -80,25 +79,3 @@ CREATE TABLE Admin (
                        email TEXT NOT NULL UNIQUE PRIMARY KEY,
                        password TEXT NOT NULL
 );
-
--- Trigger qui va vérifier si ma réponse existe déjà alors je l'update sinon je l'ajoute (Pour le dashboard)
-CREATE TRIGGER Before_insert_reponse
-    BEFORE INSERT ON Reponses
-    FOR EACH ROW
-BEGIN
-    -- Vérifier si une mise à jour est nécessaire
-    UPDATE Reponses
-    SET id_option = NEW.id_option
-    WHERE id_question = NEW.id_question
-      AND emailUser = NEW.emailUser;
-
-    -- Insérer uniquement si aucune ligne n'a été mise à jour
-    INSERT INTO Reponses (id_option, id_question, emailUser)
-    SELECT NEW.id_option, NEW.id_question, NEW.emailUser
-    WHERE NOT EXISTS (
-        SELECT 1
-        FROM Reponses
-        WHERE id_question = NEW.id_question
-          AND emailUser = NEW.emailUser
-    );
-END;

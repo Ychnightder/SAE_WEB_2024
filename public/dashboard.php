@@ -13,7 +13,7 @@ require "../src/php/views/headerDash.php";
 ?>
 
 <header>
-    <h1>Dashboard</h1>
+    <h1>Dashboard Administrateur</h1>
     <h3>
         <a href="change_passwordAdmin.php">Modifier un mot de passe</a>
     </h3>

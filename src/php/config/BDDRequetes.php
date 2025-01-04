@@ -145,14 +145,49 @@ class BDDRequetes {
     }
 
     function insertReponse($id_option, $id_question, $emailUser): bool {
-        $query = $this->pdo->prepare("
+        $queryCheck = $this->pdo->prepare("
+        SELECT COUNT(*) 
+        FROM Reponses
+        WHERE id_question = :id_question AND emailUser = :emailUser
+    ");
+        $queryCheck->bindParam(':id_question', $id_question, PDO::PARAM_INT);
+        $queryCheck->bindParam(':emailUser', $emailUser, PDO::PARAM_STR);
+        $queryCheck->execute();
+
+        if ($queryCheck->fetchColumn() > 0) {
+            $queryUpdate = $this->pdo->prepare("
+            UPDATE Reponses
+            SET id_option = :id_option
+            WHERE id_question = :id_question AND emailUser = :emailUser
+        ");
+            $queryUpdate->bindParam(':id_option', $id_option, PDO::PARAM_INT);
+            $queryUpdate->bindParam(':id_question', $id_question, PDO::PARAM_INT);
+            $queryUpdate->bindParam(':emailUser', $emailUser, PDO::PARAM_STR);
+            return $queryUpdate->execute();
+        } else {
+            $queryInsert = $this->pdo->prepare("
             INSERT INTO Reponses (id_option, id_question, emailUser)
             VALUES (:id_option, :id_question, :emailUser)
         ");
-
-        $query->bindParam(':id_option', $id_option, PDO::PARAM_INT);
-        $query->bindParam(':id_question', $id_question, PDO::PARAM_INT);
-        $query->bindParam(':emailUser', $emailUser, PDO::PARAM_STR);
-        return $query->execute();
+            $queryInsert->bindParam(':id_option', $id_option, PDO::PARAM_INT);
+            $queryInsert->bindParam(':id_question', $id_question, PDO::PARAM_INT);
+            $queryInsert->bindParam(':emailUser', $emailUser, PDO::PARAM_STR);
+            return $queryInsert->execute();
+        }
     }
+
+    function getReponse($emailUser): array {
+        $query = $this->pdo->prepare("
+            SELECT q.texte_question_ AS question_text, o.option_text, qn.titre_ AS questionnaire_title
+            FROM Reponses r
+            INNER JOIN Questions q ON r.id_question = q.id_question
+            INNER JOIN Options o ON r.id_option = o.id_option
+            INNER JOIN Questionnaires qn ON q.id_questionnaire = qn.id_questionnaire
+            WHERE r.emailUser = :emailUser
+        ");
+        $query->bindParam(':emailUser', $emailUser, PDO::PARAM_STR);
+        $query->execute();
+        return $query->fetchAll();
+    }
+
 }
