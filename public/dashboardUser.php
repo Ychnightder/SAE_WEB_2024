@@ -16,7 +16,7 @@ require "../src/php/views/headerDashUser.php";
 $emailUser = $_SESSION['emailUser']; // Supposons que l'email de l'utilisateur est stocké dans la session
 $responsesByForm = [];
 
-$responses = $request->getReponse($emailUser);
+$responses = $request->getReponseByUser($emailUser);
 
 // Organiser les réponses par formulaire
 foreach ($responses as $response) {

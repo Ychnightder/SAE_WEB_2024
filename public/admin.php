@@ -1,3 +1,10 @@
+<?php
+
+session_start();
+$errors = isset($_SESSION['login_errors']) ? $_SESSION['login_errors'] : [];
+$oldInputs = isset($_SESSION['old_inputs']) ? $_SESSION['old_inputs'] : [];
+unset($_SESSION['login_errors'], $_SESSION['old_inputs']); // Nettoyer les sessions après récupération
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -65,9 +72,12 @@
                         id="identifiant"
                         name="identifiant"
                         placeholder="azerty@exemple.com"
+                        value="<?= htmlspecialchars($oldInputs['identifiant'] ?? '') ?>"
                         required
                 />
-                <span class="error-message"></span>
+                <?php if (!empty($errors['identifiant'])): ?>
+                    <span class="error-message"><?= htmlspecialchars($errors['identifiant']) ?></span>
+                <?php endif; ?>
 
                 <label for="password">Mot de passe :</label>
                 <input
@@ -77,7 +87,9 @@
                         placeholder="mot de passe"
                         required
                 />
-                <span class="error-message"></span>
+                <?php if (!empty($errors['password'])): ?>
+                    <span class="error-message"><?= htmlspecialchars($errors['password']) ?></span>
+                <?php endif; ?>
 
             </div>
             <div class="btn-modal">

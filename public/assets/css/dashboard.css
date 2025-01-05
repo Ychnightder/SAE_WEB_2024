@@ -4,7 +4,7 @@ header {
   background: #017ac3;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Aligne les éléments aux extrémités */
+  justify-content: space-between;
   color: #ffffff;
   padding: 0 15px;
 }
@@ -38,21 +38,25 @@ header form button:hover {
 
 main {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
   gap: 20px;
   margin: 20px;
 }
 
+/* Style pour les boîtes contenant les sélecteurs et les graphiques */
 .box {
   width: 100%;
+  max-width: 600px; /* Limite la largeur de la boîte */
   padding: 20px;
   border: 1px solid #ccc;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   flex-direction: column;
+  margin-top: 20px;
 }
 
 h2 {
@@ -61,7 +65,150 @@ h2 {
   padding: 15px;
 }
 
+select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+select:hover {
+  border-color: #017ac3;
+  background-color: #f0f8ff;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: #017ac3;
+  color: #ffffff;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #005a93;
+}
+
+canvas {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  margin-top: 20px;
+}
+
 .error {
   color: red;
   font-size: 14px;
+  text-align: center;
+}
+
+/* Centrer tout le contenu dans le main */
+.dashboard-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrer horizontalement */
+  justify-content: center; /* Centrer verticalement */
+  text-align: center; /* Centrer le texte */
+  padding: 20px;
+  margin: 0;
+}
+
+/* Boîte contenant les éléments (questionnaire, questions, graphiques) */
+.box {
+  width: 90%; /* Utilisation de pourcentage pour que la boîte prenne 90% de la largeur de l'écran */
+  max-width: 600px; /* Largeur maximale */
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Sélecteurs et boutons */
+select,
+button {
+  width: 100%; /* Largeur 100% pour les rendre responsives */
+  max-width: 300px; /* Limitation de la largeur max */
+  padding: 10px;
+  margin: 10px auto;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+/* Hover effect */
+button:hover,
+#questionnaireSelect:hover,
+#questionSelect:hover {
+  background-color: #005a93;
+  color: white;
+}
+
+/* Graphiques */
+#pie-chart,
+#bar-chart {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  height: auto;
+}
+
+/* Media Queries pour les petits écrans */
+@media (max-width: 768px) {
+  /* Pour les tablettes et écrans plus petits */
+  .dashboard-main {
+    padding: 10px;
+  }
+
+  .box {
+    width: 100%; /* Prend toute la largeur disponible */
+    margin-top: 10px;
+  }
+
+  select,
+  button {
+    max-width: 100%; /* Les éléments occupent toute la largeur disponible */
+    font-size: 14px; /* Réduire légèrement la taille de police */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Pour les smartphones */
+  select,
+  button {
+    font-size: 12px; /* Taille de police plus petite */
+  }
+
+  .box {
+    padding: 15px;
+    margin-top: 10px;
+  }
+
+  h2 {
+    font-size: 18px; /* Ajustement de la taille du titre */
+  }
+
+  #pie-chart,
+  #bar-chart {
+    max-width: 100%; /* Assure que les graphiques s'adaptent aux petits écrans */
+  }
 }

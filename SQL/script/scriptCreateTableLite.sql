@@ -1,10 +1,10 @@
 CREATE TABLE Questionnaires (
-                                id_questionnaire INTEGER PRIMARY KEY AUTOINCREMENT,
-                                titre_ TEXT NOT NULL,
-                                date_creation DATE NOT NULL,
-                                est__Actif INTEGER NOT NULL, -- BOOLEAN est remplacé par INTEGER (0 ou 1)
-                                ordre INTEGER NOT NULL
-);
+                                  id_questionnaire INTEGER PRIMARY KEY AUTOINCREMENT,
+                                  titre_ TEXT NOT NULL,
+                                  date_creation DATE NOT NULL,
+                                  est__Actif INTEGER NOT NULL, -- BOOLEAN est remplacé par INTEGER (0 ou 1)
+                                  ordre INTEGER NOT NULL
+  );
 
 CREATE TABLE Questions (
                            id_question INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -12,13 +12,6 @@ CREATE TABLE Questions (
                            type_question TEXT NOT NULL,
                            id_questionnaire INTEGER NOT NULL,
                            FOREIGN KEY (id_questionnaire) REFERENCES Questionnaires(id_questionnaire)
-);
-
-CREATE TABLE Statistiques (
-                              id_statistique INTEGER PRIMARY KEY AUTOINCREMENT,
-                              valeur TEXT,
-                              id_questionnaire INTEGER NOT NULL,
-                              FOREIGN KEY (id_questionnaire) REFERENCES Questionnaires(id_questionnaire)
 );
 
 

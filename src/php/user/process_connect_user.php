@@ -31,8 +31,7 @@ $request = new BDDRequetes();
 try {
     $user = $request->getUser($email);
 } catch (Exception $e) {
-    echo $e->getMessage();
-    $errors['identifiant'] = "Email invalide.";
+    $errors['identifiant'] = "Aucun compte n'existe avec cette adresse email.";
     $_SESSION['login_errors'] = $errors;
     header("Location: /connexion.php");
     exit;

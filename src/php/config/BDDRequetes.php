@@ -56,7 +56,7 @@ class BDDRequetes {
         }
     }
 
-    public function getUser(string $email): User {
+     function getUser(string $email): User {
         $sql = "SELECT *
             FROM Utilisateurs
             WHERE email = :email
@@ -90,6 +90,16 @@ class BDDRequetes {
         }
     }
 
+
+    function userExist(string $email): bool {
+        $sql = "SELECT COUNT(*) as total
+            FROM Utilisateurs
+            WHERE email = :email";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+        $stmt->execute();
+        return $stmt->fetchColumn() > 0;
+    }
 
     public function getIdVille(string $ville): int {
         $sql = "SELECT idVille
@@ -176,7 +186,8 @@ class BDDRequetes {
         }
     }
 
-    function getReponse($emailUser): array {
+    //Recupère les réponses de chaque question, de chaque formulaire pour un utilisateur
+    function getReponseByUser($emailUser): array {
         $query = $this->pdo->prepare("
             SELECT q.texte_question_ AS question_text, o.option_text, qn.titre_ AS questionnaire_title
             FROM Reponses r
@@ -189,5 +200,117 @@ class BDDRequetes {
         $query->execute();
         return $query->fetchAll();
     }
+
+    function getAllQuestionnaires(): array {
+        $sql = "SELECT * FROM Questionnaires";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+
+    function getAllQuestionForQuestionnaire($idQuestionnaire): array {
+        $sql = "SELECT * FROM Questions WHERE id_questionnaire = :idQuestionnaire";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':idQuestionnaire', $idQuestionnaire, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+
+
+    public function getReponse(int $idQuestion): array {
+        $query = $this->pdo->prepare("SELECT * FROM Reponses WHERE id_question = :id_question");
+        $query->execute(['id_question' => $idQuestion]);
+        return $query->fetchAll();
+    }
+
+    function adminExist(string $email): bool {
+        $sql = "SELECT *
+            FROM Admin
+            WHERE email = :email
+            LIMIT 1";
+
+
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+
+        try {
+            $stmt->execute();
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if ($result) {
+                return true;
+            } else {
+                throw new Exception("Admin avec l'email $email non trouvé.");
+            }
+        } catch (PDOException $e) {
+            throw new Exception("Erreur lors de la récupération de l'utilisateur : " . $e->getMessage());
+        }
+    }
+
+    public function getPasswordAdmin(string $email): string {
+        $sql = "SELECT password FROM Admin WHERE email = :email";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+        $stmt->execute();
+
+        // Récupérer le mot de passe
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        // Vérification si un résultat est trouvé
+        if (!$result) {
+            throw new Exception("Aucun administrateur trouvé avec cet email.");
+        }
+
+        return $result['password'];
+    }
+
+
+
+//
+//    //Récupère le texte d'une question
+//    function getQuestionById($idQuestion): array {
+//        $query = $this->pdo->prepare("SELECT q.texte_question_ FROM Questions q WHERE id_question = :idQuestion");
+//        $query->bindParam(':idQuestion', $idQuestion, PDO::PARAM_INT);
+//        $query->execute();
+//        return $query->fetchAll();
+//    }
+
+//    //Récupère toutes les options d'une question
+//    function getAllOptionForQuestion($idQuestion): array {
+//        $query = $this->pdo->prepare("SELECT * FROM Options WHERE id_question = :idQuestion");
+//        $query->bindParam(':idQuestion', $idQuestion, PDO::PARAM_INT);
+//        $query->execute();
+//        return $query->fetchAll();
+//    }
+//
+//    // Récupère le nombre de réponses pour chaque option d'une question
+//    function getResponseCountByOption($idQuestion): array {
+//        // Requête pour récupérer les options et le nombre de réponses associées
+//        $query = $this->pdo->prepare("
+//        SELECT o.option_text, COUNT(r.id_reponse) as response_count
+//        FROM Reponses r
+//        INNER JOIN Options o ON r.id_option = o.id_option
+//        WHERE r.id_question = :idQuestion
+//        GROUP BY r.id_option
+//    ");
+//        $query->bindParam(':idQuestion', $idQuestion, PDO::PARAM_INT);
+//        $query->execute();
+//
+//        // Retourner les résultats sous forme de tableau associatif
+//        return $query->fetchAll(PDO::FETCH_ASSOC);
+//    }
+//
+//    // Récupère le texte de la question et les options
+//    function getQuestionAndOptions($idQuestion): array {
+//        // Récupérer le texte de la question
+//        $question = $this->getQuestionById($idQuestion);
+//
+//        // Récupérer les options disponibles pour cette question
+//        $options = $this->getAllOptionForQuestion($idQuestion);
+//
+//        return ['question' => $question, 'options' => $options];
+//    }
+
+
 
 }

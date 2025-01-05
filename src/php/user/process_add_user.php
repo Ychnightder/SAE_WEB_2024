@@ -10,16 +10,14 @@ session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $request = new BDDRequetes();
     $errors = [];
-    if($request->getUser($_POST['email']) !== null) {
+    if ($request->userExist($_POST['email'])) {
         $errors['email'] = "Cette adresse email existe déjà !";
         $_SESSION['register_errors'] = $errors;
         header("Location: /inscription.php");
         exit();
     }
 
-
     $hashedPassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
-
     $idVille = $request->getIdVille($_POST['ville']);
     $date = date("Y-m-d");
     $user = new User(
@@ -36,7 +34,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = $request->insertUser($user);
     if ($result) {
         // Inscription réussie
-        header("Location: /connexion.php");
+        $_SESSION['logged_in'] = true;
+        $_SESSION['role'] = 'user';
+        $_SESSION['emailUser'] = $_POST['email'];
+        header("Location: /enquete.php");
         exit();
     } else {
         // Redirection avec erreurs

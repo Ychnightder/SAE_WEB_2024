@@ -51,7 +51,7 @@ session_start();
 
                     <div class="divSubmit">
                         <button type="reset" class="return-btn">Retour</button>
-                        <button type="submit" class="btn-suivant">Connexion</button>
+                        <button type="button" class="btn-suivant">Suivant</button>
                     </div>
                     <div class="likns-ac">
                         <p>Vous avez un compte ?</p>
