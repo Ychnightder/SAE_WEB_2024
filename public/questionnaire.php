@@ -5,7 +5,6 @@ use Pierr\SaeWeb\php\adhesion_connexion\UserManager;
 use Pierr\SaeWeb\php\Database\Database;
 $gestionnaire = new UserManager();
 
-
 if (!isset($_SESSION["userCurrent"])) {
     header("Location: ./index.php?action=connect_user"); // Rediriger si non connecté
     exit();
@@ -78,6 +77,7 @@ $step = 1; // Par défaut
                         <?php $options = $db->chargerLesOptions($pdo , $question['id_question']);
                             ?>
                             <select name="reponses[<?= $question['id_question'] ?>]" required>
+                                <option disabled selected>Choisissez une option</option>
                                 <?php foreach ($options as $option): ?>
                                     <option  value="<?= htmlspecialchars($option['option_text']) ?>"><?= htmlspecialchars($option['option_text']) ?></option>
                                 <?php endforeach; ?>

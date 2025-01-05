@@ -35,6 +35,7 @@ if ($user) {
 
     if ($userManager->CheckUserEnquete($_SESSION['userCurrent']["id"]) === false ){
         header("Location: /main.php");
+
     }else{
         header("Location: /index.php");
     }

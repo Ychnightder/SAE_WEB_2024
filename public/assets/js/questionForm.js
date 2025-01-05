@@ -82,7 +82,7 @@ function isCurrentQuestionAnswered() {
       input.type === "hidden"
         ? input.value.trim() !== ""
         : input.tagName === "SELECT"
-          ? input.value !== ""
+          ? input.value !== "" && input.value !== "Choisissez une option"
           : false;
 
     // Ajouter ou supprimer une classe pour indiquer un problème
@@ -99,3 +99,4 @@ function isCurrentQuestionAnswered() {
   return false;
 }
 showQuestion(currentIndex);
+//Choisissez une option

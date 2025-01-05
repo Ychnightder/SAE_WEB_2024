@@ -10,13 +10,14 @@ $routes = [
     'dashboard' => '../src/php/dashboard.php',
     'submit_form' => '../src/php/enquete/submit_form.php',
     'process_change_password_admin' => '../src/php/admin/process_change_password_admin.php',
-
 ];
 
     handleRequest($routes);
 require_once "../src/php/views/header.php";
 ?>
-<!--      <a class="link-enquete" href="main.php">equête</a>-->
+      <a class="link-enquete" href="main.php">equête</a>
+
+
     <img class="banniere" src="/assets/image/Accueil/slider.png" />
   <main class="main-presentation">
     <div class="wrapper-main-presentation">
