@@ -1,17 +1,50 @@
 .section-banniere {
-  width: 100%;
   position: relative;
-}
-.section-banniere .link-enquete {
-  position: absolute;
-  left: 5%;
-  width: 35%;
-  height: 100%;
-  background: rgba(1, 122, 195, 0.8);
 }
 
 .banniere {
   width: 100%;
+  height: auto;
+}
+
+.banniere-box {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  background-color: #017ac3;
+  color: #fff;
+  padding: 20px 30px;
+  border-radius: 8px;
+  max-width: 300px;
+  text-align: left;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.banniere-title {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.banniere-description {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.banniere-button {
+  display: inline-block;
+  background-color: #ff5722;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.banniere-button:hover {
+  background-color: #e64a19;
+  cursor: pointer;
 }
 
 .main-presentation {
@@ -524,6 +557,25 @@
   .carrousel-partener {
     flex-direction: row; /* Les éléments se mettent en colonne */
   }
+
+  .banniere-box {
+    left: 2%;
+    max-width: 90%;
+    padding: 15px 20px;
+  }
+
+  .banniere-title {
+    font-size: 1.5rem;
+  }
+
+  .banniere-description {
+    font-size: 0.9rem;
+  }
+
+  .banniere-button {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
 }
 @media (max-width: 415px) {
   .presentation-header .subtitle {
@@ -537,4 +589,24 @@
   .btn-div {
     margin-top: 25%;
   }
+  .banniere-box {
+    left: 5%;
+    padding: 10px 15px;
+  }
+
+  .banniere-title {
+    font-size: 0.8rem;
+  }
+
+  .banniere-description {
+    font-size: 0.5rem;
+  }
+
+  .banniere-button {
+    font-size: 0.4rem;
+    padding: 6px 12px;
+  }
 }
+
+
+

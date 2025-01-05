@@ -90,23 +90,25 @@ function generateChart(canvasId, allOptions, rawData, chartType, question) {
   });
 }
 
+// generateChart("test", allOptionsAge, dataAge, "doughnut", questionAge);
+
 // Q1
-generateChart("pieChart-1", allOptionsAge, dataAge, "doughnut", questionAge);
-generateChart("pieChart-2", allOptionsSex, dataSex, "pie", questionSex);
+// generateChart("pieChart-1", allOptionsAge, dataAge, "doughnut", questionAge);
+// generateChart("pieChart-2", allOptionsSex, dataSex, "pie", questionSex);
 // //Q3
-generateChart(
-  "BarChart-1",
-  allOptionsInsertion,
-  dataInsertion,
-  "bar",
-  questionInsertion,
-);
-generateChart(
-  "BarChart-2",
-  allOptionsRecevez,
-  dataRecevez,
-  "bar",
-  questionRecevez,
-);
-//Q2
-generateChart("myChart-1", allOptionsRegion, dataRegion, "bar", questionRegion);
+// generateChart(
+//   "BarChart-1",
+//   allOptionsInsertion,
+//   dataInsertion,
+//   "bar",
+//   questionInsertion,
+// );
+// generateChart(
+//   "BarChart-2",
+//   allOptionsRecevez,
+//   dataRecevez,
+//   "bar",
+//   questionRecevez,
+// );
+// //Q2
+// generateChart("myChart-1", allOptionsRegion, dataRegion, "bar", questionRegion);

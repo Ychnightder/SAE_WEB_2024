@@ -4,10 +4,9 @@ header {
   background: #017ac3;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   color: #ffffff;
 }
-
 header h1 {
   padding: 15px;
   margin: 0 50px;

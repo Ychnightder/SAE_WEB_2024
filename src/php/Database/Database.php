@@ -120,4 +120,5 @@ class Database
         return $data[0]["texte_question_"];
     }
 
+
 }

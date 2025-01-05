@@ -1,4 +1,5 @@
 <?php
+session_start();
 require  '../vendor/autoload.php';
 require_once "../src/php/helpers/fonction.php";
 
@@ -14,11 +15,23 @@ $routes = [
 
     handleRequest($routes);
 require_once "../src/php/views/header.php";
+
+if (!isset($_SESSION['userCurrent']["id"])) {
+    // Si l'utilisateur est connecté, rediriger vers la page d'enquête
+    $enquete_url = 'connexion.php';
+} else {
+    // Si l'utilisateur n'est pas connecté, rediriger vers la page de connexion
+    $enquete_url = 'main.php';
+}
 ?>
-      <a class="link-enquete" href="main.php">equête</a>
-
-
-    <img class="banniere" src="/assets/image/Accueil/slider.png" />
+    <section class="section-banniere">
+        <img class="banniere" src="/assets/image/Accueil/slider.png" alt="Bannière principale" />
+        <div class="banniere-box">
+            <h2 class="banniere-title">Participez à notre enquête !</h2>
+            <p class="banniere-description">Aidez-nous à mieux comprendre vos besoins et attentes.</p>
+            <a class="banniere-button" href="<?php echo $enquete_url; ?>">Répondre à l'enquête</a>
+        </div>
+    </section>
   <main class="main-presentation">
     <div class="wrapper-main-presentation">
       <div class="presentation-header">
