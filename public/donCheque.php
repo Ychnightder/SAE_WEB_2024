@@ -1,4 +1,6 @@
 <?php
+
+
 require_once "../src/php/views/header.php";
 ?>
     <div class="donation-container">

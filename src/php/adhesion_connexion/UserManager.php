@@ -135,7 +135,6 @@ class UserManager
 
         return $errors;
     }
-
     /**
      * Inscription d'un utilisateur
      *
@@ -211,7 +210,6 @@ class UserManager
             return false;
         }
     }
-
     public function CheckUserEnquete($idUser): bool
     {
         try {
@@ -228,9 +226,5 @@ class UserManager
         }
 
     }
-
-
-
-
 
 }

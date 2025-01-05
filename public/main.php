@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once __DIR__ . '/../vendor/autoload.php';
 
 use Pierr\SaeWeb\php\adhesion_connexion\UserManager;
 
