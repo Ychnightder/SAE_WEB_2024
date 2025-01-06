@@ -32,41 +32,12 @@ main {
   width: 100%;
 }
 
-.box {
-  width: 90%;
-  height: auto;
-  max-width: 1900px; /* Limite la taille maximale */
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 16px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-}
-.box .head {
-  margin-bottom: 16px;
-}
 
-.box .body-box {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
-  gap: 20px;
-}
+
+
+
 canvas {
   height: auto;
-  max-height: 300px;
+  max-height: 500px;
 }
-.head h2 {
-  text-align: center;
-  color: #017ac3;
-  padding: 15px;
-}
-.chart-question {
-  z-index: 25;
-  margin: 50px;
-  color: #017ac3;
-}
+

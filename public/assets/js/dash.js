@@ -6,19 +6,17 @@ let i = 1;
  * @param {Array} rawData - Données de la base (avec `reponse` et `count`).
  * @param {string} chartType - Type de graphique ("bar", "pie", "doughnut", etc.).
  * @param {string} question - Question à afficher au-dessus du graphique.
+ *//**
+ * Génère un graphique avec les données et le type spécifié.
+ * @param {string} canvasId - ID du canvas HTML.
+ * @param {Array} allOptions - Liste complète des options possibles (labels).
+ * @param {Array} rawData - Données de la base (avec `reponse` et `count`).
+ * @param {string} chartType - Type de graphique ("bar", "pie", "doughnut", etc.).
+ * @param {string} question - Question à afficher au-dessus du graphique.
  */
 function generateChart(canvasId, allOptions, rawData, chartType, question) {
-  // Crée l'élément de la question dynamiquement
   const canvas = document.getElementById(canvasId);
-  const parentDiv = canvas.parentElement;
-  // Vérifie si un titre existe déjà, sinon l'ajoute
-  let questionElement = parentDiv.querySelector(".chart-question");
-  if (!questionElement) {
-    questionElement = document.createElement("h3");
-    questionElement.classList.add(`chart-question-${i++}`);
-    parentDiv.insertBefore(questionElement, canvas);
-  }
-  questionElement.textContent = question;
+  if (!canvas) return;
 
   // Prépare les données pour le graphique
   const mergedData = allOptions.map((option) => {
@@ -54,11 +52,10 @@ function generateChart(canvasId, allOptions, rawData, chartType, question) {
     },
     options: {
       responsive: true,
-      maintainAspectRatio: true,
+      maintainAspectRatio: false,
       plugins: {
         legend: {
           display: chartType !== "bar",
-          position: "top",
         },
         tooltip: {
           callbacks: {
@@ -68,47 +65,15 @@ function generateChart(canvasId, allOptions, rawData, chartType, question) {
           },
         },
       },
-      scales:
-        chartType === "bar"
-          ? {
-              y: {
-                beginAtZero: true,
-                title: {
-                  display: true,
-                  text: "Nombre de réponses",
-                },
-              },
-              x: {
-                title: {
-                  display: true,
-                  text: "Catégories",
-                },
-              },
-            }
-          : {},
+      scales: chartType === "bar" ? {
+        y: {
+          beginAtZero: true,
+          title: { display: true, text: "Nombre de réponses" },
+        },
+        x: {
+          title: { display: true, text: "Catégories" },
+        },
+      } : {},
     },
   });
 }
-
-// generateChart("test", allOptionsAge, dataAge, "doughnut", questionAge);
-
-// Q1
-// generateChart("pieChart-1", allOptionsAge, dataAge, "doughnut", questionAge);
-// generateChart("pieChart-2", allOptionsSex, dataSex, "pie", questionSex);
-// //Q3
-// generateChart(
-//   "BarChart-1",
-//   allOptionsInsertion,
-//   dataInsertion,
-//   "bar",
-//   questionInsertion,
-// );
-// generateChart(
-//   "BarChart-2",
-//   allOptionsRecevez,
-//   dataRecevez,
-//   "bar",
-//   questionRecevez,
-// );
-// //Q2
-// generateChart("myChart-1", allOptionsRegion, dataRegion, "bar", questionRegion);

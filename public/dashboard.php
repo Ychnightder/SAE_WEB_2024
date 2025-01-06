@@ -6,60 +6,105 @@ require_once "../src/php/helpers/fonction.php";
 require  '../vendor/autoload.php';
 $db = new Database();
 $pdo = $db->connect();
+$questions = $db->chargerLesQuestions($pdo);
 
-// Q1
-$questionAge = $db->ChargerTexteQuestion($pdo,1);
-$dataAge = $db->chargerReponse($pdo,1);
-$optionAge = $db->chargerLesOptions($pdo,1);
+// Charger toutes les questions pour le menu déroulant
+$questions = $db->chargerLesQuestions($pdo);
 
-$questionSex= $db->ChargerTexteQuestion($pdo,2);
-$dataSex = $db->chargerReponse($pdo,2);
-$optionSex = $db->chargerLesOptions($pdo,2);
+// Vérifier si une question est sélectionnée
+$questionId = isset($_GET['question_id']) ? intval($_GET['question_id']) : null;
+$questionText = null;
+$options = [];
+$responses = [];
 
-//Q3
-$questionInsertion = $db->ChargerTexteQuestion($pdo,9);
-$dataInsertion = $db->chargerReponse($pdo,9);
-$OptionInsertion = $db->chargerLesOptions($pdo,9);
-
-$questionRecevez = $db->ChargerTexteQuestion($pdo,9);
-$dataRecevez  = $db->chargerReponse($pdo,9);
-$OptionRecevez  = $db->chargerLesOptions($pdo,9);
-
-//Q2
-
-$questionRegion = $db->ChargerTexteQuestion($pdo,5);
-$dataRegion = $db->chargerReponse($pdo,5);
-$OptionRegion = $db->chargerLesOptions($pdo,5);
-
+if ($questionId) {
+    $questionText = $db->ChargerTexteQuestion($pdo, $questionId);
+    $options = $db->chargerLesOptions($pdo, $questionId);
+    $responses = $db->chargerReponse($pdo, $questionId);
+}
 
 ?>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script defer>
-    <?php
-//// Q1
-//    convertirEnJS("questionAge", $questionAge);
-//    convertirEnJS("dataAge", $dataAge);
-//    convertirEnJS("allOptionsAge", $optionAge);
-//
-//    convertirEnJS("questionSex", $questionSex);
-//    convertirEnJS("dataSex", $dataSex);
-//    convertirEnJS("allOptionsSex", $optionSex);
-//// Q3
-//    convertirEnJS("questionInsertion", $questionInsertion);
-//    convertirEnJS("dataInsertion", $dataInsertion);
-//    convertirEnJS("allOptionsInsertion", $OptionInsertion);
-//
-//    convertirEnJS("questionRecevez", $questionRecevez);
-//    convertirEnJS("dataRecevez", $dataRecevez);
-//    convertirEnJS("allOptionsRecevez", $OptionRecevez);
-//  // Q2
-//
-//    convertirEnJS("questionRegion", $questionRegion);
-//    convertirEnJS("dataRegion", $dataRegion);
-//    convertirEnJS("allOptionsRegion", $OptionRegion);
+<script>
 
-    ?>
+    function generateChart(canvasId, allOptions, rawData, chartType, question) {
+        const canvas = document.getElementById(canvasId);
+        if (!canvas) return;
+
+        // Prépare les données pour le graphique
+        const mergedData = allOptions.map((option) => {
+            const match = rawData.find((data) => data.reponse === option.option_text);
+            return { reponse: option.option_text, count: match ? match.count : 0 };
+        });
+
+        const labels = mergedData.map((item) => item.reponse);
+        const data = mergedData.map((item) => item.count);
+
+        const ctx = canvas.getContext("2d");
+        new Chart(ctx, {
+            type: chartType,
+            data: {
+                labels: labels,
+                datasets: [
+                    {
+                        label: "Nombre de réponses",
+                        data: data,
+                        backgroundColor: [
+                            "#FF6384",
+                            "#36A2EB",
+                            "#FFCE56",
+                            "#4BC0C0",
+                            "#9966FF",
+                            "#FF9F40",
+                            "#E7E9ED",
+                        ],
+                        borderColor: "#ccc",
+                        borderWidth: 1,
+                    },
+                ],
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: chartType !== "bar",
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function (context) {
+                                return `${context.label}: ${context.raw}`;
+                            },
+                        },
+                    },
+                },
+                scales: chartType === "bar" ? {
+                    y: {
+                        beginAtZero: true,
+                        title: { display: true, text: "Nombre de réponses" },
+                    },
+                    x: {
+                        title: { display: true, text: "Catégories" },
+                    },
+                } : {},
+            },
+        });
+    }
+
+    console.log("Script chargé : generateChart disponible ?", typeof generateChart === "function");
+
+    <?php if ($questionId): ?>
+    // Transmettre les données PHP au JavaScript
+    const question = <?php echo json_encode($questionText); ?>;
+    const allOptions = <?php echo json_encode($options); ?>;
+    const data = <?php echo json_encode($responses); ?>;
+    <?php else: ?>
+    // Valeurs par défaut si aucune question n'est sélectionnée
+    const question = null;
+    const allOptions = [];
+    const data = [];
+    <?php endif; ?>
 </script>
+
 <header>
   <div class="logo">
       <h1>Dashboard</h1>
@@ -67,18 +112,16 @@ $OptionRegion = $db->chargerLesOptions($pdo,5);
     <div class="filtre">
         <form action="dashboard.php" method="get">
             <div class="box" id="questionBox">
-                <label for="questionSelect" >Sélectionner une Question</label>
+                <label for="questionSelect">Sélectionner une Question</label>
                 <select id="questionSelect" name="question_id" onchange="this.form.submit()">
                     <option value="">Choisir une question</option>
-                    <?php
-                    // Récupérer les questions en fonction du questionnaire sélectionné
-                    $questions = $db->chargerLesQuestions($pdo);
-                    foreach ($questions as $question) {
-                        if($question['type_question'] !== "textarea") {
-                            echo "<option value='{$question['id_question']}' name='id_question{$question['id_question']}'>{$question['texte_question']}</option>";
-                        }
-                    }
-                    ?>
+                    <?php foreach ($questions as $question): ?>
+                        <?php if ($question['type_question'] !== "textarea"): ?>
+                            <option value="<?php echo $question['id_question']; ?>" <?php echo $questionId == $question['id_question'] ? 'selected' : ''; ?>>
+                                <?php echo htmlspecialchars($question['texte_question']); ?>
+                            </option>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
                 </select>
             </div>
         </form>
@@ -89,29 +132,22 @@ $OptionRegion = $db->chargerLesOptions($pdo,5);
 </header>
 
 <main>
-    <?php if (isset($_GET['question_id']) && $_GET['question_id'] != ''): ?>
-        <p><?php echo $db->ChargerTexteQuestion($pdo, $_GET['question_id'])?></p>
-        <div class="box" id="graphButtons" >
-            <h2>Choisir le Type de Graphique</h2>
-            <script>
-                <?php
-                    $question = $db->ChargerTexteQuestion($pdo,$_GET['question_id']);
-                    $data = $db->chargerReponse($pdo,$_GET['question_id']);
-                    $option = $db->chargerLesOptions($pdo,$_GET['question_id']);
-                    convertirEnJS("question", $question);
-                    convertirEnJS("data", $data);
-                    convertirEnJS("allOptions", $option);
-                ?>
-            </script>
-
-            <button type="button" onclick="generateChart("pie-chart", allOptions, data, "pie", question)">Graphique Camembert</button>
-<!--            <button type="button" onclick="generateChart(<?php //echo $_GET['question_id']?>//)">Graphique en Barres</button>
-            <button type="button" onclick="generateChart(<?php //echo $_GET['question_id']?>//)">Graphique Camembert + Barres</button> -->
+    <?php if ($questionId): ?>
+        <h2><?php echo htmlspecialchars($questionText); ?></h2>
+        <div class="box" id="graphButtons">
+            <h3>Choisir le Type de Graphique</h3>
+            <button type="button" onclick="generateChart('pie-chart', allOptions, data, 'pie', question)">Graphique Camembert</button>
+            <button type="button" onclick="generateChart('bar-chart', allOptions, data, 'bar', question)">Graphique en Barres</button>
+            <button type="button" onclick="generateChart('doughnut-chart', allOptions, data, 'doughnut', question)">Graphique Doughnut</button>
         </div>
+        <canvas id="pie-chart"></canvas>
+        <canvas id="bar-chart"></canvas>
+        <canvas id="doughnut-chart"></canvas>
+    <?php else: ?>
+        <p>Veuillez sélectionner une question pour afficher un graphique.</p>
     <?php endif; ?>
-    <canva id="pie-chart" ></canva>
-    <canva id="bar-chart"></canva>
-    <canva id="doughnut-chart"></canva>
 </main>
 
 <script type="module" src="./assets/js/dash.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
