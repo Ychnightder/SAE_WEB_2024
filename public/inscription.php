@@ -7,7 +7,7 @@ $oldInputs = $_SESSION['old_inputs'] ?? [];
 unset($_SESSION['register_errors'], $_SESSION['old_inputs']);
 require "../src/php/views/headerAC.php";
 ?>
-
+<script src="./assets/js/inscription.js"></script>
 <div class="leftBox">
     <div class="logoBox">
         <a href="index.php">
@@ -54,12 +54,19 @@ require "../src/php/views/headerAC.php";
                     <label for="pwd">
                         Mot de passe :
                         <input class="<?= isset($errors['password']) ? 'error' : '' ?>" id="pwd" type="password" name="password" value="<?= htmlspecialchars($oldInputs['password'] ?? '') ?>" required />
+                        <button type="button" id="show_mdp" onclick="showmdp()">Afficher</button>
                         <span class="error-message"></span>
                     </label>
 
                     <div class="divSubmit">
                         <button type="reset" class="return-btn">Retour</button>
                         <button type="button" class="btn-suivant">Suivant</button>
+                    </div>
+                    <div class="likns-ac">
+                        <p>Vous avez un compte ?</p>
+                        <div class="links-box">
+                            <a class="link-online" href="./connexion.php">Connexion</a>
+                        </div>
                     </div>
                 </div>
 

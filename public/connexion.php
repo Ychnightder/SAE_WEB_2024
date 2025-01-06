@@ -30,7 +30,7 @@ unset($_SESSION['login_errors'], $_SESSION['old_inputs']); // Nettoyer les sessi
                         <p>Email :</p>
                         <input id="ID" name="identifiant" type="email"
                                class="<?= isset($errors['identifiant']) ? 'input-error' : '' ?>"
-                               value="<?= htmlspecialchars($_POST['identifiant'] ?? '') ?>"
+                               value="<?= htmlspecialchars($oldInputs['identifiant'] ?? '') ?>"
 
                         />
                         <span class="error-message"></span>

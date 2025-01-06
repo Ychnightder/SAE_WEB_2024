@@ -16,7 +16,7 @@ function validateConnexion() {
 
   if (!password.value.trim() || password.value.length < 8) {
     isValid = false;
-    showError(password, "Veuillez entrer votre mot de passe.");
+    showError(password, "Mot de passe trop court");
   }
   return isValid;
 }

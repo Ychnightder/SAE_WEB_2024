@@ -1,24 +1,4 @@
-export const Pays = [
-  // "Allemagne",
-  // "Italie",
-  // "Espagne",
-  // "Royaume-Uni",
-  // "États-Unis",
-  // "Canada",
-  // "Japon",
-  // "Chine",
-  // "Brésil",
-  // "Argentine",
-  // "Russie",
-  // "Inde",
-  // "Australie",
-  // "Mexique",
-  // "Afrique du Sud",
-  // "Égypte",
-  // "Nigéria",
-  // "Corée du Sud",
-  // "Turquie",
-];
+
 const formInscriptionPart1 = document.querySelector(".first-info");
 const formInscriptionPart2 = document.querySelector(".second-info");
 const btnSuivanteIns1 = document.querySelector(".btn-suivant");
@@ -125,6 +105,11 @@ function validateSecondInfo() {
 
   return isValid;
 }
+
+/*Show mdp*/
+
+
+
 const btnSubIns = document.querySelector(".sub-inscription");
 const formInsctiption = document.querySelector(".form-inscription");
 btnSubIns.addEventListener("click", (e) => {
@@ -136,21 +121,60 @@ btnSubIns.addEventListener("click", (e) => {
     formInsctiption.submit(); // Soumettre le formulaire
   }
 });
-function remplirSelectPays() {
-  const select = document.querySelector(".select-pays");
-  Pays.forEach((pays) => {
-    const option = document.createElement("option");
-    option.text = pays;
-    option.value = pays;
-    select.appendChild(option);
-  });
-}
-remplirSelectPays();
+// function remplirSelectPays() {
+//   const select = document.querySelector(".select-pays");
+//   Pays.forEach((pays) => {
+//     const option = document.createElement("option");
+//     option.text = pays;
+//     option.value = pays;
+//     select.appendChild(option);
+//   });
+// }
+// remplirSelectPays();
 
-const errors = document.querySelector(".error-message-general-2");
-if (errors.textContent.trim() === "Code Postal ou Ville invalide.") {
-  if (validateFirstInfo()) {
-    formInscriptionPart1.classList.add("hide-left");
-    formInscriptionPart2.classList.add("show-right");
-  }
-}
+// const errors = document.querySelector(".error-message-general-2");
+// if (errors.textContent.trim() === "Code Postal ou Ville invalide.") {
+//   if (validateFirstInfo()) {
+//     formInscriptionPart1.classList.add("hide-left");
+//     formInscriptionPart2.classList.add("show-right");
+//   }
+// }
+
+
+
+
+
+const pwdButton = document.getElementById('show_mdp');
+const pwdInput = document.getElementById("pwd");
+
+
+pwdButton.addEventListener("click", () =>{
+  const isPasswordVisible = pwdInput.type === "text";
+  pwdInput.type = isPasswordVisible ? "password" : "text";
+  pwdButton.textContent = isPasswordVisible ? "Afficher" : "Masquer";
+})
+
+
+
+const pwdButton = document.getElementById('show_mdp');
+const pwdInput = document.getElementById("pwd");
+pwdButton.addEventListener("click", () => {
+  const isPasswordVisible = pwdInput.type === "text";
+  pwdInput.type = isPasswordVisible ? "password" : "text";
+  pwdButton.textContent = isPasswordVisible ? "Afficher" : "Masquer";
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

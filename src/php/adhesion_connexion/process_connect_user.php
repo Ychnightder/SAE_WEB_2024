@@ -34,10 +34,11 @@ if ($user) {
     $userManager->logConnection($user['id_utilisateur']);
 
     if ($userManager->CheckUserEnquete($_SESSION['userCurrent']["id"]) === false ){
-        header("Location: /main.php");
-
+        header("Location: /dashboardUser.php");
+        exit;
     }else{
         header("Location: /index.php");
+        exit;
     }
 } else {
     $errors['general'] = "Identifiant ou mot de passe incorrect.";

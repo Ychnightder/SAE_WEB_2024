@@ -71,7 +71,7 @@ if (!isset($_SESSION['userCurrent']["id"])) {
       </div>
 
       <div class="cta-buttons-main">
-        <a href="adhesion-connexion.php" class="member-button-main">
+        <a href="connexion.php" class="member-button-main">
           <svg
             class="member-icon"
             width="17"
