@@ -27,3 +27,5 @@ yarn-error.log*
 .DS_Store   # macOS
 Thumbs.db   # Windows
 /vendor/
+composer.json
+composer.lock

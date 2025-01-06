@@ -25,10 +25,33 @@ if ($questionId) {
 
 ?>
 <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const select = document.getElementById("questionSelect");
+        const helper = document.getElementById("selectWidthHelper");
 
+        function adjustSelectWidth() {
+            const selectedOption = select.options[select.selectedIndex].text;
+            helper.textContent = selectedOption;
+            // Ajoutez un léger padding pour éviter un ajustement trop serré
+            select.style.width = `${helper.offsetWidth + 20}px`;
+        }
+
+        // Ajuste la largeur au chargement initial et à chaque changement
+        adjustSelectWidth();
+        select.addEventListener("change", adjustSelectWidth);
+    });
     function generateChart(canvasId, allOptions, rawData, chartType, question) {
+        const allCanvases = document.querySelectorAll('.lesgraphs canvas');
+        allCanvases.forEach((canvas) => {
+            canvas.style.display = 'none'; // Masque tous les graphiques
+        });
+
+        // Afficher le graphique correspondant
         const canvas = document.getElementById(canvasId);
-        if (!canvas) return;
+        if (!canvas) return; // Si le canvas n'existe pas, on arrête la fonction
+        canvas.style.display = 'block';
+
+
 
         // Prépare les données pour le graphique
         const mergedData = allOptions.map((option) => {
@@ -114,7 +137,7 @@ if ($questionId) {
             <div class="box" id="questionBox">
                 <label for="questionSelect">Sélectionner une Question</label>
                 <select id="questionSelect" name="question_id" onchange="this.form.submit()">
-                    <option value="">Choisir une question</option>
+                    <option value="" >Choisir une question</option>
                     <?php foreach ($questions as $question): ?>
                         <?php if ($question['type_question'] !== "textarea"): ?>
                             <option value="<?php echo $question['id_question']; ?>" <?php echo $questionId == $question['id_question'] ? 'selected' : ''; ?>>
@@ -125,6 +148,7 @@ if ($questionId) {
                 </select>
             </div>
         </form>
+        <span id="selectWidthHelper" style="position: absolute; visibility: hidden; white-space: nowrap;"></span>
     </div>
     <div class="logout">
         <a href="index.php">Déconnexion</a>
@@ -133,16 +157,20 @@ if ($questionId) {
 
 <main>
     <?php if ($questionId): ?>
-        <h2><?php echo htmlspecialchars($questionText); ?></h2>
-        <div class="box" id="graphButtons">
+        <h2 class="questionSelectionner"><?php echo htmlspecialchars($questionText); ?></h2>
+        <div id="graphButtons">
             <h3>Choisir le Type de Graphique</h3>
-            <button type="button" onclick="generateChart('pie-chart', allOptions, data, 'pie', question)">Graphique Camembert</button>
-            <button type="button" onclick="generateChart('bar-chart', allOptions, data, 'bar', question)">Graphique en Barres</button>
-            <button type="button" onclick="generateChart('doughnut-chart', allOptions, data, 'doughnut', question)">Graphique Doughnut</button>
+            <div class="btn-all">
+            <button class="btn-pie-chart" type="button" onclick="generateChart('pie-chart', allOptions, data, 'pie', question)">Graphique Camembert</button>
+            <button class="btn-bar-chart" type="button" onclick="generateChart('bar-chart', allOptions, data, 'bar', question)">Graphique en Barres</button>
+            <button class="btn-doughnut-chart" type="button" onclick="generateChart('doughnut-chart', allOptions, data, 'doughnut', question)">Graphique Doughnut</button>
+            </div>
         </div>
-        <canvas id="pie-chart"></canvas>
-        <canvas id="bar-chart"></canvas>
-        <canvas id="doughnut-chart"></canvas>
+    <div class="lesgraphs">
+        <canvas style="display: none" id="pie-chart"></canvas>
+        <canvas style="display: none" id="bar-chart"></canvas>
+        <canvas style="display: none" id="doughnut-chart"></canvas>
+    </div>
     <?php else: ?>
         <p>Veuillez sélectionner une question pour afficher un graphique.</p>
     <?php endif; ?>
