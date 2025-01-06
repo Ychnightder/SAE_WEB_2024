@@ -5,7 +5,7 @@ use PDOException;
 
 class Database
 {
-    private $pdo;
+        private $pdo;
     private string $dbHost = 'localhost';
     private string $dbName = 'autisme_france';
     private string $dbUser = 'root';

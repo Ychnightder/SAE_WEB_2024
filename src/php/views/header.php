@@ -43,7 +43,7 @@
 <header class="header">
     <nav class="nav">
         <div class="logo-container">
-            <a class="logo-link" href="main.php">
+            <a class="logo-link" href="index.php">
                 <img class="logo" src="../assets/image/shared/logo.png" alt="logo" />
             </a>
         </div>
