@@ -115,17 +115,6 @@ if ($questionId) {
 
     console.log("Script chargé : generateChart disponible ?", typeof generateChart === "function");
 
-    <?php if ($questionId): ?>
-    // Transmettre les données PHP au JavaScript
-    const question = <?php echo json_encode($questionText); ?>;
-    const allOptions = <?php echo json_encode($options); ?>;
-    const data = <?php echo json_encode($responses); ?>;
-    <?php else: ?>
-    // Valeurs par défaut si aucune question n'est sélectionnée
-    const question = null;
-    const allOptions = [];
-    const data = [];
-    <?php endif; ?>
 </script>
 
 <header>
@@ -176,6 +165,5 @@ if ($questionId) {
     <?php endif; ?>
 </main>
 
-<script type="module" src="./assets/js/dash.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
