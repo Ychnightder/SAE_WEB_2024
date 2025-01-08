@@ -16,8 +16,11 @@ $id_utilisateur = $_SESSION["userCurrent"]['id'];
 $reponse = $db->getReponseByUser($pdo, $id_utilisateur);
 $reponseByForm = [];
 
-foreach ($reponse as $r) {
-    $reponseByForm[$reponse['titre_']]
+foreach ($responses as $response) {
+    $responsesByForm[$response['questionnaire_title']][] = [
+        'question_text' => $response['question_text'],
+        'option_text' => $response['option_text'],
+    ];
 }
 
 ?>
