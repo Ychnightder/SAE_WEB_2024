@@ -5,7 +5,7 @@ use PDOException;
 
 class Database
 {
-        private $pdo;
+    private $pdo;
     private string $dbHost = 'localhost';
     private string $dbName = 'autisme_france';
     private string $dbUser = 'root';
@@ -120,16 +120,15 @@ class Database
         return $data[0]["texte_question_"];
     }
 
-    function getReponseByUser($emailUser): array {
+    function getReponseByUser(Pdo $pdo, $id_utilisateur): array {
         $query = $this->pdo->prepare("
-            SELECT q.texte_question_ AS question_text, o.option_text, qn.titre_ AS questionnaire_title
-            FROM Reponses r
-            INNER JOIN Questions q ON r.id_question = q.id_question
-            INNER JOIN Options o ON r.id_option = o.id_option
+            SELECT q.texte_question_ AS question_text, r.reponse, qn.titre_ AS questionnaire_title
+            FROM réponses r
+            INNER JOIN questions q ON r.id_question = q.id_question
             INNER JOIN Questionnaires qn ON q.id_questionnaire = qn.id_questionnaire
-            WHERE r.emailUser = :emailUser
+            WHERE r.id_utilisateur = :id_utilisateur
         ");
-        $query->bindParam(':emailUser', $emailUser, PDO::PARAM_STR);
+        $query->bindParam(':id_utilisateur', $id_utilisateur, PDO::PARAM_STR);
         $query->execute();
         return $query->fetchAll();
     }

@@ -25,7 +25,7 @@ session_start();
     </div>
     <div class="body-container">
         <h1 style="margin-bottom: 70px">Merci <span class="name-user"><?php echo $_SESSION["userCurrent"]["prenom"] ?></span> d'avoir répondu</h1>
-        <a href="index.php" class="btn">Retour à l'accueil</a>
+        <a href="dashboardUser.php" class="btn">Retour au Dashboard</a>
     </div>
 </div>
 <div class="wave fond-bot">
