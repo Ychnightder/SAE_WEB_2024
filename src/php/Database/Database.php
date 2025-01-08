@@ -120,5 +120,19 @@ class Database
         return $data[0]["texte_question_"];
     }
 
+    function getReponseByUser($emailUser): array {
+        $query = $this->pdo->prepare("
+            SELECT q.texte_question_ AS question_text, o.option_text, qn.titre_ AS questionnaire_title
+            FROM Reponses r
+            INNER JOIN Questions q ON r.id_question = q.id_question
+            INNER JOIN Options o ON r.id_option = o.id_option
+            INNER JOIN Questionnaires qn ON q.id_questionnaire = qn.id_questionnaire
+            WHERE r.emailUser = :emailUser
+        ");
+        $query->bindParam(':emailUser', $emailUser, PDO::PARAM_STR);
+        $query->execute();
+        return $query->fetchAll();
+    }
+
 
 }
