@@ -8,7 +8,6 @@
  /node_modules
 
 /dist/
- /node_modules/prettier
 
 # Ignorer les fichiers de log
 npm-debug.log*
@@ -26,6 +25,3 @@ yarn-error.log*
 # Other potential caches or temporary files
 .DS_Store   # macOS
 Thumbs.db   # Windows
-/vendor/
-composer.json
-composer.lock

@@ -1,0 +1,15 @@
+{
+    "name": "pierr/sae_web_2024",
+    "autoload": {
+        "psr-4": {
+            "Pierr\\SaeWeb2024\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ychnightder",
+            "email": "pierreychnightder561@gmail.com"
+        }
+    ],
+    "require": {}
+}
